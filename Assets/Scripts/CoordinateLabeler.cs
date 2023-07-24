@@ -28,8 +28,8 @@ public class CoordinateLabeler : MonoBehaviour
 
     private void DisplayCoordinates()
     {
-        coordinate.x = Mathf.RoundToInt(transform.parent.position.x / UnityEditor.EditorSnapSettings.move.x);
-        coordinate.y = Mathf.RoundToInt(transform.parent.position.z / UnityEditor.EditorSnapSettings.move.z);
+        coordinate.x = Mathf.RoundToInt(transform.parent.position.x / 10f);
+        coordinate.y = Mathf.RoundToInt(transform.parent.position.z / 10f);
 
         label.text = coordinate.x + "," + coordinate.y;
     }

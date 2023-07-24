@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 7196379712233829337}
   m_Layer: 0
   m_Name: Tiles
-  m_TagString: Untagged
+  m_TagString: SnapPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143,6 +143,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 717a884ea0b104d48afe578e592a71de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlaceable: 0
+  tower: {fileID: 0}
 --- !u!1 &6345490420503570397
 GameObject:
   m_ObjectHideFlags: 0
