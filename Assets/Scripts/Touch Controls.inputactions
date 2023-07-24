@@ -1,0 +1,74 @@
+{
+    "name": "Touch Controls",
+    "maps": [
+        {
+            "name": "Touch",
+            "id": "d3d532bd-f7fb-4364-9707-f33f50866e75",
+            "actions": [
+                {
+                    "name": "Hold",
+                    "type": "Value",
+                    "id": "c68cda99-4559-46bc-ae4c-06cc2ce07ef7",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Pressed",
+                    "type": "Value",
+                    "id": "3ce2674a-fe51-4e7b-ae30-338a3904ad68",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Pan",
+                    "type": "Value",
+                    "id": "e4fcbb75-78e4-4ceb-b789-d0520665fbaf",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "fbd30161-e1c3-4df8-a358-df987e0d9999",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pressed",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "698ae9ad-d75f-4b09-bf6b-3e7ac084b53b",
+                    "path": "<Touchscreen>/primaryTouch",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Hold",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "33504099-1b89-4eb6-b0fa-ab19644ad258",
+                    "path": "<Touchscreen>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pan",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

@@ -278,9 +278,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7168473563337556727}
   - component: {fileID: 2458108513861777855}
+  - component: {fileID: 2725704424913641976}
   m_Layer: 0
-  m_Name: Tiles1
-  m_TagString: Untagged
+  m_Name: (0, 0)
+  m_TagString: SnapPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -314,3 +315,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 717a884ea0b104d48afe578e592a71de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlaceable: 1
+  tower: {fileID: 1770514590405088, guid: 1cace56ba420dd64c9171c422c8e9aaa, type: 3}
+--- !u!65 &2725704424913641976
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9009051902777109668}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: -5, z: 0}

@@ -17,6 +17,16 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 4300000, guid: dac1f6a026468af46b8928893e3eea27, type: 3}
+    - target: {fileID: 2458108513861777855, guid: 1fbc04066791e9049884b34821b41cb2,
+        type: 3}
+      propertyPath: isPlaceable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2725704424913641976, guid: 1fbc04066791e9049884b34821b41cb2,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7168473563337556727, guid: 1fbc04066791e9049884b34821b41cb2,
         type: 3}
       propertyPath: m_RootOrder
