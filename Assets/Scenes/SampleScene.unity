@@ -2278,7 +2278,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &337835097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5680,90 +5680,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 708712817}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &944407838
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5012397822984719870, guid: 4b8cbab1fd1773240b702371734e9b39,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 5012397822984719870, guid: 4b8cbab1fd1773240b702371734e9b39,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5012397822984719870, guid: 4b8cbab1fd1773240b702371734e9b39,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5012397822984719870, guid: 4b8cbab1fd1773240b702371734e9b39,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5012397822984719870, guid: 4b8cbab1fd1773240b702371734e9b39,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5012397822984719870, guid: 4b8cbab1fd1773240b702371734e9b39,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.44
-      objectReference: {fileID: 0}
-    - target: {fileID: 5012397822984719870, guid: 4b8cbab1fd1773240b702371734e9b39,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5012397822984719870, guid: 4b8cbab1fd1773240b702371734e9b39,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5012397822984719870, guid: 4b8cbab1fd1773240b702371734e9b39,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5012397822984719870, guid: 4b8cbab1fd1773240b702371734e9b39,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5012397822984719870, guid: 4b8cbab1fd1773240b702371734e9b39,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5012397822984719870, guid: 4b8cbab1fd1773240b702371734e9b39,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5012397822984719870, guid: 4b8cbab1fd1773240b702371734e9b39,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5012397822984719870, guid: 4b8cbab1fd1773240b702371734e9b39,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5675747122595649348, guid: 4b8cbab1fd1773240b702371734e9b39,
-        type: 3}
-      propertyPath: m_Name
-      value: coffin
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 4b8cbab1fd1773240b702371734e9b39, type: 3}
 --- !u!224 &945125282 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1605439892364268749, guid: 316ae2f96c264e548a0316919b5851f7,
@@ -9143,6 +9059,10 @@ PrefabInstance:
     - target: {fileID: 1307900707547382, guid: 1c646272db9f13f40a1cc8d87b080552, type: 3}
       propertyPath: m_Name
       value: ForestCatapult_Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 1307900707547382, guid: 1c646272db9f13f40a1cc8d87b080552, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4365009236294980, guid: 1c646272db9f13f40a1cc8d87b080552, type: 3}
       propertyPath: m_RootOrder

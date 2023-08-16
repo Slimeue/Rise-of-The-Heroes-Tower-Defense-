@@ -7,12 +7,12 @@ using System;
 [ExecuteAlways]
 public class CoordinateLabeler : MonoBehaviour
 {
-    TextMeshPro label;
+    //TextMeshPro label;
     Vector2Int coordinate = new Vector2Int();
 
     void Awake()
     {
-        label = GetComponent<TextMeshPro>();
+        //label = GetComponent<TextMeshPro>();
         DisplayCoordinates();
     }
 
@@ -31,7 +31,7 @@ public class CoordinateLabeler : MonoBehaviour
         coordinate.x = Mathf.RoundToInt(transform.parent.position.x / 10f);
         coordinate.y = Mathf.RoundToInt(transform.parent.position.z / 10f);
 
-        label.text = coordinate.x + "," + coordinate.y;
+        //label.text = coordinate.x + "," + coordinate.y;
     }
 
     void UpdateObjectName()

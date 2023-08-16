@@ -104,11 +104,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66fc69a4f3895b142a052a42f3b47162, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  layer:
+    serializedVersion: 2
+    m_Bits: 8
   _tower: {fileID: 1770514590405088, guid: 1cace56ba420dd64c9171c422c8e9aaa, type: 3}
-  _mainCam: {fileID: 2235093967035222832, guid: ddb0b561d801f8c4b855d32280417380,
-    type: 3}
-  mainMat: {fileID: 2100000, guid: 9093fea64d769c14686f81a998814598, type: 3}
-  transpMat: {fileID: 2100000, guid: 492029a9f4a477a45aa55e18bdb1366f, type: 2}
+  _mainCam: {fileID: 0}
+  _materia:
+  - {fileID: 2100000, guid: f9fc7ec022f09a6418b1b6f97f0c887b, type: 3}
+  - {fileID: 2100000, guid: 492029a9f4a477a45aa55e18bdb1366f, type: 2}
 --- !u!114 &4172485123434443867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,6 +146,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 3ce2674a-fe51-4e7b-ae30-338a3904ad68
     m_ActionName: Touch/Pressed[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e4fcbb75-78e4-4ceb-b789-d0520665fbaf
+    m_ActionName: Touch/Pan[/Device Simulator Touchscreen/position]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Touch
