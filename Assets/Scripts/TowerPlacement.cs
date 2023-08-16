@@ -15,6 +15,7 @@ public class TowerPlacement : MonoBehaviour
     Ray _position;
     bool _isPlacing;
 
+    [SerializeField] LayerMask layer;
     [SerializeField] private GameObject _tower;
     [SerializeField] private Camera _mainCam;
 
@@ -38,10 +39,6 @@ public class TowerPlacement : MonoBehaviour
 
     }
 
-    void Start()
-    {
-
-    }
 
 
     private void Update()
