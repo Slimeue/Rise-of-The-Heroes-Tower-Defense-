@@ -95,12 +95,12 @@ PrefabInstance:
     - target: {fileID: 4172485123434443862, guid: c22175920b4820d4c87aae820131360e,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -134
+      value: -200
       objectReference: {fileID: 0}
     - target: {fileID: 4172485123434443862, guid: c22175920b4820d4c87aae820131360e,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 113
+      value: 130
       objectReference: {fileID: 0}
     - target: {fileID: 4172485123434443862, guid: c22175920b4820d4c87aae820131360e,
         type: 3}
@@ -116,6 +116,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172485123434443866, guid: c22175920b4820d4c87aae820131360e,
+        type: 3}
+      propertyPath: _mainCam
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172485123434443866, guid: c22175920b4820d4c87aae820131360e,
+        type: 3}
+      propertyPath: layer.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172485123434443866, guid: c22175920b4820d4c87aae820131360e,
+        type: 3}
+      propertyPath: _materia.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172485123434443866, guid: c22175920b4820d4c87aae820131360e,
+        type: 3}
+      propertyPath: _materia.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: caca2dfcd7da619408439605ff0667a4, type: 3}
+    - target: {fileID: 4172485123434443866, guid: c22175920b4820d4c87aae820131360e,
+        type: 3}
+      propertyPath: _materia.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 492029a9f4a477a45aa55e18bdb1366f, type: 2}
+    - target: {fileID: 4172485123434443867, guid: c22175920b4820d4c87aae820131360e,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172485123434443867, guid: c22175920b4820d4c87aae820131360e,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_ActionId
+      value: e4fcbb75-78e4-4ceb-b789-d0520665fbaf
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172485123434443867, guid: c22175920b4820d4c87aae820131360e,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_ActionName
+      value: Touch/Pan[/Device Simulator Touchscreen/position]
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c22175920b4820d4c87aae820131360e, type: 3}
