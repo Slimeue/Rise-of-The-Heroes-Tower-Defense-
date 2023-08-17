@@ -107,7 +107,7 @@ MonoBehaviour:
   layer:
     serializedVersion: 2
     m_Bits: 8
-  _tower: {fileID: 1770514590405088, guid: 1cace56ba420dd64c9171c422c8e9aaa, type: 3}
+  _tower: {fileID: 6805726969315287029, guid: ec635f808d1ca4e4f80295709ee084a3, type: 3}
   _mainCam: {fileID: 0}
   _materia:
   - {fileID: 2100000, guid: f9fc7ec022f09a6418b1b6f97f0c887b, type: 3}
