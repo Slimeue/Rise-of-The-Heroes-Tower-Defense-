@@ -103,8 +103,8 @@ public class TowerPlacement : MonoBehaviour
 
     void OnPlacing(InputAction.CallbackContext context)
     {
-
-        _position = _mainCam.ScreenPointToRay(Touchscreen.current.position.ReadValue());
+        Vector2 _touchPosition = context.ReadValue<Vector2>();
+        _position = _mainCam.ScreenPointToRay(_touchPosition);
 
         if (Physics.Raycast(_position, out RaycastHit raycastHit) && _isPlacing)
         {
