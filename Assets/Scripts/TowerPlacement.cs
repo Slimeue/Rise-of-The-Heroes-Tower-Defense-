@@ -62,8 +62,9 @@ public class TowerPlacement : MonoBehaviour
 
         _touchPressedAction.performed += OnPressed;
         _touchPressedAction.canceled += OnPressedCanceled;
-        _touchHoldAction.started += OnPlacing;
         _touchHoldAction.performed += OnPlacing;
+        _touchHoldAction.canceled += OnPlacing;
+
 
 
 
@@ -73,9 +74,9 @@ public class TowerPlacement : MonoBehaviour
     private void OnDisable()
     {
         _touchPressedAction.performed -= OnPressed;
-        _touchPressedAction.canceled -= OnPressedCanceled;
-        _touchHoldAction.started -= OnPlacing;
         _touchHoldAction.performed -= OnPlacing;
+        _touchHoldAction.canceled -= OnPressedCanceled;
+
 
         // touchHoldAction.performed -= OnPlacing;
     }
