@@ -62,8 +62,9 @@ public class TowerPlacement : MonoBehaviour
 
         _touchPressedAction.performed += OnPressed;
         _touchPressedAction.canceled += OnPressedCanceled;
-        _touchHoldAction.started += OnPlacing;
         _touchHoldAction.performed += OnPlacing;
+        _touchHoldAction.canceled += OnPlacing;
+
 
 
 
@@ -73,9 +74,9 @@ public class TowerPlacement : MonoBehaviour
     private void OnDisable()
     {
         _touchPressedAction.performed -= OnPressed;
-        _touchPressedAction.canceled -= OnPressedCanceled;
-        _touchHoldAction.started -= OnPlacing;
         _touchHoldAction.performed -= OnPlacing;
+        _touchHoldAction.canceled -= OnPressedCanceled;
+
 
         // touchHoldAction.performed -= OnPlacing;
     }
@@ -103,8 +104,8 @@ public class TowerPlacement : MonoBehaviour
 
     void OnPlacing(InputAction.CallbackContext context)
     {
-        Vector2 _touchPosition = context.ReadValue<Vector2>();
-        _position = _mainCam.ScreenPointToRay(_touchPosition);
+
+        _position = _mainCam.ScreenPointToRay(Touchscreen.current.position.ReadValue());
 
         if (Physics.Raycast(_position, out RaycastHit raycastHit) && _isPlacing)
         {
