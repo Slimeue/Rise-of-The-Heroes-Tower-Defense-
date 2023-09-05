@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3248487923220954146}
   m_Layer: 0
   m_Name: enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,5 +111,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7d1d622ea3fce440a58e3e742bd0a09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints: []
+  paths: []
   speed: 1

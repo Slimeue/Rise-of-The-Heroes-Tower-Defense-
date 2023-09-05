@@ -15,7 +15,6 @@ public class EnemyMover : MonoBehaviour
     void OnEnable()
     {
         FindPath();
-        ReturnToStart();
         StartCoroutine(FollowPaths());
     }
 
@@ -37,10 +36,7 @@ public class EnemyMover : MonoBehaviour
         }
     }
 
-    void ReturnToStart()
-    {
-        transform.position = paths[0].transform.position;
-    }
+
 
     IEnumerator FollowPaths()
     {
