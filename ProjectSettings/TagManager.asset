@@ -6,6 +6,7 @@ TagManager:
   tags:
   - SnapPoint
   - Path
+  - Enemy
   layers:
   - Default
   - TransparentFX

@@ -6,7 +6,7 @@ using UnityEngine;
 public class ObjectPooler : MonoBehaviour
 {
     [SerializeField]
-    List<WaveData> _waveData;
+    public List<WaveData> _waveData;
     [SerializeField]
     [Range(1, 20)] int _poolSize = 10;
 
@@ -65,7 +65,6 @@ public class ObjectPooler : MonoBehaviour
             {
                 if (!_pooledEnemiesWave[waveIndex][i].activeInHierarchy)
                 {
-                    Debug.Log(_pooledEnemiesWave[waveIndex][i] + " " + " " + waveIndex);
                     return _pooledEnemiesWave[waveIndex][i];
                 }
             }
