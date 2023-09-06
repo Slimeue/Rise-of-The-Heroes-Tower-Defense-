@@ -1550,7 +1550,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _tower
       value: 
-      objectReference: {fileID: 724534203210487188, guid: 44de95fa108bf2447bb44ff50fa17ebd,
+      objectReference: {fileID: 6372191081567825315, guid: 9e5a976964b48a849a8290a5fcfba723,
         type: 3}
     - target: {fileID: 1605439892364268737, guid: 316ae2f96c264e548a0316919b5851f7,
         type: 3}
@@ -2666,7 +2666,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _tower
       value: 
-      objectReference: {fileID: 724534203210487188, guid: 44de95fa108bf2447bb44ff50fa17ebd,
+      objectReference: {fileID: 6372191081567825315, guid: 9e5a976964b48a849a8290a5fcfba723,
         type: 3}
     - target: {fileID: 4172485123434443866, guid: c22175920b4820d4c87aae820131360e,
         type: 3}
