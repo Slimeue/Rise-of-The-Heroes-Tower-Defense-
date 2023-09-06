@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - SnapPoint
+  - Path
+  - Enemy
   layers:
   - Default
   - TransparentFX

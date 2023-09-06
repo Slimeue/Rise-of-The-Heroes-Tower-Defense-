@@ -18,7 +18,7 @@
                     "name": "Pressed",
                     "type": "Value",
                     "id": "3ce2674a-fe51-4e7b-ae30-338a3904ad68",
-                    "expectedControlType": "",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
