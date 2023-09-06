@@ -43,6 +43,6 @@ public class CameraPan : MonoBehaviour
         Debug.Log(position);
     }
 
-    //Comments
+
 
 }
