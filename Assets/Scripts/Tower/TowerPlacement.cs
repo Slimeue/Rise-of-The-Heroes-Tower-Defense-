@@ -77,7 +77,6 @@ public class TowerPlacement : MonoBehaviour
     {
 
         _isPlacing = true;
-        Debug.Log("Click");
         //TODO: Instantiate Preview Model of Tower
 
         _instObj = Instantiate(_tower, transform.position, Quaternion.identity);
