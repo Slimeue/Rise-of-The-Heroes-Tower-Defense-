@@ -18,7 +18,6 @@ public class EnemyMover : MonoBehaviour
         StartCoroutine(FollowPaths());
     }
 
-
     void FindPath()
     {
         paths.Clear();
@@ -36,8 +35,6 @@ public class EnemyMover : MonoBehaviour
         }
     }
 
-
-
     IEnumerator FollowPaths()
     {
         foreach (Waypoints paths in paths)
@@ -52,7 +49,6 @@ public class EnemyMover : MonoBehaviour
             {
                 _travelPercent += Time.deltaTime * speed;
                 transform.position = Vector3.Lerp(_startPosition, _endPosition, _travelPercent);
-
                 yield return new WaitForEndOfFrame();
             }
         }
