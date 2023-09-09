@@ -17,10 +17,16 @@ public class WaveManager : MonoBehaviour
     [SerializeField] GameObject[] inActives;
 
     int currentWaveIndex = 0;
+    int maxWave;
     float nextWaveTime;
     bool isSpawning;
 
+    WaveData waveData;
 
+    private void Awake()
+    {
+        maxWave = objectPooler.WaveCount;
+    }
 
     void Start()
     {
@@ -32,49 +38,78 @@ public class WaveManager : MonoBehaviour
     {
 
         isSpawning = NotSpawning();
+        // for (int i = 0; i < objectPooler.WaveCount; i++)
+        // {
+        //     
+        //     maxWave = waveData.enemies.Length;
+        // }
+
+
+        if (currentWaveIndex <= maxWave)
+        {
+            StartWave();
+        }
+        else
+        {
+            Debug.Log("No More Waves");
+        }
+
+    }
+
+    void StartWave()
+    {
         if (!isSpawning)
         {
-            if (nextWaveTime > 0)
-            {
-                nextWaveTime -= Time.deltaTime;
-            }
-            else
-            {
-                StartNextWave();
-            }
+            StartNextWave();
+            Debug.Log("Current Wave: " + currentWaveIndex);
         }
         inActives = GameObject.FindGameObjectsWithTag("Enemy");
     }
 
     void StartNextWave()
     {
-        isSpawning = true;
-        StartCoroutine(SpawnWave(currentWaveIndex));
-    }
-    IEnumerator SpawnWave(int wave)
-    {
-        for (int i = 0; i <= wave; i++)
+        if (nextWaveTime > 0)
         {
-
-            WaveData waveData = objectPooler._waveData[i];
-            for (int x = 0; x < waveData.enemyCount * 2; x++)
-            {
-                GameObject enemy = objectPooler.GetPooledEnemy(i);
-                enemy.transform.position = spawnPoint.transform.position;
-                enemy.transform.rotation = spawnPoint.transform.rotation;
-                enemy.SetActive(true);
-                Debug.Log(enemy.name);
-                yield return new WaitForSeconds(spawnInterval);
-
-            }
-            if (currentWaveIndex < waveData.enemies.Length)
-            {
-                currentWaveIndex++;
-            }
-            nextWaveTime = timeBetweenWave;
-            yield return null;
+            nextWaveTime -= Time.deltaTime;
+        }
+        else
+        {
+            NextWave();
         }
     }
+
+    void NextWave()
+    {
+        isSpawning = true;
+        StartCoroutine(SpawnEnemyWave(currentWaveIndex));
+    }
+    IEnumerator SpawnEnemyWave(int wave)
+    {
+        for (int i = 0; i - 1 < wave; i++)
+        {
+
+            if (i < objectPooler.WaveCount)
+            {
+
+                waveData = objectPooler._waveData[i];
+
+                for (int x = 0; x < waveData.enemyCount * 2; x++)
+                {
+                    GameObject enemy = objectPooler.GetPooledEnemy(i);
+                    enemy.transform.position = spawnPoint.transform.position;
+                    enemy.transform.rotation = spawnPoint.transform.rotation;
+                    enemy.SetActive(true);
+                    Debug.Log(enemy.name);
+                    yield return new WaitForSeconds(spawnInterval);
+
+                }
+                nextWaveTime = timeBetweenWave;
+            }
+            yield return null;
+        }
+        currentWaveIndex++;
+    }
+
 
     public bool NotSpawning()
     {
