@@ -24,10 +24,10 @@ public class TargetLocator : MonoBehaviour
 
     private void FindClosestTarget()
     {
-        EnemyMover[] enemies = FindObjectsOfType<EnemyMover>();
+        EnemySM[] enemies = FindObjectsOfType<EnemySM>();
         Transform closestTarget = null;
         float maxDis = Mathf.Infinity;
-        foreach (EnemyMover enemy in enemies)
+        foreach (EnemySM enemy in enemies)
         {
             _targetDir = enemy.transform.position - transform.position;
             float distance = _targetDir.magnitude;
@@ -42,7 +42,6 @@ public class TargetLocator : MonoBehaviour
 
     private void FindTarget()
     {
-
         if (target != null)
         {
             Vector3 targetDir = target.position - transform.position;

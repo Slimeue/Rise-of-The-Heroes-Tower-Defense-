@@ -7,14 +7,20 @@ public class S_Idle : BaseState
     public float idleTime = 1f;
     private EnemySM _enemySM;
 
-    public S_Idle(EnemySM stateMachine) : base("Idle", stateMachine)
+
+
+
+    public S_Idle(EnemySM stateMachine, string animBoolName) : base(animBoolName, stateMachine)
     {
         _enemySM = (EnemySM)stateMachine;
+        this.animBoolName = animBoolName;
     }
 
     public override void Enter()
     {
         base.Enter();
+
+        Debug.Log(animBoolName);
     }
 
     public override void LogicUpdate()

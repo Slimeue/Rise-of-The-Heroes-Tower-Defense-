@@ -5,9 +5,15 @@ using UnityEngine;
 public class S_Moving : BaseState
 {
     private EnemySM _enemySM;
-    public S_Moving(EnemySM stateMachine) : base("Moving", stateMachine)
+
+
+
+    public S_Moving(EnemySM stateMachine, string animBoolName) : base(animBoolName, stateMachine)
     {
         _enemySM = (EnemySM)stateMachine;
+        this.animBoolName = animBoolName;
+
+
     }
 
     public override void Enter()
@@ -19,6 +25,7 @@ public class S_Moving : BaseState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+        _enemySM.anim.SetBool(animBoolName, true);
         /*if enemy goes still transition to idleState*/
         FollowPath();
         if (Input.GetKeyDown(KeyCode.Space))
