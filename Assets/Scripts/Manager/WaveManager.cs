@@ -16,7 +16,7 @@ public class WaveManager : MonoBehaviour
 
     [SerializeField] GameObject[] inActives;
 
-    int currentWaveIndex = 0;
+    int currentWaveIndex = 1;
     int maxWave;
     float nextWaveTime;
     bool isSpawning;
@@ -51,7 +51,7 @@ public class WaveManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("No More Waves");
+            //TODO: WaveCompletion() 
         }
 
     }
@@ -85,7 +85,7 @@ public class WaveManager : MonoBehaviour
     }
     IEnumerator SpawnEnemyWave(int wave)
     {
-        for (int i = 0; i - 1 < wave; i++)
+        for (int i = 0; i < wave; i++)
         {
 
             if (i < objectPooler.WaveCount)
@@ -105,6 +105,7 @@ public class WaveManager : MonoBehaviour
                 }
                 nextWaveTime = timeBetweenWave;
             }
+
             yield return null;
         }
         currentWaveIndex++;
