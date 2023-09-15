@@ -13,7 +13,6 @@ public class CharacterData : ScriptableObject
 
     [Space(5)]
     [Header("Health")]
-    [SerializeField] public float hitPoints;
     [SerializeField] public float maxHp;
 
     [Space(5)]
@@ -22,6 +21,11 @@ public class CharacterData : ScriptableObject
     [Space(5)]
     [Header("Defense")]
     [SerializeField] public float baseArmor;
+
+    [Header("Cooldowns")]
+    [SerializeField] public float towerCooldown; // Tower Cooldown after dying
+
+
 
 
 }

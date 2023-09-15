@@ -6,19 +6,19 @@
             "id": "d3d532bd-f7fb-4364-9707-f33f50866e75",
             "actions": [
                 {
-                    "name": "Hold",
+                    "name": "Pressed",
                     "type": "Value",
-                    "id": "c68cda99-4559-46bc-ae4c-06cc2ce07ef7",
+                    "id": "3ce2674a-fe51-4e7b-ae30-338a3904ad68",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Pressed",
+                    "name": "Hold",
                     "type": "Value",
-                    "id": "3ce2674a-fe51-4e7b-ae30-338a3904ad68",
-                    "expectedControlType": "Button",
+                    "id": "c68cda99-4559-46bc-ae4c-06cc2ce07ef7",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -37,22 +37,11 @@
                 {
                     "name": "",
                     "id": "fbd30161-e1c3-4df8-a358-df987e0d9999",
-                    "path": "<Mouse>/leftButton",
+                    "path": "<Touchscreen>/Press",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Pressed",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "698ae9ad-d75f-4b09-bf6b-3e7ac084b53b",
-                    "path": "<Touchscreen>/primaryTouch",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Hold",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -64,6 +53,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Pan",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "698ae9ad-d75f-4b09-bf6b-3e7ac084b53b",
+                    "path": "<Touchscreen>/primaryTouch",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Hold",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

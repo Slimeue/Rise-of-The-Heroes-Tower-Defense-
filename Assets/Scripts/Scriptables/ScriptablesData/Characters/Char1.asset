@@ -12,3 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e454853e7f0ec346bb1144e52ab7ab1, type: 3}
   m_Name: Char1
   m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 0}
+  dmgValue: 0
+  maxHp: 100
+  mana: 0
+  baseArmor: 0

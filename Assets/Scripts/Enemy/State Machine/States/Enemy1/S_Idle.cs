@@ -7,25 +7,26 @@ public class S_Idle : BaseState
     public float idleTime = 1f;
     private EnemySM _enemySM;
 
-
-
-
     public S_Idle(EnemySM stateMachine, string animBoolName) : base(animBoolName, stateMachine)
     {
         _enemySM = (EnemySM)stateMachine;
         this.animBoolName = animBoolName;
     }
 
-    public override void Enter()
+    public override void Enter(StateMachine stateMachine)
     {
-        base.Enter();
-
+        base.Enter(_enemySM);
         Debug.Log(animBoolName);
     }
 
-    public override void LogicUpdate()
+    public override void Exit(StateMachine stateMachine)
     {
-        base.LogicUpdate();
+        base.Exit(_enemySM);
+    }
+
+    public override void LogicUpdate(StateMachine stateMachine)
+    {
+        base.LogicUpdate(_enemySM);
         /*transition to movingState when it moves*/
         if (idleTime > 0)
         {
@@ -38,5 +39,8 @@ public class S_Idle : BaseState
         }
     }
 
-
+    public override void OnTriggerEnter(StateMachine stateMachine, Collider collider)
+    {
+        base.OnTriggerEnter(_enemySM, collider);
+    }
 }
