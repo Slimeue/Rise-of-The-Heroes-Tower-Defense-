@@ -15,7 +15,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Hold",
+                    "name": "Press",
                     "type": "Value",
                     "id": "c68cda99-4559-46bc-ae4c-06cc2ce07ef7",
                     "expectedControlType": "",
@@ -24,13 +24,13 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Pan",
-                    "type": "Value",
-                    "id": "e4fcbb75-78e4-4ceb-b789-d0520665fbaf",
-                    "expectedControlType": "Vector2",
+                    "name": "PlacePress",
+                    "type": "Button",
+                    "id": "fdd0bab8-976e-47c5-adc6-80852454dbc3",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": true
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -47,23 +47,23 @@
                 },
                 {
                     "name": "",
-                    "id": "33504099-1b89-4eb6-b0fa-ab19644ad258",
-                    "path": "<Touchscreen>/position",
+                    "id": "698ae9ad-d75f-4b09-bf6b-3e7ac084b53b",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Pan",
+                    "action": "Press",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "698ae9ad-d75f-4b09-bf6b-3e7ac084b53b",
-                    "path": "<Touchscreen>/primaryTouch",
+                    "id": "3b389352-ed21-4805-8b0a-1547df186679",
+                    "path": "<Touchscreen>/Press",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Hold",
+                    "action": "PlacePress",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
