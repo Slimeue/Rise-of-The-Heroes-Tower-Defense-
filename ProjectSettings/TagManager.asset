@@ -8,6 +8,7 @@ TagManager:
   - Path
   - Enemy
   - MeleePlatform
+  - TowerHolder
   layers:
   - Default
   - TransparentFX

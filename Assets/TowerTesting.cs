@@ -1,41 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
-
+using Cinemachine;
+using Unity.VisualScripting;
 
 public class TowerTesting : MonoBehaviour
 {
-    PlayerInput playerInput;
-    private InputAction _touchPressedAction;
-    private InputAction _touchPlacePressAction;
-    private InputAction _touchPressAction;
 
+    TowerManager towerManager;
+    [SerializeField] GameObject _preview;
+    [SerializeField] GameObject _charObj;
 
     private void Awake()
     {
-        playerInput = GetComponent<PlayerInput>();
-        _touchPressedAction = playerInput.actions["Pressed"];
-        _touchPressAction = playerInput.actions["Press"];
-        _touchPlacePressAction = playerInput.actions["PlacePress"];
+        towerManager = FindAnyObjectByType<TowerManager>();
     }
 
-    private void OnEnable()
+    public void Pressed()
     {
-        _touchPressAction.started += DebugLog;
-        //_touchPressedAction.started += DebugLog;
+        towerManager.StartPlacing(_preview, _charObj);
     }
-
-    private void OnDisable()
-    {
-        _touchPressAction.started -= DebugLog;
-        //_touchPressedAction.started -= DebugLog;
-    }
-
-    private void DebugLog(InputAction.CallbackContext context)
-    {
-        Debug.Log(gameObject.name);
-    }
-
 
 }
