@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Cinemachine;
+using UnityEngine.UI;
 
 public class TowerPlacement : MonoBehaviour
 {
     //References
-
+    public GameObject _characterParents;
     public GameObject[] _meleePlatform;
+    public GameObject[] _characterHolder;
     CanvasEnabler canvasEnabler;
     //
     [Space(5)]
@@ -42,8 +44,6 @@ public class TowerPlacement : MonoBehaviour
 
     bool rayCastHit;
 
-    Renderer rend;
-
     bool _isPlacing;
 
     // Material mat;
@@ -68,6 +68,7 @@ public class TowerPlacement : MonoBehaviour
         currentState = State.Default;
 
         _meleePlatform = GameObject.FindGameObjectsWithTag(_platformTag);
+        _characterHolder = GameObject.FindGameObjectsWithTag("TowerHolder");
 
     }
 
@@ -77,48 +78,22 @@ public class TowerPlacement : MonoBehaviour
         switch (currentState)
         {
             case State.Default:
-
-
-                Time.timeScale = normalGameTimeSpeed;
-                vcam1.Priority = 1;
-                vcam2.Priority = 0;
-                Debug.Log(currentState);
-                _charInfoCanvas.SetActive(false);
-                DisablePlatformCanvas();
+                Debug.Log("Name: " + gameObject.name + currentState);
                 break;
             case State.Placing:
-                Time.timeScale = placingGameTimeSpeed;
                 OnPlacing();
-                EnablePlatformCanvas();
-                //TODO:: Move the camera a bit when palcing
-                vcam1.Priority = 0;
-                vcam2.Priority = 1;
-                Debug.Log(currentState);
-                _charInfoCanvas.SetActive(true);
+                Debug.Log("Name: " + gameObject.name + currentState);
                 break;
             case State.HoldPlacing:
-                Debug.Log(currentState);
-                _CharConfirmPlacementCanvas.SetActive(true);
-                _CharConfirmPlacementCanvas.transform.position = _instPreviewObj.transform.position;
-
+                Debug.Log("Name: " + gameObject.name + currentState);
                 break;
             case State.Placed:
-                Debug.Log(currentState);
-
+                Debug.Log("Name: " + gameObject.name + currentState);
                 break;
         }
 
     }
 
-    private void OnEnable()
-    {
-
-    }
-    private void OnDisable()
-    {
-
-
-    }
 
     public void OnPressed()
     {
@@ -128,17 +103,30 @@ public class TowerPlacement : MonoBehaviour
         Debug.Log("name of prefab: " + _tower.name);
         if (_isPlacing)
         {
+            NormalTime();
             _isPlacing = false;
             Destroy(_instPreviewObj);
+            EnableTowerHolder(gameObject.GetComponent<Button>());
             _CharConfirmPlacementCanvas.SetActive(false);
+            vcam1.Priority = 1;
+            vcam2.Priority = 0;
+            _charInfoCanvas.SetActive(false);
+            DisablePlatformCanvas();
             currentState = State.Default;
             return;
         }
         if (currentState == State.Default)
         {
+            vcam1.Priority = 0;
+            vcam2.Priority = 1;
+
             Debug.Log("Press");
             _instPreviewObj = Instantiate(_previewTower, transform.position, Quaternion.identity);//previewModel
             _instPreviewObj.transform.parent = transform;
+            DisableTowerHolder(gameObject.GetComponent<Button>());
+            EnablePlatformCanvas();
+            PlacingTime();
+            _charInfoCanvas.SetActive(true);
             currentState = State.Placing;
             _isPlacing = true;
         }
@@ -150,35 +138,37 @@ public class TowerPlacement : MonoBehaviour
 
         if (currentState == State.HoldPlacing)
         {
+            EnableTowerHolder(gameObject.GetComponent<Button>());
             DisablePlatformCanvas();
+            NormalTime();
             _isPlacing = false;
-
             _instObj = Instantiate(_tower, _instPreviewObj.transform.position, Quaternion.identity);
-            _instObj.transform.parent = transform.transform;
+            _instObj.transform.parent = _characterParents.transform;
             Debug.Log("Name: " + _instObj.name);
             Destroy(_instPreviewObj);
+            _charInfoCanvas.SetActive(false);
+            DisablePlatformCanvas();
             _CharConfirmPlacementCanvas.SetActive(false);
-
+            vcam1.Priority = 1;
+            vcam2.Priority = 0;
             currentState = State.Default;
+            gameObject.SetActive(false);
         }
 
     }
 
     public void OnCancelPlacement()
     {
-
+        NormalTime();
+        _isPlacing = false;
+        Destroy(_instPreviewObj);
+        EnableTowerHolder(gameObject.GetComponent<Button>());
         _CharConfirmPlacementCanvas.SetActive(false);
-        _instPreviewObj.SetActive(false);
-
-    }
-
-    public void Hold()
-    {
-        if (currentState == State.Placing)
-        {
-
-            currentState = State.HoldPlacing;
-        }
+        vcam1.Priority = 1;
+        vcam2.Priority = 0;
+        _charInfoCanvas.SetActive(false);
+        DisablePlatformCanvas();
+        currentState = State.Default;
     }
 
     public void OnPlacing()
@@ -196,8 +186,10 @@ public class TowerPlacement : MonoBehaviour
                 {
                     _instPreviewObj.transform.position = raycastHit.transform.position;
                     Debug.DrawRay(_position.origin, _position.direction * 20, Color.red);
-                    Hold();
-
+                    Debug.Log("Touch Started");
+                    _CharConfirmPlacementCanvas.SetActive(true);
+                    _CharConfirmPlacementCanvas.transform.position = _instPreviewObj.transform.position;
+                    currentState = State.HoldPlacing;
                 }
             }
         }
@@ -205,6 +197,8 @@ public class TowerPlacement : MonoBehaviour
 
     }
 
+
+    #region enabling
     void EnablePlatformCanvas()
     {
         foreach (GameObject platform in _meleePlatform)
@@ -222,4 +216,46 @@ public class TowerPlacement : MonoBehaviour
             canvasEnabler.DisableCanvas();
         }
     }
+
+    void DisableTowerHolder(Button butButton)
+    {
+        Button clickedButton = butButton.gameObject.GetComponent<Button>();
+        foreach (GameObject holder in _characterHolder)
+        {
+            Button buttonRef = holder.GetComponent<Button>();
+
+            if (buttonRef != clickedButton)
+            {
+                buttonRef.enabled = false;
+            }
+        }
+    }
+
+    void EnableTowerHolder(Button butButton)
+    {
+        Button clickedButton = butButton.gameObject.GetComponent<Button>();
+        foreach (GameObject holder in _characterHolder)
+        {
+            Button buttonRef = holder.GetComponent<Button>();
+
+            if (buttonRef != clickedButton)
+            {
+                buttonRef.enabled = true;
+            }
+        }
+    }
+    #endregion
+
+    #region timeScale
+
+    void PlacingTime()
+    {
+        Time.timeScale = placingGameTimeSpeed;
+    }
+    void NormalTime()
+    {
+        Time.timeScale = normalGameTimeSpeed;
+    }
+
+    #endregion
 }

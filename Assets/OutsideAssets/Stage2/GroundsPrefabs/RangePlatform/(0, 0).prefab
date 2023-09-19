@@ -106,6 +106,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _platformHighlight: {fileID: 7994569369964674702}
+  notAvailColor: {r: 0.5471698, g: 0.16776434, b: 0.16776434, a: 0.5019608}
+  availColor: {r: 0.11764706, g: 0.62352943, b: 0.10980392, a: 0.22745098}
 --- !u!1 &7517018750223484671
 GameObject:
   m_ObjectHideFlags: 0
