@@ -14,7 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 201678975986700708, guid: 68f04e104245a99459ebe7bc1abc21de,
     type: 3}
-  dmgValue: 0
+  dmgValue: 10
   hitPoints: 0
   maxHp: 10
   baseArmor: 0
+  attackRange: 10
+  whatIsTower:
+    serializedVersion: 2
+    m_Bits: 64

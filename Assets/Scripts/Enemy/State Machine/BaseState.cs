@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public abstract class BaseState
+public class BaseState
 {
     protected StateMachine stateMachine;
     protected string animBoolName;
@@ -18,7 +19,20 @@ public abstract class BaseState
         this.stateMachine = stateMachine;
     }
 
-    public virtual void Enter() { }
-    public virtual void LogicUpdate() { }
-    public virtual void Exit() { }
+    public BaseState()
+    {
+    }
+
+    public virtual void Enter(StateMachine stateMachine)
+    {
+        DoChecks();
+    }
+    public virtual void LogicUpdate(StateMachine stateMachine) { DoChecks(); }
+    public virtual void Exit(StateMachine stateMachine) { }
+    public virtual void OnTriggerEnter(StateMachine stateMachine, Collider collider) { }
+    public virtual void DoChecks()
+    {
+
+    }
+
 }

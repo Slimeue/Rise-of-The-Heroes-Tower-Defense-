@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class StateMachine : MonoBehaviour
 {
-    BaseState currentState;
+
+    protected BaseState currentState;
 
     // Start is called before the first frame update
     void Start()
@@ -12,7 +14,7 @@ public class StateMachine : MonoBehaviour
         currentState = GetInitialState();
         if (currentState != null)
         {
-            currentState.Enter();
+            currentState.Enter(this);
         }
     }
 
@@ -21,24 +23,27 @@ public class StateMachine : MonoBehaviour
     {
         if (currentState != null)
         {
-            currentState.LogicUpdate();
-            Debug.Log("CurrentState: " + currentState);
+            currentState.LogicUpdate(this);
         }
         else
         {
-            Debug.Log("No State: " + currentState);
+            Debug.Log("No State");
         }
     }
 
     public void ChangeState(BaseState newState)
     {
-        currentState.Exit();
+        currentState.Exit(this);
         currentState = newState;
-        currentState.Enter();
+        currentState.Enter(this);
     }
 
     protected virtual BaseState GetInitialState()
     {
         return null;
     }
+
+
+
+
 }

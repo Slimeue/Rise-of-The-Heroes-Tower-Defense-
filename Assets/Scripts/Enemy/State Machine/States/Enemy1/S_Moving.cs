@@ -5,33 +5,66 @@ using UnityEngine;
 public class S_Moving : BaseState
 {
     private EnemySM _enemySM;
-    public S_Moving(EnemySM stateMachine) : base("Moving", stateMachine)
+
+
+
+
+
+    public S_Moving(EnemySM stateMachine, string animBoolName) : base(animBoolName, stateMachine)
     {
         _enemySM = (EnemySM)stateMachine;
-    }
+        this.animBoolName = animBoolName;
 
-    public override void Enter()
-    {
-        base.Enter();
 
     }
 
-    public override void LogicUpdate()
+    public override void Enter(StateMachine stateMachine)
     {
-        base.LogicUpdate();
+        base.Enter(_enemySM);
+        // _enemySM.anim.SetBool(animBoolName, true);
+
+    }
+
+    public override void LogicUpdate(StateMachine stateMachine)
+    {
+        base.LogicUpdate(_enemySM);
+        _enemySM.anim.SetBool(animBoolName, true);
         /*if enemy goes still transition to idleState*/
         FollowPath();
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (_enemySM.isInFront)
         {
-            stateMachine.ChangeState(_enemySM.idleState);
+            stateMachine.ChangeState(_enemySM.attackState);
         }
 
 
+    }
+
+    public override void Exit(StateMachine stateMachine)
+    {
+        base.Exit(_enemySM);
+        _enemySM.anim.SetBool(animBoolName, false);
+    }
+
+    public override void DoChecks()
+    {
+        base.DoChecks();
+        _enemySM.isInFront = _enemySM.OnEnemyFrontCheck();
+    }
+
+
+
+
+    public override void OnTriggerEnter(StateMachine stateMachine, Collider collider)
+    {
+        base.OnTriggerEnter(_enemySM, collider);
 
     }
 
+
+
     public void FollowPath()
     {
+
         _enemySM.gameObject.transform.LookAt(_enemySM.target);
         Vector3 dir = _enemySM.target.position - _enemySM.gameObject.transform.position;
         _enemySM.gameObject.transform.Translate(dir.normalized * _enemySM.speed * Time.deltaTime, Space.World);
@@ -54,9 +87,5 @@ public class S_Moving : BaseState
         _enemySM.pointIndex++;
         _enemySM.target = Waypoints.points[_enemySM.pointIndex];
     }
-
-
-
-
 
 }
