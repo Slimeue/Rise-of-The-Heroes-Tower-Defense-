@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1032953699518620534}
   - component: {fileID: 1032953699518620535}
   - component: {fileID: 1032953699518620532}
-  - component: {fileID: 1032953699518620522}
   m_Layer: 5
   m_Name: Tower
   m_TagString: Untagged
@@ -122,7 +121,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1032953699518620522}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TowerPlacement, Assembly-CSharp
         m_MethodName: OnPressed
         m_Mode: 1
@@ -134,31 +133,3 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1032953699518620522
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1032953699518620520}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66fc69a4f3895b142a052a42f3b47162, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _meleePlatform: []
-  _CharConfirmPlacementCanvas: {fileID: 0}
-  _charInfoCanvas: {fileID: 0}
-  _platformTag: MeleePlatform
-  _previewTower: {fileID: 6372191081567825315, guid: 1c492f20fe3e52c479818a9e2f03b522,
-    type: 3}
-  _tower: {fileID: 6372191081567825315, guid: 9e5a976964b48a849a8290a5fcfba723, type: 3}
-  _mainCam: {fileID: 0}
-  _materia:
-  - {fileID: 2100000, guid: 5de11ce083fa8214d9ae9abf4e955ae5, type: 2}
-  - {fileID: 2100000, guid: 492029a9f4a477a45aa55e18bdb1366f, type: 2}
-  _layerPlatform:
-    serializedVersion: 2
-    m_Bits: 256
-  vcam1: {fileID: 0}
-  vcam2: {fileID: 0}
