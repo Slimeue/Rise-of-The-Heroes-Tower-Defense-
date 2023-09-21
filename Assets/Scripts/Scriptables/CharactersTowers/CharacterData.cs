@@ -5,8 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Charaters/Towers", menuName = "Character/Character Data")]
 public class CharacterData : ScriptableObject
 {
-    [Space(5)]
-    [SerializeField] public GameObject enemyPrefab;
+
 
     [Space(5)]
     [SerializeField] public float dmgValue;
@@ -22,8 +21,13 @@ public class CharacterData : ScriptableObject
     [Header("Defense")]
     [SerializeField] public float baseArmor;
 
+    [Space(5)]
     [Header("Cooldowns")]
     [SerializeField] public float towerCooldown; // Tower Cooldown after dying
+
+    [Header("Cost")]
+    [SerializeField] public float towerCost;
+
 
 
 
