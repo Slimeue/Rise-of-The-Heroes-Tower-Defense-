@@ -4107,6 +4107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e38faecf1c6d2b4fae1ae08dda3c01d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _towerHolderTesting: {fileID: 0}
   _mainCam: {fileID: 891364793}
   normalCam: {fileID: 947085185}
   placingCam: {fileID: 1184259207}
@@ -4181,10 +4182,8 @@ MonoBehaviour:
     type: 3}
   _charObj: {fileID: 6372191081567825315, guid: 9e5a976964b48a849a8290a5fcfba723,
     type: 3}
-  _characterHolder: []
   _unavailColor: {r: 0.3584906, g: 0.3584906, b: 0.3584906, a: 0}
   _availColor: {r: 1, g: 1, b: 1, a: 0}
-  platformTag: 
 --- !u!1001 &796676812
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6154,7 +6153,6 @@ GameObject:
   - component: {fileID: 1030482495}
   - component: {fileID: 1030482497}
   - component: {fileID: 1030482494}
-  - component: {fileID: 1030482493}
   - component: {fileID: 1030482498}
   m_Layer: 5
   m_Name: Tower2
@@ -6183,34 +6181,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1030482493
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1030482491}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66fc69a4f3895b142a052a42f3b47162, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _characterParents: {fileID: 96692057}
-  _meleePlatform: []
-  _characterHolder: []
-  _CharConfirmPlacementCanvas: {fileID: 0}
-  _charInfoCanvas: {fileID: 748396697}
-  _platformTag: MeleePlatform
-  _previewTower: {fileID: 3716443803622533905, guid: 777da16f2ce292446a788305e3db7096,
-    type: 3}
-  _tower: {fileID: 3716443803622533905, guid: b23a2ce3aee553a41be74f2d8e0975ee, type: 3}
-  _mainCam: {fileID: 891364793}
-  _materia: []
-  _layerPlatform:
-    serializedVersion: 2
-    m_Bits: 256
-  vcam1: {fileID: 947085185}
-  vcam2: {fileID: 1184259207}
 --- !u!114 &1030482494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6322,10 +6292,8 @@ MonoBehaviour:
     type: 3}
   _charObj: {fileID: 3716443803622533905, guid: b23a2ce3aee553a41be74f2d8e0975ee,
     type: 3}
-  _characterHolder: []
   _unavailColor: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 0}
   _availColor: {r: 1, g: 1, b: 1, a: 0}
-  platformTag: 
 --- !u!1 &1034791849
 GameObject:
   m_ObjectHideFlags: 0
@@ -11847,41 +11815,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: TowerHolder
       objectReference: {fileID: 0}
-    - target: {fileID: 1032953699518620522, guid: e2c590e87020ebd42bc5314152a1afed,
-        type: 3}
-      propertyPath: vcam1
-      value: 
-      objectReference: {fileID: 947085185}
-    - target: {fileID: 1032953699518620522, guid: e2c590e87020ebd42bc5314152a1afed,
-        type: 3}
-      propertyPath: vcam2
-      value: 
-      objectReference: {fileID: 1184259207}
-    - target: {fileID: 1032953699518620522, guid: e2c590e87020ebd42bc5314152a1afed,
-        type: 3}
-      propertyPath: _mainCam
-      value: 
-      objectReference: {fileID: 891364793}
-    - target: {fileID: 1032953699518620522, guid: e2c590e87020ebd42bc5314152a1afed,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1032953699518620522, guid: e2c590e87020ebd42bc5314152a1afed,
-        type: 3}
-      propertyPath: _charInfoCanvas
-      value: 
-      objectReference: {fileID: 748396697}
-    - target: {fileID: 1032953699518620522, guid: e2c590e87020ebd42bc5314152a1afed,
-        type: 3}
-      propertyPath: _characterParents
-      value: 
-      objectReference: {fileID: 96692057}
-    - target: {fileID: 1032953699518620522, guid: e2c590e87020ebd42bc5314152a1afed,
-        type: 3}
-      propertyPath: _CharConfirmPlacementCanvas
-      value: 
-      objectReference: {fileID: 147999487}
     - target: {fileID: 1032953699518620523, guid: e2c590e87020ebd42bc5314152a1afed,
         type: 3}
       propertyPath: m_Pivot.x
