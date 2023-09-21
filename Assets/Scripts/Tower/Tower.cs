@@ -5,6 +5,7 @@ using UnityEngine;
 public class Tower : MonoBehaviour, IDamageable
 {
 
+    [SerializeField] TowerTesting[] towerTesting;
 
     [SerializeField] CharacterData characterData;
 
@@ -12,6 +13,7 @@ public class Tower : MonoBehaviour, IDamageable
 
     private void Awake()
     {
+        towerTesting = FindObjectsOfType<TowerTesting>();
         currentHp = characterData.maxHp;
         Debug.Log(currentHp);
     }
@@ -35,8 +37,21 @@ public class Tower : MonoBehaviour, IDamageable
         {
             Debug.Log("Dead");
             Destroy(gameObject);
+            TowerHolderEnabler();//TODO:: Enabled The towerholder holding this character again
         }
+    }
 
+    public void TowerHolderEnabler()
+    {
+        foreach (TowerTesting _towerTesting in towerTesting)
+        {
+            if (characterData == _towerTesting.characterData)
+            {
+                Debug.Log("TowerEnabling");
+                _towerTesting.gameObject.SetActive(true);
+                _towerTesting._placed = false;
+            }
+        }
     }
 
 

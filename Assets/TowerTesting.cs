@@ -10,11 +10,13 @@ public class TowerTesting : MonoBehaviour
 
     TowerManager towerManager;
     CoinsManager coinsManager;
-    [SerializeField] CharacterData characterData;
+    [SerializeField] public CharacterData characterData;
     [SerializeField] GameObject _preview;
     [SerializeField] GameObject _charObj;
 
     [SerializeField] GameObject[] _characterHolder;
+
+    [SerializeField] public bool _placed;
 
 
     Image _image;
@@ -49,15 +51,29 @@ public class TowerTesting : MonoBehaviour
 
     public void Pressed()
     {
+
+        if (!_placed)
+        {
+            StartPlace();
+        }
+        else
+        {
+            return;
+        }
+
+    }
+
+    private void StartPlace()
+    {
         if (coinsManager._CurrentCoin >= _characterCost)
         {
-            towerManager.StartPlacing(_preview, _charObj, _characterCost, layerMask, characterData._platformTag);
+            towerManager.StartPlacing(_preview, _charObj, _characterCost, layerMask, characterData._platformTag, gameObject);
         }
     }
 
     public void Unavailable()
     {
-        if (coinsManager._CurrentCoin < _characterCost)
+        if (coinsManager._CurrentCoin < _characterCost || _placed)
         {
             _image.color = _unavailColor;
         }
@@ -65,7 +81,6 @@ public class TowerTesting : MonoBehaviour
         {
             _image.color = _availColor;
         }
-
     }
 
 
