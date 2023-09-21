@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class S_R_Char1_IdleState : CharacterBaseState
 {
 
     R_Char1 characterSM;
+
 
     public S_R_Char1_IdleState(CharacterStateMachine characterStateMachine, string animBoolName, CharEntity entity, R_Char1 characterSM)
     : base(animBoolName, characterStateMachine)
@@ -36,9 +38,11 @@ public class S_R_Char1_IdleState : CharacterBaseState
     public override void DoChecks()
     {
         base.DoChecks();
+        if (characterSM._inRange)
+        {
+            characterStateMachine.ChangeState(characterSM.attackState);
+        }
     }
-
-
 
 
 }

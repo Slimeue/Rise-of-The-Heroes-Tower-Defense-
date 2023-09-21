@@ -18,7 +18,7 @@ public class WaveManager : MonoBehaviour
 
     int currentWaveIndex = 1;
     int maxWave;
-    float nextWaveTime;
+    float nextWaveTime = 5f;
     bool isSpawning;
 
     WaveData waveData;

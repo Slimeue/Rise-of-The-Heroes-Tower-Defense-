@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - MeleePlatform
   - TowerHolder
+  - RangePlatform
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - Tower
   - PostProcessing
   - MeleePlatform
-  - 
+  - RangePlatform
   - 
   - 
   - 
