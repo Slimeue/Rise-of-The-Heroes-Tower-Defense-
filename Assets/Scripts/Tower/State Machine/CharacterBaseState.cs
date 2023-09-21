@@ -21,7 +21,7 @@ public class CharacterBaseState
     public CharacterBaseState() { }
 
     public virtual void Enter() { DoChecks(); }
-    public virtual void LogicUpdate() { }
+    public virtual void LogicUpdate() { DoChecks(); }
     public virtual void Exit() { }
     public virtual void OnTriggerEnter() { }
     public virtual void DoChecks() { }
