@@ -21,6 +21,7 @@ public class BaseState
 
     public BaseState()
     {
+
     }
 
     public virtual void Enter(StateMachine stateMachine)

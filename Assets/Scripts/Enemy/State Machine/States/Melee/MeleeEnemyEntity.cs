@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RangeCharacterEntity : CharEntity
+public class MeleeEnemyEntity : EnemyEntity
 {
 
     public override void Awake()
@@ -10,8 +10,9 @@ public class RangeCharacterEntity : CharEntity
         base.Awake();
     }
 
-    private void Start()
+    void Start()
     {
 
     }
+
 }

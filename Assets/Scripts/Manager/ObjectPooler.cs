@@ -51,7 +51,7 @@ public class ObjectPooler : MonoBehaviour
 
                 }
             }
-
+            Debug.Log("PoolIndex " + poolIndex);
             waveNum++;
         }
     }

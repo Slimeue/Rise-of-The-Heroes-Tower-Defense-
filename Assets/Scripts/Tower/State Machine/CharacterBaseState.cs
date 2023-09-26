@@ -26,7 +26,4 @@ public class CharacterBaseState
     public virtual void OnTriggerEnter() { }
     public virtual void DoChecks() { }
 
-
-
-
 }

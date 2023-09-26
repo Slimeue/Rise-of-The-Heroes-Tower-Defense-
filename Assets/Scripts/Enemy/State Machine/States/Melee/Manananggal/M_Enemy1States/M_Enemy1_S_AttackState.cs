@@ -2,31 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class S_Attack : BaseState
+public class M_Enemy1_S_AttackState : BaseState
 {
-    EnemySM _enemySM;
+    M_Enemy1 m_Enemy1SM;
 
-    public S_Attack(EnemySM enemySMStateMachine, string animBoolName, StateMachine stateMachine) : base(animBoolName, stateMachine)
+    public M_Enemy1_S_AttackState(StateMachine stateMachine, string animBoolName, EnemyEntity enemyEntity, M_Enemy1 m_Enemy1SM)
+       : base(animBoolName, stateMachine)
     {
-        _enemySM = (EnemySM)enemySMStateMachine;
+        this.m_Enemy1SM = m_Enemy1SM;
         this.animBoolName = animBoolName;
     }
-
 
 
     public override void Enter(StateMachine stateMachine)
     {
         base.Enter(stateMachine);
         Debug.Log("Hello From AttackState");
-        // _enemySM.anim.SetBool(animBoolName, true);
-
-
     }
 
     public override void DoChecks()
     {
         base.DoChecks();
-        _enemySM.isInFront = _enemySM.OnEnemyFrontCheck();
+        m_Enemy1SM.isInFront = m_Enemy1SM.OnEnemyFrontCheck();
 
     }
 
@@ -34,17 +31,17 @@ public class S_Attack : BaseState
     public override void Exit(StateMachine stateMachine)
     {
         base.Exit(stateMachine);
-        _enemySM.anim.SetBool(animBoolName, false);
+        m_Enemy1SM.anim.SetBool(animBoolName, false);
     }
 
 
     public override void LogicUpdate(StateMachine stateMachine)
     {
         base.LogicUpdate(stateMachine);
-        _enemySM.anim.SetBool(animBoolName, true);
-        if (!_enemySM.isInFront)
+        m_Enemy1SM.anim.SetBool(animBoolName, true);
+        if (!m_Enemy1SM.isInFront)
         {
-            stateMachine.ChangeState(_enemySM.movingState);
+            stateMachine.ChangeState(m_Enemy1SM.movingState);
         }
     }
 
@@ -52,10 +49,11 @@ public class S_Attack : BaseState
     {
         base.OnTriggerEnter(stateMachine, collider);
         IDamageable tower = collider.GetComponent<IDamageable>();
+
         if (tower != null)
         {
             Debug.Log("Hit!!");
-            tower.Damage(_enemySM.enemiesData.dmgValue);
+            tower.Damage(m_Enemy1SM.enemiesData.dmgValue);
         }
     }
 }
