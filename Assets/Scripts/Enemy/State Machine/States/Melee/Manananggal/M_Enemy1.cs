@@ -2,18 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySM : EnemyEntity
+public class M_Enemy1 : MeleeEnemyEntity
 {
 
 
-    [HideInInspector]
-    public S_Idle idleState;
-    [HideInInspector]
-    public S_Moving movingState;
-    [HideInInspector]
-    public S_Attack attackState;
+    public M_Enemy1_S_IdleState idleState { get; private set; }
+    public M_Enemy1_S_MovingState movingState { get; private set; }
+    public M_Enemy1_S_AttackState attackState { get; private set; }
 
-
+    //TargetWaypoint
     public Transform target;
 
     BaseState baseState;
@@ -27,7 +24,7 @@ public class EnemySM : EnemyEntity
 
     #region Transform
 
-    //public GameObject body;
+    public GameObject body;
 
     #endregion
 
@@ -41,29 +38,25 @@ public class EnemySM : EnemyEntity
 
 
     float detectionRadius = 2f;
-
     public override void Awake()
     {
         base.Awake();
         target = Waypoints.points[0];
-        idleState = new S_Idle(this, "Idle", stateMachine);
-        movingState = new S_Moving(this, "walk", stateMachine);
-        attackState = new S_Attack(this, "attack", stateMachine);
-
-
+        idleState = new M_Enemy1_S_IdleState(stateMachine, "Idle", this, this);
+        movingState = new M_Enemy1_S_MovingState(stateMachine, "walk", this, this);
+        attackState = new M_Enemy1_S_AttackState(stateMachine, "attack", this, this);
 
         anim = GetComponent<Animator>();
-
     }
 
-    // protected override BaseState GetInitialState()
-    // {
-    //     return idleState;
-    // }
+    private void Start()
+    {
+        stateMachine.Initialize(idleState);
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        //baseState = currentState;
+        baseState = stateMachine.currentState;
         baseState.OnTriggerEnter(stateMachine, other);
     }
 
@@ -73,15 +66,14 @@ public class EnemySM : EnemyEntity
     }
 
     #region 
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
         Vector3 dir = transform.forward * enemiesData.attackRange;
         Gizmos.DrawRay(transform.position, dir);
     }
+
     #endregion
-
-
-
 
 }

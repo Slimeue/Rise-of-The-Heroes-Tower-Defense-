@@ -2,21 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class S_Idle : BaseState
+public class M_Enemy1_S_IdleState : BaseState
 {
     public float idleTime = 1f;
-    private EnemySM _enemySM;
 
-    public S_Idle(EnemySM enemySMstateMachine, string animBoolName, StateMachine stateMachine) : base(animBoolName, stateMachine)
+    M_Enemy1 m_Enemy1SM;
+
+    public M_Enemy1_S_IdleState(StateMachine stateMachine, string animBoolName, EnemyEntity enemyEntity, M_Enemy1 m_Enemy1SM)
+     : base(animBoolName, stateMachine)
     {
-        _enemySM = (EnemySM)enemySMstateMachine;
+        this.m_Enemy1SM = m_Enemy1SM;
         this.animBoolName = animBoolName;
     }
-
     public override void Enter(StateMachine stateMachine)
     {
         base.Enter(stateMachine);
-        Debug.Log(animBoolName);
+        Debug.Log("Hello From idle State " + animBoolName);
     }
 
     public override void Exit(StateMachine stateMachine)
@@ -35,7 +36,7 @@ public class S_Idle : BaseState
         else
         {
             Debug.Log("Transitioning to moveState");
-            stateMachine.ChangeState(_enemySM.movingState);
+            stateMachine.ChangeState(m_Enemy1SM.movingState);
         }
     }
 

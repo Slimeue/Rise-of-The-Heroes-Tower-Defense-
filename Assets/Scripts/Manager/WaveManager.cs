@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class WaveManager : MonoBehaviour
 {
@@ -16,9 +18,12 @@ public class WaveManager : MonoBehaviour
 
     [SerializeField] GameObject[] inActives;
 
-    int currentWaveIndex = 1;
-    int maxWave;
-    float nextWaveTime = 5f;
+    [SerializeField] TextMeshProUGUI _waveUIText;
+    [SerializeField] Slider slider;
+
+    public int currentWaveIndex = 1;
+    public int maxWave { get; private set; }
+    float nextWaveTime;
     bool isSpawning;
 
     WaveData waveData;
@@ -26,28 +31,22 @@ public class WaveManager : MonoBehaviour
     private void Awake()
     {
         maxWave = objectPooler.WaveCount;
+        nextWaveTime = timeBetweenWave;
     }
 
     void Start()
     {
-
+        _waveUIText.text = "Wave " + currentWaveIndex + "/" + maxWave;
     }
-
 
     void Update()
     {
-
         isSpawning = NotSpawning();
-        // for (int i = 0; i < objectPooler.WaveCount; i++)
-        // {
-        //     
-        //     maxWave = waveData.enemies.Length;
-        // }
-
 
         if (currentWaveIndex <= maxWave)
         {
             StartWave();
+
         }
         else
         {
@@ -68,13 +67,19 @@ public class WaveManager : MonoBehaviour
 
     void StartNextWave()
     {
+
+
         if (nextWaveTime > 0)
         {
             nextWaveTime -= Time.deltaTime;
+            float normalizedValue = 1.0f - (nextWaveTime / timeBetweenWave); // Normalize to 0 - 1
+            slider.value = normalizedValue;
+
         }
         else
         {
             NextWave();
+            UpdateWaveText();
         }
     }
 
@@ -122,11 +127,11 @@ public class WaveManager : MonoBehaviour
         {
             return true;
         }
-
-
     }
 
-
-
+    public void UpdateWaveText()
+    {
+        _waveUIText.text = "Wave " + currentWaveIndex + "/" + maxWave;
+    }
 
 }

@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _layerMask:
     serializedVersion: 2
-    m_Bits: 512
-  _platformTag: RangePlatform
+    m_Bits: 256
+  _platformTag: MeleePlatform
   dmgValue: 0
-  maxHp: 50
+  maxHp: 500
   mana: 0
   baseArmor: 0
   towerCooldown: 0

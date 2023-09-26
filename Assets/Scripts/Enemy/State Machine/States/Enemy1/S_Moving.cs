@@ -10,9 +10,10 @@ public class S_Moving : BaseState
 
 
 
-    public S_Moving(EnemySM stateMachine, string animBoolName) : base(animBoolName, stateMachine)
+    public S_Moving(EnemySM enemySMstateMachine, string animBoolName, StateMachine stateMachine)
+    : base(animBoolName, stateMachine)
     {
-        _enemySM = (EnemySM)stateMachine;
+        _enemySM = (EnemySM)enemySMstateMachine;
         this.animBoolName = animBoolName;
 
 
@@ -20,14 +21,14 @@ public class S_Moving : BaseState
 
     public override void Enter(StateMachine stateMachine)
     {
-        base.Enter(_enemySM);
+        base.Enter(stateMachine);
         // _enemySM.anim.SetBool(animBoolName, true);
 
     }
 
     public override void LogicUpdate(StateMachine stateMachine)
     {
-        base.LogicUpdate(_enemySM);
+        base.LogicUpdate(stateMachine);
         _enemySM.anim.SetBool(animBoolName, true);
         /*if enemy goes still transition to idleState*/
         FollowPath();
@@ -41,7 +42,7 @@ public class S_Moving : BaseState
 
     public override void Exit(StateMachine stateMachine)
     {
-        base.Exit(_enemySM);
+        base.Exit(stateMachine);
         _enemySM.anim.SetBool(animBoolName, false);
     }
 
@@ -56,7 +57,7 @@ public class S_Moving : BaseState
 
     public override void OnTriggerEnter(StateMachine stateMachine, Collider collider)
     {
-        base.OnTriggerEnter(_enemySM, collider);
+        base.OnTriggerEnter(stateMachine, collider);
 
     }
 

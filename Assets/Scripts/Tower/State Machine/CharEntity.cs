@@ -8,7 +8,7 @@ public class CharEntity : MonoBehaviour
     public CharacterStateMachine characterStateMachine;
 
     //Components
-    public Animator anim { get; private set; }
+    protected Animator anim;
     public CharacterData characterData;
 
     //Stats

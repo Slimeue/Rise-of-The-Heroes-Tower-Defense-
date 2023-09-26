@@ -3,42 +3,29 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class StateMachine : MonoBehaviour
+public class StateMachine
 {
 
-    protected BaseState currentState;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        currentState = GetInitialState();
-        if (currentState != null)
-        {
-            currentState.Enter(this);
-        }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (currentState != null)
-        {
-            currentState.LogicUpdate(this);
-        }
-        else
-        {
-            Debug.Log("No State");
-        }
-    }
+    public BaseState currentState { get; private set; }
 
     public void ChangeState(BaseState newState)
     {
         currentState.Exit(this);
         currentState = newState;
         currentState.Enter(this);
+
     }
 
-    protected virtual BaseState GetInitialState()
+    public void Initialize(BaseState startingState)
+    {
+        currentState = startingState;
+        if (currentState != null)
+        {
+            currentState.Enter(this);
+        }
+    }
+
+    protected virtual BaseState GetInitialize()
     {
         return null;
     }

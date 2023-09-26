@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _layerMask:
     serializedVersion: 2
-    m_Bits: 256
-  _platformTag: MeleePlatform
+    m_Bits: 512
+  _platformTag: RangePlatform
   dmgValue: 0
   maxHp: 100
   mana: 0

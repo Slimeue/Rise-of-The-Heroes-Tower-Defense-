@@ -9,10 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2596945802786174442}
-  - component: {fileID: 9189413668786349668}
+  - component: {fileID: -3818325768115535358}
   - component: {fileID: 5789871324758567234}
   - component: {fileID: 2336494632322255225}
   - component: {fileID: -7393212846488214341}
+  - component: {fileID: 1772669660533649379}
   m_Layer: 0
   m_Name: Enemy1
   m_TagString: Enemy
@@ -36,7 +37,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9189413668786349668
+--- !u!114 &-3818325768115535358
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45,16 +46,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 201678975986700708}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84577e49bfe41874eb7d17667296c8a8, type: 3}
+  m_Script: {fileID: 11500000, guid: be6bdce96a9b49c4fb374434ac27611b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemiesData: {fileID: 11400000, guid: 005872b33cd63654aa2215cae89ef371, type: 2}
+  anim: {fileID: 0}
   target: {fileID: 0}
   speed: 10
   pointIndex: 0
   rotationSpeed: 10
-  body: {fileID: 546220202097357415}
-  anim: {fileID: 0}
+  body: {fileID: 0}
+  isInFront: 0
   attackCollider: {fileID: 7601119915792189673}
 --- !u!95 &5789871324758567234
 Animator:
@@ -106,6 +108,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1772669660533649379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 201678975986700708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a665edc2cd9b5d84b8ec6f2cf78d62d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGroundType: 1
+  isAerialType: 0
 --- !u!1 &546220202097357415
 GameObject:
   m_ObjectHideFlags: 0
