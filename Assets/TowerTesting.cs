@@ -20,8 +20,8 @@ public class TowerTesting : MonoBehaviour
 
 
     Image _image;
-    [SerializeField] private Color _unavailColor;
-    [SerializeField] private Color _availColor;
+    [SerializeField] public Color _unavailColor;
+    [SerializeField] public Color _availColor;
 
     int _characterCost;
 
@@ -55,6 +55,7 @@ public class TowerTesting : MonoBehaviour
         if (!_placed)
         {
             StartPlace();
+
         }
         else
         {

@@ -19,6 +19,7 @@ public class M_Enemy1_S_MovingState : BaseState
     {
         base.Enter(stateMachine);
         Debug.Log("Hello From Moving state");
+
     }
 
     public override void LogicUpdate(StateMachine stateMachine)
@@ -53,8 +54,10 @@ public class M_Enemy1_S_MovingState : BaseState
     public void FollowPath()
     {
         m_Enemy1SM.gameObject.transform.LookAt(m_Enemy1SM.target);
+
         Vector3 dir = m_Enemy1SM.target.position - m_Enemy1SM.gameObject.transform.position;
         m_Enemy1SM.gameObject.transform.Translate(dir.normalized * m_Enemy1SM.speed * Time.deltaTime, Space.World);
+
 
         if (Vector3.Distance(m_Enemy1SM.transform.position, m_Enemy1SM.target.position) <= 0.2f)
         {

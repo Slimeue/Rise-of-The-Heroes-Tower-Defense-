@@ -10,6 +10,9 @@ public class TowerManager : MonoBehaviour
 
 
 
+    //TowerHolder
+    GameObject[] towerHolder;
+
     //Platforms
     GameObject[] _platFormsReference;
     string _platformTag;
@@ -44,7 +47,7 @@ public class TowerManager : MonoBehaviour
     float placingGameTimeSpeed = 0.1f;
     float normalGameTimeSpeed = 1f;
 
-    bool _isPlacing;
+    public bool _isPlacing;
 
     float maxDistance;
 
@@ -64,6 +67,8 @@ public class TowerManager : MonoBehaviour
         _touchPressAction = playerInput.actions["TouchPress"];
         coinsManager = FindObjectOfType<CoinsManager>();
         currentState = State.Default;
+
+        towerHolder = GameObject.FindGameObjectsWithTag("TowerHolder");
     }
 
     GameObject _towerHolder;
@@ -75,6 +80,9 @@ public class TowerManager : MonoBehaviour
 
     private int _charCost;
 
+
+
+
     private void Update()
     {
         switch (currentState)
@@ -83,12 +91,20 @@ public class TowerManager : MonoBehaviour
                 normalCam.Priority = 1;
                 placingCam.Priority = 0;
                 Debug.Log("Name: " + gameObject.name + currentState);
+                if (_towerHolder != null)
+                {
+                    EnableTowerHolder(_towerHolder.gameObject.GetComponent<TowerTesting>());
+                }
                 NormalTime();
                 _charInfoCanvas.SetActive(false);
                 break;
             case State.Placing:
                 PlacingTime();
                 _charInfoCanvas.SetActive(true);
+                if (_towerHolder != null)
+                {
+                    DisableTowerHolder(_towerHolder.gameObject.GetComponent<TowerTesting>());
+                }
                 normalCam.Priority = 0;
                 placingCam.Priority = 1;
                 Debug.Log("Name: " + gameObject.name + currentState);
@@ -138,6 +154,7 @@ public class TowerManager : MonoBehaviour
         else if (currentState == State.Default)
         {
             EnablePlatformCanvas();
+
             Debug.Log("Press1");
             _isPlacing = true;
             _touchPressAction.performed += OnHolding;
@@ -187,11 +204,17 @@ public class TowerManager : MonoBehaviour
                 rayCastHit = Physics.Raycast(_position, out RaycastHit raycastHit, maxDistance = Mathf.Infinity, _layerPlatform);
                 if (rayCastHit && _isPlacing)
                 {
+
+
                     _instPreviewObj.transform.position = raycastHit.transform.position;
                     Debug.DrawRay(_position.origin, _position.direction * 20, Color.red);
                     Debug.Log("Touch Started");
                     _CharConfirmPlacementCanvas.SetActive(true);
                     _CharConfirmPlacementCanvas.transform.position = _instPreviewObj.transform.position;
+                    float offset = 2f;
+                    Vector3 newPosition = _CharConfirmPlacementCanvas.transform.position;
+                    newPosition.y += offset;
+                    _CharConfirmPlacementCanvas.transform.position = newPosition;
                 }
             }
         }
@@ -204,6 +227,34 @@ public class TowerManager : MonoBehaviour
         towerTesting._placed = true;
     }
     #endregion
+
+    void DisableTowerHolder(TowerTesting butButton)
+    {
+        Button clickedButton = butButton.gameObject.GetComponent<Button>();
+        foreach (GameObject holder in towerHolder)
+        {
+            Button buttonRef = holder.GetComponent<Button>();
+
+            if (buttonRef != clickedButton)
+            {
+                buttonRef.enabled = false;
+            }
+        }
+    }
+
+    void EnableTowerHolder(TowerTesting butButton)
+    {
+        Button clickedButton = butButton.gameObject.GetComponent<Button>();
+        foreach (GameObject holder in towerHolder)
+        {
+            Button buttonRef = holder.GetComponent<Button>();
+
+            if (buttonRef != clickedButton)
+            {
+                buttonRef.enabled = true;
+            }
+        }
+    }
 
     #region Enabling Canvas
 
