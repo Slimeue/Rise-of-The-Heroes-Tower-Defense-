@@ -101,7 +101,10 @@ public class WaveManager : MonoBehaviour
                 for (int x = 0; x < waveData.enemyCount * 2; x++)
                 {
                     GameObject enemy = objectPooler.GetPooledEnemy(i);
-                    enemy.transform.position = spawnPoint.transform.position;
+                    float offset = 5;
+                    Vector3 newPosition = spawnPoint.transform.position;
+                    newPosition.y += offset;
+                    enemy.transform.position = newPosition;
                     enemy.transform.rotation = spawnPoint.transform.rotation;
                     enemy.SetActive(true);
                     Debug.Log(enemy.name);

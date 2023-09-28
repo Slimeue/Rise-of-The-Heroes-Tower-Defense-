@@ -2,23 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class R_Char1 : RangeCharacterEntity
+public class R_Sandayo : RangeCharacterEntity
 {
+    public R_Sandayo_attack attackState { get; private set; }
+    public R_Sandayo_idle idleState { get; private set; }
+    public R_Sandayo_death deathState { get; private set; }
+    public R_Sandayo_skill skillState { get; private set; }
 
-    [SerializeField] List<string> _priority;
-
-    public S_R_Char1_IdleState idleState { get; private set; }
-    public S_R_Char1_SkillState skillState { get; private set; }
-    public S_R_Char1_AttackState attackState { get; private set; }
+    const string TOWER_IDLE = "idle";
+    const string TOWER_ATTACK = "attack";
+    const string TOWER_DEATH = "death";
+    const string TOWER_SKILL = "skill";
 
     public override void Awake()
     {
         base.Awake();
-
-        idleState = new S_R_Char1_IdleState(characterStateMachine, "idle", this, this);
-        skillState = new S_R_Char1_SkillState(characterStateMachine, "skill", this, this);
-        attackState = new S_R_Char1_AttackState(characterStateMachine, "attack", this, this);
-
+        attackState = new R_Sandayo_attack(characterStateMachine, TOWER_ATTACK, this, this);
+        idleState = new R_Sandayo_idle(characterStateMachine, TOWER_IDLE, this, this);
+        deathState = new R_Sandayo_death(characterStateMachine, TOWER_DEATH, this, this);
+        skillState = new R_Sandayo_skill(characterStateMachine, TOWER_SKILL, this, this);
         anim = GetComponent<Animator>();
     }
 
@@ -46,7 +48,6 @@ public class R_Char1 : RangeCharacterEntity
 
         Transform closestTarget = null;
 
-
         float maxDis = Mathf.Infinity;
         foreach (EnemyType enemy in enemies)
         {
@@ -63,6 +64,7 @@ public class R_Char1 : RangeCharacterEntity
         }
         target = closestTarget;
     }
+
 
 
 
