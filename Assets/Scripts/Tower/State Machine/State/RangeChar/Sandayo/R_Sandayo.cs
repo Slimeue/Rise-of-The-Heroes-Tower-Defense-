@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class R_Sandayo : RangeCharacterEntity
+public class R_Sandayo : RangeCharacterEntity, IDamageable
 {
+
+    public AnimationHandler animationHandler;
+
     public R_Sandayo_attack attackState { get; private set; }
     public R_Sandayo_idle idleState { get; private set; }
     public R_Sandayo_death deathState { get; private set; }
     public R_Sandayo_skill skillState { get; private set; }
+
 
     const string TOWER_IDLE = "idle";
     const string TOWER_ATTACK = "attack";
@@ -22,6 +26,7 @@ public class R_Sandayo : RangeCharacterEntity
         deathState = new R_Sandayo_death(characterStateMachine, TOWER_DEATH, this, this);
         skillState = new R_Sandayo_skill(characterStateMachine, TOWER_SKILL, this, this);
         anim = GetComponent<Animator>();
+        animationHandler = GetComponent<AnimationHandler>();
     }
 
     public override void Update()
@@ -48,6 +53,8 @@ public class R_Sandayo : RangeCharacterEntity
 
         Transform closestTarget = null;
 
+        bool _anyEnemyInRange = false;
+
         float maxDis = Mathf.Infinity;
         foreach (EnemyType enemy in enemies)
         {
@@ -58,14 +65,32 @@ public class R_Sandayo : RangeCharacterEntity
             {
                 maxDis = distance;
                 closestTarget = enemy.transform;
-                _inRange = true;
+                _anyEnemyInRange = true;
             }
 
         }
+
         target = closestTarget;
+        _inRange = _anyEnemyInRange;
     }
 
+    public void Damage(float damageAmount)
+    {
+        currentHealth -= damageAmount;
+    }
 
+    public void DestroyGameObject()
+    {
+        Destroy(gameObject);
+    }
 
+    private void OnEnable()
+    {
+        animationHandler.OnFinish += DestroyGameObject;
+    }
 
+    private void OnDisable()
+    {
+        animationHandler.OnFinish -= DestroyGameObject;
+    }
 }

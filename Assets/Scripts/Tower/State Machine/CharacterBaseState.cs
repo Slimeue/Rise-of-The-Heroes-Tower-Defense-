@@ -6,6 +6,7 @@ public class CharacterBaseState
 {
     protected CharacterStateMachine characterStateMachine;
     protected string animBoolName;
+    protected bool isAnimationFinished;
 
     public CharacterBaseState(string animBoolName, CharacterStateMachine characterStateMachine)
     {
@@ -20,7 +21,11 @@ public class CharacterBaseState
 
     public CharacterBaseState() { }
 
-    public virtual void Enter() { DoChecks(); }
+    public virtual void Enter()
+    {
+        DoChecks();
+        isAnimationFinished = false;
+    }
     public virtual void LogicUpdate() { DoChecks(); }
     public virtual void Exit() { }
     public virtual void OnTriggerEnter() { }
