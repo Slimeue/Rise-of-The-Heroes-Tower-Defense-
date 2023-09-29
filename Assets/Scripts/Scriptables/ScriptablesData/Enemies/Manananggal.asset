@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 7445524174623351422, guid: 841ed25297f1e794e8cdc07eb233b314,
     type: 3}
-  dmgValue: 10
-  hitPoints: 0
-  maxHp: 0
+  dmgValue: 320
+  hitPoints: 1650
+  maxHp: 1650
   baseArmor: 0
   attackRange: 5
   whatIsTower:

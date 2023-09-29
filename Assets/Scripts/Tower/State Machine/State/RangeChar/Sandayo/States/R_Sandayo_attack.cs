@@ -24,6 +24,10 @@ public class R_Sandayo_attack : CharacterBaseState
         base.LogicUpdate();
         FindTarget();
         r_Sandayo.anim.Play(animBoolName);
+        if (r_Sandayo.currentHealth <= 0)
+        {
+            characterStateMachine.ChangeState(r_Sandayo.deathState);
+        }
     }
 
     public override void Exit()
@@ -39,6 +43,10 @@ public class R_Sandayo_attack : CharacterBaseState
     public override void DoChecks()
     {
         base.DoChecks();
+        if (!r_Sandayo._inRange)
+        {
+            characterStateMachine.ChangeState(r_Sandayo.idleState);
+        }
     }
     private void FindTarget()
     {
