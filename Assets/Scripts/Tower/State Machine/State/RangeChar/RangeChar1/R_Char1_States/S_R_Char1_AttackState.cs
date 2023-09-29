@@ -47,6 +47,7 @@ public class S_R_Char1_AttackState : CharacterBaseState
         if (characterSM.target != null)
         {
             Vector3 targetDir = characterSM.target.position - characterSM.transform.position;
+            targetDir.y = 0;
             Quaternion targetRotation = Quaternion.LookRotation(targetDir);
             characterSM.transform.rotation = Quaternion.Slerp(characterSM.transform.rotation, targetRotation, characterSM._rotationSpeed * Time.deltaTime);
         }

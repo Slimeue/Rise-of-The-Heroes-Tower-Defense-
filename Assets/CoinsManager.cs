@@ -33,8 +33,12 @@ public class CoinsManager : MonoBehaviour
 
     void IncrementCoin()
     {
-        _startingCoin += Time.deltaTime;
-        _currentCoin = Mathf.Round(_startingCoin);
+        if (_startingCoin <= 99)
+        {
+            _startingCoin += Time.deltaTime;
+            _currentCoin = Mathf.Round(_startingCoin);
+        }
+
     }
 
     public void MinusCoin(int amount)

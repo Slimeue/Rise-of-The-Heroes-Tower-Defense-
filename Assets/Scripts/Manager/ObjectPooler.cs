@@ -43,6 +43,7 @@ public class ObjectPooler : MonoBehaviour
                 {
                     if (_pooledEnemiesWave[waveIndex].Count < _poolSize)
                     {
+
                         enemy = Instantiate(wave.enemies[y].enemyPrefab, parentObject.transform);
                         enemy.SetActive(false);
                         _pooledEnemiesWave[waveIndex].Add(enemy);
@@ -51,7 +52,7 @@ public class ObjectPooler : MonoBehaviour
 
                 }
             }
-
+            Debug.Log("PoolIndex " + poolIndex);
             waveNum++;
         }
     }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySM : StateMachine
+public class EnemySM : EnemyEntity
 {
 
 
@@ -11,9 +11,9 @@ public class EnemySM : StateMachine
     [HideInInspector]
     public S_Moving movingState;
     [HideInInspector]
-    public Char1_S_Attack attackState;
+    public S_Attack attackState;
 
-    public EnemiesData enemiesData;
+
     public Transform target;
 
     BaseState baseState;
@@ -27,8 +27,7 @@ public class EnemySM : StateMachine
 
     #region Transform
 
-    public GameObject body;
-    public Animator anim;
+    //public GameObject body;
 
     #endregion
 
@@ -43,13 +42,13 @@ public class EnemySM : StateMachine
 
     float detectionRadius = 2f;
 
-    public void Awake()
+    public override void Awake()
     {
-
+        base.Awake();
         target = Waypoints.points[0];
-        idleState = new S_Idle(this, "Idle");
-        movingState = new S_Moving(this, "walk");
-        attackState = new Char1_S_Attack(this, "attack");
+        idleState = new S_Idle(this, "Idle", stateMachine);
+        movingState = new S_Moving(this, "walk", stateMachine);
+        attackState = new S_Attack(this, "attack", stateMachine);
 
 
 
@@ -57,15 +56,15 @@ public class EnemySM : StateMachine
 
     }
 
-    protected override BaseState GetInitialState()
-    {
-        return idleState;
-    }
+    // protected override BaseState GetInitialState()
+    // {
+    //     return idleState;
+    // }
 
     private void OnTriggerEnter(Collider other)
     {
-        baseState = currentState;
-        baseState.OnTriggerEnter(this, other);
+        //baseState = currentState;
+        baseState.OnTriggerEnter(stateMachine, other);
     }
 
     public bool OnEnemyFrontCheck()

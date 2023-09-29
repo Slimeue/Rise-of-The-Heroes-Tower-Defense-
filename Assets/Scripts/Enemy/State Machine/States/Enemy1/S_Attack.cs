@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Char1_S_Attack : BaseState
+public class S_Attack : BaseState
 {
     EnemySM _enemySM;
 
-    public Char1_S_Attack(EnemySM stateMachine, string animBoolName) : base(animBoolName, stateMachine)
+    public S_Attack(EnemySM enemySMStateMachine, string animBoolName, StateMachine stateMachine) : base(animBoolName, stateMachine)
     {
-        _enemySM = (EnemySM)stateMachine;
+        _enemySM = (EnemySM)enemySMStateMachine;
         this.animBoolName = animBoolName;
     }
 
@@ -16,7 +16,7 @@ public class Char1_S_Attack : BaseState
 
     public override void Enter(StateMachine stateMachine)
     {
-        base.Enter(_enemySM);
+        base.Enter(stateMachine);
         Debug.Log("Hello From AttackState");
         // _enemySM.anim.SetBool(animBoolName, true);
 
@@ -33,14 +33,14 @@ public class Char1_S_Attack : BaseState
 
     public override void Exit(StateMachine stateMachine)
     {
-        base.Exit(_enemySM);
+        base.Exit(stateMachine);
         _enemySM.anim.SetBool(animBoolName, false);
     }
 
 
     public override void LogicUpdate(StateMachine stateMachine)
     {
-        base.LogicUpdate(_enemySM);
+        base.LogicUpdate(stateMachine);
         _enemySM.anim.SetBool(animBoolName, true);
         if (!_enemySM.isInFront)
         {
@@ -50,7 +50,7 @@ public class Char1_S_Attack : BaseState
 
     public override void OnTriggerEnter(StateMachine stateMachine, Collider collider)
     {
-        base.OnTriggerEnter(_enemySM, collider);
+        base.OnTriggerEnter(stateMachine, collider);
         IDamageable tower = collider.GetComponent<IDamageable>();
         if (tower != null)
         {

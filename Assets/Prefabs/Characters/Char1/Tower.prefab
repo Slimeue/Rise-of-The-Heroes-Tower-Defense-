@@ -210,6 +210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb8001eb3049f024eafb72602659f3e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerTesting: []
   characterData: {fileID: 11400000, guid: c2eba38de4dd3d74b9de3eca2f9eef74, type: 2}
 --- !u!114 &1925438564223266632
 MonoBehaviour:
@@ -229,3 +230,4 @@ MonoBehaviour:
   target: {fileID: 0}
   _targetDir: {x: 0, y: 0, z: 0}
   _inRange: 0
+  _priority: []

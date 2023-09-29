@@ -8,13 +8,13 @@ public class CharEntity : MonoBehaviour
     public CharacterStateMachine characterStateMachine;
 
     //Components
-    public Animator anim { get; private set; }
+    public Animator anim;
     public CharacterData characterData;
 
     //Stats
-    public float currentHealth { get; private set; }
-    public float currentMana { get; private set; }
-    public float baseArmor { get; private set; }
+    public float currentHealth;
+    public float currentMana;
+    public float baseArmor;
 
 
     // Start is called before the first frame update
