@@ -14,15 +14,19 @@ public class RangeCharacterEntity : CharEntity
     [HideInInspector]
     public Vector3 _targetDir;
 
+
     public bool _inRange;
+
+
+    [SerializeField] public TowerTesting[] towerTesting;
+
 
     public override void Awake()
     {
         base.Awake();
-    }
-
-    private void Start()
-    {
+        towerTesting = FindObjectsOfType<TowerTesting>();
 
     }
+
+    private void Start() { }
 }

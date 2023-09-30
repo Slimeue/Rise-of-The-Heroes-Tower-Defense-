@@ -17,12 +17,15 @@ public class CharEntity : MonoBehaviour
     public float baseArmor;
 
 
+
+
     // Start is called before the first frame update
     public virtual void Awake()
     {
         currentHealth = characterData.maxHp;
         currentMana = characterData.mana;
         baseArmor = characterData.baseArmor;
+
 
         characterStateMachine = new CharacterStateMachine();
     }
