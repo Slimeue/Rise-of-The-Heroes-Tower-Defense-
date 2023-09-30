@@ -23,7 +23,7 @@ public class R_Sandayo_attack : CharacterBaseState
     {
         base.LogicUpdate();
         FindTarget();
-        r_Sandayo.anim.SetTrigger(animBoolName);
+        r_Sandayo.anim.Play(animBoolName);
         if (r_Sandayo.currentHealth <= 0)
         {
             characterStateMachine.ChangeState(r_Sandayo.deathState);
