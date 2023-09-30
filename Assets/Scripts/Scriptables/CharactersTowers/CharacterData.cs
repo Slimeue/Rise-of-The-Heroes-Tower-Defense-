@@ -6,6 +6,8 @@ using UnityEngine;
 public class CharacterData : ScriptableObject
 {
 
+    [SerializeField] public Sprite charArtWork;
+
     [SerializeField] public LayerMask _layerMask;
     [SerializeField] public string _platformTag;
 

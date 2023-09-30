@@ -225,9 +225,12 @@ public class TowerManager : MonoBehaviour
     {
         TowerTesting towerTesting = _towerHolder.GetComponent<TowerTesting>();
         towerTesting._placed = true;
+        towerTesting.cooldownFinished = false;
+
     }
     #endregion
 
+    #region 
     void DisableTowerHolder(TowerTesting butButton)
     {
         Button clickedButton = butButton.gameObject.GetComponent<Button>();
@@ -255,6 +258,7 @@ public class TowerManager : MonoBehaviour
             }
         }
     }
+    #endregion
 
     #region Enabling Canvas
 
