@@ -49,7 +49,7 @@ public class R_Sandayo : RangeCharacterEntity, IDamageable
     {
         base.Update();
         radius = characterData.range;
-        FindClosestTarget();
+
 
 
 
@@ -67,32 +67,7 @@ public class R_Sandayo : RangeCharacterEntity, IDamageable
         Gizmos.DrawWireSphere(transform.position, radius);
     }
 
-    private void FindClosestTarget()
-    {
-        EnemyType[] enemies = FindObjectsOfType<EnemyType>();
 
-        Transform closestTarget = null;
-
-        bool _anyEnemyInRange = false;
-
-        float maxDis = Mathf.Infinity;
-        foreach (EnemyType enemy in enemies)
-        {
-
-            _targetDir = enemy.transform.position - transform.position;
-            float distance = _targetDir.magnitude;
-            if (distance < radius && distance < maxDis)
-            {
-                maxDis = distance;
-                closestTarget = enemy.transform;
-                _anyEnemyInRange = true;
-            }
-
-        }
-
-        target = closestTarget;
-        _inRange = _anyEnemyInRange;
-    }
 
     public void Damage(float damageAmount)
     {

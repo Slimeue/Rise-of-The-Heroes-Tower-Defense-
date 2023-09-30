@@ -121,7 +121,6 @@ public class TowerTesting : MonoBehaviour
 
             _charCooldown -= Time.deltaTime;
             _charCooldownNormalized = (_charCooldown / characterData.towerCooldown);
-            Debug.Log("Cooldown: " + _charCooldownNormalized);
             slider.value = 1.0f - _charCooldownNormalized;
             UpdateCooldownText();
         }
