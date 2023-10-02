@@ -4406,10 +4406,15 @@ MonoBehaviour:
     type: 3}
   _characterHolder: []
   _placed: 0
+  _charCooldown: 0
+  cooldownFinished: 0
   isDead: 0
   cooldownSlider: {fileID: 0}
   _unavailColor: {r: 0.3584906, g: 0.3584906, b: 0.3584906, a: 0}
   _availColor: {r: 1, g: 1, b: 1, a: 0}
+  cooldownText: {fileID: 0}
+  costText: {fileID: 0}
+  cooldownBGImg: {fileID: 0}
 --- !u!1001 &796676812
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6628,10 +6633,15 @@ MonoBehaviour:
     type: 3}
   _characterHolder: []
   _placed: 0
+  _charCooldown: 0
+  cooldownFinished: 0
   isDead: 0
   cooldownSlider: {fileID: 0}
   _unavailColor: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 0}
   _availColor: {r: 1, g: 1, b: 1, a: 0}
+  cooldownText: {fileID: 0}
+  costText: {fileID: 0}
+  cooldownBGImg: {fileID: 0}
 --- !u!1 &1034791849
 GameObject:
   m_ObjectHideFlags: 0
