@@ -1271,10 +1271,8 @@ MonoBehaviour:
   target: {fileID: 0}
   speed: 10
   pointIndex: 0
-  rotationSpeed: 10
-  body: {fileID: 0}
-  isInFront: 0
   attackCollider: {fileID: 9198903124232955851}
+  isInFront: 0
 --- !u!95 &-6220225287072429544
 Animator:
   serializedVersion: 5

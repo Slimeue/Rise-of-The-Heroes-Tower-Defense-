@@ -44,10 +44,6 @@ public class R_Sandayo : RangeCharacterEntity, IDamageable
     {
         base.Update();
         radius = characterData.range;
-
-
-
-
     }
 
     private void Start()
