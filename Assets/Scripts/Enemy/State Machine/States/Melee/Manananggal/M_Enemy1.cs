@@ -14,7 +14,7 @@ public class M_Enemy1 : MeleeEnemyEntity
     public override void Awake()
     {
         base.Awake();
-        target = Waypoints.points[0];
+
         idleState = new M_Enemy1_S_IdleState(stateMachine, "Idle", this, this);
         movingState = new M_Enemy1_S_MovingState(stateMachine, "walk", this, this);
         attackState = new M_Enemy1_S_AttackState(stateMachine, "attack", this, this);
@@ -33,10 +33,6 @@ public class M_Enemy1 : MeleeEnemyEntity
         baseState.OnTriggerEnter(stateMachine, other);
     }
 
-    public bool OnEnemyFrontCheck()
-    {
-        return Physics.Raycast(transform.position, transform.forward, enemiesData.attackRange, enemiesData.whatIsTower);
-    }
 
     #region 
 

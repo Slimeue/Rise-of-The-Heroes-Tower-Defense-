@@ -15,13 +15,13 @@ public class EnemyEntity : MonoBehaviour
     protected BaseState baseState;
 
     #region MOVEMENT
-    public float speed = 10f;
+    public float speed;
     public int pointIndex = 0;
     #endregion
 
     #region Transform
 
-    public GameObject body;
+
 
     #endregion
 
@@ -39,7 +39,7 @@ public class EnemyEntity : MonoBehaviour
     {
         currentHealth = enemiesData.maxHp;
         baseArmor = enemiesData.baseArmor;
-
+        speed = enemiesData.moveSpeed;
         stateMachine = new StateMachine();
 
     }

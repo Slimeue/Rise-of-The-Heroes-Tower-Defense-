@@ -20,6 +20,8 @@ public class EnemiesData : ScriptableObject
     [Header("Defense")]
     [SerializeField] public float baseArmor;
 
+    [SerializeField] public float moveSpeed;
+
     [SerializeField] public float attackRange;
 
     [SerializeField] public LayerMask whatIsTower;

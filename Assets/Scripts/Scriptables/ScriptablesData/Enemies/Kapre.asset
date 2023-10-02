@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a869f512bc3988443925f27cd4554df4, type: 3}
-  m_Name: Manananggal
+  m_Name: Kapre
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 7445524174623351422, guid: 841ed25297f1e794e8cdc07eb233b314,
+  enemyPrefab: {fileID: 611673615268700165, guid: 135ab866e398e874c9f35b8dacebf601,
     type: 3}
-  dmgValue: 320
-  hitPoints: 1650
-  maxHp: 1650
-  baseArmor: 0
-  moveSpeed: 7
-  attackRange: 5
+  dmgValue: 400
+  hitPoints: 0
+  maxHp: 500
+  baseArmor: 200
+  moveSpeed: 5
+  attackRange: 10
   whatIsTower:
     serializedVersion: 2
     m_Bits: 64
