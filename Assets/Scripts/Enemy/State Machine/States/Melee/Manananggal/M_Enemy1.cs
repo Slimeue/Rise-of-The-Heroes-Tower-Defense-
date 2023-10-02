@@ -10,34 +10,7 @@ public class M_Enemy1 : MeleeEnemyEntity
     public M_Enemy1_S_MovingState movingState { get; private set; }
     public M_Enemy1_S_AttackState attackState { get; private set; }
 
-    //TargetWaypoint
-    public Transform target;
 
-    BaseState baseState;
-
-    Vector3 point;
-    #region MOVEMENT
-    public float speed = 10f;
-    public int pointIndex = 0;
-    public float rotationSpeed = 10f;
-    #endregion
-
-    #region Transform
-
-    public GameObject body;
-
-    #endregion
-
-    #region Checks
-    public bool isInFront;
-
-
-    #endregion
-
-    [SerializeField] BoxCollider attackCollider;
-
-
-    float detectionRadius = 2f;
     public override void Awake()
     {
         base.Awake();

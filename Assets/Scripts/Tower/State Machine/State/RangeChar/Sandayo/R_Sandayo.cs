@@ -14,11 +14,6 @@ public class R_Sandayo : RangeCharacterEntity, IDamageable
     public R_Sandayo_death deathState { get; private set; }
     public R_Sandayo_skill skillState { get; private set; }
 
-    public bool isDead;
-
-    public float cooldownNormalized;
-
-    public bool cooldownFinished;
 
 
     const string TOWER_IDLE = "idle";

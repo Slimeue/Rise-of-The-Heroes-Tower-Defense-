@@ -9,6 +9,29 @@ public class EnemyEntity : MonoBehaviour
 
     public Animator anim;
 
+    //TargetWaypoint
+    public Transform target;
+
+    protected BaseState baseState;
+
+    #region MOVEMENT
+    public float speed = 10f;
+    public int pointIndex = 0;
+    #endregion
+
+    #region Transform
+
+    public GameObject body;
+
+    #endregion
+
+
+
+    [SerializeField] BoxCollider attackCollider;
+
+
+    float detectionRadius = 2f;
+
     public float currentHealth { get; private set; }
     public float baseArmor { get; private set; }
 
