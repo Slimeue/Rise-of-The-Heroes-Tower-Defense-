@@ -19,25 +19,23 @@ public class M_Enemy1_S_MovingState : BaseState
     {
         base.Enter(stateMachine);
         Debug.Log("Hello From Moving state");
+        m_Enemy1SM.PlayAnim(animBoolName);
 
     }
 
     public override void LogicUpdate(StateMachine stateMachine)
     {
         base.LogicUpdate(stateMachine);
-        m_Enemy1SM.anim.SetBool(animBoolName, true);
         /*if enemy goes still transition to idleState*/
         FollowPath();
-        if (m_Enemy1SM.isInFront)
-        {
-            stateMachine.ChangeState(m_Enemy1SM.attackState);
-        }
+        CheckFront(stateMachine);
     }
+
+
 
     public override void Exit(StateMachine stateMachine)
     {
         base.Exit(stateMachine);
-        m_Enemy1SM.anim.SetBool(animBoolName, false);
     }
 
     public override void DoChecks()
@@ -50,6 +48,20 @@ public class M_Enemy1_S_MovingState : BaseState
     {
         base.OnTriggerEnter(stateMachine, collider);
     }
+
+
+    #region METHODS
+
+    #region Checks
+
+    private void CheckFront(StateMachine stateMachine)
+    {
+        if (m_Enemy1SM.isInFront)
+        {
+            stateMachine.ChangeState(m_Enemy1SM.attackState);
+        }
+    }
+    #endregion
 
     public void FollowPath()
     {
@@ -77,5 +89,10 @@ public class M_Enemy1_S_MovingState : BaseState
         m_Enemy1SM.pointIndex++;
         m_Enemy1SM.target = Waypoints.points[m_Enemy1SM.pointIndex];
     }
+
+    #endregion
+
+
+
 
 }
