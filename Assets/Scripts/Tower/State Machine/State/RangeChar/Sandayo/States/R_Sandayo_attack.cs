@@ -19,13 +19,13 @@ public class R_Sandayo_attack : CharacterBaseState
     {
         base.Enter();
         Debug.Log("Hello from Sandayo Attack state");
+        r_Sandayo.PlayAnim(animBoolName);
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
         FindTarget();
-        r_Sandayo.anim.Play(animBoolName);
         ToDeathState();
     }
 

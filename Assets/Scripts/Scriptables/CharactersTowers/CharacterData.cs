@@ -12,6 +12,9 @@ public class CharacterData : ScriptableObject
     [SerializeField] public string _platformTag;
 
     [Space(5)]
+    [SerializeField] public string charName;
+
+    [Space(5)]
     [SerializeField] public float dmgValue;
 
     [Space(5)]

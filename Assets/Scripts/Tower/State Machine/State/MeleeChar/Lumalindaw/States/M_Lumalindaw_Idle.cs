@@ -16,6 +16,8 @@ public class M_Lumalindaw_Idle : CharacterBaseState
     public override void Enter()
     {
         base.Enter();
+        Debug.Log("Hello From Lumalindaw idle state");
+        m_Lumalindaw.PlayAnim(animBoolName);
     }
 
     public override void LogicUpdate()

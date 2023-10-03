@@ -12,7 +12,7 @@ public class RangeCharacterEntity : CharEntity
 
     public bool _inRange;
 
-    [SerializeField] public TowerTesting[] towerTesting;
+    [SerializeField] public TowerHolder[] towerTesting;
 
     public bool isDead;
 
@@ -20,7 +20,7 @@ public class RangeCharacterEntity : CharEntity
     public override void Awake()
     {
         base.Awake();
-        towerTesting = FindObjectsOfType<TowerTesting>();
+        towerTesting = FindObjectsOfType<TowerHolder>();
 
     }
 

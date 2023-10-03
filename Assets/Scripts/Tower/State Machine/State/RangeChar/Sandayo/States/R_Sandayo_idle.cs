@@ -20,12 +20,12 @@ public class R_Sandayo_idle : CharacterBaseState
     {
         base.Enter();
         Debug.Log("Hello From Sandayo Idle State");
+        r_Sandayo.PlayAnim(animBoolName);
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        r_Sandayo.anim.Play(animBoolName);
         ToDeathState();
     }
 
