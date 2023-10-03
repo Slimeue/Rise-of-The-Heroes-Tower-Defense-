@@ -23,12 +23,13 @@ public class R_Sandayo_death : CharacterBaseState
         r_Sandayo.animationHandler.OnDeathFinish += r_Sandayo.DestroyGameObject;
         r_Sandayo.animationHandler.OnDeathFinish += r_Sandayo.TowerHolderEnabler;
         r_Sandayo.isDead = true;
+        r_Sandayo.PlayAnim(animBoolName);
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        r_Sandayo.anim.Play(animBoolName);
+
 
     }
 

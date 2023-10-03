@@ -7,7 +7,7 @@ using UnityEngine.UI;
 using System;
 using TMPro;
 
-public class TowerTesting : MonoBehaviour
+public class TowerHolder : MonoBehaviour
 {
 
     TowerManager towerManager;
@@ -32,6 +32,8 @@ public class TowerTesting : MonoBehaviour
     [Header("UI Components")]
     public GameObject cooldownSlider;
     Image _image;
+
+    [SerializeField] public Image _charArtWork;
     [SerializeField] public Color _unavailColor;
     [SerializeField] public Color _availColor;
     [SerializeField] public TextMeshProUGUI cooldownText;
@@ -44,6 +46,7 @@ public class TowerTesting : MonoBehaviour
 
     private void Awake()
     {
+
         towerManager = FindObjectOfType<TowerManager>();
         coinsManager = FindObjectOfType<CoinsManager>();
         _image = GetComponent<Image>();
@@ -51,10 +54,13 @@ public class TowerTesting : MonoBehaviour
         _characterHolder = GameObject.FindGameObjectsWithTag("TowerHolder");
         cooldownFinished = true;
         costText.text = characterData.towerCost.ToString();
+        _charArtWork.sprite = characterData.charArtWork;
+
     }
 
     private void Start()
     {
+
         _unavailColor.a = 1;
         _availColor.a = 1;
         _characterCost = characterData.towerCost;

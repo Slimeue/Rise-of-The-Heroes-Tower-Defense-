@@ -93,7 +93,7 @@ public class TowerManager : MonoBehaviour
                 Debug.Log("Name: " + gameObject.name + currentState);
                 if (_towerHolder != null)
                 {
-                    EnableTowerHolder(_towerHolder.gameObject.GetComponent<TowerTesting>());
+                    EnableTowerHolder(_towerHolder.gameObject.GetComponent<TowerHolder>());
                 }
                 NormalTime();
                 _charInfoCanvas.SetActive(false);
@@ -103,7 +103,7 @@ public class TowerManager : MonoBehaviour
                 _charInfoCanvas.SetActive(true);
                 if (_towerHolder != null)
                 {
-                    DisableTowerHolder(_towerHolder.gameObject.GetComponent<TowerTesting>());
+                    DisableTowerHolder(_towerHolder.gameObject.GetComponent<TowerHolder>());
                 }
                 normalCam.Priority = 0;
                 placingCam.Priority = 1;
@@ -195,35 +195,34 @@ public class TowerManager : MonoBehaviour
 
     public void Placing(InputAction.CallbackContext context)
     {
-        if (Input.touchCount > 0)
+
+
+        if (_instPreviewObj != null)
         {
-            Touch touch = Input.GetTouch(0);
-            if (_instPreviewObj != null)
+            _position = _mainCam.ScreenPointToRay(Touchscreen.current.position.ReadValue());
+            rayCastHit = Physics.Raycast(_position, out RaycastHit raycastHit, maxDistance = Mathf.Infinity, _layerPlatform);
+            if (rayCastHit && _isPlacing)
             {
-                _position = _mainCam.ScreenPointToRay(Touchscreen.current.position.ReadValue());
-                rayCastHit = Physics.Raycast(_position, out RaycastHit raycastHit, maxDistance = Mathf.Infinity, _layerPlatform);
-                if (rayCastHit && _isPlacing)
-                {
 
 
-                    _instPreviewObj.transform.position = raycastHit.transform.position;
-                    Debug.DrawRay(_position.origin, _position.direction * 20, Color.red);
-                    Debug.Log("Touch Started");
-                    _CharConfirmPlacementCanvas.SetActive(true);
-                    _CharConfirmPlacementCanvas.transform.position = _instPreviewObj.transform.position;
-                    float offset = 2f;
-                    Vector3 newPosition = _CharConfirmPlacementCanvas.transform.position;
-                    newPosition.y += offset;
-                    _CharConfirmPlacementCanvas.transform.position = newPosition;
-                }
+                _instPreviewObj.transform.position = raycastHit.transform.position;
+                Debug.DrawRay(_position.origin, _position.direction * 20, Color.red);
+                Debug.Log("Touch Started");
+                _CharConfirmPlacementCanvas.SetActive(true);
+                _CharConfirmPlacementCanvas.transform.position = _instPreviewObj.transform.position;
+                float offset = 2f;
+                Vector3 newPosition = _CharConfirmPlacementCanvas.transform.position;
+                newPosition.y += offset;
+                _CharConfirmPlacementCanvas.transform.position = newPosition;
             }
         }
+
     }
 
     #region Enabling/Disabling TowerHolder
     public void TowerHolderDisabler()
     {
-        TowerTesting towerTesting = _towerHolder.GetComponent<TowerTesting>();
+        TowerHolder towerTesting = _towerHolder.GetComponent<TowerHolder>();
         towerTesting._placed = true;
         towerTesting.cooldownFinished = false;
 
@@ -231,7 +230,7 @@ public class TowerManager : MonoBehaviour
     #endregion
 
     #region 
-    void DisableTowerHolder(TowerTesting butButton)
+    void DisableTowerHolder(TowerHolder butButton)
     {
         Button clickedButton = butButton.gameObject.GetComponent<Button>();
         foreach (GameObject holder in towerHolder)
@@ -245,7 +244,7 @@ public class TowerManager : MonoBehaviour
         }
     }
 
-    void EnableTowerHolder(TowerTesting butButton)
+    void EnableTowerHolder(TowerHolder butButton)
     {
         Button clickedButton = butButton.gameObject.GetComponent<Button>();
         foreach (GameObject holder in towerHolder)

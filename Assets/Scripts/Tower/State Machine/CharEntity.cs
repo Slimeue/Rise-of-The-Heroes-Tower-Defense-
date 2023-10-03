@@ -43,9 +43,9 @@ public class CharEntity : MonoBehaviour
         characterStateMachine.currentState.LogicUpdate();
     }
 
-    public virtual void FixedUpdate()
+    public virtual void PlayAnim(string animBoolName)
     {
-
+        anim.Play(animBoolName);
     }
 
 

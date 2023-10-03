@@ -71,7 +71,7 @@ public class R_Sandayo : RangeCharacterEntity, IDamageable
 
     private void RefreshChar()
     {
-        foreach (TowerTesting _towerTesting in towerTesting)
+        foreach (TowerHolder _towerTesting in towerTesting)
         {
             if (characterData == _towerTesting.characterData)
             {
@@ -83,7 +83,7 @@ public class R_Sandayo : RangeCharacterEntity, IDamageable
 
     public void TowerHolderEnabler()
     {
-        foreach (TowerTesting _towerTesting in towerTesting)
+        foreach (TowerHolder _towerTesting in towerTesting)
         {
             if (characterData == _towerTesting.characterData)
             {

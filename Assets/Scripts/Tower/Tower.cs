@@ -5,7 +5,7 @@ using UnityEngine;
 public class Tower : MonoBehaviour, IDamageable
 {
 
-    [SerializeField] TowerTesting[] towerTesting;
+    [SerializeField] TowerHolder[] towerTesting;
 
     [SerializeField] CharacterData characterData;
 
@@ -13,7 +13,7 @@ public class Tower : MonoBehaviour, IDamageable
 
     private void Awake()
     {
-        towerTesting = FindObjectsOfType<TowerTesting>();
+        towerTesting = FindObjectsOfType<TowerHolder>();
         currentHp = characterData.maxHp;
         Debug.Log(currentHp);
     }
@@ -43,7 +43,7 @@ public class Tower : MonoBehaviour, IDamageable
 
     public void TowerHolderEnabler()
     {
-        foreach (TowerTesting _towerTesting in towerTesting)
+        foreach (TowerHolder _towerTesting in towerTesting)
         {
             if (characterData == _towerTesting.characterData)
             {
