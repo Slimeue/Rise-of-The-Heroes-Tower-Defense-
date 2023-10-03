@@ -28,7 +28,7 @@ public class M_Kapre_S_MovingState : BaseState
         base.LogicUpdate(stateMachine);
         // m_Kapre.anim.Play(animBoolName);
         FollowPath();
-        StopIdle();
+        StartIdle();
         AttackTransition();
     }
 
@@ -58,7 +58,7 @@ public class M_Kapre_S_MovingState : BaseState
 
     #region METHODS
 
-    private void StopIdle()
+    private void StartIdle()
     {
         if (movingTime > 0)
         {

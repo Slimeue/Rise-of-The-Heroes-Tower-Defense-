@@ -14,10 +14,12 @@ public class M_Enemy1_S_IdleState : BaseState
         this.m_Enemy1SM = m_Enemy1SM;
         this.animBoolName = animBoolName;
     }
+
+    #region override Methods
     public override void Enter(StateMachine stateMachine)
     {
         base.Enter(stateMachine);
-        Debug.Log("Hello From idle State " + animBoolName);
+        m_Enemy1SM.PlayAnim(animBoolName);
     }
 
     public override void Exit(StateMachine stateMachine)
@@ -29,6 +31,20 @@ public class M_Enemy1_S_IdleState : BaseState
     {
         base.LogicUpdate(stateMachine);
         /*transition to movingState when it moves*/
+        StopIdle(stateMachine);
+    }
+
+    public override void OnTriggerEnter(StateMachine stateMachine, Collider collider)
+    {
+        base.OnTriggerEnter(stateMachine, collider);
+    }
+    #endregion
+
+
+
+    #region METOHDS
+    private void StopIdle(StateMachine stateMachine)
+    {
         if (idleTime > 0)
         {
             idleTime -= Time.deltaTime;
@@ -39,9 +55,5 @@ public class M_Enemy1_S_IdleState : BaseState
             stateMachine.ChangeState(m_Enemy1SM.movingState);
         }
     }
-
-    public override void OnTriggerEnter(StateMachine stateMachine, Collider collider)
-    {
-        base.OnTriggerEnter(stateMachine, collider);
-    }
+    #endregion
 }

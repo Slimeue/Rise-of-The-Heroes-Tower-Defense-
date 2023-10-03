@@ -30,14 +30,7 @@ public class R_Sandayo : RangeCharacterEntity, IDamageable
         skillState = new R_Sandayo_skill(characterStateMachine, TOWER_SKILL, this, this);
         anim = GetComponent<Animator>();
         animationHandler = GetComponent<AnimationHandler>();
-        foreach (TowerTesting _towerTesting in towerTesting)
-        {
-            if (characterData == _towerTesting.characterData)
-            {
-                _towerTesting.isDead = false;
-                _towerTesting._charCooldown = characterData.towerCost;
-            }
-        }
+        RefreshChar();
     }
 
     public override void Update()
@@ -58,7 +51,13 @@ public class R_Sandayo : RangeCharacterEntity, IDamageable
         Gizmos.DrawWireSphere(transform.position, radius);
     }
 
+    private void OnDisable()
+    {
+        animationHandler.OnDeathFinish -= DestroyGameObject;
+        animationHandler.OnDeathFinish -= TowerHolderEnabler;
+    }
 
+    #region Methods
 
     public void Damage(float damageAmount)
     {
@@ -70,12 +69,16 @@ public class R_Sandayo : RangeCharacterEntity, IDamageable
         Destroy(gameObject);
     }
 
-
-
-    private void OnDisable()
+    private void RefreshChar()
     {
-        animationHandler.OnDeathFinish -= DestroyGameObject;
-        animationHandler.OnDeathFinish -= TowerHolderEnabler;
+        foreach (TowerTesting _towerTesting in towerTesting)
+        {
+            if (characterData == _towerTesting.characterData)
+            {
+                _towerTesting.isDead = false;
+                _towerTesting._charCooldown = characterData.towerCost;
+            }
+        }
     }
 
     public void TowerHolderEnabler()
@@ -91,6 +94,10 @@ public class R_Sandayo : RangeCharacterEntity, IDamageable
             }
         }
     }
+
+    #endregion
+
+
 
 
 }

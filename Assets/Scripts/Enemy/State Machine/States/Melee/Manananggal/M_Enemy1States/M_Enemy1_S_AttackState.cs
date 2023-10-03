@@ -19,6 +19,7 @@ public class M_Enemy1_S_AttackState : BaseState
     {
         base.Enter(stateMachine);
         Debug.Log("Hello From AttackState");
+        m_Enemy1SM.PlayAnim(animBoolName);
     }
 
     public override void DoChecks()
@@ -32,18 +33,13 @@ public class M_Enemy1_S_AttackState : BaseState
     public override void Exit(StateMachine stateMachine)
     {
         base.Exit(stateMachine);
-        m_Enemy1SM.anim.SetBool(animBoolName, false);
     }
 
 
     public override void LogicUpdate(StateMachine stateMachine)
     {
         base.LogicUpdate(stateMachine);
-        m_Enemy1SM.anim.SetBool(animBoolName, true);
-        if (!m_Enemy1SM.isInFront)
-        {
-            stateMachine.ChangeState(m_Enemy1SM.movingState);
-        }
+        CheckFront(stateMachine);
     }
 
     public override void OnTriggerEnter(StateMachine stateMachine, Collider collider)
@@ -53,10 +49,8 @@ public class M_Enemy1_S_AttackState : BaseState
     }
     #endregion
 
-
-
-
     #region METHODS
+
     private void DamageListener(Collider collider)
     {
         IDamageable tower = collider.GetComponent<IDamageable>();
@@ -67,6 +61,17 @@ public class M_Enemy1_S_AttackState : BaseState
             tower.Damage(m_Enemy1SM.enemiesData.dmgValue);
         }
     }
+
+    #region Checks
+    private void CheckFront(StateMachine stateMachine)
+    {
+        if (!m_Enemy1SM.isInFront)
+        {
+            stateMachine.ChangeState(m_Enemy1SM.movingState);
+        }
+    }
+    #endregion
+
     #endregion
 
 }
