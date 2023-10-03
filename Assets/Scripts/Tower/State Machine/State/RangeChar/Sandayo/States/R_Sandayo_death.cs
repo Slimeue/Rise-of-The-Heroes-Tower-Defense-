@@ -15,11 +15,14 @@ public class R_Sandayo_death : CharacterBaseState
         this.animBoolName = animBoolName;
     }
 
+    #region Override Methods
     public override void Enter()
     {
         base.Enter();
         Debug.Log("Hello from Sandayo Death State");
-
+        r_Sandayo.animationHandler.OnDeathFinish += r_Sandayo.DestroyGameObject;
+        r_Sandayo.animationHandler.OnDeathFinish += r_Sandayo.TowerHolderEnabler;
+        r_Sandayo.isDead = true;
     }
 
     public override void LogicUpdate()
@@ -32,6 +35,7 @@ public class R_Sandayo_death : CharacterBaseState
     public override void Exit()
     {
         base.Exit();
+        r_Sandayo.animationHandler.OnDeathFinish -= r_Sandayo.DestroyGameObject;
     }
 
     public override void OnTriggerEnter()
@@ -43,5 +47,10 @@ public class R_Sandayo_death : CharacterBaseState
     {
         base.DoChecks();
     }
+    #endregion
+
+
+
+
 
 }

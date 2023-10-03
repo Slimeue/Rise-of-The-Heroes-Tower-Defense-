@@ -6,11 +6,17 @@ using UnityEngine;
 public class AnimationHandler : MonoBehaviour
 {
 
-    public event Action OnFinish;
+    public event Action OnDeathFinish;
+    public event Action OnAttackEnd;
 
     private void AnimationDeathFinishedTrigger()
     {
-        OnFinish?.Invoke();
+        OnDeathFinish?.Invoke();
+    }
+
+    private void AnimationAttackFinishedTrigger()
+    {
+        OnAttackEnd?.Invoke();
     }
 
 

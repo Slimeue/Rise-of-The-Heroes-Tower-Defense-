@@ -9,6 +9,24 @@ public class EnemyEntity : MonoBehaviour
 
     public Animator anim;
 
+    //TargetWaypoint
+    public Transform target;
+
+    protected BaseState baseState;
+
+    #region MOVEMENT
+    public float speed;
+    public int pointIndex = 0;
+    #endregion
+
+    #region Transform
+
+
+
+    #endregion
+
+    float detectionRadius = 2f;
+
     public float currentHealth { get; private set; }
     public float baseArmor { get; private set; }
 
@@ -16,7 +34,7 @@ public class EnemyEntity : MonoBehaviour
     {
         currentHealth = enemiesData.maxHp;
         baseArmor = enemiesData.baseArmor;
-
+        speed = enemiesData.moveSpeed;
         stateMachine = new StateMachine();
 
     }
@@ -25,5 +43,11 @@ public class EnemyEntity : MonoBehaviour
     {
         stateMachine.currentState.LogicUpdate(stateMachine);
     }
+
+    public virtual void PlayAnim(string animBoolName)
+    {
+        anim.Play(animBoolName);
+    }
+
 
 }

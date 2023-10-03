@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a869f512bc3988443925f27cd4554df4, type: 3}
+  m_Name: Kapre
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 611673615268700165, guid: 135ab866e398e874c9f35b8dacebf601,
+    type: 3}
+  dmgValue: 400
+  hitPoints: 0
+  maxHp: 500
+  baseArmor: 200
+  moveSpeed: 5
+  attackRange: 10
+  whatIsTower:
+    serializedVersion: 2
+    m_Bits: 64

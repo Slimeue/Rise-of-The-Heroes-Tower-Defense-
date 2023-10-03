@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class R_Sandayo : RangeCharacterEntity, IDamageable
 {
+
 
     public AnimationHandler animationHandler;
 
@@ -11,6 +13,7 @@ public class R_Sandayo : RangeCharacterEntity, IDamageable
     public R_Sandayo_idle idleState { get; private set; }
     public R_Sandayo_death deathState { get; private set; }
     public R_Sandayo_skill skillState { get; private set; }
+
 
 
     const string TOWER_IDLE = "idle";
@@ -27,18 +30,26 @@ public class R_Sandayo : RangeCharacterEntity, IDamageable
         skillState = new R_Sandayo_skill(characterStateMachine, TOWER_SKILL, this, this);
         anim = GetComponent<Animator>();
         animationHandler = GetComponent<AnimationHandler>();
+        foreach (TowerTesting _towerTesting in towerTesting)
+        {
+            if (characterData == _towerTesting.characterData)
+            {
+                _towerTesting.isDead = false;
+                _towerTesting._charCooldown = characterData.towerCost;
+            }
+        }
     }
 
     public override void Update()
     {
         base.Update();
         radius = characterData.range;
-        FindClosestTarget();
     }
 
     private void Start()
     {
         characterStateMachine.Initialize(idleState);
+        isDead = false;
     }
 
     private void OnDrawGizmos()
@@ -47,32 +58,7 @@ public class R_Sandayo : RangeCharacterEntity, IDamageable
         Gizmos.DrawWireSphere(transform.position, radius);
     }
 
-    private void FindClosestTarget()
-    {
-        EnemyType[] enemies = FindObjectsOfType<EnemyType>();
 
-        Transform closestTarget = null;
-
-        bool _anyEnemyInRange = false;
-
-        float maxDis = Mathf.Infinity;
-        foreach (EnemyType enemy in enemies)
-        {
-
-            _targetDir = enemy.transform.position - transform.position;
-            float distance = _targetDir.magnitude;
-            if (distance < radius && distance < maxDis)
-            {
-                maxDis = distance;
-                closestTarget = enemy.transform;
-                _anyEnemyInRange = true;
-            }
-
-        }
-
-        target = closestTarget;
-        _inRange = _anyEnemyInRange;
-    }
 
     public void Damage(float damageAmount)
     {
@@ -84,13 +70,27 @@ public class R_Sandayo : RangeCharacterEntity, IDamageable
         Destroy(gameObject);
     }
 
-    private void OnEnable()
-    {
-        animationHandler.OnFinish += DestroyGameObject;
-    }
+
 
     private void OnDisable()
     {
-        animationHandler.OnFinish -= DestroyGameObject;
+        animationHandler.OnDeathFinish -= DestroyGameObject;
+        animationHandler.OnDeathFinish -= TowerHolderEnabler;
     }
+
+    public void TowerHolderEnabler()
+    {
+        foreach (TowerTesting _towerTesting in towerTesting)
+        {
+            if (characterData == _towerTesting.characterData)
+            {
+                Debug.Log("TowerEnabling");
+                _towerTesting.gameObject.SetActive(true);
+                _towerTesting.isDead = true;
+                _towerTesting._placed = false;
+            }
+        }
+    }
+
+
 }

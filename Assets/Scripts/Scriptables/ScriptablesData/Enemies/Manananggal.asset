@@ -18,6 +18,7 @@ MonoBehaviour:
   hitPoints: 1650
   maxHp: 1650
   baseArmor: 0
+  moveSpeed: 7
   attackRange: 5
   whatIsTower:
     serializedVersion: 2
