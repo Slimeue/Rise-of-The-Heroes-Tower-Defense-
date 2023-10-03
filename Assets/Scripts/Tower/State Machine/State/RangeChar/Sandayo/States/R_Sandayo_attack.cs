@@ -13,6 +13,8 @@ public class R_Sandayo_attack : CharacterBaseState
         this.animBoolName = animBoolName;
     }
 
+    #region Override Methods
+
     public override void Enter()
     {
         base.Enter();
@@ -24,10 +26,7 @@ public class R_Sandayo_attack : CharacterBaseState
         base.LogicUpdate();
         FindTarget();
         r_Sandayo.anim.Play(animBoolName);
-        if (r_Sandayo.currentHealth <= 0)
-        {
-            characterStateMachine.ChangeState(r_Sandayo.deathState);
-        }
+        ToDeathState();
     }
 
     public override void Exit()
@@ -48,6 +47,13 @@ public class R_Sandayo_attack : CharacterBaseState
             characterStateMachine.ChangeState(r_Sandayo.idleState);
         }
     }
+
+    #endregion
+
+
+
+    #region METHODS 
+
     private void FindTarget()
     {
         if (r_Sandayo.target != null)
@@ -59,5 +65,14 @@ public class R_Sandayo_attack : CharacterBaseState
             r_Sandayo.transform.rotation = Quaternion.Slerp(r_Sandayo.transform.rotation, targetRotation, r_Sandayo._rotationSpeed * Time.deltaTime);
         }
     }
+
+    private void ToDeathState()
+    {
+        if (r_Sandayo.currentHealth <= 0)
+        {
+            characterStateMachine.ChangeState(r_Sandayo.deathState);
+        }
+    }
+    #endregion
 
 }

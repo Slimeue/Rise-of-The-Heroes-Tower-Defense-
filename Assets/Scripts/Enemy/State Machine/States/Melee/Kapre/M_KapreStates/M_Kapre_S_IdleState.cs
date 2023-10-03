@@ -16,25 +16,20 @@ public class M_Kapre_S_IdleState : BaseState
         this.m_Kapre = m_Kapre;
     }
 
+    #region override Methods
     public override void Enter(StateMachine stateMachine)
     {
         base.Enter(stateMachine);
         idleTime = 5;
         Debug.Log("Hello From Kapre idle state");
+        m_Kapre.PlayAnim(animBoolName);
     }
 
     public override void LogicUpdate(StateMachine stateMachine)
     {
         base.LogicUpdate(stateMachine);
-        m_Kapre.anim.Play(animBoolName);
-        if (idleTime > 0)
-        {
-            idleTime -= Time.deltaTime;
-        }
-        else
-        {
-            m_Kapre.stateMachine.ChangeState(m_Kapre.movingState);
-        }
+        // m_Kapre.anim.Play(animBoolName);
+        StopIdle();
 
     }
 
@@ -53,6 +48,25 @@ public class M_Kapre_S_IdleState : BaseState
         base.Exit(stateMachine);
     }
 
+    #endregion
+
+
+
+    #region METHODS
+
+    private void StopIdle()
+    {
+        if (idleTime > 0)
+        {
+            idleTime -= Time.deltaTime;
+        }
+        else
+        {
+            m_Kapre.stateMachine.ChangeState(m_Kapre.movingState);
+        }
+    }
+
+    #endregion
 
 
 

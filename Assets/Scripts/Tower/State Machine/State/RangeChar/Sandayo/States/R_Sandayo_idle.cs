@@ -14,6 +14,8 @@ public class R_Sandayo_idle : CharacterBaseState
         this.animBoolName = animBoolName;
     }
 
+    #region Override Methods 
+
     public override void Enter()
     {
         base.Enter();
@@ -24,6 +26,7 @@ public class R_Sandayo_idle : CharacterBaseState
     {
         base.LogicUpdate();
         r_Sandayo.anim.Play(animBoolName);
+        ToDeathState();
     }
 
     public override void Exit()
@@ -44,4 +47,20 @@ public class R_Sandayo_idle : CharacterBaseState
             characterStateMachine.ChangeState(r_Sandayo.attackState);
         }
     }
+    #endregion
+
+
+
+    #region METHODS 
+    private void ToDeathState()
+    {
+        if (r_Sandayo.currentHealth <= 0)
+        {
+            characterStateMachine.ChangeState(r_Sandayo.deathState);
+        }
+    }
+    #endregion
+
+
+
 }

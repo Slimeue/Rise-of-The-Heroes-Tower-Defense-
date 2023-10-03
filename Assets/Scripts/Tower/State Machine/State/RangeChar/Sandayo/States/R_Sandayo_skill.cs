@@ -14,6 +14,8 @@ public class R_Sandayo_skill : CharacterBaseState
         this.animBoolName = animBoolName;
     }
 
+    #region Override Methods 
+
     public override void Enter()
     {
         base.Enter();
@@ -38,5 +40,9 @@ public class R_Sandayo_skill : CharacterBaseState
     {
         base.DoChecks();
     }
+
+    #endregion
+
+
 
 }
