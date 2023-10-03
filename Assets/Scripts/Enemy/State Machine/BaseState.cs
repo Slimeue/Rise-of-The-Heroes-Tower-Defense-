@@ -24,6 +24,8 @@ public class BaseState
 
     }
 
+
+
     public virtual void Enter(StateMachine stateMachine)
     {
         DoChecks();
@@ -31,9 +33,6 @@ public class BaseState
     public virtual void LogicUpdate(StateMachine stateMachine) { DoChecks(); }
     public virtual void Exit(StateMachine stateMachine) { }
     public virtual void OnTriggerEnter(StateMachine stateMachine, Collider collider) { }
-    public virtual void DoChecks()
-    {
-
-    }
+    public virtual void DoChecks() { }
 
 }

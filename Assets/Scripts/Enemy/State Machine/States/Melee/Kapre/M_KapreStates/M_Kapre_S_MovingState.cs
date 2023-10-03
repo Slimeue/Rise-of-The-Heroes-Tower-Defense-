@@ -14,23 +14,51 @@ public class M_Kapre_S_MovingState : BaseState
         this.m_Kapre = m_Kapre;
     }
 
+    #region override Methods
     public override void Enter(StateMachine stateMachine)
     {
         base.Enter(stateMachine);
         movingTime = 5f;
         Debug.Log("Hello From Kapre moving state");
+        m_Kapre.PlayAnim(animBoolName);
     }
 
     public override void LogicUpdate(StateMachine stateMachine)
     {
         base.LogicUpdate(stateMachine);
-        m_Kapre.anim.Play(animBoolName);
+        // m_Kapre.anim.Play(animBoolName);
         FollowPath();
-        IdleStop();
+        StopIdle();
         AttackTransition();
     }
 
-    private void IdleStop()
+
+    public override void DoChecks()
+    {
+        base.DoChecks();
+        m_Kapre.isInFront = m_Kapre.OnEnemyFrontCheck();
+    }
+
+    public override void OnTriggerEnter(StateMachine stateMachine, Collider collider)
+    {
+        base.OnTriggerEnter(stateMachine, collider);
+    }
+
+    public override void Exit(StateMachine stateMachine)
+    {
+        base.Exit(stateMachine);
+    }
+    #endregion
+
+
+
+
+
+
+
+    #region METHODS
+
+    private void StopIdle()
     {
         if (movingTime > 0)
         {
@@ -50,23 +78,6 @@ public class M_Kapre_S_MovingState : BaseState
         }
         m_Kapre.stateMachine.ChangeState(m_Kapre.attackState);
     }
-
-    public override void DoChecks()
-    {
-        base.DoChecks();
-        m_Kapre.isInFront = m_Kapre.OnEnemyFrontCheck();
-    }
-
-    public override void OnTriggerEnter(StateMachine stateMachine, Collider collider)
-    {
-        base.OnTriggerEnter(stateMachine, collider);
-    }
-
-    public override void Exit(StateMachine stateMachine)
-    {
-        base.Exit(stateMachine);
-    }
-
 
     public void FollowPath()
     {
@@ -95,6 +106,6 @@ public class M_Kapre_S_MovingState : BaseState
         m_Kapre.target = Waypoints.points[m_Kapre.pointIndex];
     }
 
-
+    #endregion
 
 }

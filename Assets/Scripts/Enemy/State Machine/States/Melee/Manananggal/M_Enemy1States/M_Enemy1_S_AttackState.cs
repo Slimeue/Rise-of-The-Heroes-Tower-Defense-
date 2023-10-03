@@ -14,6 +14,7 @@ public class M_Enemy1_S_AttackState : BaseState
     }
 
 
+    #region override Methods
     public override void Enter(StateMachine stateMachine)
     {
         base.Enter(stateMachine);
@@ -48,6 +49,16 @@ public class M_Enemy1_S_AttackState : BaseState
     public override void OnTriggerEnter(StateMachine stateMachine, Collider collider)
     {
         base.OnTriggerEnter(stateMachine, collider);
+        DamageListener(collider);
+    }
+    #endregion
+
+
+
+
+    #region METHODS
+    private void DamageListener(Collider collider)
+    {
         IDamageable tower = collider.GetComponent<IDamageable>();
 
         if (tower != null)
@@ -56,4 +67,6 @@ public class M_Enemy1_S_AttackState : BaseState
             tower.Damage(m_Enemy1SM.enemiesData.dmgValue);
         }
     }
+    #endregion
+
 }

@@ -18,13 +18,12 @@ public class M_Kapre_S_DeathState : BaseState
     {
         base.Enter(stateMachine);
         Debug.Log("Hello From Kapre Death state");
+        m_Kapre.PlayAnim(animBoolName);
     }
 
     public override void LogicUpdate(StateMachine stateMachine)
     {
         base.LogicUpdate(stateMachine);
-        m_Kapre.anim.Play(animBoolName);
-
     }
 
     public override void DoChecks()

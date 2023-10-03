@@ -25,11 +25,6 @@ public class EnemyEntity : MonoBehaviour
 
     #endregion
 
-
-
-    [SerializeField] BoxCollider attackCollider;
-
-
     float detectionRadius = 2f;
 
     public float currentHealth { get; private set; }
@@ -48,5 +43,11 @@ public class EnemyEntity : MonoBehaviour
     {
         stateMachine.currentState.LogicUpdate(stateMachine);
     }
+
+    public virtual void PlayAnim(string animBoolName)
+    {
+        anim.Play(animBoolName);
+    }
+
 
 }
