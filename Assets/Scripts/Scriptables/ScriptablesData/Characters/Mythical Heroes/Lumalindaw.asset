@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e454853e7f0ec346bb1144e52ab7ab1, type: 3}
   m_Name: Lumalindaw
   m_EditorClassIdentifier: 
-  charArtWork: {fileID: 0}
+  charArtWork: {fileID: 21300000, guid: 29c435903c4f8404f87a061424329530, type: 3}
   _layerMask:
     serializedVersion: 2
     m_Bits: 256
   _platformTag: MeleePlatform
+  charName: Lumalindaw
   dmgValue: 400
   maxHp: 2000
   mana: 400
