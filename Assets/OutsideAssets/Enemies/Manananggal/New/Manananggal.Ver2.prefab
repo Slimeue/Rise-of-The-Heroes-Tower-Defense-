@@ -1230,6 +1230,7 @@ GameObject:
   - component: {fileID: -6220225287072429544}
   - component: {fileID: 1304364762310780523}
   - component: {fileID: 3186312866423214900}
+  - component: {fileID: -8292873989217917105}
   m_Layer: 0
   m_Name: Manananggal.Ver2
   m_TagString: Enemy
@@ -1267,11 +1268,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemiesData: {fileID: 11400000, guid: 5d15a91dacdbb33428e2bf333e821c72, type: 2}
+  currentTarget: {fileID: 0}
   anim: {fileID: 0}
   target: {fileID: 0}
+  animationHandler: {fileID: 0}
   speed: 10
   pointIndex: 0
-  attackCollider: {fileID: 9198903124232955851}
+  currentHealth: 0
   isInFront: 0
 --- !u!95 &-6220225287072429544
 Animator:
@@ -1324,6 +1327,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isGroundType: 0
   isAerialType: 1
+--- !u!114 &-8292873989217917105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7445524174623351422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad184c616c632084ebeca515fe3875c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7807969548774549061
 GameObject:
   m_ObjectHideFlags: 0

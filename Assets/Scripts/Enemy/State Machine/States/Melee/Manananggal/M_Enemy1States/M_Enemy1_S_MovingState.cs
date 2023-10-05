@@ -18,7 +18,7 @@ public class M_Enemy1_S_MovingState : BaseState
     public override void Enter(StateMachine stateMachine)
     {
         base.Enter(stateMachine);
-        Debug.Log("Hello From Moving state");
+        Debug.Log("Hello From Manananggal Moving state");
         m_Enemy1SM.PlayAnim(animBoolName);
 
     }

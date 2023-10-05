@@ -6,13 +6,15 @@ public class EnemyEntity : MonoBehaviour
 {
     public StateMachine stateMachine;
     public EnemiesData enemiesData;
-
+    public GameObject currentTarget;
     public Animator anim;
 
     //TargetWaypoint
     public Transform target;
 
     protected BaseState baseState;
+
+    public AnimationHandler animationHandler;
 
     #region MOVEMENT
     public float speed;
@@ -27,7 +29,7 @@ public class EnemyEntity : MonoBehaviour
 
     float detectionRadius = 2f;
 
-    public float currentHealth { get; private set; }
+    public float currentHealth;
     public float baseArmor { get; private set; }
 
     public virtual void Awake()

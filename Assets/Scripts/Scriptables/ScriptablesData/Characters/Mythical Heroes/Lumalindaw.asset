@@ -17,11 +17,16 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   _platformTag: MeleePlatform
+  previewChar: {fileID: 1558075628705206174, guid: b65f218f66c1be84991abd752dc7dff0,
+    type: 3}
+  charObject: {fileID: 1558075628705206174, guid: 9297fdf71bdc1964db8ebdbc1437fec0,
+    type: 3}
   charName: Lumalindaw
   dmgValue: 400
-  maxHp: 2000
+  maxHp: 5000
   mana: 400
   baseArmor: 360
   towerCooldown: 13
   towerCost: 14
-  range: 5
+  range: 10
+  rotationSpeed: 10

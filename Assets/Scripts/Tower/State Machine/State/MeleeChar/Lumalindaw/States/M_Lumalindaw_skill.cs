@@ -29,9 +29,9 @@ public class M_Lumalindaw_skill : CharacterBaseState
         base.DoChecks();
     }
 
-    public override void OnTriggerEnter()
+    public override void OnTriggerEnter(Collider collider)
     {
-        base.OnTriggerEnter();
+        base.OnTriggerEnter(collider);
     }
 
     public override void Exit()

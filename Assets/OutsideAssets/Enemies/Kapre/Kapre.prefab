@@ -141,6 +141,8 @@ GameObject:
   - component: {fileID: -6153859342384799160}
   - component: {fileID: -4543553757102323311}
   - component: {fileID: -2105756074355709832}
+  - component: {fileID: 3735676225167818587}
+  - component: {fileID: 6277942112798829253}
   m_Layer: 0
   m_Name: Kapre
   m_TagString: Enemy
@@ -178,10 +180,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemiesData: {fileID: 11400000, guid: a3732c799d94c7f4484edb47faab1f8b, type: 2}
+  currentTarget: {fileID: 0}
   anim: {fileID: 0}
   target: {fileID: 0}
+  animationHandler: {fileID: 0}
   speed: 10
   pointIndex: 0
+  currentHealth: 0
   isInFront: 0
 --- !u!95 &-6153859342384799160
 Animator:
@@ -234,6 +239,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isGroundType: 1
   isAerialType: 0
+--- !u!65 &3735676225167818587
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611673615268700165}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.6508958, y: 4.5644426, z: 1.4610701}
+  m_Center: {x: -0.00000015894572, y: 2.2324624, z: -0.034957767}
+--- !u!114 &6277942112798829253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611673615268700165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad184c616c632084ebeca515fe3875c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &741765155782176858
 GameObject:
   m_ObjectHideFlags: 0
@@ -1539,7 +1569,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7285089465599336555}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

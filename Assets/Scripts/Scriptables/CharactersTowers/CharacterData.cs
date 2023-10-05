@@ -11,6 +11,9 @@ public class CharacterData : ScriptableObject
     [SerializeField] public LayerMask _layerMask;
     [SerializeField] public string _platformTag;
 
+    [SerializeField] public GameObject previewChar;
+    [SerializeField] public GameObject charObject;
+
     [Space(5)]
     [SerializeField] public string charName;
 
@@ -38,6 +41,9 @@ public class CharacterData : ScriptableObject
     [Space(5)]
     [Header("Locator")]
     [SerializeField] public float range;
+
+    [Space(5)]
+    [SerializeField] public float rotationSpeed;
 
 
 

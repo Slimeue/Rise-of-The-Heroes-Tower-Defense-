@@ -31,9 +31,9 @@ public class S_R_Char1_IdleState : CharacterBaseState
     {
         base.Exit();
     }
-    public override void OnTriggerEnter()
+    public override void OnTriggerEnter(Collider collider)
     {
-        base.OnTriggerEnter();
+        base.OnTriggerEnter(collider);
     }
     public override void DoChecks()
     {

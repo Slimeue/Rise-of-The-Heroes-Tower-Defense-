@@ -685,8 +685,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TowerTesting, Assembly-CSharp
+      - m_Target: {fileID: 3588740982691007549}
+        m_TargetAssemblyTypeName: TowerHolder, Assembly-CSharp
         m_MethodName: Pressed
         m_Mode: 1
         m_Arguments:
@@ -740,8 +740,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterData: {fileID: 0}
-  _preview: {fileID: 0}
-  _charObj: {fileID: 0}
   _characterHolder: []
   _placed: 0
   _charCooldown: 0
@@ -749,8 +747,8 @@ MonoBehaviour:
   isDead: 0
   cooldownSlider: {fileID: 2713593386287222207}
   _charArtWork: {fileID: 168275583855007069}
-  _unavailColor: {r: 0, g: 0, b: 0, a: 0}
-  _availColor: {r: 0, g: 0, b: 0, a: 0}
+  _unavailColor: {r: 0.16981131, g: 0.16981131, b: 0.16981131, a: 0}
+  _availColor: {r: 0.754717, g: 0.754717, b: 0.754717, a: 0}
   cooldownText: {fileID: 6348175743146230566}
   costText: {fileID: 1090742344210911420}
   cooldownBGImg: {fileID: 3385410351696559876}

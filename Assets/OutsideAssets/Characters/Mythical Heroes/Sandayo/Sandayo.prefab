@@ -1548,6 +1548,7 @@ GameObject:
   - component: {fileID: -8224980944848254280}
   - component: {fileID: 4040343144035901475}
   - component: {fileID: 521605592330098563}
+  - component: {fileID: 2468947399854688656}
   m_Layer: 6
   m_Name: Sandayo
   m_TagString: Player
@@ -1594,7 +1595,9 @@ MonoBehaviour:
   target: {fileID: 0}
   _targetDir: {x: 0, y: 0, z: 0}
   _inRange: 0
-  animationIsFinished: 0
+  towerTesting: []
+  isDead: 0
+  animationHandler: {fileID: 0}
 --- !u!95 &-8224980944848254280
 Animator:
   serializedVersion: 5
@@ -1641,6 +1644,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad184c616c632084ebeca515fe3875c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2468947399854688656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8008844980106868492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d840188521c965a4ab93423c44be6e46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterData: {fileID: 11400000, guid: cee8b4e45e2ce2d4ca94ff52bb0d4548, type: 2}
+  charType:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &8074271894998603299
 GameObject:
   m_ObjectHideFlags: 0

@@ -31,9 +31,9 @@ public class R_Sandayo_skill : CharacterBaseState
         base.Exit();
     }
 
-    public override void OnTriggerEnter()
+    public override void OnTriggerEnter(Collider collider)
     {
-        base.OnTriggerEnter();
+        base.OnTriggerEnter(collider);
     }
 
     public override void DoChecks()

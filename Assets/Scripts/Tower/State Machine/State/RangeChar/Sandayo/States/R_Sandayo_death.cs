@@ -39,9 +39,9 @@ public class R_Sandayo_death : CharacterBaseState
         r_Sandayo.animationHandler.OnDeathFinish -= r_Sandayo.DestroyGameObject;
     }
 
-    public override void OnTriggerEnter()
+    public override void OnTriggerEnter(Collider collider)
     {
-        base.OnTriggerEnter();
+        base.OnTriggerEnter(collider);
     }
 
     public override void DoChecks()

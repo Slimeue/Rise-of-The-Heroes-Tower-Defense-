@@ -34,19 +34,18 @@ public class R_Sandayo_idle : CharacterBaseState
         base.Exit();
     }
 
-    public override void OnTriggerEnter()
+    public override void OnTriggerEnter(Collider collider)
     {
-        base.OnTriggerEnter();
+        base.OnTriggerEnter(collider);
     }
 
     public override void DoChecks()
     {
         base.DoChecks();
-        if (r_Sandayo._inRange)
-        {
-            characterStateMachine.ChangeState(r_Sandayo.attackState);
-        }
+        InRangeCheck();
     }
+
+
     #endregion
 
 
@@ -59,6 +58,15 @@ public class R_Sandayo_idle : CharacterBaseState
             characterStateMachine.ChangeState(r_Sandayo.deathState);
         }
     }
+
+    private void InRangeCheck()
+    {
+        if (r_Sandayo._inRange)
+        {
+            characterStateMachine.ChangeState(r_Sandayo.attackState);
+        }
+    }
+
     #endregion
 
 

@@ -8,6 +8,7 @@ public class CanvasEnabler : MonoBehaviour
     [SerializeField] public GameObject _platformHighlight;
     [SerializeField] Color notAvailColor;
     [SerializeField] Color availColor;
+    public bool isPlaceable;
 
     public void EnableCanvas()
     {
