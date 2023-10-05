@@ -30,6 +30,8 @@ public class M_Kapre_S_IdleState : BaseState
         base.LogicUpdate(stateMachine);
         // m_Kapre.anim.Play(animBoolName);
         StopIdle();
+        AttackTransition();
+        ToDeathState();
 
     }
 
@@ -65,6 +67,24 @@ public class M_Kapre_S_IdleState : BaseState
             m_Kapre.stateMachine.ChangeState(m_Kapre.movingState);
         }
     }
+
+    private void AttackTransition()
+    {
+        if (!m_Kapre.isInFront)
+        {
+            return;
+        }
+        m_Kapre.stateMachine.ChangeState(m_Kapre.attackState);
+    }
+
+    void ToDeathState()
+    {
+        if (m_Kapre.currentHealth <= 0f)
+        {
+            m_Kapre.stateMachine.ChangeState(m_Kapre.deathState);
+        }
+    }
+
 
     #endregion
 

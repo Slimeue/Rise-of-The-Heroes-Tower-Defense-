@@ -7,7 +7,6 @@ public class R_Sandayo : RangeCharacterEntity, IDamageable
 {
 
 
-    public AnimationHandler animationHandler;
 
     public R_Sandayo_attack attackState { get; private set; }
     public R_Sandayo_idle idleState { get; private set; }
@@ -76,7 +75,7 @@ public class R_Sandayo : RangeCharacterEntity, IDamageable
             if (characterData == _towerTesting.characterData)
             {
                 _towerTesting.isDead = false;
-                _towerTesting._charCooldown = characterData.towerCost;
+                _towerTesting._charCooldown = characterData.towerCooldown;
             }
         }
     }

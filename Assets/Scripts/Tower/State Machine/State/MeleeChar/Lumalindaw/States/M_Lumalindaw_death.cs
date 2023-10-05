@@ -16,6 +16,11 @@ public class M_Lumalindaw_death : CharacterBaseState
     public override void Enter()
     {
         base.Enter();
+        m_Lumalindaw.PlayAnim(animBoolName);
+        m_Lumalindaw.animationHandler.OnDeathFinish += m_Lumalindaw.DestroyGameObject;
+        m_Lumalindaw.animationHandler.OnDeathFinish += m_Lumalindaw.TowerHolderEnabler;
+        m_Lumalindaw.isDead = true;
+
     }
 
     public override void LogicUpdate()
@@ -28,13 +33,15 @@ public class M_Lumalindaw_death : CharacterBaseState
         base.DoChecks();
     }
 
-    public override void OnTriggerEnter()
+    public override void OnTriggerEnter(Collider collider)
     {
-        base.OnTriggerEnter();
+        base.OnTriggerEnter(collider);
+
     }
 
     public override void Exit()
     {
         base.Exit();
+        m_Lumalindaw.animationHandler.OnDeathFinish -= m_Lumalindaw.TowerHolderEnabler;
     }
 }

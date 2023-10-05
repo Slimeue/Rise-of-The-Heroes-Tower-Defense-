@@ -30,6 +30,7 @@ public class M_Kapre_S_MovingState : BaseState
         FollowPath();
         StartIdle();
         AttackTransition();
+        ToDeathState();
     }
 
 
@@ -57,6 +58,15 @@ public class M_Kapre_S_MovingState : BaseState
 
 
     #region METHODS
+
+    void ToDeathState()
+    {
+        if (m_Kapre.currentHealth <= 0f)
+        {
+            m_Kapre.stateMachine.ChangeState(m_Kapre.deathState);
+        }
+    }
+
 
     private void StartIdle()
     {

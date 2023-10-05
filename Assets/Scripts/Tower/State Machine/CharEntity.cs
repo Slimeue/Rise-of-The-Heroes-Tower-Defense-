@@ -6,7 +6,8 @@ public class CharEntity : MonoBehaviour
 {
 
     public CharacterStateMachine characterStateMachine;
-
+    public CharacterBaseState characterBaseState;
+    public AnimationHandler animationHandler;
     //Components
     [Header("Components")]
     public Animator anim;
@@ -22,6 +23,7 @@ public class CharEntity : MonoBehaviour
     [HideInInspector]
     public float radius;
 
+    [HideInInspector]
     public float _rotationSpeed;
 
 
@@ -32,7 +34,7 @@ public class CharEntity : MonoBehaviour
         currentHealth = characterData.maxHp;
         currentMana = characterData.mana;
         baseArmor = characterData.baseArmor;
-
+        _rotationSpeed = characterData.rotationSpeed;
 
         characterStateMachine = new CharacterStateMachine();
     }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class M_Kapre : MeleeEnemyEntity
+public class M_Kapre : MeleeEnemyEntity, IDamageable
 {
     public M_Kapre_S_AttackState attackState { get; private set; }
     public M_Kapre_S_DeathState deathState { get; private set; }
@@ -23,16 +23,22 @@ public class M_Kapre : MeleeEnemyEntity
         deathState = new M_Kapre_S_DeathState(stateMachine, CREATURE_DEATH, this, this);
         movingState = new M_Kapre_S_MovingState(stateMachine, CREATURE_MOVE, this, this);
         idleState = new M_Kapre_S_IdleState(stateMachine, CREATURE_IDLE, this, this);
-
+        animationHandler = GetComponent<AnimationHandler>();
         anim = GetComponent<Animator>();
-
+        currentHealth = enemiesData.maxHp;
         baseState = stateMachine.currentState;
 
     }
 
-    private void Start()
+    private void OnEnable()
     {
         stateMachine.Initialize(idleState);
+        currentHealth = enemiesData.maxHp;
+    }
+
+    private void OnDisable()
+    {
+        animationHandler.OnDeathFinish -= DestroyGameObject;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -44,11 +50,21 @@ public class M_Kapre : MeleeEnemyEntity
 
     #region 
 
+    public void DestroyGameObject()
+    {
+        gameObject.SetActive(false);
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
         Vector3 dir = transform.forward * enemiesData.attackRange;
         Gizmos.DrawRay(transform.position, dir);
+    }
+
+    public void Damage(float damageAmount)
+    {
+        currentHealth -= damageAmount;
     }
 
     #endregion

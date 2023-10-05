@@ -22,7 +22,7 @@ public class M_Enemy1 : MeleeEnemyEntity
         anim = GetComponent<Animator>();
     }
 
-    private void Start()
+    private void OnEnable()
     {
         stateMachine.Initialize(idleState);
     }

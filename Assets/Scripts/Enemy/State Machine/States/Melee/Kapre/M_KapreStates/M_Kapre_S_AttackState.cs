@@ -26,6 +26,7 @@ public class M_Kapre_S_AttackState : BaseState
     {
         base.LogicUpdate(stateMachine);
         CheckFront();
+        ToDeathState();
     }
 
 
@@ -59,10 +60,18 @@ public class M_Kapre_S_AttackState : BaseState
     {
         IDamageable tower = collider.GetComponent<IDamageable>();
 
-        if (tower != null)
+        if (tower != null && m_Kapre.currentTarget == collider.gameObject)
         {
             Debug.Log("Hit!!");
             tower.Damage(m_Kapre.enemiesData.dmgValue);
+        }
+    }
+
+    void ToDeathState()
+    {
+        if (m_Kapre.currentHealth <= 0f)
+        {
+            m_Kapre.stateMachine.ChangeState(m_Kapre.deathState);
         }
     }
 

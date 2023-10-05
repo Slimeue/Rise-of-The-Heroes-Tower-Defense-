@@ -8,6 +8,7 @@ public class MeleeCharacterEntity : CharEntity
 
     [HideInInspector]
     public Transform target;
+    public GameObject currentTarget;
     [HideInInspector]
     public Vector3 _targetDir;
 
@@ -47,7 +48,7 @@ public class MeleeCharacterEntity : CharEntity
 
             _targetDir = enemy.transform.position - transform.position;
             float distance = _targetDir.magnitude;
-            if (distance < radius && distance < maxDis && enemy.isGroundType)
+            if (distance < radius && distance < maxDis)
             {
                 maxDis = distance;
                 closestTarget = enemy.transform;
@@ -57,6 +58,11 @@ public class MeleeCharacterEntity : CharEntity
         }
 
         target = closestTarget;
+        if (target != null)
+        {
+            currentTarget = target.gameObject;
+        }
+
         _inRange = _anyEnemyInRange;
     }
 }

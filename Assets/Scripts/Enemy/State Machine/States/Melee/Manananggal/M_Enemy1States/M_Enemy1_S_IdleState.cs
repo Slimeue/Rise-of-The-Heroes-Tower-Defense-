@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class M_Enemy1_S_IdleState : BaseState
 {
-    public float idleTime = 1f;
+    public float idleTime;
 
     M_Enemy1 m_Enemy1SM;
 
@@ -19,6 +19,8 @@ public class M_Enemy1_S_IdleState : BaseState
     public override void Enter(StateMachine stateMachine)
     {
         base.Enter(stateMachine);
+        Debug.Log("HelloFrom Manananggal idle state");
+        idleTime = 1f;
         m_Enemy1SM.PlayAnim(animBoolName);
     }
 

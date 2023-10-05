@@ -19,6 +19,7 @@ public class M_Kapre_S_DeathState : BaseState
         base.Enter(stateMachine);
         Debug.Log("Hello From Kapre Death state");
         m_Kapre.PlayAnim(animBoolName);
+        m_Kapre.animationHandler.OnDeathFinish += m_Kapre.DestroyGameObject;
     }
 
     public override void LogicUpdate(StateMachine stateMachine)
