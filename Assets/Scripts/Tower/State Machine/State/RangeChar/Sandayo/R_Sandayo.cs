@@ -36,6 +36,7 @@ public class R_Sandayo : RangeCharacterEntity, IDamageable
     {
         base.Update();
         radius = characterData.range;
+        HealthBarTracker();
     }
 
     private void Start()
@@ -58,9 +59,32 @@ public class R_Sandayo : RangeCharacterEntity, IDamageable
 
     #region Methods
 
+
+    public void Fire()
+    {
+        GameObject projectileGO = Instantiate(projectile, firePoint.position, firePoint.rotation);
+        Projectile _projectile = projectileGO.GetComponent<Projectile>();
+
+        if (_projectile != null)
+        {
+            _projectile.SeekTarget(target, characterData);
+        }
+    }
+
+    public override void HealthBarTracker()
+    {
+        base.HealthBarTracker();
+    }
+
+
+
     public void Damage(float damageAmount)
     {
-        currentHealth -= damageAmount;
+        float totalDamage;
+
+        totalDamage = damageAmount * (100 / (100 + baseArmor));
+        Debug.Log(totalDamage);
+        currentHealth -= totalDamage;
     }
 
     public void DestroyGameObject()

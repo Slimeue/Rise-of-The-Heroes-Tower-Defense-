@@ -16,10 +16,10 @@ MonoBehaviour:
     type: 3}
   dmgValue: 350
   hitPoints: 0
-  maxHp: 2000
+  maxHp: 5000
   baseArmor: 200
   moveSpeed: 5
-  attackRange: 10
+  attackRange: 5
   whatIsTower:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 64

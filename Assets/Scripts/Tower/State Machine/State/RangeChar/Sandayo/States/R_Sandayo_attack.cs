@@ -6,6 +6,8 @@ public class R_Sandayo_attack : CharacterBaseState
 {
     R_Sandayo r_Sandayo;
 
+    public bool isAttackFinish;
+
     public R_Sandayo_attack(CharacterStateMachine characterStateMachine, string animBoolName, CharEntity charEntity, R_Sandayo r_Sandayo)
     : base(animBoolName, characterStateMachine)
     {
@@ -20,6 +22,7 @@ public class R_Sandayo_attack : CharacterBaseState
         base.Enter();
         Debug.Log("Hello from Sandayo Attack state");
         r_Sandayo.PlayAnim(animBoolName);
+        r_Sandayo.rangeCharAnimationHandler.OnRangeStartAttack += r_Sandayo.Fire;
     }
 
     public override void LogicUpdate()
@@ -32,6 +35,7 @@ public class R_Sandayo_attack : CharacterBaseState
     public override void Exit()
     {
         base.Exit();
+        //r_Sandayo.rangeCharAnimationHandler.OnRangeStartAttack -= r_Sandayo.Fire;
     }
 
     public override void OnTriggerEnter(Collider collider)
@@ -73,6 +77,7 @@ public class R_Sandayo_attack : CharacterBaseState
             characterStateMachine.ChangeState(r_Sandayo.deathState);
         }
     }
+
     #endregion
 
 }

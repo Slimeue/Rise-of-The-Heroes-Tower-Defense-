@@ -98,7 +98,7 @@ public class WaveManager : MonoBehaviour
 
                 waveData = objectPooler._waveData[i];
 
-                for (int x = 0; x < waveData.enemyCount * 2; x++)
+                for (int x = 0; x < waveData.enemyCount * waveData.enemies.Length; x++)
                 {
                     GameObject enemy = objectPooler.GetPooledEnemy(i);
                     float offset = 5;

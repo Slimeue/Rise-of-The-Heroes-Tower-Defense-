@@ -26,25 +26,42 @@ public class M_Kapre : MeleeEnemyEntity, IDamageable
         animationHandler = GetComponent<AnimationHandler>();
         anim = GetComponent<Animator>();
         currentHealth = enemiesData.maxHp;
-        baseState = stateMachine.currentState;
-
     }
 
-    private void OnEnable()
+    public override void Update()
     {
+        base.Update();
+        HealthBarTracker();
+    }
+
+    public override void OnEnable()
+    {
+        base.OnEnable();
         stateMachine.Initialize(idleState);
         currentHealth = enemiesData.maxHp;
     }
 
-    private void OnDisable()
+    public void OnDisable()
     {
         animationHandler.OnDeathFinish -= DestroyGameObject;
     }
 
-    private void OnTriggerEnter(Collider other)
+    public override void HealthBarTracker()
+    {
+        base.HealthBarTracker();
+    }
+
+    public void OnTriggerEnter(Collider other)
     {
         baseState = stateMachine.currentState;
         baseState.OnTriggerEnter(stateMachine, other);
+        Debug.Log(other.name);
+    }
+
+    private void OnTriggerExit(Collider collider)
+    {
+        baseState = stateMachine.currentState;
+        baseState.OnTriggerExit(stateMachine, collider);
     }
 
 
@@ -64,7 +81,11 @@ public class M_Kapre : MeleeEnemyEntity, IDamageable
 
     public void Damage(float damageAmount)
     {
-        currentHealth -= damageAmount;
+        float totalDamage;
+
+        totalDamage = damageAmount * (100 / (100 + baseArmor));
+        Debug.Log(totalDamage);
+        currentHealth -= totalDamage;
     }
 
     #endregion

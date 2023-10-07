@@ -16,23 +16,29 @@ public class MeleeEnemyEntity : EnemyEntity
         target = Waypoints.points[0];
     }
 
-    void Start()
+    public virtual void OnEnable()
     {
-
+        target = Waypoints.points[0];
+        pointIndex = 0;
+        Debug.Log("enabled");
     }
 
     public bool OnEnemyFrontCheck()
     {
-        if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hitInfo, enemiesData.attackRange))
-        {
-            TowerType towerType = hitInfo.collider.gameObject.GetComponent<TowerType>();
-            currentTarget = hitInfo.collider.gameObject;
-            if (towerType != null)
-            {
-                return towerType.charType == enemiesData.whatIsTower;
-            }
-        }
-        return false;
+
+
+        return Physics.Raycast(transform.position, transform.forward, enemiesData.attackRange, enemiesData.whatIsTower);
+
+        // if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hitInfo, enemiesData.attackRange))
+        // {
+        //     TowerType towerType = hitInfo.collider.gameObject.GetComponent<TowerType>();
+        //     currentTarget = hitInfo.collider.gameObject;
+        //     if (hitInfo.collider.isTrigger && towerType != null)
+        //     {
+        //         return towerType.charType == enemiesData.whatIsTower;
+        //     }
+        // }
+        // return false;
 
 
 

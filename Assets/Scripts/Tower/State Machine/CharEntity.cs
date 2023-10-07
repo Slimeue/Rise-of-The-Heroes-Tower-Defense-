@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharEntity : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class CharEntity : MonoBehaviour
     public CharacterStateMachine characterStateMachine;
     public CharacterBaseState characterBaseState;
     public AnimationHandler animationHandler;
+    public Slider healthBar;
+
     //Components
     [Header("Components")]
     public Animator anim;
@@ -25,6 +28,7 @@ public class CharEntity : MonoBehaviour
 
     [HideInInspector]
     public float _rotationSpeed;
+    public bool isAttackFinished;
 
 
 
@@ -48,6 +52,12 @@ public class CharEntity : MonoBehaviour
     public virtual void PlayAnim(string animBoolName)
     {
         anim.Play(animBoolName);
+    }
+
+    public virtual void HealthBarTracker()
+    {
+        float normalizedHealth = currentHealth / characterData.maxHp;
+        healthBar.value = normalizedHealth;
     }
 
 

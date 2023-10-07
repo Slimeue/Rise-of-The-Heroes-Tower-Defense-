@@ -34,6 +34,7 @@ public class M_Lumalindaw : MeleeCharacterEntity, IDamageable
         base.Update();
         radius = characterData.range;
         RefreshChar();
+        HealthBarTracker();
     }
 
     private void Start()
@@ -62,11 +63,28 @@ public class M_Lumalindaw : MeleeCharacterEntity, IDamageable
     }
 
 
+    private void OnTriggerExit(Collider other)
+    {
+        characterBaseState = characterStateMachine.currentState;
+        characterBaseState.OnTriggerExit(other);
+    }
+
+    public override void HealthBarTracker()
+    {
+        base.HealthBarTracker();
+    }
+
+
+
     #region Methods
 
     public void Damage(float damageAmount)
     {
-        currentHealth -= damageAmount;
+        float totalDamage;
+
+        totalDamage = damageAmount * (100 / (100 + baseArmor));
+        Debug.Log(totalDamage);
+        currentHealth -= totalDamage;
     }
 
     public void DestroyGameObject()
