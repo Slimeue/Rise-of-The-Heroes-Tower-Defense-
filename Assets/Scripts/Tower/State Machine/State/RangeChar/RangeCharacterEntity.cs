@@ -10,7 +10,16 @@ public class RangeCharacterEntity : CharEntity
     [HideInInspector]
     public Vector3 _targetDir;
 
+    public RangeCharAnimationHandler rangeCharAnimationHandler;
+
     public bool _inRange;
+
+    [Space(5)]
+    [SerializeField]
+    public GameObject projectile;
+    [SerializeField]
+    public Transform firePoint;
+
 
     [SerializeField] public TowerHolder[] towerTesting;
 
@@ -21,6 +30,8 @@ public class RangeCharacterEntity : CharEntity
     {
         base.Awake();
         towerTesting = FindObjectsOfType<TowerHolder>();
+        projectile = characterData.projectile;
+        rangeCharAnimationHandler = GetComponent<RangeCharAnimationHandler>();
 
     }
 
@@ -31,6 +42,9 @@ public class RangeCharacterEntity : CharEntity
         base.Update();
         FindClosestTarget();
     }
+
+
+
 
     private void FindClosestTarget()
     {
@@ -46,6 +60,7 @@ public class RangeCharacterEntity : CharEntity
 
             _targetDir = enemy.transform.position - transform.position;
             float distance = _targetDir.magnitude;
+
             if (distance < radius && distance < maxDis)
             {
                 maxDis = distance;

@@ -28,9 +28,8 @@ public class TowerHolder : MonoBehaviour
     float _charCooldownNormalized;
 
 
-    [HideInInspector]
+
     public bool cooldownFinished;
-    [HideInInspector]
     public bool isDead;
 
     [Space(5)]
@@ -87,7 +86,7 @@ public class TowerHolder : MonoBehaviour
     public void Pressed()
     {
 
-        if (!_placed || cooldownFinished)
+        if (!_placed && cooldownFinished)
         {
             StartPlace();
         }

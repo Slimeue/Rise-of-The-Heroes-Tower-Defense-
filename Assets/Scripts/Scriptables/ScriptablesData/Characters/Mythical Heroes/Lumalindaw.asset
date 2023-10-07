@@ -21,6 +21,7 @@ MonoBehaviour:
     type: 3}
   charObject: {fileID: 1558075628705206174, guid: 9297fdf71bdc1964db8ebdbc1437fec0,
     type: 3}
+  projectile: {fileID: 0}
   charName: Lumalindaw
   dmgValue: 400
   maxHp: 5000
@@ -28,5 +29,7 @@ MonoBehaviour:
   baseArmor: 360
   towerCooldown: 13
   towerCost: 14
-  range: 10
+  range: 15
+  projectileSpeed: 0
+  attackSpeed: 0
   rotationSpeed: 10

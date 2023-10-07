@@ -6,6 +6,7 @@ public class M_Lumalindaw_attack : CharacterBaseState
 {
     M_Lumalindaw m_Lumalindaw;
 
+
     public M_Lumalindaw_attack(CharacterStateMachine characterStateMachine, string animBoolName, CharEntity charEntity, M_Lumalindaw m_Lumalindaw)
     : base(animBoolName, characterStateMachine)
     {
@@ -18,6 +19,7 @@ public class M_Lumalindaw_attack : CharacterBaseState
         base.Enter();
         Debug.Log("Hello From Lumalindaw attack state");
         m_Lumalindaw.PlayAnim(animBoolName);
+
     }
 
     public override void LogicUpdate()
@@ -33,14 +35,21 @@ public class M_Lumalindaw_attack : CharacterBaseState
         DamageListener(collider);
     }
 
+    public override void OnTriggerExit(Collider collider)
+    {
+        base.OnTriggerExit(collider);
+        m_Lumalindaw.isAttackFinished = true;
+    }
+
+
+
     public override void DoChecks()
     {
         base.DoChecks();
-        if (!m_Lumalindaw._inRange)
-        {
-            characterStateMachine.ChangeState(m_Lumalindaw.idleState);
-        }
+        ToIdleState();
     }
+
+
 
     public override void Exit()
     {
@@ -50,15 +59,27 @@ public class M_Lumalindaw_attack : CharacterBaseState
 
     #region METHODS 
 
+    private void ToIdleState()
+    {
+        if (!m_Lumalindaw._inRange)
+        {
+            characterStateMachine.ChangeState(m_Lumalindaw.idleState);
+        }
+    }
+
     void DamageListener(Collider collider)
     {
         IDamageable damageable = collider.GetComponent<IDamageable>();
-        if (damageable != null && m_Lumalindaw.currentTarget == collider.gameObject)
+        if (m_Lumalindaw.isAttackFinished)
         {
-
-            damageable.Damage(m_Lumalindaw.characterData.dmgValue);
-            Debug.Log("Enemy Hit!");
+            if (collider.gameObject.CompareTag("Enemy"))
+            {
+                damageable.Damage(m_Lumalindaw.characterData.dmgValue);
+                Debug.Log(collider.gameObject.name);
+                m_Lumalindaw.isAttackFinished = false;
+            }
         }
+
     }
 
     private void FindTarget()

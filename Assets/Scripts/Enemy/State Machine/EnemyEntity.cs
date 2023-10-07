@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyEntity : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class EnemyEntity : MonoBehaviour
     public EnemiesData enemiesData;
     public GameObject currentTarget;
     public Animator anim;
+    public Slider healthBar;
 
     //TargetWaypoint
     public Transform target;
@@ -21,16 +23,12 @@ public class EnemyEntity : MonoBehaviour
     public int pointIndex = 0;
     #endregion
 
-    #region Transform
-
-
-
-    #endregion
-
-    float detectionRadius = 2f;
+    public bool enemyAttackFinished;
 
     public float currentHealth;
     public float baseArmor { get; private set; }
+
+
 
     public virtual void Awake()
     {
@@ -50,6 +48,14 @@ public class EnemyEntity : MonoBehaviour
     {
         anim.Play(animBoolName);
     }
+
+    public virtual void HealthBarTracker()
+    {
+        float normalizedHealth = currentHealth / enemiesData.maxHp;
+        healthBar.value = normalizedHealth;
+    }
+
+
 
 
 }

@@ -10,6 +10,9 @@ TagManager:
   - MeleePlatform
   - TowerHolder
   - RangePlatform
+  - NewCam
+  - Body
+  - Weapon
   layers:
   - Default
   - TransparentFX
@@ -21,8 +24,8 @@ TagManager:
   - PostProcessing
   - MeleePlatform
   - RangePlatform
-  - 
-  - 
+  - Weapon
+  - Enemy
   - 
   - 
   - 
