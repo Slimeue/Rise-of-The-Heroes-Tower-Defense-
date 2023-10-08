@@ -40,6 +40,7 @@ public class M_Manggob : MeleeCharacterEntity, IDamageable
     {
         characterStateMachine.Initialize(idleState);
         isDead = false;
+        ground = towerManager.canvasEnabler.gameObject;
     }
 
 
@@ -88,6 +89,8 @@ public class M_Manggob : MeleeCharacterEntity, IDamageable
 
     public void DestroyGameObject()
     {
+        CanvasEnabler canvasEnabler = ground.GetComponent<CanvasEnabler>();
+        canvasEnabler.isPlaceable = true;
         Destroy(gameObject);
     }
 

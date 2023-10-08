@@ -16,7 +16,7 @@ public class TowerManager : MonoBehaviour
     //Platforms
     GameObject[] _platFormsReference;
     string _platformTag;
-    CanvasEnabler canvasEnabler;
+    public CanvasEnabler canvasEnabler;
     //References
 
     PlayerInput playerInput;
@@ -175,6 +175,7 @@ public class TowerManager : MonoBehaviour
 
         if (currentState == State.HoldPlacing)
         {
+            canvasEnabler.isPlaceable = false;
             DisablePlatformCanvas();
             UnsubscribeAction();
             TowerHolderDisabler();//TODO: Make towerHolder disappear
@@ -204,19 +205,25 @@ public class TowerManager : MonoBehaviour
         {
             _position = _mainCam.ScreenPointToRay(Touchscreen.current.position.ReadValue());
             rayCastHit = Physics.Raycast(_position, out RaycastHit raycastHit, maxDistance = Mathf.Infinity, _layerPlatform);
+
+
+
             if (rayCastHit && _isPlacing)
             {
+                canvasEnabler = raycastHit.collider.GetComponent<CanvasEnabler>();
+                if (canvasEnabler.isPlaceable)
+                {
+                    _instPreviewObj.transform.position = raycastHit.transform.position;
+                    Debug.DrawRay(_position.origin, _position.direction * 20, Color.red);
+                    Debug.Log("Touch Started");
+                    _CharConfirmPlacementCanvas.SetActive(true);
+                    _CharConfirmPlacementCanvas.transform.position = _instPreviewObj.transform.position;
+                    float offset = 2f;
+                    Vector3 newPosition = _CharConfirmPlacementCanvas.transform.position;
+                    newPosition.y += offset;
+                    _CharConfirmPlacementCanvas.transform.position = newPosition;
+                }
 
-
-                _instPreviewObj.transform.position = raycastHit.transform.position;
-                Debug.DrawRay(_position.origin, _position.direction * 20, Color.red);
-                Debug.Log("Touch Started");
-                _CharConfirmPlacementCanvas.SetActive(true);
-                _CharConfirmPlacementCanvas.transform.position = _instPreviewObj.transform.position;
-                float offset = 2f;
-                Vector3 newPosition = _CharConfirmPlacementCanvas.transform.position;
-                newPosition.y += offset;
-                _CharConfirmPlacementCanvas.transform.position = newPosition;
             }
         }
 
@@ -269,8 +276,8 @@ public class TowerManager : MonoBehaviour
     {
         foreach (GameObject platform in _platFormsReference)
         {
-            canvasEnabler = platform.GetComponent<CanvasEnabler>();
-            canvasEnabler.EnableCanvas();
+            CanvasEnabler enabler = platform.GetComponent<CanvasEnabler>();
+            enabler.EnableCanvas();
         }
     }
 
@@ -278,10 +285,13 @@ public class TowerManager : MonoBehaviour
     {
         foreach (GameObject platform in _platFormsReference)
         {
-            canvasEnabler = platform.GetComponent<CanvasEnabler>();
-            canvasEnabler.DisableCanvas();
+            CanvasEnabler enabler = platform.GetComponent<CanvasEnabler>();
+            enabler.DisableCanvas();
         }
     }
+
+
+
     #endregion
 
     #region timeScale

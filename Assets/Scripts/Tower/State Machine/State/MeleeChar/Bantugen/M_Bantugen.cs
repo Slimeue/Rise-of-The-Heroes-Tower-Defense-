@@ -33,6 +33,7 @@ public class M_Bantugen : MeleeCharacterEntity, IDamageable
     {
         characterStateMachine.Initialize(idleState);
         isDead = false;
+        ground = towerManager.canvasEnabler.gameObject;
     }
 
     // Update is called once per frame
@@ -88,7 +89,10 @@ public class M_Bantugen : MeleeCharacterEntity, IDamageable
 
     public void DestroyGameObject()
     {
+        CanvasEnabler canvasEnabler = ground.GetComponent<CanvasEnabler>();
+        canvasEnabler.isPlaceable = true;
         Destroy(gameObject);
+
     }
 
     private void RefreshChar()
@@ -115,6 +119,7 @@ public class M_Bantugen : MeleeCharacterEntity, IDamageable
                 _towerTesting._placed = false;
             }
         }
+
     }
 
     #endregion

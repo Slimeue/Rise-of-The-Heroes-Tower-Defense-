@@ -10,6 +10,17 @@ public class CanvasEnabler : MonoBehaviour
     [SerializeField] Color availColor;
     public bool isPlaceable;
 
+    private void Awake()
+    {
+        isPlaceable = true;
+    }
+
+    private void Update()
+    {
+        NotAvailColor();
+        AvailColor();
+    }
+
     public void EnableCanvas()
     {
         _platformHighlight.SetActive(true);
@@ -17,11 +28,18 @@ public class CanvasEnabler : MonoBehaviour
 
     public void NotAvailColor()
     {
-        RawImage color = _platformHighlight.GetComponentInChildren<RawImage>();
-        color.color = notAvailColor;
+        if (!isPlaceable)
+        {
+            RawImage color = _platformHighlight.GetComponentInChildren<RawImage>();
+            color.color = notAvailColor;
+        }
     }
     public void AvailColor()
     {
+        if (!isPlaceable)
+        {
+            return;
+        }
         RawImage color = _platformHighlight.GetComponentInChildren<RawImage>();
         color.color = availColor;
     }

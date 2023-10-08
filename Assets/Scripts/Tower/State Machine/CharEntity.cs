@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class CharEntity : MonoBehaviour
 {
 
+    [SerializeField] public GameObject ground;
+    [SerializeField] public TowerManager towerManager;
     public CharacterStateMachine characterStateMachine;
     public CharacterBaseState characterBaseState;
     public AnimationHandler animationHandler;
@@ -39,7 +41,7 @@ public class CharEntity : MonoBehaviour
         currentMana = characterData.mana;
         baseArmor = characterData.baseArmor;
         _rotationSpeed = characterData.rotationSpeed;
-
+        towerManager = FindObjectOfType<TowerManager>();
         characterStateMachine = new CharacterStateMachine();
     }
 

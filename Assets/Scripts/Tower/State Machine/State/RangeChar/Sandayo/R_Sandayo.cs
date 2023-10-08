@@ -43,6 +43,7 @@ public class R_Sandayo : RangeCharacterEntity, IDamageable
     {
         characterStateMachine.Initialize(idleState);
         isDead = false;
+        ground = towerManager.canvasEnabler.gameObject;
     }
 
     private void OnDrawGizmos()
@@ -89,6 +90,8 @@ public class R_Sandayo : RangeCharacterEntity, IDamageable
 
     public void DestroyGameObject()
     {
+        CanvasEnabler canvasEnabler = ground.GetComponent<CanvasEnabler>();
+        canvasEnabler.isPlaceable = true;
         Destroy(gameObject);
     }
 

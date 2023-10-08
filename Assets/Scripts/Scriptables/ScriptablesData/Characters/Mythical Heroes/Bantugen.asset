@@ -30,7 +30,7 @@ MonoBehaviour:
   baseArmor: 500
   towerCooldown: 17
   towerCost: 11
-  range: 10
+  range: 13
   projectileSpeed: 0
   attackSpeed: 0
   rotationSpeed: 10
