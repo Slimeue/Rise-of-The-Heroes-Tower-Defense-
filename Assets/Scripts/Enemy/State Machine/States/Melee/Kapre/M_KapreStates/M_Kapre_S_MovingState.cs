@@ -52,11 +52,6 @@ public class M_Kapre_S_MovingState : BaseState
     #endregion
 
 
-
-
-
-
-
     #region METHODS
 
     void ToDeathState()

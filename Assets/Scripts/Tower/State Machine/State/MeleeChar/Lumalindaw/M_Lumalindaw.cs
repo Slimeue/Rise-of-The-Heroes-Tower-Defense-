@@ -41,6 +41,7 @@ public class M_Lumalindaw : MeleeCharacterEntity, IDamageable
     {
         characterStateMachine.Initialize(idleState);
         isDead = false;
+        ground = towerManager.canvasEnabler.gameObject;
     }
 
 
@@ -89,6 +90,8 @@ public class M_Lumalindaw : MeleeCharacterEntity, IDamageable
 
     public void DestroyGameObject()
     {
+        CanvasEnabler canvasEnabler = ground.GetComponent<CanvasEnabler>();
+        canvasEnabler.isPlaceable = true;
         Destroy(gameObject);
     }
 

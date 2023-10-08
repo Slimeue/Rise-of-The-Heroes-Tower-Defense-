@@ -22,7 +22,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField] Slider slider;
 
     public int currentWaveIndex = 1;
-    public int maxWave { get; private set; }
+    public int maxWave;
     float nextWaveTime;
     bool isSpawning;
 

@@ -16,6 +16,8 @@ public class MeleeCharacterEntity : CharEntity
 
     [SerializeField] public TowerHolder[] towerTesting;
 
+
+
     public bool isDead;
 
 
@@ -24,9 +26,9 @@ public class MeleeCharacterEntity : CharEntity
         base.Awake();
         towerTesting = FindObjectsOfType<TowerHolder>();
 
+
     }
 
-    private void Start() { }
 
     public override void Update()
     {

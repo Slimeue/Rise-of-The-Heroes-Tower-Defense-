@@ -42,7 +42,6 @@ public class Waypoints : MonoBehaviour
             Gizmos.DrawLine(transform.GetChild(i).position, transform.GetChild(i + 1).position);
         }
 
-
     }
 
 
