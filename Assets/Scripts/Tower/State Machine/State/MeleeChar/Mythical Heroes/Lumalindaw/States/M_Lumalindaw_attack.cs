@@ -54,6 +54,7 @@ public class M_Lumalindaw_attack : CharacterBaseState
     public override void Exit()
     {
         base.Exit();
+
     }
 
 

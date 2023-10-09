@@ -25,10 +25,7 @@ public class MeleeCharacterEntity : CharEntity
     {
         base.Awake();
         towerTesting = FindObjectsOfType<TowerHolder>();
-
-
     }
-
 
     public override void Update()
     {

@@ -33,8 +33,13 @@ public class Projectile : MonoBehaviour
     void HitTarget()
     {
         Debug.Log("Hit!");
-        IDamageable damageable = target.GetComponent<IDamageable>();
-        damageable.Damage(dmgValue);
+        IDamageable damageable = target.GetComponentInParent<IDamageable>();
+
+        if (damageable != null)
+        {
+            damageable.Damage(dmgValue);
+            Destroy(gameObject);
+        }
         Destroy(gameObject);
 
     }

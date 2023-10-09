@@ -59,6 +59,11 @@ public class M_Berberoka_S_AttackState : BaseState
     {
         IDamageable tower = collider.GetComponentInParent<IDamageable>();
 
+        if (!m_Berberoka.enemyAttackFinished)
+        {
+            return;
+        }
+
         if (collider.gameObject.CompareTag("Body"))
         {
             Debug.Log("Hit!!");

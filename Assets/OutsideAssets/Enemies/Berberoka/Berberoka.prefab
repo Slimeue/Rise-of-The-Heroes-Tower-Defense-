@@ -298,7 +298,6 @@ GameObject:
   - component: {fileID: 2661973230325799174}
   - component: {fileID: -4434814421336479059}
   - component: {fileID: 541487517284705476}
-  - component: {fileID: -767392073552691441}
   m_Layer: 11
   m_Name: Berberoka
   m_TagString: Enemy
@@ -321,6 +320,7 @@ Transform:
   - {fileID: 7466800549221524753}
   - {fileID: 4456273946622595294}
   - {fileID: 8082806746284233676}
+  - {fileID: 3156584545599804966}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -409,20 +409,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.327489, y: 7.178401, z: 2.0949066}
   m_Center: {x: -0.07820749, y: 3.2456157, z: 0.026069164}
---- !u!114 &-767392073552691441
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1181177267751087925}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a665edc2cd9b5d84b8ec6f2cf78d62d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isGroundType: 1
-  isAerialType: 0
 --- !u!1 &1588129770462682091
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,6 +635,52 @@ Transform:
   m_Father: {fileID: 3010173145094184330}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -27.206188, y: 9.934093, z: 9.585254}
+--- !u!1 &2584629349923024049
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3156584545599804966}
+  - component: {fileID: 4845624179629646893}
+  m_Layer: 11
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3156584545599804966
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2584629349923024049}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 3.89, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1958981017127728527}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4845624179629646893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2584629349923024049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a665edc2cd9b5d84b8ec6f2cf78d62d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGroundType: 1
+  isAerialType: 0
 --- !u!1 &3117752750939650512
 GameObject:
   m_ObjectHideFlags: 0
@@ -934,7 +966,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7249557090078197704}
-  - component: {fileID: 3485277063290547172}
   m_Layer: 11
   m_Name: Hand.L
   m_TagString: Untagged
@@ -959,19 +990,6 @@ Transform:
   m_Father: {fileID: 4939644171123254078}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -1.7597033, y: -5.500494, z: -2.4899647}
---- !u!65 &3485277063290547172
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5817597339071424565}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1.5704643}
-  m_Center: {x: 0.000000032045456, y: -0.000000055333143, z: 0.2852304}
 --- !u!1 &5898010007159240962
 GameObject:
   m_ObjectHideFlags: 0
