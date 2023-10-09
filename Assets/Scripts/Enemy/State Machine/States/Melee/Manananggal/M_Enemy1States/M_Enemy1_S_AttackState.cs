@@ -48,12 +48,14 @@ public class M_Enemy1_S_AttackState : BaseState
     public override void OnTriggerEnter(StateMachine stateMachine, Collider collider)
     {
         base.OnTriggerEnter(stateMachine, collider);
+        DamageListener(collider);
     }
 
     public override void OnTriggerExit(StateMachine stateMachine, Collider collider)
     {
         base.OnTriggerExit(stateMachine, collider);
-        DamageListener(collider);
+        m_Enemy1SM.enemyAttackFinished = true;
+
     }
 
     #endregion
@@ -71,6 +73,12 @@ public class M_Enemy1_S_AttackState : BaseState
     private void DamageListener(Collider collider)
     {
         IDamageable tower = collider.GetComponentInParent<IDamageable>();
+
+        if (!m_Enemy1SM.enemyAttackFinished)
+        {
+            return;
+        }
+
         if (collider.gameObject.CompareTag("Body"))
         {
             tower.Damage(m_Enemy1SM.enemiesData.dmgValue);

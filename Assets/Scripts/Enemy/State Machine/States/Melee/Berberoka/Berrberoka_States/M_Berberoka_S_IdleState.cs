@@ -21,7 +21,6 @@ public class M_Berberoka_S_IdleState : BaseState
     {
         base.Enter(stateMachine);
         idleTime = 5;
-        Debug.Log("Hello From Kapre idle state");
         m_Berberoka.PlayAnim(animBoolName);
     }
 

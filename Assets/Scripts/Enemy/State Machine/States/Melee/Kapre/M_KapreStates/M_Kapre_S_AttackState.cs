@@ -66,6 +66,11 @@ public class M_Kapre_S_AttackState : BaseState
     {
         IDamageable tower = collider.GetComponentInParent<IDamageable>();
 
+        if (!m_Kapre.enemyAttackFinished)
+        {
+            return;
+        }
+
         if (collider.gameObject.CompareTag("Body"))
         {
             Debug.Log("Hit!!");

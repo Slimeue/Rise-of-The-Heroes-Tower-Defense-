@@ -24,7 +24,7 @@ public class WaveManager : MonoBehaviour
     public int currentWaveIndex = 1;
     public int maxWave;
     float nextWaveTime;
-    bool isSpawning;
+    public bool isSpawning;
 
     WaveData waveData;
 
@@ -52,6 +52,7 @@ public class WaveManager : MonoBehaviour
         {
             //TODO: WaveCompletion() 
         }
+        inActives = GameObject.FindGameObjectsWithTag("Enemy");
 
     }
 
@@ -62,7 +63,7 @@ public class WaveManager : MonoBehaviour
             StartNextWave();
             Debug.Log("Current Wave: " + currentWaveIndex);
         }
-        inActives = GameObject.FindGameObjectsWithTag("Enemy");
+
     }
 
     void StartNextWave()
