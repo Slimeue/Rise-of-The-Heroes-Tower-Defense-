@@ -22,9 +22,9 @@ public class WaveManager : MonoBehaviour
     [SerializeField] Slider slider;
 
     public int currentWaveIndex = 1;
-    public int maxWave { get; private set; }
+    public int maxWave;
     float nextWaveTime;
-    bool isSpawning;
+    public bool isSpawning;
 
     WaveData waveData;
 
@@ -52,6 +52,7 @@ public class WaveManager : MonoBehaviour
         {
             //TODO: WaveCompletion() 
         }
+        inActives = GameObject.FindGameObjectsWithTag("Enemy");
 
     }
 
@@ -62,7 +63,7 @@ public class WaveManager : MonoBehaviour
             StartNextWave();
             Debug.Log("Current Wave: " + currentWaveIndex);
         }
-        inActives = GameObject.FindGameObjectsWithTag("Enemy");
+
     }
 
     void StartNextWave()
@@ -98,7 +99,7 @@ public class WaveManager : MonoBehaviour
 
                 waveData = objectPooler._waveData[i];
 
-                for (int x = 0; x < waveData.enemyCount * 2; x++)
+                for (int x = 0; x < waveData.enemyCount * waveData.enemies.Length; x++)
                 {
                     GameObject enemy = objectPooler.GetPooledEnemy(i);
                     float offset = 5;

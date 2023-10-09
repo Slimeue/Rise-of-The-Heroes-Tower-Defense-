@@ -8,6 +8,7 @@ public class CharacterBaseState
     protected string animBoolName;
     protected bool isAnimationFinished;
 
+
     public CharacterBaseState(string animBoolName, CharacterStateMachine characterStateMachine)
     {
         this.animBoolName = animBoolName;
@@ -28,7 +29,8 @@ public class CharacterBaseState
     }
     public virtual void LogicUpdate() { DoChecks(); }
     public virtual void Exit() { }
-    public virtual void OnTriggerEnter() { }
+    public virtual void OnTriggerEnter(Collider collider) { }
+    public virtual void OnTriggerExit(Collider collider) { }
     public virtual void DoChecks() { }
 
 }

@@ -11,6 +11,7 @@ public class M_Enemy1_S_AttackState : BaseState
     {
         this.m_Enemy1SM = m_Enemy1SM;
         this.animBoolName = animBoolName;
+
     }
 
 
@@ -18,8 +19,9 @@ public class M_Enemy1_S_AttackState : BaseState
     public override void Enter(StateMachine stateMachine)
     {
         base.Enter(stateMachine);
-        Debug.Log("Hello From AttackState");
+        Debug.Log("Hello From Mananaggal AttackState");
         m_Enemy1SM.PlayAnim(animBoolName);
+
     }
 
     public override void DoChecks()
@@ -40,6 +42,7 @@ public class M_Enemy1_S_AttackState : BaseState
     {
         base.LogicUpdate(stateMachine);
         CheckFront(stateMachine);
+        ToDeathState();
     }
 
     public override void OnTriggerEnter(StateMachine stateMachine, Collider collider)
@@ -47,17 +50,37 @@ public class M_Enemy1_S_AttackState : BaseState
         base.OnTriggerEnter(stateMachine, collider);
         DamageListener(collider);
     }
+
+    public override void OnTriggerExit(StateMachine stateMachine, Collider collider)
+    {
+        base.OnTriggerExit(stateMachine, collider);
+        m_Enemy1SM.enemyAttackFinished = true;
+
+    }
+
     #endregion
 
     #region METHODS
 
+    void ToDeathState()
+    {
+        if (m_Enemy1SM.currentHealth <= 0f)
+        {
+            m_Enemy1SM.stateMachine.ChangeState(m_Enemy1SM.deathState);
+        }
+    }
+
     private void DamageListener(Collider collider)
     {
-        IDamageable tower = collider.GetComponent<IDamageable>();
+        IDamageable tower = collider.GetComponentInParent<IDamageable>();
 
-        if (tower != null)
+        if (!m_Enemy1SM.enemyAttackFinished)
         {
-            Debug.Log("Hit!!");
+            return;
+        }
+
+        if (collider.gameObject.CompareTag("Body"))
+        {
             tower.Damage(m_Enemy1SM.enemiesData.dmgValue);
         }
     }

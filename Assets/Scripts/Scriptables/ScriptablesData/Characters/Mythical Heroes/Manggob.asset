@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e454853e7f0ec346bb1144e52ab7ab1, type: 3}
+  m_Name: Manggob
+  m_EditorClassIdentifier: 
+  charArtWork: {fileID: 21300000, guid: 6bbaf63188247e345a4162ebd0260281, type: 3}
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  _platformTag: MeleePlatform
+  previewChar: {fileID: 9120724745420781136, guid: 24e74c2c8b4340b46876c14970c28562,
+    type: 3}
+  charObject: {fileID: 9120724745420781136, guid: 93425f7688e7be948aee6ec3502a0555,
+    type: 3}
+  projectile: {fileID: 0}
+  charName: Manggob
+  dmgValue: 460
+  maxHp: 3400
+  mana: 400
+  baseArmor: 320
+  towerCooldown: 15
+  towerCost: 13
+  range: 15
+  projectileSpeed: 0
+  attackSpeed: 0
+  rotationSpeed: 5

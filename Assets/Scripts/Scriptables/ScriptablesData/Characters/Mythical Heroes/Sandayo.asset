@@ -12,14 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e454853e7f0ec346bb1144e52ab7ab1, type: 3}
   m_Name: Sandayo
   m_EditorClassIdentifier: 
+  charArtWork: {fileID: 21300000, guid: 4ac0f4a9ae8823440886c60e87e45b89, type: 3}
   _layerMask:
     serializedVersion: 2
-    m_Bits: 256
-  _platformTag: MeleePlatform
-  dmgValue: 260
+    m_Bits: 512
+  _platformTag: RangePlatform
+  previewChar: {fileID: 8008844980106868492, guid: d1a7b87c388ed124ba9452cf293c658c,
+    type: 3}
+  charObject: {fileID: 8008844980106868492, guid: 563be07e06e04b141a9952a41e69ab7d,
+    type: 3}
+  projectile: {fileID: 8716359784765577863, guid: 87232b88b8743a845a5a9c8351ed5ca3,
+    type: 3}
+  charName: Sandayo
+  dmgValue: 500
   maxHp: 1400
   mana: 400
   baseArmor: 265
   towerCooldown: 10
   towerCost: 10
-  range: 20
+  range: 50
+  projectileSpeed: 50
+  attackSpeed: 0
+  rotationSpeed: 10

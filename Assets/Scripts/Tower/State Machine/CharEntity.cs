@@ -1,11 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharEntity : MonoBehaviour
 {
 
+    [SerializeField] public GameObject ground;
+    [SerializeField] public TowerManager towerManager;
     public CharacterStateMachine characterStateMachine;
+    public CharacterBaseState characterBaseState;
+    public AnimationHandler animationHandler;
+    public Slider healthBar;
 
     //Components
     [Header("Components")]
@@ -22,7 +28,9 @@ public class CharEntity : MonoBehaviour
     [HideInInspector]
     public float radius;
 
+    [HideInInspector]
     public float _rotationSpeed;
+    public bool isAttackFinished;
 
 
 
@@ -32,8 +40,8 @@ public class CharEntity : MonoBehaviour
         currentHealth = characterData.maxHp;
         currentMana = characterData.mana;
         baseArmor = characterData.baseArmor;
-
-
+        _rotationSpeed = characterData.rotationSpeed;
+        towerManager = FindObjectOfType<TowerManager>();
         characterStateMachine = new CharacterStateMachine();
     }
 
@@ -43,9 +51,15 @@ public class CharEntity : MonoBehaviour
         characterStateMachine.currentState.LogicUpdate();
     }
 
-    public virtual void FixedUpdate()
+    public virtual void PlayAnim(string animBoolName)
     {
+        anim.Play(animBoolName);
+    }
 
+    public virtual void HealthBarTracker()
+    {
+        float normalizedHealth = currentHealth / characterData.maxHp;
+        healthBar.value = normalizedHealth;
     }
 
 

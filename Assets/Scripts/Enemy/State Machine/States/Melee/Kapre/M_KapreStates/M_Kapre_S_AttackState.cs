@@ -26,6 +26,7 @@ public class M_Kapre_S_AttackState : BaseState
     {
         base.LogicUpdate(stateMachine);
         CheckFront();
+        ToDeathState();
     }
 
 
@@ -40,6 +41,12 @@ public class M_Kapre_S_AttackState : BaseState
     {
         base.OnTriggerEnter(stateMachine, collider);
         DamageListener(collider);
+    }
+
+    public override void OnTriggerExit(StateMachine stateMachine, Collider collider)
+    {
+        base.OnTriggerExit(stateMachine, collider);
+        m_Kapre.enemyAttackFinished = true;
     }
 
 
@@ -57,12 +64,27 @@ public class M_Kapre_S_AttackState : BaseState
 
     private void DamageListener(Collider collider)
     {
-        IDamageable tower = collider.GetComponent<IDamageable>();
+        IDamageable tower = collider.GetComponentInParent<IDamageable>();
 
-        if (tower != null)
+        if (!m_Kapre.enemyAttackFinished)
+        {
+            return;
+        }
+
+        if (collider.gameObject.CompareTag("Body"))
         {
             Debug.Log("Hit!!");
             tower.Damage(m_Kapre.enemiesData.dmgValue);
+            Debug.Log(collider.name);
+            m_Kapre.enemyAttackFinished = false;
+        }
+    }
+
+    void ToDeathState()
+    {
+        if (m_Kapre.currentHealth <= 0f)
+        {
+            m_Kapre.stateMachine.ChangeState(m_Kapre.deathState);
         }
     }
 
