@@ -18,6 +18,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private GameObject failedScreen;
 
     float starsCounter;
+    float empytStarCounter;
     float maxStar = 3;
 
     private void Awake()
@@ -58,9 +59,15 @@ public class LevelManager : MonoBehaviour
             if (healthPercentage <= 25f)
             {
                 starsCounter = 1f;
+                empytStarCounter = 2f;
                 for (int i = 0; i < starsCounter; i++)
                 {
                     starsManager.filledStar[i].SetActive(true);
+                }
+
+                for (int i = 0; i < empytStarCounter; i++)
+                {
+                    starsManager.empytStar[i].SetActive(true);
                 }
                 //1filled star
                 //2empty star
@@ -71,10 +78,17 @@ public class LevelManager : MonoBehaviour
             else if (healthPercentage < 100f)
             {
                 starsCounter = 2f;
+                empytStarCounter = 1f;
                 for (int i = 0; i < starsCounter; i++)
                 {
                     starsManager.filledStar[i].SetActive(true);
                 }
+
+                for (int i = 0; i < empytStarCounter; i++)
+                {
+                    starsManager.empytStar[i].SetActive(true);
+                }
+
                 Debug.Log("2Star");
                 return;
             }
