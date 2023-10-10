@@ -11,12 +11,14 @@ public class M_Valenzuela : MeleeCharacterEntity, IDamageable
     public M_Valenzuela_S_idleState idleState { get; private set; }
     public M_Valenzuela_S_skillState skillState { get; private set; }
     public M_Valenzuela_S_recoveryState recoveryState { get; private set; }
+    public M_Valenzuela_S_deathState deathState { get; private set; }
 
 
     const string HERO_IDLE = "idle";
     const string HERO_ATTACK = "attack";
     const string HERO_RECOVERY = "recovery";
     const string HERO_SKILL = "skill";
+    const string HERO_DEATH = "death";
 
 
     public override void Awake()
@@ -27,6 +29,7 @@ public class M_Valenzuela : MeleeCharacterEntity, IDamageable
         attackState = new M_Valenzuela_S_attackState(characterStateMachine, HERO_ATTACK, this, this);
         skillState = new M_Valenzuela_S_skillState(characterStateMachine, HERO_SKILL, this, this);
         recoveryState = new M_Valenzuela_S_recoveryState(characterStateMachine, HERO_RECOVERY, this, this);
+        deathState = new M_Valenzuela_S_deathState(characterStateMachine, HERO_DEATH, this, this);
         anim = GetComponent<Animator>();
         animationHandler = GetComponent<AnimationHandler>();
 
