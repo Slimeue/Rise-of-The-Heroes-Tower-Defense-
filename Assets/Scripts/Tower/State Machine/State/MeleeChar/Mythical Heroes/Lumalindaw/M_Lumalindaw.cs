@@ -84,7 +84,6 @@ public class M_Lumalindaw : MeleeCharacterEntity, IDamageable
         float totalDamage;
 
         totalDamage = damageAmount * (100 / (100 + baseArmor));
-        Debug.Log(totalDamage);
         currentHealth -= totalDamage;
     }
 

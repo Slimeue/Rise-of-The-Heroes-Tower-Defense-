@@ -56,6 +56,7 @@ public class R_Sandayo : RangeCharacterEntity, IDamageable
     {
         animationHandler.OnDeathFinish -= DestroyGameObject;
         animationHandler.OnDeathFinish -= TowerHolderEnabler;
+        rangeCharAnimationHandler.OnRangeStartAttack -= Fire;
     }
 
     #region Methods
@@ -84,7 +85,6 @@ public class R_Sandayo : RangeCharacterEntity, IDamageable
         float totalDamage;
 
         totalDamage = damageAmount * (100 / (100 + baseArmor));
-        Debug.Log(totalDamage);
         currentHealth -= totalDamage;
     }
 
@@ -113,7 +113,6 @@ public class R_Sandayo : RangeCharacterEntity, IDamageable
         {
             if (characterData == _towerTesting.characterData)
             {
-                Debug.Log("TowerEnabling");
                 _towerTesting.gameObject.SetActive(true);
                 _towerTesting.isDead = true;
                 _towerTesting._placed = false;
