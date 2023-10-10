@@ -112,7 +112,6 @@ public class M_Lumalindaw : MeleeCharacterEntity, IDamageable
         {
             if (characterData == _towerTesting.characterData)
             {
-                Debug.Log("TowerEnabling");
                 _towerTesting.gameObject.SetActive(true);
                 _towerTesting.isDead = true;
                 _towerTesting._placed = false;
