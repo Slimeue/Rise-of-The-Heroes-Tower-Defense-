@@ -53,7 +53,7 @@ ExportedObj/
 *.mdb.meta
 *.exr.meta
 *.exr
-*.LightingData.asset
+*LightingData.asset
 
 
 
