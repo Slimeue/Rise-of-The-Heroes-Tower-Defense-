@@ -19,7 +19,6 @@ public class R_Sandayo_death : CharacterBaseState
     public override void Enter()
     {
         base.Enter();
-        Debug.Log("Hello from Sandayo Death State");
         r_Sandayo.animationHandler.OnDeathFinish += r_Sandayo.DestroyGameObject;
         r_Sandayo.animationHandler.OnDeathFinish += r_Sandayo.TowerHolderEnabler;
         r_Sandayo.isDead = true;

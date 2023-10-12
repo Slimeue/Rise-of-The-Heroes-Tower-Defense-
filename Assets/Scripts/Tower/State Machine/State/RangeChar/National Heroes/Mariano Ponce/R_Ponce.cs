@@ -85,6 +85,7 @@ public class R_Ponce : RangeCharacterEntity, IDamageable
 
         if (characterStateMachine.currentState == recoveryState || characterStateMachine.currentState == deathState)
         {
+            baseManager.ShakeEffect();
             baseManager.currentBaseHp -= damageAmount;
             return;
         }
