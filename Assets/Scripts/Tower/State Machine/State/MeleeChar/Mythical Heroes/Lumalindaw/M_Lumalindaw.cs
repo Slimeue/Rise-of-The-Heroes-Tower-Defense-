@@ -84,7 +84,6 @@ public class M_Lumalindaw : MeleeCharacterEntity, IDamageable
         float totalDamage;
 
         totalDamage = damageAmount * (100 / (100 + baseArmor));
-        Debug.Log(totalDamage);
         currentHealth -= totalDamage;
     }
 
@@ -113,7 +112,6 @@ public class M_Lumalindaw : MeleeCharacterEntity, IDamageable
         {
             if (characterData == _towerTesting.characterData)
             {
-                Debug.Log("TowerEnabling");
                 _towerTesting.gameObject.SetActive(true);
                 _towerTesting.isDead = true;
                 _towerTesting._placed = false;

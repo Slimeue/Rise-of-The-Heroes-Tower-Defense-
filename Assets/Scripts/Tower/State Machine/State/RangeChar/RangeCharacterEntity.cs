@@ -48,13 +48,12 @@ public class RangeCharacterEntity : CharEntity
 
     private void FindClosestTarget()
     {
+
         EnemyType[] enemies = FindObjectsOfType<EnemyType>();
-
         Transform closestTarget = null;
-
         bool _anyEnemyInRange = false;
-
         float maxDis = Mathf.Infinity;
+
         foreach (EnemyType enemy in enemies)
         {
 

@@ -32,7 +32,6 @@ public class Projectile : MonoBehaviour
 
     void HitTarget()
     {
-        Debug.Log("Hit!");
         IDamageable damageable = target.GetComponentInParent<IDamageable>();
 
         if (damageable != null)
