@@ -8,6 +8,7 @@ public class SpecialHeroSpawn : MonoBehaviour
 
     private void Awake()
     {
+        characterData = SquadManager.instance.selectedSpecialHero;
         Instantiate(characterData.charObject, transform.position, Quaternion.identity);
     }
 

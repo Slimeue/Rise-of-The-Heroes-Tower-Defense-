@@ -9,17 +9,28 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] GameObject squadSelection;
     [SerializeField] GameObject heroeStatusPanel;
 
+    public static CanvasManager instance;
+
     public CharacterData selectedHero;
 
     private void Awake()
     {
+
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
         if (squadCanvas != null)
         {
             squadCanvas.transform.localScale = Vector2.zero;
             selectedSquadPanel.transform.localScale = Vector2.zero;
             squadSelection.transform.localScale = Vector2.zero;
             heroeStatusPanel.transform.localScale = Vector2.zero;
-
         }
     }
 
@@ -48,6 +59,13 @@ public class CanvasManager : MonoBehaviour
         squadSelection.transform.localScale = Vector3.zero;
         heroeStatusPanel.transform.localScale = Vector3.one;
     }
+
+    public void CloseScreenHeroeStatus(GameObject gameObject)
+    {
+        gameObject.transform.localScale = Vector3.zero;
+        selectedSquadPanel.transform.localScale = Vector3.one;
+    }
+
     #endregion end of openingLogic
 
 

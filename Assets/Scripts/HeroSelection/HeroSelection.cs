@@ -37,9 +37,13 @@ public class HeroSelection : MonoBehaviour
             health.text = selectedCharacter.maxHp.ToString();
             attack.text = selectedCharacter.dmgValue.ToString();
             defense.text = selectedCharacter.baseArmor.ToString();
-
-
         }
+    }
+
+    public void EquipHero()
+    {
+        CanvasManager.instance.CloseScreenHeroeStatus(gameObject);
+        SquadManager.instance.GetSpecialHeroCharacterData(selectedCharacter);
     }
 
 
