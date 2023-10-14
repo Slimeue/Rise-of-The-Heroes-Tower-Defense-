@@ -8,10 +8,13 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] GameObject selectedSquadPanel;
     [SerializeField] GameObject squadSelection;
     [SerializeField] GameObject heroeStatusPanel;
+    [SerializeField] GameObject mythicalHeroesStatusPanel;
 
     public static CanvasManager instance;
 
     public CharacterData selectedHero;
+    public CharacterData selectedMythicalHero;
+    public CharacterData selectedHeroForStatus;
 
     private void Awake()
     {
@@ -31,6 +34,7 @@ public class CanvasManager : MonoBehaviour
             selectedSquadPanel.transform.localScale = Vector2.zero;
             squadSelection.transform.localScale = Vector2.zero;
             heroeStatusPanel.transform.localScale = Vector2.zero;
+            mythicalHeroesStatusPanel.transform.localScale = Vector2.zero;
         }
     }
 
@@ -56,8 +60,17 @@ public class CanvasManager : MonoBehaviour
     public void HeroeStatusButton(CharacterData characterData)
     {
         selectedHero = characterData;
+        selectedHeroForStatus = characterData;
         squadSelection.transform.localScale = Vector3.zero;
         heroeStatusPanel.transform.localScale = Vector3.one;
+    }
+
+    public void MythicalHeroesStatusButton(CharacterData characterData)
+    {
+        selectedMythicalHero = characterData;
+        selectedHeroForStatus = characterData;
+        selectedSquadPanel.transform.localScale = Vector3.zero;
+        mythicalHeroesStatusPanel.transform.localScale = Vector3.one;
     }
 
     public void CloseScreenHeroeStatus(GameObject gameObject)
@@ -87,6 +100,12 @@ public class CanvasManager : MonoBehaviour
     {
         squadSelection.transform.localScale = Vector3.one;
         heroeStatusPanel.transform.localScale = Vector2.zero;
+    }
+
+    public void CloseMythicalHeroesStatus()
+    {
+        selectedSquadPanel.transform.localScale = Vector3.one;
+        mythicalHeroesStatusPanel.transform.localScale = Vector2.zero;
     }
 
     #endregion

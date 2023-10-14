@@ -14,7 +14,6 @@ public class SquadManager : MonoBehaviour
     private void Awake()
     {
         CreateSquadManager();
-
     }
 
     private void CreateSquadManager()
@@ -39,11 +38,18 @@ public class SquadManager : MonoBehaviour
         }
         else return;
 
+
+
     }
 
     public CharacterData GetSpecialHeroCharacterData(CharacterData characterData)
     {
         selectedSpecialHero = characterData;
+        return characterData;
+    }
+
+    public CharacterData[] GetTowersCharacterData(CharacterData[] characterData)
+    {
         return characterData;
     }
 

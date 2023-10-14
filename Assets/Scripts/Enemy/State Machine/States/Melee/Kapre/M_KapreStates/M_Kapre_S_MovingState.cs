@@ -18,7 +18,7 @@ public class M_Kapre_S_MovingState : BaseState
     public override void Enter(StateMachine stateMachine)
     {
         base.Enter(stateMachine);
-        movingTime = 5f;
+        movingTime = Random.Range(1f, 5f);
         Debug.Log("Hello From Kapre moving state");
         m_Kapre.PlayAnim(animBoolName);
     }

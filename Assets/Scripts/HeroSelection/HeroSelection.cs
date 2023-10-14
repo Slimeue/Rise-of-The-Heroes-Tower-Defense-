@@ -8,6 +8,7 @@ public class HeroSelection : MonoBehaviour
 {
 
     public CharacterData selectedCharacter;
+    public CharacterData selectedCharacterForStatus;
     public GameObject heroeStatus;
 
     [SerializeField] Image charArtWork;
@@ -30,13 +31,13 @@ public class HeroSelection : MonoBehaviour
         if (canvasManager.selectedHero != null)
         {
             selectedCharacter = canvasManager.selectedHero;
-
-            charArtWork.sprite = selectedCharacter.charArtWork;
-            charName.text = selectedCharacter.charName;
+            selectedCharacterForStatus = canvasManager.selectedHeroForStatus;
+            charArtWork.sprite = selectedCharacterForStatus.charArtWork;
+            charName.text = selectedCharacterForStatus.charName;
             //TODO Level
-            health.text = selectedCharacter.maxHp.ToString();
-            attack.text = selectedCharacter.dmgValue.ToString();
-            defense.text = selectedCharacter.baseArmor.ToString();
+            health.text = selectedCharacterForStatus.maxHp.ToString();
+            attack.text = selectedCharacterForStatus.dmgValue.ToString();
+            defense.text = selectedCharacterForStatus.baseArmor.ToString();
         }
     }
 
