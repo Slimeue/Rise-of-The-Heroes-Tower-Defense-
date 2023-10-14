@@ -192,6 +192,8 @@ GameObject:
   - component: {fileID: 7730725426020023436}
   - component: {fileID: 7730725426020023439}
   - component: {fileID: 5187649775765867946}
+  - component: {fileID: 5032553799517190105}
+  - component: {fileID: 1132023838849241455}
   m_Layer: 5
   m_Name: HeroCardAdd
   m_TagString: Untagged
@@ -274,6 +276,49 @@ MonoBehaviour:
   characterData: {fileID: 0}
   charArtWork: {fileID: 3482831982175796680}
   charName: {fileID: 5370449271206126421}
+--- !u!114 &5032553799517190105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7730725426020023433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: 
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &1132023838849241455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7730725426020023433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99d0f4ecf64c22445a9776f5d18b7424, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedCharacter: {fileID: 0}
+  heroeStatus: {fileID: 0}
 --- !u!1 &8078860830843458528
 GameObject:
   m_ObjectHideFlags: 0

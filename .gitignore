@@ -54,6 +54,7 @@ ExportedObj/
 *.exr.meta
 *.exr
 *LightingData.asset
+*LightingData.asset.meta
 
 
 

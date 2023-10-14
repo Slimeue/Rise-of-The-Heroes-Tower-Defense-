@@ -93,7 +93,6 @@ public class TowerManager : MonoBehaviour
             case State.Default:
                 normalCam.Priority = 1;
                 placingCam.Priority = 0;
-                Debug.Log("Name: " + gameObject.name + currentState);
                 if (_towerHolder != null)
                 {
                     EnableTowerHolder(_towerHolder.gameObject.GetComponent<TowerHolder>());
@@ -110,17 +109,14 @@ public class TowerManager : MonoBehaviour
                 }
                 normalCam.Priority = 0;
                 placingCam.Priority = 1;
-                Debug.Log("Name: " + gameObject.name + currentState);
                 break;
             case State.HoldPlacing:
-                Debug.Log("Name: " + gameObject.name + currentState);
                 break;
         }
     }
 
     public void OnHolding(InputAction.CallbackContext context)
     {
-        Debug.Log("Holding");
         _touchHoldAction.performed += Placing;
     }
 
@@ -148,7 +144,6 @@ public class TowerManager : MonoBehaviour
         {
             UnsubscribeAction();
             DisablePlatformCanvas();
-            Debug.Log("Press2");
             Destroy(_instPreviewObj);
             _CharConfirmPlacementCanvas.SetActive(false);
             currentState = State.Default;
@@ -158,7 +153,6 @@ public class TowerManager : MonoBehaviour
         {
             EnablePlatformCanvas();
 
-            Debug.Log("Press1");
             _isPlacing = true;
             _touchPressAction.performed += OnHolding;
             _touchPressAction.canceled += EndTest;
@@ -180,7 +174,6 @@ public class TowerManager : MonoBehaviour
             UnsubscribeAction();
             TowerHolderDisabler();//TODO: Make towerHolder disappear
             coinsManager.MinusCoin(_charCost);
-            Debug.Log("Minus: " + _charCost);
             _CharConfirmPlacementCanvas.SetActive(false);
             Destroy(_instPreviewObj);
             _instObj = Instantiate(_charObj, _instPreviewObj.transform.position, Quaternion.identity);
@@ -215,7 +208,6 @@ public class TowerManager : MonoBehaviour
                 {
                     _instPreviewObj.transform.position = raycastHit.transform.position;
                     Debug.DrawRay(_position.origin, _position.direction * 20, Color.red);
-                    Debug.Log("Touch Started");
                     _CharConfirmPlacementCanvas.SetActive(true);
                     _CharConfirmPlacementCanvas.transform.position = _instPreviewObj.transform.position;
                     float offset = 2f;

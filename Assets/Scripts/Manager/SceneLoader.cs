@@ -26,7 +26,7 @@ public class SceneLoader : MonoBehaviour
     {
         title.transform.LeanMoveLocal(new Vector2(title.transform.position.x, 300), 2).setEaseInOutExpo();
 
-        // title.transform.LeanScale(new Vector3(.5f, .5f, 5f), 2).setEaseInOutExpo();
+        title.transform.LeanScale(new Vector3(2, 2f, 1f), 2).setEaseInOutExpo();
 
         // mainMenu.SetActive(true);
 
