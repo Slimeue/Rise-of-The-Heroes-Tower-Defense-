@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e454853e7f0ec346bb1144e52ab7ab1, type: 3}
   m_Name: Ponce
   m_EditorClassIdentifier: 
-  charArtWork: {fileID: 0}
+  charArtWork: {fileID: 21300000, guid: 5f7fa9a7940a64e79b5a42d9f661d42c, type: 3}
   _layerMask:
     serializedVersion: 2
     m_Bits: 4096
