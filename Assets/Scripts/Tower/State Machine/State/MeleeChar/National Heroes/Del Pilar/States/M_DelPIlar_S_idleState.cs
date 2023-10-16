@@ -63,7 +63,7 @@ public class M_DelPIlar_S_idleState : CharacterBaseState
         if (m_DelPilar.currentHealth <= 0)
         {
             Debug.Log("Hello From to death state");
-            characterStateMachine.ChangeState(m_DelPilar.recoveryState);
+            characterStateMachine.ChangeState(m_DelPilar.deathState);
         }
     }
 

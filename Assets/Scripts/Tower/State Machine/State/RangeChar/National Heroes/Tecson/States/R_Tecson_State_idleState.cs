@@ -2,32 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class R_Ponce_State_idleState : CharacterBaseState
+public class R_Tecson_State_idleState : CharacterBaseState
 {
-    R_Ponce r_Ponce;
+    R_Tecson r_Tecson;
     float healInterval = 5f;
     float timeLastHeal = 0f;
     float healPercentageAmount = 5f;
 
-    public R_Ponce_State_idleState(CharacterStateMachine characterStateMachine, string animBoolName, CharEntity charEntity, R_Ponce r_Ponce)
+    public R_Tecson_State_idleState(CharacterStateMachine characterStateMachine, string animBoolName, CharEntity charEntity, R_Tecson r_Tecson)
     : base(animBoolName, characterStateMachine)
     {
         this.animBoolName = animBoolName;
-        this.r_Ponce = r_Ponce;
+        this.r_Tecson = r_Tecson;
     }
 
     public override void Enter()
     {
         base.Enter();
-        r_Ponce.PlayAnim(animBoolName);
-
+        r_Tecson.PlayAnim(animBoolName);
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
         ToDeathState();
-        Debug.Log(animBoolName);
         PassiveHeal();
     }
 
@@ -52,21 +50,20 @@ public class R_Ponce_State_idleState : CharacterBaseState
         base.Exit();
     }
 
-    #region  METHODS
 
     void ToDeathState()
     {
-        if (r_Ponce.currentHealth <= 0)
+        if (r_Tecson.currentHealth <= 0)
         {
-            r_Ponce.characterStateMachine.ChangeState(r_Ponce.deathState);
+            r_Tecson.characterStateMachine.ChangeState(r_Tecson.deathState);
         }
     }
 
     void InRangeCheck()
     {
-        if (r_Ponce._inRange)
+        if (r_Tecson._inRange)
         {
-            r_Ponce.characterStateMachine.ChangeState(r_Ponce.attackState);
+            r_Tecson.characterStateMachine.ChangeState(r_Tecson.attackState);
         }
     }
 
@@ -76,12 +73,11 @@ public class R_Ponce_State_idleState : CharacterBaseState
         timeLastHeal += Time.deltaTime;
         if (timeLastHeal >= healInterval)
         {
-            float healValue = (healPercentageAmount * r_Ponce.characterData.maxHp) / 100f;
+            float healValue = (healPercentageAmount * r_Tecson.characterData.maxHp) / 100f;
 
-            r_Ponce.currentHealth = Mathf.Min(r_Ponce.characterData.maxHp, r_Ponce.currentHealth + healValue);
+            r_Tecson.currentHealth = Mathf.Min(r_Tecson.characterData.maxHp, r_Tecson.currentHealth + healValue);
             timeLastHeal = 0f;
         }
     }
 
-    #endregion
 }

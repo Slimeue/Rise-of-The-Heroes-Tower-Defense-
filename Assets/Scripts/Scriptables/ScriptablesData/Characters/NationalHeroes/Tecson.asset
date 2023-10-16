@@ -10,25 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e454853e7f0ec346bb1144e52ab7ab1, type: 3}
-  m_Name: Del Pilar
+  m_Name: Tecson
   m_EditorClassIdentifier: 
-  charArtWork: {fileID: 21300000, guid: 896f7fecab94b9d44860a5992623fe15, type: 3}
+  charArtWork: {fileID: 0}
   _layerMask:
     serializedVersion: 2
     m_Bits: 4096
   _platformTag: 
   previewChar: {fileID: 0}
-  charObject: {fileID: 8946194410183242603, guid: fe5619690256e0843b920837ea94e250,
+  charObject: {fileID: 1005150024574080214, guid: 454302ee936d4fc46a197fe2926a217b,
     type: 3}
-  projectile: {fileID: 0}
-  charName: Gregorio Del Pilar
-  dmgValue: 200
-  maxHp: 500
+  projectile: {fileID: 2462218149979854566, guid: 6119f98b5ad4c6444aa3ee194bfdc451,
+    type: 3}
+  charName: Tecson
+  dmgValue: 500
+  maxHp: 1200
   mana: 0
   baseArmor: 500
   towerCooldown: 0
   towerCost: 0
-  range: 15
-  projectileSpeed: 0
-  attackSpeed: 2
+  range: 94.76
+  projectileSpeed: 50
+  attackSpeed: 0
   rotationSpeed: 5

@@ -2,22 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class R_Ponce_State_attackState : CharacterBaseState
+public class R_Tecson_State_attackState : CharacterBaseState
 {
-    R_Ponce r_Ponce;
+    R_Tecson r_Tecson;
 
-    public R_Ponce_State_attackState(CharacterStateMachine characterStateMachine, string animBoolName, CharEntity charEntity, R_Ponce r_Ponce)
+    public R_Tecson_State_attackState(CharacterStateMachine characterStateMachine, string animBoolName, CharEntity charEntity, R_Tecson r_Tecson)
     : base(animBoolName, characterStateMachine)
     {
         this.animBoolName = animBoolName;
-        this.r_Ponce = r_Ponce;
+        this.r_Tecson = r_Tecson;
     }
 
     public override void Enter()
     {
         base.Enter();
-        //r_Ponce.PlayAnim(animBoolName);
-        r_Ponce.rangeCharAnimationHandler.OnRangeStartAttack += r_Ponce.Fire;
+        r_Tecson.rangeCharAnimationHandler.OnRangeStartAttack += r_Tecson.Fire;
     }
 
     public override void LogicUpdate()
@@ -25,7 +24,8 @@ public class R_Ponce_State_attackState : CharacterBaseState
         base.LogicUpdate();
         FindTarget();
         ToDeathState();
-        r_Ponce.PlayAnim(animBoolName);
+        r_Tecson.PlayAnim(animBoolName);
+
     }
 
     public override void OnTriggerEnter(Collider collider)
@@ -49,37 +49,35 @@ public class R_Ponce_State_attackState : CharacterBaseState
         base.Exit();
     }
 
-
     #region METHODS
 
     void ToIdleState()
     {
-        if (!r_Ponce._inRange)
+        if (!r_Tecson._inRange)
         {
-            characterStateMachine.ChangeState(r_Ponce.idleState);
+            characterStateMachine.ChangeState(r_Tecson.idleState);
         }
     }
 
     void FindTarget()
     {
-        if (r_Ponce.target != null)
+        if (r_Tecson.target != null)
         {
-            Vector3 targetDir = r_Ponce.target.position - r_Ponce.transform.position;
+            Vector3 targetDir = r_Tecson.target.position - r_Tecson.transform.position;
             targetDir.y = 0;
             Quaternion targetRotation = Quaternion.LookRotation(targetDir);
-            r_Ponce.transform.rotation = Quaternion.Slerp(r_Ponce.transform.rotation, targetRotation, r_Ponce._rotationSpeed * Time.deltaTime);
+            r_Tecson.transform.rotation = Quaternion.Slerp(r_Tecson.transform.rotation, targetRotation, r_Tecson._rotationSpeed * Time.deltaTime);
 
         }
     }
 
     private void ToDeathState()
     {
-        if (r_Ponce.currentHealth <= 0)
+        if (r_Tecson.currentHealth <= 0)
         {
-            characterStateMachine.ChangeState(r_Ponce.deathState);
+            characterStateMachine.ChangeState(r_Tecson.deathState);
         }
     }
 
     #endregion
-
 }

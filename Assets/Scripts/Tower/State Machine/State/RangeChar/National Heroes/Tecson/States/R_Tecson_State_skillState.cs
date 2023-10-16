@@ -2,28 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class M_DelPIlar_S_deathState : CharacterBaseState
+public class R_Tecson_State_skillState : CharacterBaseState
 {
-    M_DelPilar m_DelPilar;
+    R_Tecson r_Tecson;
 
-    public M_DelPIlar_S_deathState(CharacterStateMachine characterStateMachine, string animBoolName, CharEntity charEntity, M_DelPilar m_DelPilar)
+    public R_Tecson_State_skillState(CharacterStateMachine characterStateMachine, string animBoolName, CharEntity charEntity, R_Tecson r_Tecson)
     : base(animBoolName, characterStateMachine)
     {
         this.animBoolName = animBoolName;
-        this.m_DelPilar = m_DelPilar;
+        this.r_Tecson = r_Tecson;
     }
 
     public override void Enter()
     {
         base.Enter();
-        m_DelPilar.PlayAnim(animBoolName);
-        m_DelPilar.animationHandler.OnDeathFinish += m_DelPilar.ToRecovery;
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-
     }
 
     public override void OnTriggerEnter(Collider collider)
@@ -39,15 +36,10 @@ public class M_DelPIlar_S_deathState : CharacterBaseState
     public override void DoChecks()
     {
         base.DoChecks();
-
     }
 
     public override void Exit()
     {
         base.Exit();
     }
-
-
-
-
 }

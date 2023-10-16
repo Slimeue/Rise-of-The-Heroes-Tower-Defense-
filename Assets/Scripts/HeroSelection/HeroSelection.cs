@@ -28,7 +28,7 @@ public class HeroSelection : MonoBehaviour
 
     private void Update()
     {
-        if (canvasManager.selectedHero != null)
+        if (canvasManager.selectedHero != null || canvasManager.selectedHeroForStatus != null)
         {
             selectedCharacter = canvasManager.selectedHero;
             selectedCharacterForStatus = canvasManager.selectedHeroForStatus;

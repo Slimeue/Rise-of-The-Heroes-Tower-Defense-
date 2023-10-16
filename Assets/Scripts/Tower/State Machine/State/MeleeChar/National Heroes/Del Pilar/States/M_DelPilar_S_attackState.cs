@@ -94,7 +94,7 @@ public class M_DelPilar_S_attackState : CharacterBaseState
     {
         if (m_DelPilar.currentHealth <= 0)
         {
-            characterStateMachine.ChangeState(m_DelPilar.recoveryState);
+            characterStateMachine.ChangeState(m_DelPilar.deathState);
         }
     }
 
