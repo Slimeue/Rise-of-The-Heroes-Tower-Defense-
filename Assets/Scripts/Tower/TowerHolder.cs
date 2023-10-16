@@ -37,6 +37,7 @@ public class TowerHolder : MonoBehaviour
     public GameObject cooldownSlider;
     Image _image;
 
+    [SerializeField] public TextMeshProUGUI _charName;
     [SerializeField] public Image _charArtWork;
     [SerializeField] public Color _unavailColor;
     [SerializeField] public Color _availColor;
@@ -64,6 +65,7 @@ public class TowerHolder : MonoBehaviour
         _charArtWork.sprite = characterData.charArtWork;
         _preview = characterData.previewChar;
         _charObj = characterData.charObject;
+        _charName.text = characterData.charName;
 
 
     }
@@ -111,10 +113,12 @@ public class TowerHolder : MonoBehaviour
         if (coinsManager._CurrentCoin < _characterCost || _placed || !cooldownFinished)
         {
             _image.color = _unavailColor;
+            _charArtWork.color = _unavailColor;
         }
         else
         {
             _image.color = _availColor;
+            _charArtWork.color = _availColor;
         }
     }
 
