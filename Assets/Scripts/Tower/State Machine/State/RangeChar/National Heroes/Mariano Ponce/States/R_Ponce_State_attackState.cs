@@ -47,6 +47,8 @@ public class R_Ponce_State_attackState : CharacterBaseState
     public override void Exit()
     {
         base.Exit();
+        r_Ponce.rangeCharAnimationHandler.OnRangeStartAttack -= r_Ponce.Fire;
+
     }
 
 

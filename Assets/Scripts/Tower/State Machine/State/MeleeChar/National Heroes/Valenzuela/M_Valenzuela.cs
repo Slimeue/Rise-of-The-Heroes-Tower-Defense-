@@ -81,11 +81,17 @@ public class M_Valenzuela : MeleeCharacterEntity, IDamageable
 
         if (characterStateMachine.currentState == recoveryState)
         {
+            baseManager.ShakeEffect();
             baseManager.currentBaseHp -= damageAmount;
             return;
         }
 
         currentHealth -= totalDamage;
+    }
+
+    public void ToRecovery()
+    {
+        characterStateMachine.ChangeState(recoveryState);
     }
 
     #endregion

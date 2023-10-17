@@ -97,7 +97,6 @@ public class TowerManager : MonoBehaviour
                 {
                     EnableTowerHolder(_towerHolder.gameObject.GetComponent<TowerHolder>());
                 }
-                NormalTime();
                 _charInfoCanvas.SetActive(false);
                 break;
             case State.Placing:
@@ -111,6 +110,7 @@ public class TowerManager : MonoBehaviour
                 placingCam.Priority = 1;
                 break;
             case State.HoldPlacing:
+                PlacingTime();
                 break;
         }
     }

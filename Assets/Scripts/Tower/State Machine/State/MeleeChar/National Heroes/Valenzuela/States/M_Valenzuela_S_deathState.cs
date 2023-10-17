@@ -17,6 +17,8 @@ public class M_Valenzuela_S_deathState : CharacterBaseState
     public override void Enter()
     {
         base.Enter();
+        m_Valenzuela.PlayAnim(animBoolName);
+        m_Valenzuela.animationHandler.OnDeathFinish += m_Valenzuela.ToRecovery;
     }
 
     public override void LogicUpdate()

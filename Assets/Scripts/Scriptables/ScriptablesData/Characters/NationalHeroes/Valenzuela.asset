@@ -18,7 +18,7 @@ MonoBehaviour:
     m_Bits: 4096
   _platformTag: 
   previewChar: {fileID: 0}
-  charObject: {fileID: 7481068085187042713, guid: 02f6df4f92a1a3a4b81537ab9323a574,
+  charObject: {fileID: 3537201373362703865, guid: 5d6c2ef8c39163a48b49406cbd2d6f61,
     type: 3}
   projectile: {fileID: 0}
   charName: Valenzuela
@@ -27,6 +27,7 @@ MonoBehaviour:
   mana: 0
   baseArmor: 280
   towerCooldown: 0
+  skillCooldown: 0
   towerCost: 0
   range: 15
   projectileSpeed: 0

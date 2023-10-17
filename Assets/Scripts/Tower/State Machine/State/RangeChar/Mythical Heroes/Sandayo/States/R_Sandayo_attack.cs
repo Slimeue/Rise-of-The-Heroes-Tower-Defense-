@@ -35,7 +35,7 @@ public class R_Sandayo_attack : CharacterBaseState
     public override void Exit()
     {
         base.Exit();
-        //r_Sandayo.rangeCharAnimationHandler.OnRangeStartAttack -= r_Sandayo.Fire;
+        r_Sandayo.rangeCharAnimationHandler.OnRangeStartAttack -= r_Sandayo.Fire;
     }
 
     public override void OnTriggerEnter(Collider collider)

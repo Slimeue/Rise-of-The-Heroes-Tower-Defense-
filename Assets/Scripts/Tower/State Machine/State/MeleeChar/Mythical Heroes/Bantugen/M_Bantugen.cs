@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class M_Bantugen : MeleeCharacterEntity, IDamageable
 {
+    public GameObject ability;
+    public float skillCd;
+    public bool skillFinished;
+    public bool skillIsActivated;
+    float skillDuration = 5f;
+
     public M_Bantguen_idle idleState { get; private set; }
     public M_Bantugen_attack attackState { get; private set; }
     public M_Bantugen_death deathState { get; private set; }
@@ -19,6 +25,7 @@ public class M_Bantugen : MeleeCharacterEntity, IDamageable
     {
 
         base.Awake();
+        skillCd = characterData.skillCooldown;
         attackState = new M_Bantugen_attack(characterStateMachine, TOWER_ATTACK, this, this);
         idleState = new M_Bantguen_idle(characterStateMachine, TOWER_IDLE, this, this);
         deathState = new M_Bantugen_death(characterStateMachine, TOWER_DEATH, this, this);
@@ -43,6 +50,20 @@ public class M_Bantugen : MeleeCharacterEntity, IDamageable
         radius = characterData.range;
         RefreshChar();
         HealthBarTracker();
+        Debug.Log(characterStateMachine.currentState);
+        if (skillFinished)
+        {
+            skillIsActivated = true;
+            //startCooldown
+            skillCd -= Time.deltaTime;
+            if (skillCd <= 0f)
+            {
+                skillFinished = false;
+                skillCd = characterData.skillCooldown;
+            }
+        }
+
+        SkillCounter();
     }
 
     private void OnDrawGizmos()
@@ -121,6 +142,22 @@ public class M_Bantugen : MeleeCharacterEntity, IDamageable
         }
 
     }
+
+    void SkillCounter()
+    {
+        if (skillIsActivated)
+        {
+            skillDuration -= Time.deltaTime;
+            if (skillDuration <= 0f)
+            {
+                skillDuration = 5f;
+                baseArmor = characterData.baseArmor;
+                ability.SetActive(false);
+            }
+        }
+    }
+
+
 
     #endregion
 

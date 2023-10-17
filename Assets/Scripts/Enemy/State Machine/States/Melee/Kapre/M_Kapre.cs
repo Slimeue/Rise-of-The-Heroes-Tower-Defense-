@@ -55,7 +55,6 @@ public class M_Kapre : MeleeEnemyEntity, IDamageable
     {
         baseState = stateMachine.currentState;
         baseState.OnTriggerEnter(stateMachine, other);
-        Debug.Log(other.name);
     }
 
     private void OnTriggerExit(Collider collider)

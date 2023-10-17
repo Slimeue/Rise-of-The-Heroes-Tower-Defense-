@@ -16,6 +16,9 @@ public class M_Bantugen_skill : CharacterBaseState
     public override void Enter()
     {
         base.Enter();
+        m_Bantugen.PlayAnim(animBoolName);
+        m_Bantugen.animationHandler.OnSkillActivated += SkillActivate;
+        m_Bantugen.animationHandler.OnSkillFinished += SkillFinished;
     }
 
     public override void LogicUpdate()
@@ -41,5 +44,20 @@ public class M_Bantugen_skill : CharacterBaseState
     public override void Exit()
     {
         base.Exit();
+        m_Bantugen.animationHandler.OnSkillActivated -= SkillActivate;
+        m_Bantugen.animationHandler.OnSkillFinished -= SkillFinished;
     }
+
+    void SkillActivate()
+    {
+        m_Bantugen.ability.SetActive(true);
+        m_Bantugen.baseArmor += m_Bantugen.baseArmor * 1f;
+    }
+
+    public void SkillFinished()
+    {
+        m_Bantugen.skillFinished = true;
+        m_Bantugen.characterStateMachine.ChangeState(m_Bantugen.attackState);
+    }
+
 }

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
@@ -17,12 +19,21 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private GameObject victoryScreen;
     [SerializeField] private GameObject failedScreen;
 
+    [SerializeField] private Image fastForward;
+    [SerializeField] private TextMeshProUGUI fastForwardText;
+
+    [SerializeField] private Sprite normalSpeed;
+    [SerializeField] private Sprite fastSpeed;
+
+    bool isNormalSpeed;
+
     float starsCounter;
     float empytStarCounter;
     float maxStar = 3;
 
     private void Awake()
     {
+        isNormalSpeed = true;
         waveManager = FindObjectOfType<WaveManager>();
         baseManager = FindObjectOfType<BaseManager>();
         starsManager = FindObjectOfType<StarsManager>();
@@ -32,6 +43,7 @@ public class LevelManager : MonoBehaviour
     {
         LevelComplete();
         LevelFailed();
+        FastForward();
     }
 
     private void Start()
@@ -115,5 +127,36 @@ public class LevelManager : MonoBehaviour
             failedScreen.SetActive(true);
         }
     }
+
+
+    void FastForward()
+    {
+        if (isNormalSpeed)
+        {
+            fastForward.sprite = normalSpeed;
+            Time.timeScale = 1f;
+            fastForwardText.text = "1x";
+        }
+        else
+        {
+            fastForward.sprite = fastSpeed;
+            Time.timeScale = 2f;
+            fastForwardText.text = "2x";
+        }
+    }
+
+    public void SwitchSpeed()
+    {
+        if (isNormalSpeed)
+        {
+            isNormalSpeed = false;
+        }
+        else
+        {
+            isNormalSpeed = true;
+        }
+    }
+
+
 
 }
