@@ -8,6 +8,8 @@ public class AnimationHandler : MonoBehaviour
 
     public event Action OnDeathFinish;
     public event Action OnAttackEnd;
+    public event Action OnSkillActivated;
+    public event Action OnSkillFinished;
 
     private void AnimationDeathFinishedTrigger()
     {
@@ -17,6 +19,15 @@ public class AnimationHandler : MonoBehaviour
     private void AnimationAttackFinishedTrigger()
     {
         OnAttackEnd?.Invoke();
+    }
+
+    private void AnimationSkillTrigger()
+    {
+        OnSkillActivated?.Invoke();
+    }
+    private void AnimationSkilLFinished()
+    {
+        OnSkillFinished?.Invoke();
     }
 
 

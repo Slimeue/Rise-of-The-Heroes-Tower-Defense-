@@ -6,6 +6,7 @@ public class M_DelPilar_S_attackState : CharacterBaseState
 {
     M_DelPilar m_DelPilar;
 
+
     public M_DelPilar_S_attackState(CharacterStateMachine characterStateMachine, string animBoolName, CharEntity charEntity, M_DelPilar m_DelPilar)
     : base(animBoolName, characterStateMachine)
     {
@@ -97,6 +98,7 @@ public class M_DelPilar_S_attackState : CharacterBaseState
             characterStateMachine.ChangeState(m_DelPilar.deathState);
         }
     }
+
 
     #endregion
 }

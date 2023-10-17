@@ -5,6 +5,10 @@ using UnityEngine;
 public class M_Lumalindaw : MeleeCharacterEntity, IDamageable
 {
 
+    public GameObject abilityHolder;
+    public float skillCd;
+    public bool skillFinished;
+
 
     public M_Lumalindaw_attack attackState { get; private set; }
     public M_Lumalindaw_death deathState { get; private set; }
@@ -20,6 +24,7 @@ public class M_Lumalindaw : MeleeCharacterEntity, IDamageable
     {
 
         base.Awake();
+        skillCd = characterData.skillCooldown;
         attackState = new M_Lumalindaw_attack(characterStateMachine, TOWER_ATTACK, this, this);
         idleState = new M_Lumalindaw_Idle(characterStateMachine, TOWER_IDLE, this, this);
         deathState = new M_Lumalindaw_death(characterStateMachine, TOWER_DEATH, this, this);
@@ -35,6 +40,18 @@ public class M_Lumalindaw : MeleeCharacterEntity, IDamageable
         radius = characterData.range;
         RefreshChar();
         HealthBarTracker();
+        Debug.Log(characterStateMachine.currentState);
+        //skillCd
+        if (skillFinished)
+        {
+            //startCooldown
+            skillCd -= Time.deltaTime;
+            if (skillCd <= 0f)
+            {
+                skillFinished = false;
+                skillCd = characterData.skillCooldown;
+            }
+        }
     }
 
     private void Start()

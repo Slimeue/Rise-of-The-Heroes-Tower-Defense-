@@ -35,6 +35,7 @@ public class CharacterData : ScriptableObject
     [Space(5)]
     [Header("Cooldowns")]
     [SerializeField] public float towerCooldown; // Tower Cooldown after dying
+    [SerializeField] public float skillCooldown;
 
     [Header("Cost")]
     [SerializeField] public int towerCost;

@@ -61,7 +61,6 @@ public class WaveManager : MonoBehaviour
         if (!isSpawning)
         {
             StartNextWave();
-            Debug.Log("Current Wave: " + currentWaveIndex);
         }
 
     }

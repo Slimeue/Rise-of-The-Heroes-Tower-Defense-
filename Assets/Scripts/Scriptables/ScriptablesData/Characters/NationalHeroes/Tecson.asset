@@ -20,7 +20,7 @@ MonoBehaviour:
   previewChar: {fileID: 0}
   charObject: {fileID: 1005150024574080214, guid: 454302ee936d4fc46a197fe2926a217b,
     type: 3}
-  projectile: {fileID: 2462218149979854566, guid: 6119f98b5ad4c6444aa3ee194bfdc451,
+  projectile: {fileID: 4448543319399486599, guid: c8badcda00171224f96ca0cd6891b6f4,
     type: 3}
   charName: Tecson
   dmgValue: 500
