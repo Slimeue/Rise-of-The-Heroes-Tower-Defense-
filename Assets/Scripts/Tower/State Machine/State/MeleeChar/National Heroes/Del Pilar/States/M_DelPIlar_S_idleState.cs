@@ -19,7 +19,6 @@ public class M_DelPIlar_S_idleState : CharacterBaseState
     public override void Enter()
     {
         base.Enter();
-        m_DelPilar.PlayAnim(animBoolName);
     }
 
     public override void LogicUpdate()
@@ -27,6 +26,8 @@ public class M_DelPIlar_S_idleState : CharacterBaseState
         base.LogicUpdate();
         ToDeathState();
         PassiveHeal();
+        m_DelPilar.PlayAnim(animBoolName);
+
     }
 
     public override void OnTriggerEnter(Collider collider)

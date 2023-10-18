@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 031911cc3d4f61b4fbe1942e237bab96
+guid: afbad195d7cd415429089fbd18fb638e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,22 +129,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Status-board_0
+      name: Victory-screen_2_0
       rect:
         serializedVersion: 2
-        x: 191
-        y: 199
-        width: 1182
-        height: 1657
+        x: 453
+        y: 1230
+        width: 628
+        height: 616
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0746927f4f7d824aa9ad41807b09110
-      internalID: 1578557449
+      spriteID: e0e76feed29b96a429cd80cc779ad9bf
+      internalID: 1747055262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Victory-screen_2_1
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 272
+        width: 624
+        height: 612
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a2f7645ab1ad6146a454e4cbe6425a1
+      internalID: 1686047256
       vertices: []
       indices: 
       edges: []
@@ -160,7 +181,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Status-board_0: 1962171621
+      Victory-screen_2_0: 1747055262
+      Victory-screen_2_1: 1686047256
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

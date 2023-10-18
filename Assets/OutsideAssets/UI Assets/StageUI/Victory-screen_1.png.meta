@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 031911cc3d4f61b4fbe1942e237bab96
+guid: 655002d3b99d29e42b93e763a4f4a14c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,22 +129,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Status-board_0
+      name: Victory-screen_1_0
       rect:
         serializedVersion: 2
-        x: 191
-        y: 199
-        width: 1182
-        height: 1657
+        x: 534
+        y: 1152
+        width: 468
+        height: 470
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0746927f4f7d824aa9ad41807b09110
-      internalID: 1578557449
+      spriteID: c7d866f0c947d614d88ab15e9a5bac2e
+      internalID: 119772752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Victory-screen_1_1
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 181
+        width: 470
+        height: 469
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d18332b768bd9a4fbb8216e809fe820
+      internalID: -1476008287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Victory-screen_1_2
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 811
+        width: 628
+        height: 199
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 142d2106cffd1b84abe7a0382aab2497
+      internalID: -888981831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Victory-screen_1_3
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 1762
+        width: 626
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a54ed06fb92cad14388e5d701934076e
+      internalID: -129609873
       vertices: []
       indices: 
       edges: []
@@ -160,7 +223,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Status-board_0: 1962171621
+      Victory-screen_1_0: 119772752
+      Victory-screen_1_1: -1476008287
+      Victory-screen_1_2: -888981831
+      Victory-screen_1_3: -129609873
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

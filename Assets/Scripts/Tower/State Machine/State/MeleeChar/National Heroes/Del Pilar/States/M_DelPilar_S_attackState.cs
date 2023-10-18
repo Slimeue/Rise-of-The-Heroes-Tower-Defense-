@@ -19,7 +19,6 @@ public class M_DelPilar_S_attackState : CharacterBaseState
     {
         base.Enter();
         m_DelPilar.anim.speed = m_DelPilar.characterData.attackSpeed;
-        m_DelPilar.PlayAnim(animBoolName);
     }
 
     public override void LogicUpdate()
@@ -28,6 +27,8 @@ public class M_DelPilar_S_attackState : CharacterBaseState
         ToIdleState();
         ToDeathState();
         FindTarget();
+        m_DelPilar.PlayAnim(animBoolName);
+
     }
 
     public override void OnTriggerEnter(Collider collider)

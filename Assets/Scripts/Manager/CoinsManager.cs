@@ -35,7 +35,7 @@ public class CoinsManager : MonoBehaviour
     {
         if (_startingCoin <= 99)
         {
-            _startingCoin += Time.deltaTime;
+            _startingCoin += Time.deltaTime * 0.5f;
             _currentCoin = Mathf.Round(_startingCoin);
         }
 

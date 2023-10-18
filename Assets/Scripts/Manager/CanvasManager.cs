@@ -10,6 +10,11 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] GameObject heroeStatusPanel;
     [SerializeField] GameObject mythicalHeroesStatusPanel;
 
+    [Space(5)]
+    [Header("HeroesScreen")]
+    [SerializeField] GameObject heroesScreenPanel; //To deactive when click a card
+
+
     public static CanvasManager instance;
 
     public CharacterData selectedHero;
@@ -114,6 +119,11 @@ public class CanvasManager : MonoBehaviour
     #endregion
 
 
+
+    #region HEROES SCREEN
+
+
+    #endregion
 
 
 

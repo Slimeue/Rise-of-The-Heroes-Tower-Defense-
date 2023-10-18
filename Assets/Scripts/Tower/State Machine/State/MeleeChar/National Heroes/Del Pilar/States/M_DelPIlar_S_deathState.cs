@@ -39,7 +39,6 @@ public class M_DelPIlar_S_deathState : CharacterBaseState
     public override void DoChecks()
     {
         base.DoChecks();
-
     }
 
     public override void Exit()

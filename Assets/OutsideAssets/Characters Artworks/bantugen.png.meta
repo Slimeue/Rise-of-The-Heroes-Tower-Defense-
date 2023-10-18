@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 031911cc3d4f61b4fbe1942e237bab96
+guid: cedf0234596f97140aee4bfac68dfae7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,22 +129,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Status-board_0
+      name: bantugen_0
       rect:
         serializedVersion: 2
-        x: 191
-        y: 199
-        width: 1182
-        height: 1657
+        x: 114
+        y: 0
+        width: 304
+        height: 473
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0746927f4f7d824aa9ad41807b09110
-      internalID: 1578557449
+      spriteID: e23f3b507adec4545a06ee09d3699346
+      internalID: 525727493
       vertices: []
       indices: 
       edges: []
@@ -160,7 +160,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Status-board_0: 1962171621
+      bantugen_0: 525727493
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

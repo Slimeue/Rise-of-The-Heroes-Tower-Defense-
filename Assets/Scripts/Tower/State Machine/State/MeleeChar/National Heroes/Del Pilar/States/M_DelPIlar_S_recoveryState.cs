@@ -26,7 +26,6 @@ public class M_DelPIlar_S_recoveryState : CharacterBaseState
         base.Enter();
         isRecovering = true;
         m_DelPilar.PlayAnim(animBoolName);
-        m_DelPilar.animationHandler.OnDeathFinish -= m_DelPilar.ToRecovery;
     }
 
     public override void LogicUpdate()

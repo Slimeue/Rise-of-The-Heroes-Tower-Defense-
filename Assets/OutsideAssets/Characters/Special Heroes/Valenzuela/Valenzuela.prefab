@@ -1635,6 +1635,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4205650963840538435}
     m_Modifications:
+    - target: {fileID: 1774831269848037816, guid: e4a7960f0fc2fb3489ab2ad446951bbf,
+        type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3308739186227538276, guid: e4a7960f0fc2fb3489ab2ad446951bbf,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1744,6 +1749,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 5799355166981427641, guid: e4a7960f0fc2fb3489ab2ad446951bbf,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5799355166981427641, guid: e4a7960f0fc2fb3489ab2ad446951bbf,
         type: 3}

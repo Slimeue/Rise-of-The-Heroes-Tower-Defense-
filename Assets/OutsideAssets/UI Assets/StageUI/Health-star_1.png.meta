@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 031911cc3d4f61b4fbe1942e237bab96
+guid: 136d08354f94fc949859c52b79e903d9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -129,13 +129,55 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Status-board_0
+      name: Health-star_1_0
       rect:
         serializedVersion: 2
-        x: 191
-        y: 199
-        width: 1182
-        height: 1657
+        x: 123
+        y: 632
+        width: 479
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 230, y: 4, z: 231, w: 3}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d9432a4412e1cd4c8e05e02d838b43c
+      internalID: 317217787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health-star_1_1
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 571
+        width: 475
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 232, y: 6, z: 234, w: 4}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d13db84a757f4234184c14818b7bf289
+      internalID: 1324277843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health-star_1_2
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 462
+        width: 528
+        height: 60
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,8 +185,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0746927f4f7d824aa9ad41807b09110
-      internalID: 1578557449
+      spriteID: 212f8c6ce2500414dae1b3cb2af2c454
+      internalID: 1275644071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health-star_1_3
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 380
+        width: 528
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c17f9c34722ae0844b1ebba557ac11cc
+      internalID: -206208950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health-star_1_4
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 286
+        width: 528
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0eaa6c5aed3bb8a4981f97eaaef7f196
+      internalID: -160518647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health-star_1_5
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 35
+        width: 223
+        height: 210
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 155c7f196844ed847a2e045b9bc7ae51
+      internalID: 1176773537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health-star_1_6
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 34
+        width: 223
+        height: 210
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c983d59d0c9527408e3032b849364f8
+      internalID: 1762253732
       vertices: []
       indices: 
       edges: []
@@ -160,7 +286,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Status-board_0: 1962171621
+      Health-star_1_0: 317217787
+      Health-star_1_1: 1324277843
+      Health-star_1_2: 1275644071
+      Health-star_1_3: -206208950
+      Health-star_1_4: -160518647
+      Health-star_1_5: 1176773537
+      Health-star_1_6: 1762253732
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

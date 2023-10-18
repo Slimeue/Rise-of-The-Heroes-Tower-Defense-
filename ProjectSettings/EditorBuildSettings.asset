@@ -10,7 +10,7 @@ EditorBuildSettings:
     guid: 93b58613ecdcc9f46a26fa874b956776
   - enabled: 1
     path: Assets/Scenes/Main Menu Scenes/MainHomeScreen.unity
-    guid: 907647bff64651e468f15b87548a3cd3
+    guid: be723ea94fd146042945e2022aeafc78
   - enabled: 1
     path: Assets/Scenes/Testing Scenes/TestScene/Test.unity
     guid: 8b48b7b8a83dbd2419b00a50e84753d6
