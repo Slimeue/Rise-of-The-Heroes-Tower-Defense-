@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4317421446816536669
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4317421446816536671}
+  - component: {fileID: 4317421446816536670}
+  m_Layer: 0
+  m_Name: UICanvaseManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4317421446816536671
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4317421446816536669}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 90}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4317421446816536670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4317421446816536669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c35057e7c287044469ce623b322594fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  squadCanvas: {fileID: 0}
+  selectedSquadPanel: {fileID: 0}
+  squadSelection: {fileID: 0}
+  heroeStatusPanel: {fileID: 0}
+  mythicalHeroesStatusPanel: {fileID: 0}
+  heroesScreenPanel: {fileID: 0}
+  heroesScrollArea: {fileID: 0}
+  heroesStatusScreen: {fileID: 0}
+  selectedHero: {fileID: 0}
+  selectedMythicalHero: {fileID: 0}
+  selectedHeroForStatus: {fileID: 0}

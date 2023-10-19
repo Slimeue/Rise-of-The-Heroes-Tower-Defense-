@@ -22,6 +22,10 @@ public class CharacterData : ScriptableObject
     [SerializeField] public float dmgValue;
 
     [Space(5)]
+    [Header("Level")]
+    [SerializeField] public int charLevel;
+
+    [Space(5)]
     [Header("Health")]
     [SerializeField] public float maxHp;
 

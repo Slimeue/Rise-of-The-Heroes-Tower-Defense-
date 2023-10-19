@@ -13,10 +13,14 @@ public class CanvasManager : MonoBehaviour
     [Space(5)]
     [Header("HeroesScreen")]
     [SerializeField] GameObject heroesScreenPanel; //To deactive when click a card
+    [SerializeField] GameObject heroesScrollArea;
+    [SerializeField] GameObject heroesStatusScreen;
+    public CharacterData heroesStatusCharacterData;
 
 
     public static CanvasManager instance;
-
+    [Space(5)]
+    [Header("Character Datas")]
     public CharacterData selectedHero;
     public CharacterData selectedMythicalHero;
     public CharacterData selectedHeroForStatus;
@@ -40,6 +44,9 @@ public class CanvasManager : MonoBehaviour
             squadSelection.transform.localScale = Vector2.zero;
             heroeStatusPanel.transform.localScale = Vector2.zero;
             mythicalHeroesStatusPanel.transform.localScale = Vector2.zero;
+            heroesScreenPanel.transform.localScale = Vector2.zero;
+            heroesStatusScreen.SetActive(false);
+
         }
     }
 
@@ -122,6 +129,18 @@ public class CanvasManager : MonoBehaviour
 
     #region HEROES SCREEN
 
+
+    public void OpenHeroesPanel()
+    {
+        heroesScreenPanel.transform.localScale = Vector3.one;
+    }
+
+    public void OpenHeroesStatus(CharacterData characterData)
+    {
+        heroesStatusCharacterData = characterData;
+        heroesScrollArea.SetActive(false);
+        heroesStatusScreen.SetActive(true);
+    }
 
     #endregion
 
