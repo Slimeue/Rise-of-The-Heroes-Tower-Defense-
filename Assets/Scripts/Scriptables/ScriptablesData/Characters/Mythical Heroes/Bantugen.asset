@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e454853e7f0ec346bb1144e52ab7ab1, type: 3}
   m_Name: Bantugen
   m_EditorClassIdentifier: 
-  charArtWork: {fileID: -804784678, guid: ffa38d74d981c1541852df6ee2c89e65, type: 3}
+  charArtWork: {fileID: 525727493, guid: cedf0234596f97140aee4bfac68dfae7, type: 3}
   _layerMask:
     serializedVersion: 2
     m_Bits: 256
@@ -25,6 +25,7 @@ MonoBehaviour:
     type: 3}
   charName: Bantugen
   dmgValue: 300
+  charLevel: 0
   maxHp: 5000
   mana: 0
   baseArmor: 500
@@ -35,3 +36,16 @@ MonoBehaviour:
   projectileSpeed: 0
   attackSpeed: 0
   rotationSpeed: 10
+  charLore: "Known for being one of the greatest Datu when it came to fighting prowess,
+    the story of Bantugen delves deeply into his fight against the enemy of their
+    land and the romances between him and all the girls he fell in love with. However,
+    his older brother Morog forbids him to marry any of those ladies despite their
+    unparalleled beauty \u2013 for none of these women could match or equal the power
+    and the richness of Bantugen. As a warrior, Bantugen\u2019s battlefield abilities
+    make him one of the most formidable opponents to wage war with. He can travel
+    into the sky and even walk on the surface of water. He also has the power to
+    call upon the help of Anito to do his bidding. This was because he was the descendant
+    of Maria Makilling, a lesser divine spirit closer to an elemental. The Elemental
+    watching over Bantugen also owns a Bangka (boat) that can travel like a submarine
+    in the deepest part of the ocean and can carry nearly the total population of
+    a village."

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e454853e7f0ec346bb1144e52ab7ab1, type: 3}
   m_Name: Manggob
   m_EditorClassIdentifier: 
-  charArtWork: {fileID: 21300000, guid: 6bbaf63188247e345a4162ebd0260281, type: 3}
+  charArtWork: {fileID: 1113035084, guid: 832a01d5e86e4d647b014f79c2058423, type: 3}
   _layerMask:
     serializedVersion: 2
     m_Bits: 256
@@ -24,12 +24,17 @@ MonoBehaviour:
   projectile: {fileID: 0}
   charName: Manggob
   dmgValue: 460
+  charLevel: 0
   maxHp: 3400
   mana: 400
   baseArmor: 320
   towerCooldown: 15
+  skillCooldown: 0
   towerCost: 13
   range: 15
   projectileSpeed: 0
   attackSpeed: 0
   rotationSpeed: 5
+  charLore: a young hero raised by a giant recorded in the Diawot epic of Mansaka
+    mythology; he wields a golden top which had the power to bring dreams into reality;
+    his journey focuses on his search for the golden top and his long-lost sister

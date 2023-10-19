@@ -34,7 +34,7 @@ public class HeroSelection : MonoBehaviour
             selectedCharacterForStatus = canvasManager.selectedHeroForStatus;
             charArtWork.sprite = selectedCharacterForStatus.charArtWork;
             charName.text = selectedCharacterForStatus.charName;
-            //TODO Level
+            level.text = selectedCharacter.charLevel.ToString();
             health.text = selectedCharacterForStatus.maxHp.ToString();
             attack.text = selectedCharacterForStatus.dmgValue.ToString();
             defense.text = selectedCharacterForStatus.baseArmor.ToString();

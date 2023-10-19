@@ -13,6 +13,7 @@ public class CanvasManager : MonoBehaviour
     [Space(5)]
     [Header("HeroesScreen")]
     [SerializeField] GameObject heroesScreenPanel; //To deactive when click a card
+    [SerializeField] GameObject heroesScreenPanelBackButton;
     [SerializeField] GameObject heroesScrollArea;
     [SerializeField] GameObject heroesStatusScreen;
     public CharacterData heroesStatusCharacterData;
@@ -135,11 +136,24 @@ public class CanvasManager : MonoBehaviour
         heroesScreenPanel.transform.localScale = Vector3.one;
     }
 
+    public void CloseHeroesPanel()
+    {
+        heroesScreenPanel.transform.localScale = Vector3.zero;
+    }
+
     public void OpenHeroesStatus(CharacterData characterData)
     {
         heroesStatusCharacterData = characterData;
         heroesScrollArea.SetActive(false);
         heroesStatusScreen.SetActive(true);
+        heroesScreenPanelBackButton.SetActive(false);
+    }
+
+    public void CloseHeroesStatusScreen()
+    {
+        heroesScrollArea.SetActive(true);
+        heroesStatusScreen.SetActive(false);
+        heroesScreenPanelBackButton.SetActive(true);
     }
 
     #endregion

@@ -53,6 +53,9 @@ public class CharacterData : ScriptableObject
     [Space(5)]
     [SerializeField] public float rotationSpeed;
 
+    [Space(5)]
+    [Header("Lore")]
+    [TextArea(5, 10)][SerializeField] public string charLore;
 
 
 

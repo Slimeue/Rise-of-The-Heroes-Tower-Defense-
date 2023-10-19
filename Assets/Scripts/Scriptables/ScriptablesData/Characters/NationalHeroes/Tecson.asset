@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e454853e7f0ec346bb1144e52ab7ab1, type: 3}
   m_Name: Tecson
   m_EditorClassIdentifier: 
-  charArtWork: {fileID: 0}
+  charArtWork: {fileID: 1050084858, guid: 217fb54a6fe9c63499682bfda76c38be, type: 3}
   _layerMask:
     serializedVersion: 2
     m_Bits: 4096
@@ -24,12 +24,23 @@ MonoBehaviour:
     type: 3}
   charName: Tecson
   dmgValue: 500
+  charLevel: 0
   maxHp: 1200
   mana: 0
   baseArmor: 500
   towerCooldown: 0
+  skillCooldown: 0
   towerCost: 0
   range: 94.76
   projectileSpeed: 50
   attackSpeed: 0
   rotationSpeed: 5
+  charLore: 'Trinidad Perez Tecson, known as the "Mother of Biak-na-Bato" and "Mother
+    of Mercy", fought to gain Philippines independence.
+
+    
+
+    She was given
+    the title "Mother of Biak-na-Bato" by Gen. Emilio Aguinaldo. She was also cited
+    as the "Mother of the Philippine National Red Cross" for her service to her fellow
+    Katipuneros.'

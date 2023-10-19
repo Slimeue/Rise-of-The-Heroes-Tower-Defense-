@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e454853e7f0ec346bb1144e52ab7ab1, type: 3}
   m_Name: Valenzuela
   m_EditorClassIdentifier: 
-  charArtWork: {fileID: 0}
+  charArtWork: {fileID: 1354984968, guid: cd3fab574bed45d4090a8ed495684135, type: 3}
   _layerMask:
     serializedVersion: 2
     m_Bits: 4096
@@ -23,6 +23,7 @@ MonoBehaviour:
   projectile: {fileID: 0}
   charName: Valenzuela
   dmgValue: 440
+  charLevel: 0
   maxHp: 1550
   mana: 0
   baseArmor: 280
@@ -33,3 +34,22 @@ MonoBehaviour:
   projectileSpeed: 0
   attackSpeed: 2
   rotationSpeed: 5
+  charLore: "P\xEDo Valenzuela y Alejandrino was a Filipino physician and revolutionary
+    leader who played a crucial role in the independence movement of the Philippines
+    from Spanish colonial rule. Born on July 11, 1869, and passing away on April
+    6, 1956, he joined the Katipunan society at the age of 23. Alongside Andr\xE9s
+    Bonifacio and Emilio Jacinto, they established the secret chamber within the
+    society known as Camara Reina. Valenzuela was responsible for overseeing the
+    publication of Ang Kalayaan, the Katipunan's inaugural and sole official publication.\r\n\r\nValenzuela
+    even made efforts to persuade the exiled Jos\xE9 Rizal to join the revolutionary
+    cause. When the Katipunan was eventually uncovered, he fled to Balintawak (now
+    part of Quezon City) on August 20, 1896. Subsequently, he decided to avail of
+    an amnesty offered by the Spanish colonial government, surrendering on September
+    1, 1896. Following his surrender, he was deported to Spain and endured trials
+    and imprisonment in Madrid before being transferred to M\xE1laga and eventually
+    a Spanish outpost in Africa. His incarceration lasted for approximately two years.\r\n\r\nUpon
+    his return to the Philippines in April 1899, Valenzuela resumed his medical practice.
+    However, the American authorities, fearing that he might incite insurrection,
+    promptly arrested him. His election as municipal president in his hometown of
+    Polo forced the Americans to release him from prison. Between 1921 and 1925,
+    he served as the governor of the province of Bulacan."
