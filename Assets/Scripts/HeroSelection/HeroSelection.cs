@@ -11,6 +11,8 @@ public class HeroSelection : MonoBehaviour
     public CharacterData selectedCharacterForStatus;
     public GameObject heroeStatus;
 
+    private IDataService DataService = new JsonDataService();
+
     [SerializeField] Image charArtWork;
     [SerializeField] TextMeshProUGUI charName;
     [SerializeField] TextMeshProUGUI level;
@@ -19,6 +21,12 @@ public class HeroSelection : MonoBehaviour
     [SerializeField] TextMeshProUGUI defense;
 
     CanvasManager canvasManager;
+
+    string saveDataPath = "/data-data.json";
+
+    private SpecialCharacterData specialCharacterData = new SpecialCharacterData();
+
+    bool EncryptionEnabled;
 
     private void Awake()
     {
@@ -45,6 +53,18 @@ public class HeroSelection : MonoBehaviour
     {
         CanvasManager.instance.CloseScreenHeroeStatus(gameObject);
         SquadManager.instance.GetSpecialHeroCharacterData(selectedCharacter);
+        specialCharacterData.charName = selectedCharacter.charName;
+        if (DataService.SaveData(saveDataPath, specialCharacterData, EncryptionEnabled))
+        {
+            Debug.Log("Data Save");
+            SpecialCharacterData data = DataService.LoadData<SpecialCharacterData>(saveDataPath, EncryptionEnabled);
+            Debug.Log("Name " + data.charName);
+        }
+        else
+        {
+            Debug.Log("Can't Save Data");
+        }
+
     }
 
 
