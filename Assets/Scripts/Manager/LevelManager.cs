@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
@@ -15,6 +17,7 @@ public class LevelManager : MonoBehaviour
     private WaveManager waveManager;
     private BaseManager baseManager;
     private StarsManager starsManager;
+    private CoinsManager coinsManager;
 
     [SerializeField] private GameObject victoryScreen;
     [SerializeField] private GameObject failedScreen;
@@ -27,6 +30,11 @@ public class LevelManager : MonoBehaviour
 
     bool isNormalSpeed;
 
+    public bool isVictory;
+    public bool isStageFinished;
+
+    float timeToContinue = 5f;
+
     float starsCounter;
     float empytStarCounter;
     float maxStar = 3;
@@ -34,9 +42,11 @@ public class LevelManager : MonoBehaviour
     private void Awake()
     {
         isNormalSpeed = true;
+
         waveManager = FindObjectOfType<WaveManager>();
         baseManager = FindObjectOfType<BaseManager>();
         starsManager = FindObjectOfType<StarsManager>();
+        coinsManager = FindObjectOfType<CoinsManager>();
     }
 
     private void Update()
@@ -44,6 +54,30 @@ public class LevelManager : MonoBehaviour
         LevelComplete();
         LevelFailed();
         FastForward();
+        if (isStageFinished)
+        {
+            AutoToContinue();
+
+        }
+
+
+    }
+
+    private void AutoToContinue()
+    {
+        timeToContinue -= Time.deltaTime;
+        if (timeToContinue <= 0f)
+        {
+            StageComplete();
+        }
+    }
+
+
+    private void StageComplete()
+    {
+        //After some time itll automatically throw us to the continue scene
+        SceneManager.LoadScene("MainHomeScreen");
+        Debug.Log("New Scene continue to reward scene!!");
     }
 
     private void Start()
@@ -61,10 +95,13 @@ public class LevelManager : MonoBehaviour
 
     void LevelComplete()
     {
-        if (waveManager.currentWaveIndex > waveManager.maxWave && !waveManager.isSpawning)
+        if (waveManager.currentWaveIndex > waveManager.maxWave && !waveManager.isSpawning && !isStageFinished)
         {
             victoryScreen.gameObject.SetActive(true);
             float healthPercentage = baseManager.currentBaseHp / baseManager.maxBaseHp * 100f;
+            isVictory = true;
+            isStageFinished = true;
+            CurrencyManager.instance.GetCoin(coinsManager._CurrentCoin);
             //TODO:: if 100% 3 stars
             //if if less than 100% 2stars
             //if less than = 25% 1 star
@@ -115,6 +152,8 @@ public class LevelManager : MonoBehaviour
                 return;
             }
 
+
+
         }
     }
 
@@ -122,9 +161,11 @@ public class LevelManager : MonoBehaviour
 
     void LevelFailed()
     {
-        if (baseManager.currentBaseHp <= 0)
+        if (baseManager.currentBaseHp <= 0 && !isStageFinished)
         {
             failedScreen.SetActive(true);
+            isVictory = false;
+            isStageFinished = true;
         }
     }
 

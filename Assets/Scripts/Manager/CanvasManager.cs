@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class CanvasManager : MonoBehaviour
@@ -18,6 +19,10 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] GameObject heroesStatusScreen;
     public CharacterData heroesStatusCharacterData;
 
+    [Space(5)]
+    [Header("Currency")]
+    [SerializeField] TextMeshProUGUI currentCurrency;
+
 
     public static CanvasManager instance;
     [Space(5)]
@@ -25,6 +30,10 @@ public class CanvasManager : MonoBehaviour
     public CharacterData selectedHero;
     public CharacterData selectedMythicalHero;
     public CharacterData selectedHeroForStatus;
+
+    IDataService dataService = new JsonDataService();
+    DataPathClass dataPathClass = new DataPathClass();
+
 
     private void Awake()
     {
@@ -51,8 +60,15 @@ public class CanvasManager : MonoBehaviour
         }
     }
 
-    #region SquadCanvasManip
+    private void Start()
+    {
 
+        CurrencyModel data = dataService.LoadData<CurrencyModel>(dataPathClass.coinPath, false);
+        currentCurrency.text = data.coins.ToString();
+
+    }
+
+    #region SquadCanvasManip
 
     #region openingLogic
 
