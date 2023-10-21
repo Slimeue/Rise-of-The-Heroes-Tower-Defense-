@@ -22,7 +22,7 @@ public class HeroSelection : MonoBehaviour
 
     CanvasManager canvasManager;
 
-    string saveDataPath = "/data-data.json";
+    string saveDataPathSelectedSquad = "/data-squad.json";
 
     private SpecialCharacterData specialCharacterData = new SpecialCharacterData();
 
@@ -54,10 +54,10 @@ public class HeroSelection : MonoBehaviour
         CanvasManager.instance.CloseScreenHeroeStatus(gameObject);
         SquadManager.instance.GetSpecialHeroCharacterData(selectedCharacter);
         specialCharacterData.charName = selectedCharacter.charName;
-        if (DataService.SaveData(saveDataPath, specialCharacterData, EncryptionEnabled))
+        if (DataService.SaveData(saveDataPathSelectedSquad, specialCharacterData, EncryptionEnabled))
         {
             Debug.Log("Data Save");
-            SpecialCharacterData data = DataService.LoadData<SpecialCharacterData>(saveDataPath, EncryptionEnabled);
+            SpecialCharacterData data = DataService.LoadData<SpecialCharacterData>(saveDataPathSelectedSquad, EncryptionEnabled);
             Debug.Log("Name " + data.charName);
         }
         else

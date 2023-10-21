@@ -32,6 +32,8 @@ public class CharEntity : MonoBehaviour
     public float _rotationSpeed;
     public bool isAttackFinished;
 
+    IDataService dataService = new JsonDataService();
+
 
 
     // Start is called before the first frame update
@@ -41,6 +43,8 @@ public class CharEntity : MonoBehaviour
         currentMana = characterData.mana;
         baseArmor = characterData.baseArmor;
         _rotationSpeed = characterData.rotationSpeed;
+
+
         towerManager = FindObjectOfType<TowerManager>();
         characterStateMachine = new CharacterStateMachine();
     }
@@ -62,5 +66,9 @@ public class CharEntity : MonoBehaviour
         healthBar.value = normalizedHealth;
     }
 
+    public void CheckData()
+    {
+
+    }
 
 }

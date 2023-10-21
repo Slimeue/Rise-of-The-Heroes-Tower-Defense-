@@ -13,7 +13,7 @@ public class SelectedSquadDisplay : MonoBehaviour
     [SerializeField] TextMeshProUGUI charName;
 
 
-    string saveDataPath = "/data-data.json";
+    string saveDataPath = "/data-squad.json";
 
     private SpecialCharacterData specialCharacterData = new SpecialCharacterData();
 
