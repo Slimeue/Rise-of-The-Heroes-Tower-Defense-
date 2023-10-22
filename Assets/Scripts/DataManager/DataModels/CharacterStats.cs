@@ -10,6 +10,7 @@ public class CharacterStats
     {
         public string charName;
         public int level;
+        public float experienceToNextLevel;
         public float hp;
         public float damage;
         public float armor;

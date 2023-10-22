@@ -20,6 +20,11 @@ public class CanvasManager : MonoBehaviour
     public CharacterData heroesStatusCharacterData;
 
     [Space(5)]
+    [Header("LevelScreen")]
+    [SerializeField] GameObject levelWindow;
+
+
+    [Space(5)]
     [Header("Currency")]
     [SerializeField] TextMeshProUGUI currentCurrency;
 
@@ -56,16 +61,14 @@ public class CanvasManager : MonoBehaviour
             mythicalHeroesStatusPanel.transform.localScale = Vector2.zero;
             heroesScreenPanel.transform.localScale = Vector2.zero;
             heroesStatusScreen.SetActive(false);
+            levelWindow.SetActive(false);
 
         }
     }
 
-    private void Start()
+    private void Update()
     {
-
-        CurrencyModel data = dataService.LoadData<CurrencyModel>(dataPathClass.coinPath, false);
-        currentCurrency.text = data.coins.ToString();
-
+        currentCurrency.text = CurrencyManager.instance.currentCurrency.ToString();
     }
 
     #region SquadCanvasManip
@@ -170,6 +173,16 @@ public class CanvasManager : MonoBehaviour
         heroesScrollArea.SetActive(true);
         heroesStatusScreen.SetActive(false);
         heroesScreenPanelBackButton.SetActive(true);
+    }
+
+    public void OpenLevelWindow()
+    {
+        levelWindow.SetActive(true);
+    }
+
+    public void CloseLevelWindows()
+    {
+        levelWindow.SetActive(false);
     }
 
     #endregion

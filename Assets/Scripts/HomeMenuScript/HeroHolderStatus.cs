@@ -50,6 +50,7 @@ public class HeroHolderStatus : MonoBehaviour
                     {
                         charName = characterData.charName,
                         level = characterData.charLevel,
+                        experienceToNextLevel = 50,
                         hp = characterData.maxHp,
                         damage = characterData.dmgValue,
                         armor = characterData.baseArmor
