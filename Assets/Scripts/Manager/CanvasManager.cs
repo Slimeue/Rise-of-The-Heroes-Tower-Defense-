@@ -178,11 +178,13 @@ public class CanvasManager : MonoBehaviour
     public void OpenLevelWindow()
     {
         levelWindow.SetActive(true);
+        heroesStatusScreen.SetActive(false);
     }
 
     public void CloseLevelWindows()
     {
         levelWindow.SetActive(false);
+        heroesStatusScreen.SetActive(true);
     }
 
     #endregion

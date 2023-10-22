@@ -30,6 +30,11 @@ public class HeroHolderStatus : MonoBehaviour
 
     private void OnEnable()
     {
+        LoadData();
+    }
+
+    public void LoadData()
+    {
         if (CanvasManager.instance.heroesStatusCharacterData != null)
         {
             characterData = CanvasManager.instance.heroesStatusCharacterData;
@@ -96,8 +101,5 @@ public class HeroHolderStatus : MonoBehaviour
 
         }
         else return;
-
     }
-
-
 }

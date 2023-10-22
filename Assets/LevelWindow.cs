@@ -34,12 +34,13 @@ public class LevelWindow : MonoBehaviour
     float experiencePerLevel;
 
     //
-
     CharacterStats.charStats charData;
     DataPathClass dataPathClass = new DataPathClass();
     IDataService dataService = new JsonDataService();
     string saveDataPath = "/character-data"; //TODO static reference
     private CharacterStats characterStats = new CharacterStats();
+
+
 
     private void OnEnable()
     {
