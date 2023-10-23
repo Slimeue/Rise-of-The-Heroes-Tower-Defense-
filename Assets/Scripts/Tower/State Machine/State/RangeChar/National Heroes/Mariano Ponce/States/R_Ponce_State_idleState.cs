@@ -76,9 +76,9 @@ public class R_Ponce_State_idleState : CharacterBaseState
         timeLastHeal += Time.deltaTime;
         if (timeLastHeal >= healInterval)
         {
-            float healValue = (healPercentageAmount * r_Ponce.characterData.maxHp) / 100f;
+            float healValue = (healPercentageAmount * r_Ponce.maxHp) / 100f;
 
-            r_Ponce.currentHealth = Mathf.Min(r_Ponce.characterData.maxHp, r_Ponce.currentHealth + healValue);
+            r_Ponce.currentHealth = Mathf.Min(r_Ponce.maxHp, r_Ponce.currentHealth + healValue);
             timeLastHeal = 0f;
         }
     }

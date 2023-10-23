@@ -62,7 +62,7 @@ public class M_Valenzuela_S_recoveryState : CharacterBaseState
         {
             timeStarted += Time.deltaTime;
 
-            float amountToHeal = m_Valenzuela.characterData.maxHp / recoveryDuration;
+            float amountToHeal = m_Valenzuela.maxHp / recoveryDuration;
 
             elapsed += Time.deltaTime;
 

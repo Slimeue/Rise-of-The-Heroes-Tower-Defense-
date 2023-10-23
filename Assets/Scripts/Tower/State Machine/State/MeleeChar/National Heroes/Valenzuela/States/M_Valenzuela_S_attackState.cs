@@ -74,7 +74,7 @@ public class M_Valenzuela_S_attackState : CharacterBaseState
         if (collider.gameObject.CompareTag("Enemy"))
         {
             Debug.Log("Hit");
-            damageable.Damage(m_Valenzuela.characterData.dmgValue);
+            damageable.Damage(m_Valenzuela.damageValue);
             m_Valenzuela.isAttackFinished = false;
         }
     }

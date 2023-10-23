@@ -70,7 +70,7 @@ public class M_Bantugen_attack : CharacterBaseState
 
         if (collider.gameObject.CompareTag("Enemy"))
         {
-            damageable.Damage(m_Bantugen.characterData.dmgValue);
+            damageable.Damage(m_Bantugen.damageValue);
             m_Bantugen.isAttackFinished = false;
         }
     }

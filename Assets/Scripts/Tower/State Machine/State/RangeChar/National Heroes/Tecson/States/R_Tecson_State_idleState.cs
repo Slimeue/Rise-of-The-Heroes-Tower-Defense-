@@ -73,9 +73,9 @@ public class R_Tecson_State_idleState : CharacterBaseState
         timeLastHeal += Time.deltaTime;
         if (timeLastHeal >= healInterval)
         {
-            float healValue = (healPercentageAmount * r_Tecson.characterData.maxHp) / 100f;
+            float healValue = (healPercentageAmount * r_Tecson.maxHp) / 100f;
 
-            r_Tecson.currentHealth = Mathf.Min(r_Tecson.characterData.maxHp, r_Tecson.currentHealth + healValue);
+            r_Tecson.currentHealth = Mathf.Min(r_Tecson.maxHp, r_Tecson.currentHealth + healValue);
             timeLastHeal = 0f;
         }
     }

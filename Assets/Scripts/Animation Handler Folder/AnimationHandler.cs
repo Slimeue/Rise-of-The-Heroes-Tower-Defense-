@@ -11,6 +11,7 @@ public class AnimationHandler : MonoBehaviour
     public event Action OnSkillActivated;
     public event Action OnSkillFinished;
 
+
     private void AnimationDeathFinishedTrigger()
     {
         OnDeathFinish?.Invoke();
@@ -29,6 +30,7 @@ public class AnimationHandler : MonoBehaviour
     {
         OnSkillFinished?.Invoke();
     }
+
 
 
 

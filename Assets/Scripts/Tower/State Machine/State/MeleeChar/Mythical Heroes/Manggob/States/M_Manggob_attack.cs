@@ -66,7 +66,7 @@ public class M_Manggob_attack : CharacterBaseState
         {
             if (collider.gameObject.CompareTag("Enemy"))
             {
-                damageable.Damage(m_Manggob.characterData.dmgValue);
+                damageable.Damage(m_Manggob.damageValue);
                 Debug.Log(collider.gameObject.name);
                 m_Manggob.isAttackFinished = false;
             }

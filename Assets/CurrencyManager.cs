@@ -40,10 +40,7 @@ public class CurrencyManager : MonoBehaviour
         LoadCurrency();
     }
 
-    private void Update()
-    {
-        Debug.Log("Reward Value: " + rewardValue);
-    }
+
 
     public float GetCoin(float currency)
     {

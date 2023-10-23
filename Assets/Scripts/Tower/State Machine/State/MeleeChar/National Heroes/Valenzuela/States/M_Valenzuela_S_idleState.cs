@@ -78,9 +78,9 @@ public class M_Valenzuela_S_idleState : CharacterBaseState
         timeLastHeal += Time.deltaTime;
         if (timeLastHeal >= healInterval)
         {
-            float healValue = (healPercentageAmount * m_Valenzuela.characterData.maxHp) / 100f;
+            float healValue = (healPercentageAmount * m_Valenzuela.maxHp) / 100f;
 
-            m_Valenzuela.currentHealth = Mathf.Min(m_Valenzuela.characterData.maxHp, m_Valenzuela.currentHealth + healValue);
+            m_Valenzuela.currentHealth = Mathf.Min(m_Valenzuela.maxHp, m_Valenzuela.currentHealth + healValue);
             timeLastHeal = 0f;
         }
     }

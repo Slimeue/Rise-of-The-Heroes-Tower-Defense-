@@ -63,7 +63,7 @@ public class R_Ponce_State_recoveryState : CharacterBaseState
         {
             timeStarted += Time.deltaTime;
 
-            float amountToHeal = r_Ponce.characterData.maxHp / recoveryDuration;
+            float amountToHeal = r_Ponce.maxHp / recoveryDuration;
 
             elapsed += Time.deltaTime;
 

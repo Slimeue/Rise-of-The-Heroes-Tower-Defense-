@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,9 +22,11 @@ public class CharEntity : MonoBehaviour
     //Stats
     [Header("Stats")]
     [Space(5)]
+    public float maxHp;
     public float currentHealth;
     public float currentMana;
     public float baseArmor;
+    public float damageValue;
 
     [HideInInspector]
     public float radius;
@@ -33,17 +36,17 @@ public class CharEntity : MonoBehaviour
     public bool isAttackFinished;
 
     IDataService dataService = new JsonDataService();
+    string saveDataPath = "/character-data"; //TODO static reference
+    private CharacterStats characterStats = new CharacterStats();
 
 
 
     // Start is called before the first frame update
     public virtual void Awake()
     {
-        currentHealth = characterData.maxHp;
         currentMana = characterData.mana;
-        baseArmor = characterData.baseArmor;
         _rotationSpeed = characterData.rotationSpeed;
-
+        LoadCharStats();
 
         towerManager = FindObjectOfType<TowerManager>();
         characterStateMachine = new CharacterStateMachine();
@@ -55,6 +58,31 @@ public class CharEntity : MonoBehaviour
         characterStateMachine.currentState.LogicUpdate();
     }
 
+    public void LoadCharStats()
+    {
+        string newSaveDataPath = $"{saveDataPath}-{characterData.charName}.json";
+
+        CharacterStats charStatsData = dataService.LoadData<CharacterStats>(newSaveDataPath, false);
+
+        try
+        {
+            CharacterStats.charStats charData = charStatsData.stats[characterData.name];
+
+            maxHp = charData.hp;
+            currentHealth = charData.hp;
+            baseArmor = charData.armor;
+            damageValue = charData.damage;
+
+        }
+        catch (Exception e)
+        {
+            Debug.Log(e.Message + " " + e.StackTrace);
+
+        }
+
+
+    }
+
     public virtual void PlayAnim(string animBoolName)
     {
         anim.Play(animBoolName);
@@ -62,7 +90,7 @@ public class CharEntity : MonoBehaviour
 
     public virtual void HealthBarTracker()
     {
-        float normalizedHealth = currentHealth / characterData.maxHp;
+        float normalizedHealth = currentHealth / maxHp;
         healthBar.value = normalizedHealth;
     }
 

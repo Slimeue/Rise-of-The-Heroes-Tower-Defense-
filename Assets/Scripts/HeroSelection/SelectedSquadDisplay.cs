@@ -13,15 +13,6 @@ public class SelectedSquadDisplay : MonoBehaviour
     [SerializeField] TextMeshProUGUI charName;
 
 
-    string saveDataPath = "/data-squad.json";
-
-    private SpecialCharacterData specialCharacterData = new SpecialCharacterData();
-
-    bool EncryptionEnabled;
-
-
-
-
     private void Awake()
     {
 

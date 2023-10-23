@@ -76,7 +76,7 @@ public class M_DelPilar_S_attackState : CharacterBaseState
         if (collider.gameObject.CompareTag("Enemy"))
         {
             Debug.Log("Hit");
-            damageable.Damage(m_DelPilar.characterData.dmgValue);
+            damageable.Damage(m_DelPilar.damageValue);
             m_DelPilar.isAttackFinished = false;
         }
     }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class M_Kapre : MeleeEnemyEntity, IDamageable
+public class M_Kapre : MeleeEnemyEntity, IDamageable, IEnemyDataGetable
 {
     public M_Kapre_S_AttackState attackState { get; private set; }
     public M_Kapre_S_DeathState deathState { get; private set; }
@@ -86,6 +86,12 @@ public class M_Kapre : MeleeEnemyEntity, IDamageable
         Debug.Log(totalDamage);
         currentHealth -= totalDamage;
     }
+
+    EnemiesData IEnemyDataGetable.GetEnemyData()
+    {
+        return enemiesData;
+    }
+
 
     #endregion
 

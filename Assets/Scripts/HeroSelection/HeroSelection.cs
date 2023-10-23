@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -26,6 +27,14 @@ public class HeroSelection : MonoBehaviour
 
     private SpecialCharacterData specialCharacterData = new SpecialCharacterData();
 
+
+    IDataService dataService = new JsonDataService();
+
+    string saveDataPath = "/character-data"; //TODO static reference
+
+    private CharacterStats characterStats = new CharacterStats();
+
+
     bool EncryptionEnabled;
 
     private void Awake()
@@ -34,20 +43,45 @@ public class HeroSelection : MonoBehaviour
 
     }
 
-    private void Update()
+    private void OnEnable()
     {
-        if (canvasManager.selectedHero != null || canvasManager.selectedHeroForStatus != null)
+
+        selectedCharacter = canvasManager.selectedHero;
+        selectedCharacterForStatus = canvasManager.selectedHeroForStatus;
+        charArtWork.sprite = selectedCharacterForStatus.charArtWork;
+        LoadData();
+
+    }
+
+    public void LoadData()
+    {
+
+        string newSaveDataPath = $"{saveDataPath}-{selectedCharacterForStatus.charName}.json";
+
+        string path = Application.persistentDataPath + newSaveDataPath;
+
+
+        CharacterStats data = dataService.LoadData<CharacterStats>(newSaveDataPath, EncryptionEnabled);
+        Debug.Log("File exist!");
+        try
         {
-            selectedCharacter = canvasManager.selectedHero;
-            selectedCharacterForStatus = canvasManager.selectedHeroForStatus;
-            charArtWork.sprite = selectedCharacterForStatus.charArtWork;
-            charName.text = selectedCharacterForStatus.charName;
-            level.text = selectedCharacter.charLevel.ToString();
-            health.text = selectedCharacterForStatus.maxHp.ToString();
-            attack.text = selectedCharacterForStatus.dmgValue.ToString();
-            defense.text = selectedCharacterForStatus.baseArmor.ToString();
+            CharacterStats.charStats charData = data.stats[selectedCharacterForStatus.charName];
+
+            charName.text = charData.charName;
+
+            health.text = charData.hp.ToString();
+            attack.text = charData.damage.ToString();
+            defense.text = charData.armor.ToString();
+            level.text = charData.level.ToString();
+
+        }
+        catch (Exception e)
+        {
+            Debug.Log(e.Message + " " + e.StackTrace);
         }
     }
+
+
 
     public void EquipHero()
     {

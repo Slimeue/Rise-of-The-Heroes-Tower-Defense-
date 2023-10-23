@@ -61,7 +61,7 @@ public class R_Tecson_State_recoveryState : CharacterBaseState
         {
             timeStarted += Time.deltaTime;
 
-            float amountToHeal = r_Tecson.characterData.maxHp / recoveryDuration;
+            float amountToHeal = r_Tecson.maxHp / recoveryDuration;
 
             elapsed += Time.deltaTime;
 

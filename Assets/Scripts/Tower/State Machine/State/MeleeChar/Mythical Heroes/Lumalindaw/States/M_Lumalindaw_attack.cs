@@ -77,7 +77,7 @@ public class M_Lumalindaw_attack : CharacterBaseState
         {
             if (collider.gameObject.CompareTag("Enemy"))
             {
-                damageable.Damage(m_Lumalindaw.characterData.dmgValue);
+                damageable.Damage(m_Lumalindaw.damageValue);
                 Debug.Log(collider.gameObject.name);
                 m_Lumalindaw.isAttackFinished = false;
             }

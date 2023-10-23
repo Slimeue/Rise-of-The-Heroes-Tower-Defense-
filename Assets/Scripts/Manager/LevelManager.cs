@@ -19,8 +19,11 @@ public class LevelManager : MonoBehaviour
     private StarsManager starsManager;
     private CoinsManager coinsManager;
 
+
     [SerializeField] private GameObject victoryScreen;
     [SerializeField] private GameObject failedScreen;
+
+    [SerializeField] private TextMeshProUGUI rewardText;
 
     [SerializeField] private Image fastForward;
     [SerializeField] private TextMeshProUGUI fastForwardText;
@@ -34,6 +37,8 @@ public class LevelManager : MonoBehaviour
     public bool isStageFinished;
 
     float timeToContinue = 5f;
+
+    float rewardValue;
 
     float starsCounter;
     float empytStarCounter;
@@ -53,7 +58,12 @@ public class LevelManager : MonoBehaviour
     {
         LevelComplete();
         LevelFailed();
-        FastForward();
+
+        if (!PauseMenu.isGamePause)
+        {
+            FastForward();
+        }
+
         if (isStageFinished)
         {
             AutoToContinue();
@@ -101,7 +111,6 @@ public class LevelManager : MonoBehaviour
             float healthPercentage = baseManager.currentBaseHp / baseManager.maxBaseHp * 100f;
             isVictory = true;
             isStageFinished = true;
-            CurrencyManager.instance.GetCoin(coinsManager._CurrentCoin);
             //TODO:: if 100% 3 stars
             //if if less than 100% 2stars
             //if less than = 25% 1 star
@@ -122,7 +131,7 @@ public class LevelManager : MonoBehaviour
                 //2empty star
 
                 Debug.Log("1Star");
-                return;
+                rewardValue = coinsManager._CurrentCoin * 0.25f;
             }
             else if (healthPercentage < 100f)
             {
@@ -139,7 +148,7 @@ public class LevelManager : MonoBehaviour
                 }
 
                 Debug.Log("2Star");
-                return;
+                rewardValue = coinsManager._CurrentCoin * 0.5f;
             }
             else
             {
@@ -149,8 +158,12 @@ public class LevelManager : MonoBehaviour
                     starsManager.filledStar[i].SetActive(true);
                 }
                 Debug.Log("3Star");
-                return;
+                rewardValue = coinsManager._CurrentCoin * 1f;
             }
+
+            CurrencyManager.instance.GetCoin(rewardValue);
+
+            rewardText.text = rewardValue.ToString();
 
 
 

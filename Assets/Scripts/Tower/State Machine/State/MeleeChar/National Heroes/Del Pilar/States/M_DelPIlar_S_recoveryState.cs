@@ -61,7 +61,7 @@ public class M_DelPIlar_S_recoveryState : CharacterBaseState
         {
             timeStarted += Time.deltaTime;
 
-            float amountToHeal = m_DelPilar.characterData.maxHp / recoveryDuration;
+            float amountToHeal = m_DelPilar.maxHp / recoveryDuration;
 
             elapsed += Time.deltaTime;
 

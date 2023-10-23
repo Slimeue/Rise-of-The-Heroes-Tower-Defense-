@@ -69,7 +69,7 @@ public class R_Sandayo : RangeCharacterEntity, IDamageable
 
         if (_projectile != null)
         {
-            _projectile.SeekTarget(target, characterData);
+            _projectile.SeekTarget(target, characterData, damageValue);
         }
     }
 

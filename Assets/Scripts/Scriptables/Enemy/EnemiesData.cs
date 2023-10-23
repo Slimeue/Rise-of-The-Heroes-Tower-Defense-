@@ -8,6 +8,10 @@ public class EnemiesData : ScriptableObject
     [Space(5)]
     [SerializeField] public GameObject enemyPrefab;
 
+    [SerializeField] public Sprite enemyArtWork;
+
+    [SerializeField] public string enemyName;
+
     [Space(5)]
     [SerializeField] public float dmgValue;
 
@@ -23,6 +27,10 @@ public class EnemiesData : ScriptableObject
     [SerializeField] public float moveSpeed;
 
     [SerializeField] public float attackRange;
+
+    [Space(5)]
+    [Header("Lore")]
+    [TextArea(5, 10)][SerializeField] public string enemyLore;
 
     [SerializeField] public LayerMask whatIsTower;
 

@@ -77,9 +77,9 @@ public class M_DelPIlar_S_idleState : CharacterBaseState
         timeLastHeal += Time.deltaTime;
         if (timeLastHeal >= healInterval)
         {
-            float healValue = (healPercentageAmount * m_DelPilar.characterData.maxHp) / 100f;
+            float healValue = (healPercentageAmount * m_DelPilar.maxHp) / 100f;
 
-            m_DelPilar.currentHealth = Mathf.Min(m_DelPilar.characterData.maxHp, m_DelPilar.currentHealth + healValue);
+            m_DelPilar.currentHealth = Mathf.Min(m_DelPilar.maxHp, m_DelPilar.currentHealth + healValue);
             timeLastHeal = 0f;
         }
     }

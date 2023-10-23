@@ -57,8 +57,8 @@ public class CanvasManager : MonoBehaviour
             squadCanvas.transform.localScale = Vector2.zero;
             selectedSquadPanel.transform.localScale = Vector2.zero;
             squadSelection.transform.localScale = Vector2.zero;
-            heroeStatusPanel.transform.localScale = Vector2.zero;
-            mythicalHeroesStatusPanel.transform.localScale = Vector2.zero;
+            heroeStatusPanel.SetActive(false);
+            mythicalHeroesStatusPanel.SetActive(false);
             heroesScreenPanel.transform.localScale = Vector2.zero;
             heroesStatusScreen.SetActive(false);
             levelWindow.SetActive(false);
@@ -94,7 +94,7 @@ public class CanvasManager : MonoBehaviour
         selectedHero = characterData;
         selectedHeroForStatus = characterData;
         squadSelection.transform.localScale = Vector3.zero;
-        heroeStatusPanel.transform.localScale = Vector3.one;
+        heroeStatusPanel.SetActive(true);
     }
 
     public void MythicalHeroesStatusButton(CharacterData characterData)
@@ -102,12 +102,12 @@ public class CanvasManager : MonoBehaviour
         selectedMythicalHero = characterData;
         selectedHeroForStatus = characterData;
         selectedSquadPanel.transform.localScale = Vector3.zero;
-        mythicalHeroesStatusPanel.transform.localScale = Vector3.one;
+        mythicalHeroesStatusPanel.SetActive(true);
     }
 
     public void CloseScreenHeroeStatus(GameObject gameObject)
     {
-        gameObject.transform.localScale = Vector3.zero;
+        gameObject.SetActive(false);
         selectedSquadPanel.transform.localScale = Vector3.one;
     }
 
@@ -131,13 +131,13 @@ public class CanvasManager : MonoBehaviour
     public void CloseHeroesStatus()
     {
         squadSelection.transform.localScale = Vector3.one;
-        heroeStatusPanel.transform.localScale = Vector2.zero;
+        heroeStatusPanel.SetActive(false);
     }
 
     public void CloseMythicalHeroesStatus()
     {
         selectedSquadPanel.transform.localScale = Vector3.one;
-        mythicalHeroesStatusPanel.transform.localScale = Vector2.zero;
+        mythicalHeroesStatusPanel.SetActive(false);
     }
 
     #endregion

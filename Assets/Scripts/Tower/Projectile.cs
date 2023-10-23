@@ -43,11 +43,11 @@ public class Projectile : MonoBehaviour
 
     }
 
-    public void SeekTarget(Transform target, CharacterData characterData)
+    public void SeekTarget(Transform target, CharacterData characterData, float amountDamage)
     {
         this.target = target;
         speed = characterData.projectileSpeed;
-        dmgValue = characterData.dmgValue;
+        dmgValue = amountDamage;
     }
 
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class M_Berberoka : MeleeEnemyEntity, IDamageable
+public class M_Berberoka : MeleeEnemyEntity, IDamageable, IEnemyDataGetable
 {
 
     public M_Berberoka_S_AttackState attackState { get; private set; }
@@ -83,10 +83,15 @@ public class M_Berberoka : MeleeEnemyEntity, IDamageable
     public void Damage(float damageAmount)
     {
         float totalDamage;
-
         totalDamage = damageAmount * (100 / (100 + baseArmor));
         Debug.Log(totalDamage);
         currentHealth -= totalDamage;
+    }
+
+
+    EnemiesData IEnemyDataGetable.GetEnemyData()
+    {
+        return enemiesData;
     }
 
     #endregion

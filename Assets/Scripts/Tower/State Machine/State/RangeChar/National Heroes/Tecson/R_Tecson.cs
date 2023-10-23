@@ -73,7 +73,7 @@ public class R_Tecson : RangeCharacterEntity, IDamageable
 
         if (_projectile != null)
         {
-            _projectile.SeekTarget(target, characterData);
+            _projectile.SeekTarget(target, characterData, damageValue);
         }
     }
 
