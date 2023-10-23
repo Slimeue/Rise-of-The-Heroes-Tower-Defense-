@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class SquadManager : MonoBehaviour
@@ -23,15 +24,21 @@ public class SquadManager : MonoBehaviour
     {
         CreateSquadManager();
         sCSquadHolder = FindObjectOfType<SCSquadHolder>();
-        SpecialCharacterData data = DataService.LoadData<SpecialCharacterData>(saveDataPath, EncryptionEnabled);
-
-        for (int i = 0; i < sCSquadHolder.characterDatas.Length; i++)
+        string path = Application.persistentDataPath + saveDataPath;
+        if (File.Exists(path))
         {
-            if (data.charName == sCSquadHolder.characterDatas[i].charName)
+            SpecialCharacterData data = DataService.LoadData<SpecialCharacterData>(saveDataPath, EncryptionEnabled);
+            for (int i = 0; i < sCSquadHolder.characterDatas.Length; i++)
             {
-                selectedSpecialHero = sCSquadHolder.characterDatas[i];
+                if (data.charName == sCSquadHolder.characterDatas[i].charName)
+                {
+                    selectedSpecialHero = sCSquadHolder.characterDatas[i];
+                }
             }
         }
+
+
+
     }
 
     private void CreateSquadManager()

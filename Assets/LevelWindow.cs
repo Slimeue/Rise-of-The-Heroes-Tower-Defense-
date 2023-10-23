@@ -38,7 +38,7 @@ public class LevelWindow : MonoBehaviour
     DataPathClass dataPathClass = new DataPathClass();
     IDataService dataService = new JsonDataService();
     string saveDataPath = "/character-data"; //TODO static reference
-    private CharacterStats characterStats = new CharacterStats();
+
 
 
 
@@ -76,7 +76,9 @@ public class LevelWindow : MonoBehaviour
             charExperienceToNextLever.text = "Requried: " + charData.experienceToNextLevel;
             if (charData.level >= 5)
             {
-                charNextLevel.text = "Level: " + charData.level;
+                charNextLevel.text = "MAX LEVEL";
+                charExperienceToNextLever.text = "Requried: NONE ";
+
             }
             else
             {
@@ -88,9 +90,9 @@ public class LevelWindow : MonoBehaviour
             damage = charData.damage;
             armor = charData.armor;
 
-            hpPerLevel = hp * 0.5f;
-            damagePerLevel = damage * 0.5f;
-            armorPerLevel = damage * 0.5f;
+            hpPerLevel = hp * 0.1f;
+            damagePerLevel = damage * 0.1f;
+            armorPerLevel = damage * 0.1f;
             experiencePerLevel = experienceToNextLevel * 0.5f;
 
         }
@@ -105,12 +107,12 @@ public class LevelWindow : MonoBehaviour
 
         level++;
         currentPearl -= experienceToNextLevel;
-        float newHp = hp + level * hpPerLevel;
-        float newDamage = damage + level * damagePerLevel;
-        float newArmor = armor + level * armorPerLevel;
-        float newExperienceToNextLevel = experienceToNextLevel + level * experiencePerLevel;
+        float newHp = hp + (level * hpPerLevel);
+        float newDamage = damage + (level * damagePerLevel);
+        float newArmor = armor + (level * armorPerLevel);
+        float newExperienceToNextLevel = experienceToNextLevel + (level * experiencePerLevel);
 
-
+        CharacterStats characterStats = new CharacterStats();
 
         string newSaveDataPath = $"{saveDataPath}-{characterData.charName}.json";
 
@@ -151,8 +153,9 @@ public class LevelWindow : MonoBehaviour
     public void AddLevel()
     {
 
-        if (currentPearl >= experienceToNextLevel)
+        if (currentPearl >= experienceToNextLevel && level < 5)
         {
+            Debug.Log("LevelUp");
             SaveDataLevel();
             LoadDataLevel();
             CurrencyManager.instance.LoadCurrency();

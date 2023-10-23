@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using TMPro;
 using UnityEngine;
 
@@ -38,6 +39,9 @@ public class CurrencyManager : MonoBehaviour
     private void Start()
     {
         LoadCurrency();
+        currencyModel.coins = currentCurrency;
+        dataService.SaveData(dataPathClass.coinPath, currencyModel, EncryptionEnabled);
+
     }
 
 
@@ -54,8 +58,13 @@ public class CurrencyManager : MonoBehaviour
 
     public void LoadCurrency()
     {
-        CurrencyModel data = dataService.LoadData<CurrencyModel>(dataPathClass.coinPath, EncryptionEnabled);
-        currentCurrency = data.coins;
+        string path = Application.persistentDataPath + dataPathClass.coinPath;
+        if (File.Exists(path))
+        {
+            CurrencyModel data = dataService.LoadData<CurrencyModel>(dataPathClass.coinPath, EncryptionEnabled);
+            currentCurrency = data.coins;
+        }
+
     }
 
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class M_Enemy1 : MeleeEnemyEntity, IDamageable
+public class M_Enemy1 : MeleeEnemyEntity, IDamageable, IEnemyDataGetable
 {
 
 
@@ -83,6 +83,11 @@ public class M_Enemy1 : MeleeEnemyEntity, IDamageable
     public void DestroyGameObject()
     {
         gameObject.SetActive(false);
+    }
+
+    EnemiesData IEnemyDataGetable.GetEnemyData()
+    {
+        return enemiesData;
     }
 
     #endregion

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -59,6 +60,33 @@ public class HeroSelection : MonoBehaviour
         string newSaveDataPath = $"{saveDataPath}-{selectedCharacterForStatus.charName}.json";
 
         string path = Application.persistentDataPath + newSaveDataPath;
+
+
+        if (!File.Exists(path))
+        {
+            if (!characterStats.stats.ContainsKey(selectedCharacterForStatus.charName))
+            {
+                CharacterStats.charStats characterStatsData = new CharacterStats.charStats
+                {
+                    charName = selectedCharacterForStatus.charName,
+                    level = selectedCharacterForStatus.charLevel,
+                    experienceToNextLevel = 50,
+                    hp = selectedCharacterForStatus.maxHp,
+                    damage = selectedCharacterForStatus.dmgValue,
+                    armor = selectedCharacterForStatus.baseArmor
+                };
+                characterStats.stats.Clear();
+                characterStats.stats.Add(selectedCharacterForStatus.charName, characterStatsData);
+                dataService.SaveData(newSaveDataPath, characterStats, EncryptionEnabled);
+
+
+            }
+            else
+            {
+                return;
+            }
+
+        }
 
 
         CharacterStats data = dataService.LoadData<CharacterStats>(newSaveDataPath, EncryptionEnabled);

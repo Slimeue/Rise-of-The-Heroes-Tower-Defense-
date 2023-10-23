@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -44,9 +45,10 @@ public class CharEntity : MonoBehaviour
     // Start is called before the first frame update
     public virtual void Awake()
     {
+        LoadCharStats();
         currentMana = characterData.mana;
         _rotationSpeed = characterData.rotationSpeed;
-        LoadCharStats();
+
 
         towerManager = FindObjectOfType<TowerManager>();
         characterStateMachine = new CharacterStateMachine();
@@ -62,11 +64,40 @@ public class CharEntity : MonoBehaviour
     {
         string newSaveDataPath = $"{saveDataPath}-{characterData.charName}.json";
 
+        string path = Application.persistentDataPath + newSaveDataPath;
+
+
+        if (!File.Exists(path))
+        {
+            if (!characterStats.stats.ContainsKey(characterData.charName))
+            {
+                CharacterStats.charStats characterStatsData = new CharacterStats.charStats
+                {
+                    charName = characterData.charName,
+                    level = characterData.charLevel,
+                    experienceToNextLevel = 50,
+                    hp = characterData.maxHp,
+                    damage = characterData.dmgValue,
+                    armor = characterData.baseArmor
+                };
+                characterStats.stats.Clear();
+                characterStats.stats.Add(characterData.charName, characterStatsData);
+                dataService.SaveData(newSaveDataPath, characterStats, false);
+            }
+            else
+            {
+                return;
+            }
+
+        }
+
+
+
         CharacterStats charStatsData = dataService.LoadData<CharacterStats>(newSaveDataPath, false);
 
         try
         {
-            CharacterStats.charStats charData = charStatsData.stats[characterData.name];
+            CharacterStats.charStats charData = charStatsData.stats[characterData.charName];
 
             maxHp = charData.hp;
             currentHealth = charData.hp;
