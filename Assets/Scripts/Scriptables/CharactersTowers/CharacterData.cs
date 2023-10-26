@@ -22,6 +22,9 @@ public class CharacterData : ScriptableObject
     [SerializeField] public float dmgValue;
 
     [Space(5)]
+    [SerializeField] public bool charType;
+
+    [Space(5)]
     [Header("Level")]
     [SerializeField] public int charLevel;
 

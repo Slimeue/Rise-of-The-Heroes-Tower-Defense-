@@ -20,7 +20,7 @@ public class M_Kapre_S_IdleState : BaseState
     public override void Enter(StateMachine stateMachine)
     {
         base.Enter(stateMachine);
-        idleTime = 5;
+        idleTime = Random.Range(1f, 5f);
         Debug.Log("Hello From Kapre idle state");
         m_Kapre.PlayAnim(animBoolName);
     }

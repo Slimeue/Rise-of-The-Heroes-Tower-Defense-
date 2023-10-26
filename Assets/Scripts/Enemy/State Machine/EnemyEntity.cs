@@ -23,6 +23,10 @@ public class EnemyEntity : MonoBehaviour
     public int pointIndex = 0;
     #endregion
 
+    [HideInInspector]
+    public float radius;
+
+
     public bool enemyAttackFinished;
 
     public float currentHealth;
@@ -36,6 +40,7 @@ public class EnemyEntity : MonoBehaviour
         baseArmor = enemiesData.baseArmor;
         speed = enemiesData.moveSpeed;
         stateMachine = new StateMachine();
+        radius = enemiesData.attackRange;
 
     }
 

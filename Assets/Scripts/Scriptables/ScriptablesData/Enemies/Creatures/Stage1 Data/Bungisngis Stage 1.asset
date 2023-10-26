@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a869f512bc3988443925f27cd4554df4, type: 3}
+  m_Name: Bungisngis Stage 1
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 7813587587678489670, guid: 338ff14224bf8634684a394a7a668035,
+    type: 3}
+  enemyArtWork: {fileID: -1228377624, guid: f4c86b3cf2f792046a185b16e989956a, type: 3}
+  enemyName: Bungisngis
+  dmgValue: 34
+  hitPoints: 0
+  maxHp: 250
+  baseArmor: 23
+  moveSpeed: 10
+  attackRange: 7
+  enemyLore: 
+  whatIsTower:
+    serializedVersion: 2
+    m_Bits: 4160

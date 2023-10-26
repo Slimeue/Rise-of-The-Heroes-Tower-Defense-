@@ -83,7 +83,6 @@ public class M_Kapre : MeleeEnemyEntity, IDamageable, IEnemyDataGetable
         float totalDamage;
 
         totalDamage = damageAmount * (100 / (100 + baseArmor));
-        Debug.Log(totalDamage);
         currentHealth -= totalDamage;
     }
 

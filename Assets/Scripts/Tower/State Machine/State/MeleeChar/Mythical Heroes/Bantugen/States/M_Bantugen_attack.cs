@@ -96,7 +96,7 @@ public class M_Bantugen_attack : CharacterBaseState
 
     void ToSkillState()
     {
-        float healthPercentage = m_Bantugen.characterData.maxHp * 0.5f;
+        float healthPercentage = m_Bantugen.maxHp * 0.5f;
         if (m_Bantugen.currentHealth < healthPercentage && !m_Bantugen.skillFinished)
         {
             m_Bantugen.characterStateMachine.ChangeState(m_Bantugen.skillState);

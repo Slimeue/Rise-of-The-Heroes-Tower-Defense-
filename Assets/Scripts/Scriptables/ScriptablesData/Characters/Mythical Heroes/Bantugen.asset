@@ -24,15 +24,16 @@ MonoBehaviour:
   projectile: {fileID: 3470282489955092626, guid: e745b19baf502fe4e8fe353bb62ee9f2,
     type: 3}
   charName: Bantugen
-  dmgValue: 300
+  dmgValue: 23
+  charType: 0
   charLevel: 0
-  maxHp: 5000
+  maxHp: 560
   mana: 0
-  baseArmor: 500
+  baseArmor: 70
   towerCooldown: 17
   skillCooldown: 10
   towerCost: 11
-  range: 15
+  range: 20
   projectileSpeed: 0
   attackSpeed: 0
   rotationSpeed: 10

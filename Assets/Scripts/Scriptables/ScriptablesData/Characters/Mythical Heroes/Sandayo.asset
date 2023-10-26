@@ -24,11 +24,12 @@ MonoBehaviour:
   projectile: {fileID: 8716359784765577863, guid: 87232b88b8743a845a5a9c8351ed5ca3,
     type: 3}
   charName: Sandayo
-  dmgValue: 500
+  dmgValue: 46
+  charType: 0
   charLevel: 0
-  maxHp: 1400
+  maxHp: 350
   mana: 400
-  baseArmor: 265
+  baseArmor: 23
   towerCooldown: 10
   skillCooldown: 0
   towerCost: 10

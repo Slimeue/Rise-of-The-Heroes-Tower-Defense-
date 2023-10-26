@@ -4,12 +4,8 @@ using UnityEngine;
 
 public class TowerType : MonoBehaviour
 {
+    public static string RANGE_CHAR = "RangePlatform";
+    public static string MELEE_CHAR = "MeleePlatform";
+
     public CharacterData characterData;
-
-    public LayerMask charType;
-
-    private void Awake()
-    {
-        charType = characterData._layerMask;
-    }
 }

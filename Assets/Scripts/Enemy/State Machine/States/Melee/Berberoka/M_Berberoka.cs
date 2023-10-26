@@ -56,7 +56,6 @@ public class M_Berberoka : MeleeEnemyEntity, IDamageable, IEnemyDataGetable
     {
         baseState = stateMachine.currentState;
         baseState.OnTriggerEnter(stateMachine, other);
-        Debug.Log(other.name);
     }
 
     private void OnTriggerExit(Collider collider)

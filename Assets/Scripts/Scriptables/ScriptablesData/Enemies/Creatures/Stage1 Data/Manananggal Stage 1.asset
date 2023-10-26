@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a869f512bc3988443925f27cd4554df4, type: 3}
-  m_Name: Manananggal
+  m_Name: Manananggal Stage 1
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 7445524174623351422, guid: 841ed25297f1e794e8cdc07eb233b314,
     type: 3}
   enemyArtWork: {fileID: 675130504, guid: c78eda97fd6c81240988899b246488be, type: 3}
   enemyName: Mananggal
-  dmgValue: 325
+  dmgValue: 32
   hitPoints: 1650
-  maxHp: 1650
-  baseArmor: 320
+  maxHp: 300
+  baseArmor: 24
   moveSpeed: 7
-  attackRange: 5
+  attackRange: 7
   enemyLore: 'The manananggal is a mythical creature in the Philippines that is able
     to separate its upper torso from the lower part of its body. Their fangs and
     wings give them a vampire-like appearance.
@@ -35,10 +35,10 @@ MonoBehaviour:
     "separator". In this case, "one who separates itself". The name also originates
     from an expression used for a severed torso.
 
-    
 
-    The manananggal is
-    said to favor preying on sleeping, pregnant women, using an elongated proboscis-like
+
+    The manananggal is said to
+    favor preying on sleeping, pregnant women, using an elongated proboscis-like
     tongue to suck the hearts of fetuses, or the blood of someone who is sleeping.
     It also haunts newlyweds or couples in love and sometimes a new born child. Due
     to being left at the altar, grooms-to-be are one of its main targets.

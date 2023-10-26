@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a869f512bc3988443925f27cd4554df4, type: 3}
-  m_Name: Kapre
+  m_Name: Kapre Stage 1
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 611673615268700165, guid: 135ab866e398e874c9f35b8dacebf601,
     type: 3}
@@ -18,10 +18,10 @@ MonoBehaviour:
   enemyName: Kapre
   dmgValue: 350
   hitPoints: 0
-  maxHp: 2000
-  baseArmor: 400
+  maxHp: 400
+  baseArmor: 40
   moveSpeed: 5
-  attackRange: 5
+  attackRange: 7
   enemyLore: "The Kapre is a type of mythical creature in the Philippines that\u2019s
     commonly referred to as a tree demon. It\u2019s described as a tall and hairy
     brown-haired creature with a strong smell. In addition, it\u2019s believed that

@@ -16,17 +16,18 @@ MonoBehaviour:
   _layerMask:
     serializedVersion: 2
     m_Bits: 4096
-  _platformTag: 
+  _platformTag: MeleePlatform
   previewChar: {fileID: 0}
   charObject: {fileID: 8946194410183242603, guid: fe5619690256e0843b920837ea94e250,
     type: 3}
   projectile: {fileID: 0}
   charName: Gregorio Del Pilar
-  dmgValue: 200
+  dmgValue: 65
+  charType: 0
   charLevel: 0
   maxHp: 500
   mana: 0
-  baseArmor: 500
+  baseArmor: 30
   towerCooldown: 0
   skillCooldown: 0
   towerCost: 0

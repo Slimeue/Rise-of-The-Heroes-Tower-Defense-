@@ -234,6 +234,7 @@ GameObject:
   - component: {fileID: -5893029381116470842}
   - component: {fileID: 1357572299660688488}
   - component: {fileID: 9069714079421906231}
+  - component: {fileID: 96331150883033366}
   m_Layer: 12
   m_Name: Tecson
   m_TagString: Player
@@ -323,9 +324,11 @@ MonoBehaviour:
   healthBar: {fileID: 2922450524904313449}
   anim: {fileID: 0}
   characterData: {fileID: 11400000, guid: 5ea3601518eb078498b93fdeacddaccb, type: 2}
+  maxHp: 0
   currentHealth: 0
   currentMana: 0
   baseArmor: 0
+  damageValue: 0
   radius: 0
   _rotationSpeed: 0
   isAttackFinished: 0
@@ -337,6 +340,19 @@ MonoBehaviour:
   firePoint: {fileID: 6010983909334762077}
   towerTesting: []
   isDead: 0
+--- !u!114 &96331150883033366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1005150024574080214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d840188521c965a4ab93423c44be6e46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterData: {fileID: 11400000, guid: 5ea3601518eb078498b93fdeacddaccb, type: 2}
 --- !u!1 &1358876588741621241
 GameObject:
   m_ObjectHideFlags: 0

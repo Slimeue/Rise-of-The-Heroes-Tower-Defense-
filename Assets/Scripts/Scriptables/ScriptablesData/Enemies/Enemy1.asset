@@ -14,11 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 201678975986700708, guid: 68f04e104245a99459ebe7bc1abc21de,
     type: 3}
+  enemyArtWork: {fileID: -451497622, guid: 37c73ac720f3d4547879aed4c5a01eba, type: 3}
+  enemyName: Tikbalang
   dmgValue: 10
   hitPoints: 0
   maxHp: 10
   baseArmor: 0
+  moveSpeed: 0
   attackRange: 10
+  enemyLore: 
   whatIsTower:
     serializedVersion: 2
     m_Bits: 64

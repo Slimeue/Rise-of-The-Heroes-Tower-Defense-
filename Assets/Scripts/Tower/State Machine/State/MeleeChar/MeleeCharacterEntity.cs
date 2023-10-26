@@ -49,7 +49,7 @@ public class MeleeCharacterEntity : CharEntity
             _targetDir = enemy.transform.position - transform.position;
             float distance = _targetDir.magnitude;
 
-            if (distance < radius)
+            if (distance < radius && enemy.isGroundType)
             {
                 enemiesInRange++;
                 if (distance < maxDis)

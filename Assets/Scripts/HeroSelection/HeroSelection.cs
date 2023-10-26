@@ -97,9 +97,9 @@ public class HeroSelection : MonoBehaviour
 
             charName.text = charData.charName;
 
-            health.text = charData.hp.ToString();
-            attack.text = charData.damage.ToString();
-            defense.text = charData.armor.ToString();
+            health.text = charData.hp.ToString("f0");
+            attack.text = charData.damage.ToString("f0");
+            defense.text = charData.armor.ToString("f0");
             level.text = charData.level.ToString();
 
         }

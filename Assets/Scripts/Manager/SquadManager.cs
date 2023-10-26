@@ -55,19 +55,6 @@ public class SquadManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    private void Update()
-    {
-
-        if (selectedSpecialHero != null)
-        {
-            Debug.Log(selectedSpecialHero);
-
-        }
-        else return;
-
-
-
-    }
 
     public CharacterData GetSpecialHeroCharacterData(CharacterData characterData)
     {

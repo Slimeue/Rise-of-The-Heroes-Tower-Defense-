@@ -529,6 +529,7 @@ GameObject:
   - component: {fileID: 5037705692226671488}
   - component: {fileID: -3979414915740466386}
   - component: {fileID: 4180461943566201068}
+  - component: {fileID: -8854539754396823068}
   m_Layer: 12
   m_Name: Valenzuela
   m_TagString: Player
@@ -572,9 +573,11 @@ MonoBehaviour:
   healthBar: {fileID: 3514907973284655025}
   anim: {fileID: 0}
   characterData: {fileID: 11400000, guid: 390698b3c8f0368479e3731fbab78fd8, type: 2}
+  maxHp: 0
   currentHealth: 0
   currentMana: 0
   baseArmor: 0
+  damageValue: 0
   radius: 0
   _rotationSpeed: 0
   isAttackFinished: 0
@@ -634,6 +637,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-8854539754396823068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3537201373362703865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d840188521c965a4ab93423c44be6e46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterData: {fileID: 11400000, guid: 390698b3c8f0368479e3731fbab78fd8, type: 2}
 --- !u!1 &3827599129339410341
 GameObject:
   m_ObjectHideFlags: 0
@@ -1414,9 +1430,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7227809933702644100}
+  - component: {fileID: 7941209598577728856}
   m_Layer: 12
   m_Name: LowerArm.L.003
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1438,6 +1455,19 @@ Transform:
   m_Father: {fileID: 5533963284931011056}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0.0000000013669621, y: 0.000000020504428, z: -0.00000071123674}
+--- !u!65 &7941209598577728856
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8509257922677608559}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 10.092168}
+  m_Center: {x: 0.00000033305, y: -0.000000058327064, z: -1.3121612}
 --- !u!1 &8705105664193257149
 GameObject:
   m_ObjectHideFlags: 0

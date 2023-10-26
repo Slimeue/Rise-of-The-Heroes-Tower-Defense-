@@ -83,9 +83,9 @@ public class HeroHolderStatus : MonoBehaviour
                 {
                     _charName.text = charData.charName;
                 }
-                charHealth.text = "Health: " + charData.hp.ToString("f1");
-                charAttack.text = "Attack: " + charData.damage.ToString("f1");
-                charDefense.text = "Defense: " + charData.armor.ToString("f1");
+                charHealth.text = "Health: " + charData.hp.ToString("f0");
+                charAttack.text = "Attack: " + charData.damage.ToString("f0");
+                charDefense.text = "Defense: " + charData.armor.ToString("f0");
                 charLevel.text = "Lvl: " + charData.level;
                 charLore.text = characterData.charLore;
 

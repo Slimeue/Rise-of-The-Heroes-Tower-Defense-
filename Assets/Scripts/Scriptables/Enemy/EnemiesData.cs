@@ -7,7 +7,7 @@ public class EnemiesData : ScriptableObject
 {
     [Space(5)]
     [SerializeField] public GameObject enemyPrefab;
-
+    [SerializeField] public GameObject projectile;
     [SerializeField] public Sprite enemyArtWork;
 
     [SerializeField] public string enemyName;
@@ -27,6 +27,8 @@ public class EnemiesData : ScriptableObject
     [SerializeField] public float moveSpeed;
 
     [SerializeField] public float attackRange;
+
+    [SerializeField] public float rotationsSpeed;
 
     [Space(5)]
     [Header("Lore")]

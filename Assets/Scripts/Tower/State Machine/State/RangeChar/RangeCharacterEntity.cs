@@ -60,11 +60,23 @@ public class RangeCharacterEntity : CharEntity
             _targetDir = enemy.transform.position - transform.position;
             float distance = _targetDir.magnitude;
 
-            if (distance < radius && distance < maxDis)
+            if (distance < radius)
             {
-                maxDis = distance;
-                closestTarget = enemy.transform;
-                _anyEnemyInRange = true;
+                if (distance < maxDis)
+                {
+                    if (enemy.isAerialType)
+                    {
+                        maxDis = distance;
+                        closestTarget = enemy.transform;
+                        _anyEnemyInRange = true;
+                    }
+                    else if (!closestTarget || !closestTarget.GetComponent<EnemyType>().isAerialType)
+                    {
+                        maxDis = distance;
+                        closestTarget = enemy.transform;
+                        _anyEnemyInRange = true;
+                    }
+                }
             }
 
         }

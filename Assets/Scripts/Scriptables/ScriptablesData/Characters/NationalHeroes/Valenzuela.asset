@@ -16,17 +16,18 @@ MonoBehaviour:
   _layerMask:
     serializedVersion: 2
     m_Bits: 4096
-  _platformTag: 
+  _platformTag: MeleePlatform
   previewChar: {fileID: 0}
   charObject: {fileID: 3537201373362703865, guid: 5d6c2ef8c39163a48b49406cbd2d6f61,
     type: 3}
   projectile: {fileID: 0}
   charName: Valenzuela
-  dmgValue: 440
+  dmgValue: 65
+  charType: 0
   charLevel: 0
-  maxHp: 1550
+  maxHp: 500
   mana: 0
-  baseArmor: 280
+  baseArmor: 45
   towerCooldown: 0
   skillCooldown: 0
   towerCost: 0

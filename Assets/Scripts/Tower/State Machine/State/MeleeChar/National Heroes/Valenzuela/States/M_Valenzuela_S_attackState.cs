@@ -18,12 +18,12 @@ public class M_Valenzuela_S_attackState : CharacterBaseState
     {
         base.Enter();
         m_Valenzuela.anim.speed = m_Valenzuela.characterData.attackSpeed;
-        m_Valenzuela.PlayAnim(animBoolName);
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+        m_Valenzuela.PlayAnim(animBoolName);
         ToIdleState();
         ToDeathState();
         FindTarget();

@@ -23,15 +23,16 @@ MonoBehaviour:
     type: 3}
   projectile: {fileID: 0}
   charName: Manggob
-  dmgValue: 460
+  dmgValue: 56
+  charType: 0
   charLevel: 0
-  maxHp: 3400
+  maxHp: 326
   mana: 400
-  baseArmor: 320
+  baseArmor: 30
   towerCooldown: 15
   skillCooldown: 0
   towerCost: 13
-  range: 15
+  range: 25
   projectileSpeed: 0
   attackSpeed: 0
   rotationSpeed: 5

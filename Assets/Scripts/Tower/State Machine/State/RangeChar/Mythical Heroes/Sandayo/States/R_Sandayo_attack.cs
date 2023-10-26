@@ -62,7 +62,6 @@ public class R_Sandayo_attack : CharacterBaseState
     {
         if (r_Sandayo.target != null)
         {
-            Debug.Log("Targeting");
             Vector3 targetDir = r_Sandayo.target.position - r_Sandayo.transform.position;
             targetDir.y = 0;
             Quaternion targetRotation = Quaternion.LookRotation(targetDir);

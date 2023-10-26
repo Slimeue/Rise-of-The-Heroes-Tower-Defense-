@@ -23,11 +23,12 @@ MonoBehaviour:
     type: 3}
   projectile: {fileID: 0}
   charName: Lumalindaw
-  dmgValue: 400
+  dmgValue: 70
+  charType: 0
   charLevel: 0
-  maxHp: 5000
+  maxHp: 350
   mana: 400
-  baseArmor: 360
+  baseArmor: 34
   towerCooldown: 13
   skillCooldown: 5
   towerCost: 14

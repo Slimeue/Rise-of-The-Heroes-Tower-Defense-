@@ -1368,6 +1368,7 @@ GameObject:
   - component: {fileID: 3770805728148116306}
   - component: {fileID: 5359407373163904082}
   - component: {fileID: 2738046164756003443}
+  - component: {fileID: -7600699219055424995}
   m_Layer: 12
   m_Name: DelPilar
   m_TagString: Player
@@ -1411,9 +1412,11 @@ MonoBehaviour:
   healthBar: {fileID: 8761628194764584158}
   anim: {fileID: 0}
   characterData: {fileID: 11400000, guid: 44820dc02b094c24d8c14447cb23f68b, type: 2}
+  maxHp: 0
   currentHealth: 0
   currentMana: 0
   baseArmor: 0
+  damageValue: 0
   radius: 0
   _rotationSpeed: 0
   isAttackFinished: 0
@@ -1422,6 +1425,7 @@ MonoBehaviour:
   _targetDir: {x: 0, y: 0, z: 0}
   _inRange: 0
   towerTesting: []
+  enemiesInRange: 0
   isDead: 0
 --- !u!95 &3770805728148116306
 Animator:
@@ -1472,6 +1476,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-7600699219055424995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8946194410183242603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d840188521c965a4ab93423c44be6e46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterData: {fileID: 11400000, guid: 44820dc02b094c24d8c14447cb23f68b, type: 2}
 --- !u!1001 &3393075149074948914
 PrefabInstance:
   m_ObjectHideFlags: 0

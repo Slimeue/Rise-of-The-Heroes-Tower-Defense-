@@ -1422,6 +1422,7 @@ GameObject:
   - component: {fileID: 4326389173592924841}
   - component: {fileID: -815865157415134714}
   - component: {fileID: -8507700960070420196}
+  - component: {fileID: 8502352876764519575}
   m_Layer: 12
   m_Name: Ponce
   m_TagString: Player
@@ -1511,9 +1512,11 @@ MonoBehaviour:
   healthBar: {fileID: 869594871609090685}
   anim: {fileID: 0}
   characterData: {fileID: 11400000, guid: 693d77975296253448738c1cc5f62293, type: 2}
+  maxHp: 0
   currentHealth: 0
   currentMana: 0
   baseArmor: 0
+  damageValue: 0
   radius: 0
   _rotationSpeed: 0
   isAttackFinished: 0
@@ -1525,6 +1528,19 @@ MonoBehaviour:
   firePoint: {fileID: 3137372461436993470}
   towerTesting: []
   isDead: 0
+--- !u!114 &8502352876764519575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8328953826122689365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d840188521c965a4ab93423c44be6e46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterData: {fileID: 11400000, guid: 693d77975296253448738c1cc5f62293, type: 2}
 --- !u!1 &8619493488338931977
 GameObject:
   m_ObjectHideFlags: 0

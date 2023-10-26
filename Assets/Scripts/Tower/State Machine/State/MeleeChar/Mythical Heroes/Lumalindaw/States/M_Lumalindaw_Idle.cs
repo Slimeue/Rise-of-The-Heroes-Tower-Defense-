@@ -17,13 +17,14 @@ public class M_Lumalindaw_Idle : CharacterBaseState
     {
         base.Enter();
         Debug.Log("Hello From Lumalindaw idle state");
-        m_Lumalindaw.PlayAnim(animBoolName);
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
         ToDeathState();
+        m_Lumalindaw.PlayAnim(animBoolName);
+
     }
 
     public override void DoChecks()

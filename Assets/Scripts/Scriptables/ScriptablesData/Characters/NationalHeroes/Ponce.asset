@@ -16,18 +16,19 @@ MonoBehaviour:
   _layerMask:
     serializedVersion: 2
     m_Bits: 4096
-  _platformTag: 
+  _platformTag: MeleePlatform
   previewChar: {fileID: 0}
   charObject: {fileID: 8328953826122689365, guid: 8ab8661038a8f2848a608743f04cf27d,
     type: 3}
   projectile: {fileID: 2462218149979854566, guid: 6119f98b5ad4c6444aa3ee194bfdc451,
     type: 3}
   charName: Ponce
-  dmgValue: 350
+  dmgValue: 54
+  charType: 0
   charLevel: 0
-  maxHp: 500
+  maxHp: 360
   mana: 500
-  baseArmor: 350
+  baseArmor: 34
   towerCooldown: 0
   skillCooldown: 0
   towerCost: 0
