@@ -5,9 +5,9 @@ using UnityEngine;
 public class M_Manggob_skill : CharacterBaseState
 {
 
-    M_Manggob m_Manggob;
+    Manggob m_Manggob;
 
-    public M_Manggob_skill(CharacterStateMachine characterStateMachine, string animBoolName, CharEntity charEntity, M_Manggob m_Manggob)
+    public M_Manggob_skill(CharacterStateMachine characterStateMachine, string animBoolName, CharEntity charEntity, Manggob m_Manggob)
     : base(animBoolName, characterStateMachine)
     {
         this.animBoolName = animBoolName;

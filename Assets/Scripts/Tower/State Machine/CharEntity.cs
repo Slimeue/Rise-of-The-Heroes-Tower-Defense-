@@ -40,7 +40,14 @@ public class CharEntity : MonoBehaviour
     string saveDataPath = "/character-data"; //TODO static reference
     private CharacterStats characterStats = new CharacterStats();
 
+    //AnimParameters
+    protected const string ATTACK_SPEED = "AttackSpeed";
 
+    //Buffs
+    [HideInInspector]
+    public float buffDuration;
+    [HideInInspector]
+    public bool isBuffed;
 
     // Start is called before the first frame update
     public virtual void Awake()
@@ -58,6 +65,7 @@ public class CharEntity : MonoBehaviour
     public virtual void Update()
     {
         characterStateMachine.currentState.LogicUpdate();
+        CheckIsBuffed();
     }
 
     public void LoadCharStats()
@@ -125,9 +133,19 @@ public class CharEntity : MonoBehaviour
         healthBar.value = normalizedHealth;
     }
 
-    public void CheckData()
+    public void CheckIsBuffed()
     {
-
+        if (isBuffed)
+        {
+            buffDuration -= Time.deltaTime;
+            if (buffDuration <= 0f)
+            {
+                //setback to default speed
+                anim.SetFloat(ATTACK_SPEED, 1f);
+                isBuffed = false;
+            }
+        }
     }
+
 
 }

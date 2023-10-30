@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class M_DelPIlar_S_idleState : CharacterBaseState
 {
-    M_DelPilar m_DelPilar;
+    DelPilar m_DelPilar;
     float healInterval = 5f;
     float timeLastHeal = 0f;
     float healPercentageAmount = 5f;
 
-    public M_DelPIlar_S_idleState(CharacterStateMachine characterStateMachine, string animBoolName, CharEntity charEntity, M_DelPilar m_DelPilar)
+    public M_DelPIlar_S_idleState(CharacterStateMachine characterStateMachine, string animBoolName, CharEntity charEntity, DelPilar m_DelPilar)
     : base(animBoolName, characterStateMachine)
     {
         this.animBoolName = animBoolName;

@@ -2,8 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class R_Ponce : RangeCharacterEntity, IDamageable
+public class R_Ponce : RangeCharacterEntity, IDamageable, ISkillable, IBuffable
 {
+
+
+    public GameObject skillHolder;
+    public float skillCd;
+    public float skillDuration;
+    public bool skillFinished;
 
     BaseManager baseManager;
 
@@ -19,10 +25,13 @@ public class R_Ponce : RangeCharacterEntity, IDamageable
     const string HERO_SKILL = "skill";
     const string HERO_DEATH = "death";
 
+    public GameObject[] activeTowers;
+
+
     public override void Awake()
     {
         base.Awake();
-
+        skillCd = characterData.skillCooldown;
         attackState = new R_Ponce_State_attackState(characterStateMachine, HERO_ATTACK, this, this);
         idleState = new R_Ponce_State_idleState(characterStateMachine, HERO_IDLE, this, this);
         deathState = new R_Ponce_State_deathState(characterStateMachine, HERO_DEATH, this, this);
@@ -36,8 +45,23 @@ public class R_Ponce : RangeCharacterEntity, IDamageable
     public override void Update()
     {
         base.Update();
+
+        activeTowers = GameObject.FindGameObjectsWithTag("Player");
+
         radius = characterData.range;
         HealthBarTracker();
+
+        //skillcd
+        if (skillFinished)
+        {
+            skillCd -= Time.deltaTime;
+            if (skillCd <= 0f)
+            {
+                skillFinished = false;
+                skillCd = characterData.skillCooldown;
+            }
+        }
+
     }
 
     private void Start()
@@ -96,6 +120,32 @@ public class R_Ponce : RangeCharacterEntity, IDamageable
     public void ToRecovery()
     {
         characterStateMachine.ChangeState(recoveryState);
+    }
+
+    public void Slowed(float slowAmount, float time) { }
+
+    public void Skill()
+    {
+        if (!skillFinished)
+        {
+            Debug.Log(gameObject.name + " Skill Click");
+            characterStateMachine.ChangeState(skillState);
+            skillFinished = true;
+        }
+    }
+
+    public void AttackSpeedBuff(float percentage, float duration)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void AttackBuff(float percentage, float duration)
+    {
+        damageValue *= percentage;
+
+        isBuffed = true;
+        buffDuration = duration;
+
     }
 
     #endregion

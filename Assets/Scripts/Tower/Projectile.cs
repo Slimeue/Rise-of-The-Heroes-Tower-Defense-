@@ -50,5 +50,12 @@ public class Projectile : MonoBehaviour
         dmgValue = amountDamage;
     }
 
+    public void EnemySeekTarget(Transform target, EnemiesData enemiesData)
+    {
+        this.target = target;
+        speed = enemiesData.projectileSpeed;
+        dmgValue = enemiesData.dmgValue;
+    }
+
 
 }

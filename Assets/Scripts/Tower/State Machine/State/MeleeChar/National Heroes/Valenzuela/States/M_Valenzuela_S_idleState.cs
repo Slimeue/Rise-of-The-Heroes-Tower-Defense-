@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class M_Valenzuela_S_idleState : CharacterBaseState
 {
-    M_Valenzuela m_Valenzuela;
+    Valenzuela m_Valenzuela;
 
     float healInterval = 5f;
     float timeLastHeal = 0f;
     float healPercentageAmount = 5f;
 
-    public M_Valenzuela_S_idleState(CharacterStateMachine characterStateMachine, string animBoolName, CharEntity charEntity, M_Valenzuela m_Valenzuela)
+    public M_Valenzuela_S_idleState(CharacterStateMachine characterStateMachine, string animBoolName, CharEntity charEntity, Valenzuela m_Valenzuela)
     : base(animBoolName, characterStateMachine)
     {
         this.animBoolName = animBoolName;
@@ -20,13 +20,14 @@ public class M_Valenzuela_S_idleState : CharacterBaseState
     public override void Enter()
     {
         base.Enter();
-        m_Valenzuela.PlayAnim(animBoolName);
         Debug.Log("Hello From valenzuela idle state");
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+        m_Valenzuela.PlayAnim(animBoolName);
+
         ToDeathState();
         PassiveHeal();
     }

@@ -6,10 +6,12 @@ public class SpecialHeroSpawn : MonoBehaviour
 {
     public CharacterData characterData;
 
+    public GameObject _specialHero;
+
     private void Awake()
     {
         characterData = SquadManager.instance.selectedSpecialHero;
-        Instantiate(characterData.charObject, transform.position, Quaternion.identity);
+        _specialHero = Instantiate(characterData.charObject, transform.position, Quaternion.identity);
     }
 
 }

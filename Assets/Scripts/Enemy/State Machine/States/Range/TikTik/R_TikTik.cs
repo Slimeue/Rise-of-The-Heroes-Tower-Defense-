@@ -20,7 +20,7 @@ public class R_TikTik : RangeEnemyEntity, IDamageable, IEnemyDataGetable
 
         attackState = new R_TikTik_S_attackState(stateMachine, CREATURE_ATTACK, this, this);
         idleState = new R_TikTik_S_idleState(stateMachine, CREATURE_IDLE, this, this);
-        deathState = new R_TikTik_S_deathState();
+        deathState = new R_TikTik_S_deathState(stateMachine, CREATURE_DEATH, this, this);
         movingState = new R_TikTik_S_moveState(stateMachine, CREATURE_MOVE, this, this);
         animationHandler = GetComponent<AnimationHandler>();
         anim = GetComponent<Animator>();
@@ -31,6 +31,7 @@ public class R_TikTik : RangeEnemyEntity, IDamageable, IEnemyDataGetable
     {
         base.Update();
         HealthBarTracker();
+        SlowedChecked();
     }
 
     public override void OnEnable()
@@ -87,6 +88,34 @@ public class R_TikTik : RangeEnemyEntity, IDamageable, IEnemyDataGetable
     EnemiesData IEnemyDataGetable.GetEnemyData()
     {
         return enemiesData;
+    }
+
+    public void Slowed(float slowAmount, float time)
+    {
+
+
+        speed /= slowAmount;
+        anim.SetFloat("Speed", 0.5f);
+        anim.speed = 0.1f;
+
+        slowed = true;
+
+    }
+
+    private void SlowedChecked()
+    {
+        if (slowed)
+        {
+            Debug.Log(anim.speed);
+            timeSlow -= Time.deltaTime;
+            if (timeSlow <= 0)
+            {
+                timeSlow = 5f;
+                anim.SetFloat("Speed", 1f);
+                anim.speed = 1f;
+                slowed = false;
+            }
+        }
     }
     #endregion
 

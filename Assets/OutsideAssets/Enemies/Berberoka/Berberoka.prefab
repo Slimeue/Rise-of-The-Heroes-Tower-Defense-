@@ -393,6 +393,9 @@ MonoBehaviour:
   animationHandler: {fileID: 0}
   speed: 0
   pointIndex: 0
+  radius: 0
+  timeSlow: 0
+  slowed: 0
   enemyAttackFinished: 0
   currentHealth: 0
   isInFront: 0
@@ -407,8 +410,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5.327489, y: 7.1784015, z: 3.511057}
-  m_Center: {x: -0.078207396, y: 3.2456155, z: 0.23724924}
+  m_Size: {x: 5.3274894, y: 7.178401, z: 2.6736975}
+  m_Center: {x: -0.07820742, y: 3.2456157, z: -0.18143007}
 --- !u!1 &1588129770462682091
 GameObject:
   m_ObjectHideFlags: 0

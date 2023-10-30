@@ -62,6 +62,11 @@ public class SquadManager : MonoBehaviour
         return characterData;
     }
 
+    public GameObject SelectedHero()
+    {
+        return gameObject;
+    }
+
 
 
 

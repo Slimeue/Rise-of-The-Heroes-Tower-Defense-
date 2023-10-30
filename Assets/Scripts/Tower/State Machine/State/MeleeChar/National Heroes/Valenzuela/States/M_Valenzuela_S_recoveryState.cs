@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class M_Valenzuela_S_recoveryState : CharacterBaseState
 {
-    M_Valenzuela m_Valenzuela;
+    Valenzuela m_Valenzuela;
 
 
     float recoveryDuration = 30f;
@@ -13,7 +13,7 @@ public class M_Valenzuela_S_recoveryState : CharacterBaseState
     float recoveryRate = 1.0f; // percent   
     bool isRecovering = true;
 
-    public M_Valenzuela_S_recoveryState(CharacterStateMachine characterStateMachine, string animBoolName, CharEntity charEntity, M_Valenzuela m_Valenzuela)
+    public M_Valenzuela_S_recoveryState(CharacterStateMachine characterStateMachine, string animBoolName, CharEntity charEntity, Valenzuela m_Valenzuela)
     : base(animBoolName, characterStateMachine)
     {
         this.animBoolName = animBoolName;
@@ -25,13 +25,13 @@ public class M_Valenzuela_S_recoveryState : CharacterBaseState
     {
         base.Enter();
         isRecovering = true;
-        m_Valenzuela.PlayAnim(animBoolName);
         Debug.Log("Hello from Valenzuela RecoveryState");
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+        m_Valenzuela.PlayAnim(animBoolName);
         PassiveHeal();
     }
 

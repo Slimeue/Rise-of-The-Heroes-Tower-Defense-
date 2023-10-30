@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class R_Sandayo_attack : CharacterBaseState
 {
-    R_Sandayo r_Sandayo;
-
+    Sandayo r_Sandayo;
+    float count;
     public bool isAttackFinish;
 
-    public R_Sandayo_attack(CharacterStateMachine characterStateMachine, string animBoolName, CharEntity charEntity, R_Sandayo r_Sandayo)
+    public R_Sandayo_attack(CharacterStateMachine characterStateMachine, string animBoolName, CharEntity charEntity, Sandayo r_Sandayo)
     : base(animBoolName, characterStateMachine)
     {
         this.r_Sandayo = r_Sandayo;
@@ -20,6 +20,7 @@ public class R_Sandayo_attack : CharacterBaseState
     public override void Enter()
     {
         base.Enter();
+        count = 2;
         Debug.Log("Hello from Sandayo Attack state");
         r_Sandayo.PlayAnim(animBoolName);
         r_Sandayo.rangeCharAnimationHandler.OnRangeStartAttack += r_Sandayo.Fire;
@@ -30,6 +31,7 @@ public class R_Sandayo_attack : CharacterBaseState
         base.LogicUpdate();
         FindTarget();
         ToDeathState();
+        ToSkillState();
     }
 
     public override void Exit()
@@ -74,6 +76,21 @@ public class R_Sandayo_attack : CharacterBaseState
         if (r_Sandayo.currentHealth <= 0)
         {
             characterStateMachine.ChangeState(r_Sandayo.deathState);
+        }
+    }
+
+    private void ToSkillState()
+    {
+
+
+
+        if (!r_Sandayo.skillFinished && count <= 0f)
+        {
+            r_Sandayo.characterStateMachine.ChangeState(r_Sandayo.skillState);
+        }
+        else
+        {
+            count -= Time.deltaTime;
         }
     }
 

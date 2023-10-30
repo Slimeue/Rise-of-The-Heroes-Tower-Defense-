@@ -6,10 +6,11 @@ using UnityEngine.SceneManagement;
 public class SceneLoaderManager : MonoBehaviour
 {
 
-
+    public StageVineRef stageVineRef;
 
     public void LoadScene(string scene)
     {
+
         SceneManager.LoadScene(scene);
     }
 }

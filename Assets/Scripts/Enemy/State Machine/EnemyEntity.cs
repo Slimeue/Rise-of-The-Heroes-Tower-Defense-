@@ -11,6 +11,8 @@ public class EnemyEntity : MonoBehaviour
     public Animator anim;
     public Slider healthBar;
 
+
+
     //TargetWaypoint
     public Transform target;
 
@@ -26,6 +28,8 @@ public class EnemyEntity : MonoBehaviour
     [HideInInspector]
     public float radius;
 
+    public float timeSlow;
+    public bool slowed;
 
     public bool enemyAttackFinished;
 

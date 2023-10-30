@@ -33,6 +33,8 @@ public class M_Bungisngis : MeleeEnemyEntity, IDamageable, IEnemyDataGetable
     {
         base.Update();
         HealthBarTracker();
+        SlowedChecked();
+
     }
 
     public override void OnEnable()
@@ -92,6 +94,33 @@ public class M_Bungisngis : MeleeEnemyEntity, IDamageable, IEnemyDataGetable
         return enemiesData;
     }
 
+    public void Slowed(float slowAmount, float time)
+    {
+
+
+        speed /= slowAmount;
+        anim.SetFloat("Speed", 0.5f);
+        anim.speed = 0.1f;
+
+        slowed = true;
+
+    }
+
+    private void SlowedChecked()
+    {
+        if (slowed)
+        {
+            Debug.Log(anim.speed);
+            timeSlow -= Time.deltaTime;
+            if (timeSlow <= 0)
+            {
+                timeSlow = 5f;
+                anim.SetFloat("Speed", 1f);
+                anim.speed = 1f;
+                slowed = false;
+            }
+        }
+    }
 
     #endregion
 

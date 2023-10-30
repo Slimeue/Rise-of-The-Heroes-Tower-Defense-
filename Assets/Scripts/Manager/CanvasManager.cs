@@ -63,6 +63,7 @@ public class CanvasManager : MonoBehaviour
             heroesStatusScreen.SetActive(false);
             levelWindow.SetActive(false);
 
+
         }
     }
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class M_Bantugen : MeleeCharacterEntity, IDamageable
+public class M_Bantugen : MeleeCharacterEntity, IDamageable, IBuffable
 {
     public GameObject ability;
     public float skillCd;
@@ -155,6 +155,31 @@ public class M_Bantugen : MeleeCharacterEntity, IDamageable
                 ability.SetActive(false);
             }
         }
+    }
+
+    public void Slowed(float slowAmount, float time)
+    {
+    }
+
+    public void AttackSpeedBuff(float percentage, float duration)
+    {
+        float defaultAttackSpeed = anim.GetFloat(ATTACK_SPEED);
+
+        float buffAttackSpeed = defaultAttackSpeed *= percentage;
+
+        anim.SetFloat(ATTACK_SPEED, buffAttackSpeed);
+
+        isBuffed = true;
+        buffDuration = duration;
+    }
+
+    public void AttackBuff(float percentage, float duration)
+    {
+        damageValue *= percentage;
+
+        isBuffed = true;
+        buffDuration = duration;
+
     }
 
 

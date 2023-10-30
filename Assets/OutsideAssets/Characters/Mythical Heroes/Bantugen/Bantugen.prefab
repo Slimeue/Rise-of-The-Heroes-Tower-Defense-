@@ -524,7 +524,6 @@ GameObject:
   - component: {fileID: 8443848128749590166}
   - component: {fileID: -6086331402742912521}
   - component: {fileID: -1955971057591892364}
-  - component: {fileID: 2761166526489230252}
   m_Layer: 6
   m_Name: Bantugen
   m_TagString: Player
@@ -548,6 +547,7 @@ Transform:
   - {fileID: 5175742594332983990}
   - {fileID: 2133391710034425721}
   - {fileID: 9210989283511773559}
+  - {fileID: 4444396147365923588}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -637,19 +637,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad184c616c632084ebeca515fe3875c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2761166526489230252
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3470282489955092626}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d840188521c965a4ab93423c44be6e46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterData: {fileID: 11400000, guid: c5fd8cc5a6019534eac1bbe380138339, type: 2}
 --- !u!1 &3756036454813823694
 GameObject:
   m_ObjectHideFlags: 0
@@ -682,6 +669,51 @@ Transform:
   m_Father: {fileID: 3975044832172046647}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 2.7285314, y: -11.016682, z: 7.8127}
+--- !u!1 &3853344167279818944
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4444396147365923588}
+  - component: {fileID: 3920135739056218864}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4444396147365923588
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3853344167279818944}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4279329102486852136}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3920135739056218864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3853344167279818944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d840188521c965a4ab93423c44be6e46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterData: {fileID: 11400000, guid: c5fd8cc5a6019534eac1bbe380138339, type: 2}
 --- !u!1 &4016396430205117868
 GameObject:
   m_ObjectHideFlags: 0
@@ -1668,6 +1700,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4279329102486852136}
     m_Modifications:
+    - target: {fileID: 1774831269848037816, guid: e4a7960f0fc2fb3489ab2ad446951bbf,
+        type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3308739186227538276, guid: e4a7960f0fc2fb3489ab2ad446951bbf,
         type: 3}
       propertyPath: m_Pivot.x

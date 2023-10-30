@@ -31,6 +31,15 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Sprite normalSpeed;
     [SerializeField] private Sprite fastSpeed;
 
+
+    //
+
+    private IDataService DataService = new JsonDataService();
+    string saveDataPath = "/data-stageProgress.json";
+    StageDataModel newStageDataModel = new StageDataModel();
+
+    //
+
     bool isNormalSpeed;
 
     public bool isVictory;
@@ -44,6 +53,11 @@ public class LevelManager : MonoBehaviour
     float empytStarCounter;
     float maxStar = 3;
 
+    //StageProgress Attributes
+    int stageCounter;
+    int stageReached;
+    int chapterReached;
+
     private void Awake()
     {
         isNormalSpeed = true;
@@ -52,6 +66,8 @@ public class LevelManager : MonoBehaviour
         baseManager = FindObjectOfType<BaseManager>();
         starsManager = FindObjectOfType<StarsManager>();
         coinsManager = FindObjectOfType<CoinsManager>();
+
+        LoadData();
     }
 
     private void Update()
@@ -165,6 +181,10 @@ public class LevelManager : MonoBehaviour
 
             rewardText.text = rewardValue.ToString();
 
+            if (!StageCompletedManager.instance.isCompleted)
+            {
+                SaveStageProgress();
+            }
 
 
         }
@@ -211,6 +231,42 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    void LoadData()
+    {
+        StageDataModel stageData = DataService.LoadData<StageDataModel>(saveDataPath, false);
+
+        stageCounter = stageData.stageCounter;
+        stageReached = stageData.stageReached;
+        chapterReached = stageData.chapterReached;
+
+    }
+
+    void SaveStageProgress()
+    {
+
+        stageCounter++;
+        stageReached++;
+
+        if (stageCounter > 5)
+        {
+            stageCounter = 1;
+            chapterReached++;
+            newStageDataModel.chapterReached = chapterReached;
+            newStageDataModel.stageCounter = stageCounter;
+        }
+        else
+        {
+            newStageDataModel.chapterReached = chapterReached;
+        }
+
+        newStageDataModel.stageCounter = stageCounter;
+        newStageDataModel.stageReached = stageReached;
+        Debug.Log("FINISHED STAGE SAVING PROGRESS");
+        Debug.Log(stageReached);
+
+
+        DataService.SaveData(saveDataPath, newStageDataModel, false);
+    }
 
 
 }

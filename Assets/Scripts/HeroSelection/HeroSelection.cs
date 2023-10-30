@@ -24,6 +24,8 @@ public class HeroSelection : MonoBehaviour
 
     CanvasManager canvasManager;
 
+    string newSaveDataPath;
+
     string saveDataPathSelectedSquad = "/data-squad.json";
 
     private SpecialCharacterData specialCharacterData = new SpecialCharacterData();
@@ -49,15 +51,20 @@ public class HeroSelection : MonoBehaviour
 
         selectedCharacter = canvasManager.selectedHero;
         selectedCharacterForStatus = canvasManager.selectedHeroForStatus;
-        charArtWork.sprite = selectedCharacterForStatus.charArtWork;
-        LoadData();
+        if (selectedCharacterForStatus != null)
+        {
+            charArtWork.sprite = selectedCharacterForStatus.charArtWork;
+            LoadData();
+        }
+
+
 
     }
 
     public void LoadData()
     {
 
-        string newSaveDataPath = $"{saveDataPath}-{selectedCharacterForStatus.charName}.json";
+        newSaveDataPath = $"{saveDataPath}-{selectedCharacterForStatus.charName}.json";
 
         string path = Application.persistentDataPath + newSaveDataPath;
 

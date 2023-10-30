@@ -98,6 +98,8 @@ public class R_Tecson : RangeCharacterEntity, IDamageable
         characterStateMachine.ChangeState(recoveryState);
     }
 
+    public void Slowed(float slowAmount, float time) { }
+
     #endregion
 
 }

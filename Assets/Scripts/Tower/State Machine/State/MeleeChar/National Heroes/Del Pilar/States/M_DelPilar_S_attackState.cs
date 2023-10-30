@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class M_DelPilar_S_attackState : CharacterBaseState
 {
-    M_DelPilar m_DelPilar;
+    DelPilar m_DelPilar;
 
 
-    public M_DelPilar_S_attackState(CharacterStateMachine characterStateMachine, string animBoolName, CharEntity charEntity, M_DelPilar m_DelPilar)
+    public M_DelPilar_S_attackState(CharacterStateMachine characterStateMachine, string animBoolName, CharEntity charEntity, DelPilar m_DelPilar)
     : base(animBoolName, characterStateMachine)
     {
         this.animBoolName = animBoolName;

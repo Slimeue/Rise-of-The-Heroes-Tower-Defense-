@@ -323,6 +323,51 @@ Transform:
   m_Father: {fileID: 8766096532099336971}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1150662208521156669
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8429248063643487145}
+  - component: {fileID: 202445156713849118}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8429248063643487145
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150662208521156669}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.11, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7236988554436472246}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &202445156713849118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150662208521156669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d840188521c965a4ab93423c44be6e46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterData: {fileID: 11400000, guid: cee8b4e45e2ce2d4ca94ff52bb0d4548, type: 2}
 --- !u!1 &1250346890296573751
 GameObject:
   m_ObjectHideFlags: 0
@@ -1578,7 +1623,6 @@ GameObject:
   - component: {fileID: 4606868741581876667}
   - component: {fileID: -8224980944848254280}
   - component: {fileID: 521605592330098563}
-  - component: {fileID: 2468947399854688656}
   - component: {fileID: 88249466456952567}
   m_Layer: 6
   m_Name: Sandayo
@@ -1603,6 +1647,7 @@ Transform:
   - {fileID: 4409173025871108689}
   - {fileID: 3049203224344228311}
   - {fileID: 6339487463038333733}
+  - {fileID: 8429248063643487145}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1618,13 +1663,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a9636f3d03d1224ca106f8f2cfbe5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ground: {fileID: 0}
+  towerManager: {fileID: 0}
   animationHandler: {fileID: 0}
   healthBar: {fileID: 3211193197126274477}
   anim: {fileID: 0}
   characterData: {fileID: 11400000, guid: cee8b4e45e2ce2d4ca94ff52bb0d4548, type: 2}
+  maxHp: 0
   currentHealth: 0
   currentMana: 0
   baseArmor: 0
+  damageValue: 0
   radius: 0
   _rotationSpeed: 2
   isAttackFinished: 0
@@ -1636,6 +1685,10 @@ MonoBehaviour:
   firePoint: {fileID: 3049203224344228311}
   towerTesting: []
   isDead: 0
+  abilityHolder: {fileID: 4038803556841329707, guid: 5a2d3fae52306ed48b0e6d64da08fd88,
+    type: 3}
+  skillCd: 0
+  skillFinished: 0
 --- !u!95 &-8224980944848254280
 Animator:
   serializedVersion: 5
@@ -1669,22 +1722,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad184c616c632084ebeca515fe3875c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2468947399854688656
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8008844980106868492}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d840188521c965a4ab93423c44be6e46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterData: {fileID: 11400000, guid: cee8b4e45e2ce2d4ca94ff52bb0d4548, type: 2}
-  charType:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!114 &88249466456952567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1969,6 +2006,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7236988554436472246}
     m_Modifications:
+    - target: {fileID: 1774831269848037816, guid: e4a7960f0fc2fb3489ab2ad446951bbf,
+        type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3308739186227538276, guid: e4a7960f0fc2fb3489ab2ad446951bbf,
         type: 3}
       propertyPath: m_Pivot.x

@@ -28,6 +28,8 @@ public class EnemiesData : ScriptableObject
 
     [SerializeField] public float attackRange;
 
+    [SerializeField] public float projectileSpeed;
+
     [SerializeField] public float rotationsSpeed;
 
     [Space(5)]

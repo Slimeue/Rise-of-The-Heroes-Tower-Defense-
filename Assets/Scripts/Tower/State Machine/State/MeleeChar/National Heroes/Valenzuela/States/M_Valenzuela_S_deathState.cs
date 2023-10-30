@@ -5,9 +5,9 @@ using UnityEngine;
 public class M_Valenzuela_S_deathState : CharacterBaseState
 {
 
-    M_Valenzuela m_Valenzuela;
+    Valenzuela m_Valenzuela;
 
-    public M_Valenzuela_S_deathState(CharacterStateMachine characterStateMachine, string animBoolName, CharEntity charEntity, M_Valenzuela m_Valenzuela)
+    public M_Valenzuela_S_deathState(CharacterStateMachine characterStateMachine, string animBoolName, CharEntity charEntity, Valenzuela m_Valenzuela)
     : base(animBoolName, characterStateMachine)
     {
         this.animBoolName = animBoolName;
@@ -17,13 +17,14 @@ public class M_Valenzuela_S_deathState : CharacterBaseState
     public override void Enter()
     {
         base.Enter();
-        m_Valenzuela.PlayAnim(animBoolName);
         m_Valenzuela.animationHandler.OnDeathFinish += m_Valenzuela.ToRecovery;
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+        m_Valenzuela.PlayAnim(animBoolName);
+
     }
 
     public override void OnTriggerEnter(Collider collider)

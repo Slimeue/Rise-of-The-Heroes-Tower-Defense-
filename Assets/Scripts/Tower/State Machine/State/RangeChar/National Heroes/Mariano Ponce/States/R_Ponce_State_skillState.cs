@@ -6,6 +6,10 @@ public class R_Ponce_State_skillState : CharacterBaseState
 {
     R_Ponce r_Ponce;
 
+
+    float buffValue = 2f;
+    float buffDuration = 10f;
+
     public R_Ponce_State_skillState(CharacterStateMachine characterStateMachine, string animBoolName, CharEntity charEntity, R_Ponce r_Ponce)
     : base(animBoolName, characterStateMachine)
     {
@@ -16,6 +20,10 @@ public class R_Ponce_State_skillState : CharacterBaseState
     public override void Enter()
     {
         base.Enter();
+        r_Ponce.PlayAnim(animBoolName);
+        r_Ponce.animationHandler.OnSkillActivated += SkillActivated;
+        r_Ponce.animationHandler.OnSkillFinished += SkillFinished;
+
     }
 
     public override void LogicUpdate()
@@ -41,5 +49,23 @@ public class R_Ponce_State_skillState : CharacterBaseState
     public override void Exit()
     {
         base.Exit();
+        r_Ponce.animationHandler.OnSkillActivated -= SkillActivated;
+        r_Ponce.animationHandler.OnSkillFinished -= SkillFinished;
+
+    }
+
+    void SkillActivated()
+    {
+        r_Ponce.skillHolder.SetActive(true);
+        foreach (GameObject tower in r_Ponce.activeTowers)
+        {
+            IBuffable buffable = tower.GetComponent<IBuffable>();
+            buffable.AttackBuff(buffValue, buffDuration);
+        }
+    }
+
+    void SkillFinished()
+    {
+        r_Ponce.characterStateMachine.ChangeState(r_Ponce.idleState);
     }
 }

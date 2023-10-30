@@ -24,6 +24,8 @@ public class R_TikTik_S_attackState : BaseState
     {
         base.LogicUpdate(stateMachine);
         FindTarget();
+        ToDeathState();
+        InRangeCheck();
     }
 
     public override void OnTriggerEnter(StateMachine stateMachine, Collider collider)
@@ -47,6 +49,22 @@ public class R_TikTik_S_attackState : BaseState
     public override void Exit(StateMachine stateMachine)
     {
         base.Exit(stateMachine);
+    }
+
+    void InRangeCheck()
+    {
+        if (!r_TikTik._inRange)
+        {
+            r_TikTik.stateMachine.ChangeState(r_TikTik.movingState);
+        }
+    }
+
+    void ToDeathState()
+    {
+        if (r_TikTik.currentHealth <= 0f)
+        {
+            r_TikTik.stateMachine.ChangeState(r_TikTik.deathState);
+        }
     }
 
     private void DamageListener(Collider collider)
