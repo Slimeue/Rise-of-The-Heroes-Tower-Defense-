@@ -102,13 +102,17 @@ public class M_Berberoka : MeleeEnemyEntity, IDamageable, IEnemyDataGetable
     public void Slowed(float slowAmount, float time)
     {
 
+        if (!slowed)
+        {
+            speed /= slowAmount;
+            anim.SetFloat("Speed", 0.5f);
+            anim.speed = 0.1f;
+        }
 
-        speed /= slowAmount;
-        anim.SetFloat("Speed", 0.5f);
-        anim.speed = 0.1f;
+
+        timeSlow = time;
 
         slowed = true;
-
     }
 
     private void SlowedChecked()
@@ -122,6 +126,7 @@ public class M_Berberoka : MeleeEnemyEntity, IDamageable, IEnemyDataGetable
                 timeSlow = 5f;
                 anim.SetFloat("Speed", 1f);
                 anim.speed = 1f;
+                speed = enemiesData.moveSpeed;
                 slowed = false;
             }
         }

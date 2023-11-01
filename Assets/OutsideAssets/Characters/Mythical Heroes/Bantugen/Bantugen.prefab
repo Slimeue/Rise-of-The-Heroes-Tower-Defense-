@@ -614,6 +614,8 @@ MonoBehaviour:
   radius: 0
   _rotationSpeed: 0
   isAttackFinished: 0
+  buffDuration: 0
+  isBuffed: 0
   target: {fileID: 0}
   currentTarget: {fileID: 0}
   _targetDir: {x: 0, y: 0, z: 0}

@@ -53,6 +53,12 @@ public class EnemyEntity : MonoBehaviour
         stateMachine.currentState.LogicUpdate(stateMachine);
     }
 
+    private void FixedUpdate()
+    {
+        stateMachine.currentState.PhysicsUpdate(stateMachine);
+        Debug.Log("FixedUpdated");
+    }
+
     public virtual void PlayAnim(string animBoolName)
     {
         anim.Play(animBoolName);

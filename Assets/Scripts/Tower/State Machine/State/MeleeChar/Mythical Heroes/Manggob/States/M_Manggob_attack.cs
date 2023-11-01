@@ -24,6 +24,7 @@ public class M_Manggob_attack : CharacterBaseState
         base.LogicUpdate();
         FindTarget();
         ToDeathState();
+        SkillActivate();
     }
 
     public override void DoChecks()
@@ -93,6 +94,15 @@ public class M_Manggob_attack : CharacterBaseState
             characterStateMachine.ChangeState(m_Manggob.deathState);
         }
     }
+
+    void SkillActivate()
+    {
+        if (!m_Manggob.skillFinished)
+        {
+            m_Manggob.characterStateMachine.ChangeState(m_Manggob.skillState);
+        }
+    }
+
     #endregion
 
 }

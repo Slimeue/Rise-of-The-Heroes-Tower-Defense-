@@ -7,13 +7,17 @@ using UnityEngine.UI;
 public class SpecialHeroHolder : MonoBehaviour
 {
     [SerializeField] public CharacterData characterData;
-    [SerializeField] Image charArtWork;
-    [SerializeField] TextMeshProUGUI charName;
+    [SerializeField] public Image charArtWork;
+    [SerializeField] public GameObject chainLocked;
+    [SerializeField] public TextMeshProUGUI charName;
+
+    public bool isUnlocked;
 
     private void Awake()
     {
         charArtWork.sprite = characterData.charArtWork;
         charName.text = characterData.charName;
+        chainLocked.SetActive(false);
     }
 
 }

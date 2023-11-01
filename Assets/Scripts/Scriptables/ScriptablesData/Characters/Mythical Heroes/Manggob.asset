@@ -30,7 +30,7 @@ MonoBehaviour:
   mana: 400
   baseArmor: 30
   towerCooldown: 15
-  skillCooldown: 0
+  skillCooldown: 15
   towerCost: 13
   range: 25
   projectileSpeed: 0

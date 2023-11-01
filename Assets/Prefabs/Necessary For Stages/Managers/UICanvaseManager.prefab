@@ -50,8 +50,14 @@ MonoBehaviour:
   heroeStatusPanel: {fileID: 0}
   mythicalHeroesStatusPanel: {fileID: 0}
   heroesScreenPanel: {fileID: 0}
+  heroesScreenPanelBackButton: {fileID: 0}
   heroesScrollArea: {fileID: 0}
   heroesStatusScreen: {fileID: 0}
+  heroesStatusCharacterData: {fileID: 0}
+  levelWindow: {fileID: 0}
+  currentCurrency: {fileID: 0}
   selectedHero: {fileID: 0}
   selectedMythicalHero: {fileID: 0}
   selectedHeroForStatus: {fileID: 0}
+  StageSelectionUI: {fileID: 0}
+  StageSelectionBackButton: {fileID: 0}

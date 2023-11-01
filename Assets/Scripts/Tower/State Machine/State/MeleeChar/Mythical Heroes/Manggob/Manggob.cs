@@ -5,6 +5,14 @@ using UnityEngine;
 public class Manggob : MeleeCharacterEntity, IDamageable, IBuffable
 {
 
+    public GameObject skillHolder;
+    public float skillCd;
+    public float skillDuration = 5f;
+    public bool skillFinished;
+
+    public bool skillDur;
+
+
 
 
     public M_Manggob_attack attackState { get; private set; }
@@ -21,6 +29,8 @@ public class Manggob : MeleeCharacterEntity, IDamageable, IBuffable
     {
 
         base.Awake();
+        skillHolder.SetActive(false);
+        skillCd = characterData.skillCooldown;
         attackState = new M_Manggob_attack(characterStateMachine, TOWER_ATTACK, this, this);
         idleState = new M_Manggob_idle(characterStateMachine, TOWER_IDLE, this, this);
         deathState = new M_Manggob_death(characterStateMachine, TOWER_DEATH, this, this);
@@ -36,6 +46,25 @@ public class Manggob : MeleeCharacterEntity, IDamageable, IBuffable
         radius = characterData.range;
         RefreshChar();
         HealthBarTracker();
+
+        if (skillFinished)
+        {
+
+            SkillDurationFinished();
+            if (skillDur)
+            {
+                skillCd -= Time.deltaTime;
+                if (skillCd <= 0f)
+                {
+                    skillFinished = false;
+                    skillCd = characterData.skillCooldown;
+                    skillDur = false;
+                }
+            }
+
+        }
+
+
     }
 
     private void Start()
@@ -122,6 +151,21 @@ public class Manggob : MeleeCharacterEntity, IDamageable, IBuffable
         }
     }
 
+    void SkillDurationFinished()
+    {
+
+        if (skillDuration <= 0f)
+        {
+            skillHolder.SetActive(false);
+            skillDuration = 5f;
+            skillDur = true;
+        }
+        else
+        {
+            skillDuration -= Time.deltaTime;
+        }
+    }
+
 
 
     public void Slowed(float slowAmount, float time) { }
@@ -146,6 +190,8 @@ public class Manggob : MeleeCharacterEntity, IDamageable, IBuffable
         buffDuration = duration;
 
     }
+
+
     #endregion
 
 }

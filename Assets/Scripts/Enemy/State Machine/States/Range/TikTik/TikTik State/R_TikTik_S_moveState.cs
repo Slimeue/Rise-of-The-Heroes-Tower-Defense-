@@ -23,10 +23,14 @@ public class R_TikTik_S_moveState : BaseState
     public override void LogicUpdate(StateMachine stateMachine)
     {
         base.LogicUpdate(stateMachine);
-        FollowPath();
         ToDeathState();
         ToAttackState();
+    }
 
+    public override void PhysicsUpdate(StateMachine stateMachine)
+    {
+        base.PhysicsUpdate(stateMachine);
+        FollowPath();
     }
 
     public override void OnTriggerEnter(StateMachine stateMachine, Collider collider)

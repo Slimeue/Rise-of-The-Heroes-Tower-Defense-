@@ -25,10 +25,15 @@ public class M_WhiteLady_S_movingState : BaseState
     public override void LogicUpdate(StateMachine stateMachine)
     {
         base.LogicUpdate(stateMachine);
-        FollowPath();
         StartIdle();
         AttackTransition();
         ToDeathState();
+    }
+
+    public override void PhysicsUpdate(StateMachine stateMachine)
+    {
+        base.PhysicsUpdate(stateMachine);
+        FollowPath();
     }
 
     public override void DoChecks()

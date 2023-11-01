@@ -33,6 +33,12 @@ public class SandayoAbility : MonoBehaviour
     {
         // Move the object forward along its local Z-axis.
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
+
+    }
+
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
     }
 
     private void OnTriggerEnter(Collider other)

@@ -39,6 +39,11 @@ public class CanvasManager : MonoBehaviour
     IDataService dataService = new JsonDataService();
     DataPathClass dataPathClass = new DataPathClass();
 
+    [Space(5)]
+    [Header("StageSelection")]
+    public GameObject StageSelectionUI;
+    public GameObject StageSelectionBackButton;
+
 
     private void Awake()
     {
@@ -62,6 +67,7 @@ public class CanvasManager : MonoBehaviour
             heroesScreenPanel.transform.localScale = Vector2.zero;
             heroesStatusScreen.SetActive(false);
             levelWindow.SetActive(false);
+            StageSelectionUI.SetActive(false);
 
 
         }
@@ -186,6 +192,18 @@ public class CanvasManager : MonoBehaviour
     {
         levelWindow.SetActive(false);
         heroesStatusScreen.SetActive(true);
+    }
+
+
+    //StageSelection
+    public void StageSelectionOpen()
+    {
+        StageSelectionUI.SetActive(true);
+    }
+
+    public void CloseStageSelection()
+    {
+        StageSelectionUI.SetActive(false);
     }
 
     #endregion

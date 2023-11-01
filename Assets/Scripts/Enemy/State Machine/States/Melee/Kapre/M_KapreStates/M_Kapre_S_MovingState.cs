@@ -27,10 +27,15 @@ public class M_Kapre_S_MovingState : BaseState
     {
         base.LogicUpdate(stateMachine);
         // m_Kapre.anim.Play(animBoolName);
-        FollowPath();
         StartIdle();
         AttackTransition();
         ToDeathState();
+    }
+
+    public override void PhysicsUpdate(StateMachine stateMachine)
+    {
+        base.PhysicsUpdate(stateMachine);
+        FollowPath();
     }
 
 
