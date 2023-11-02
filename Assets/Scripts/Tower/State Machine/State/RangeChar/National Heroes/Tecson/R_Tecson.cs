@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class R_Tecson : RangeCharacterEntity, IDamageable
+public class R_Tecson : RangeCharacterEntity, IDamageable, ISkillable
 {
 
     BaseManager baseManager;
@@ -99,6 +99,16 @@ public class R_Tecson : RangeCharacterEntity, IDamageable
     }
 
     public void Slowed(float slowAmount, float time) { }
+
+    public void Skill()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public CharacterData SkillData()
+    {
+        return characterData;
+    }
 
     #endregion
 

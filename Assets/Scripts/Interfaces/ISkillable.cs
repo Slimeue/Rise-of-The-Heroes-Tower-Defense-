@@ -6,4 +6,7 @@ public interface ISkillable
 {
     //Skill Holder For Special Tower
     public void Skill();
+
+    public CharacterData SkillData();
+
 }

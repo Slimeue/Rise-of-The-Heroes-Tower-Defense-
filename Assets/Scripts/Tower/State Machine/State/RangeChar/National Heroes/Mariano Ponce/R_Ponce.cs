@@ -148,6 +148,11 @@ public class R_Ponce : RangeCharacterEntity, IDamageable, ISkillable, IBuffable
 
     }
 
+    public CharacterData SkillData()
+    {
+        return characterData;
+    }
+
     #endregion
 
 

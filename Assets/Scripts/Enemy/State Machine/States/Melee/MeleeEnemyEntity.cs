@@ -21,6 +21,7 @@ public class MeleeEnemyEntity : EnemyEntity
         target = Waypoints.points[0];
         pointIndex = 0;
         Debug.Log("enabled");
+        speed = enemiesData.moveSpeed;
     }
 
     public bool OnEnemyFrontCheck()

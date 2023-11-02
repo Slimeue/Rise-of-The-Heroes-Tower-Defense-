@@ -123,6 +123,11 @@ public class Valenzuela : MeleeCharacterEntity, IDamageable, ISkillable
 
     public void Slowed(float slowAmount, float time) { }
 
+    public CharacterData SkillData()
+    {
+        return characterData;
+    }
+
 
     #endregion
 

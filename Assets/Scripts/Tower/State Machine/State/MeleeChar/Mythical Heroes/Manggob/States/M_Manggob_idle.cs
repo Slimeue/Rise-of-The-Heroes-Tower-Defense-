@@ -16,12 +16,13 @@ public class M_Manggob_idle : CharacterBaseState
     public override void Enter()
     {
         base.Enter();
-        m_Manggob.PlayAnim(animBoolName);
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+        m_Manggob.PlayAnim(animBoolName);
+
         ToDeathState();
     }
 

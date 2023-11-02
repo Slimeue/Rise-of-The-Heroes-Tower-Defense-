@@ -31,7 +31,7 @@ public class R_Sandayo_attack : CharacterBaseState
         base.LogicUpdate();
         FindTarget();
         ToDeathState();
-        ToSkillState();
+
     }
 
     public override void Exit()
@@ -79,20 +79,20 @@ public class R_Sandayo_attack : CharacterBaseState
         }
     }
 
-    private void ToSkillState()
-    {
+    // private void ToSkillState()
+    // {
 
 
 
-        if (!r_Sandayo.skillFinished && count <= 0f)
-        {
-            r_Sandayo.characterStateMachine.ChangeState(r_Sandayo.skillState);
-        }
-        else
-        {
-            count -= Time.deltaTime;
-        }
-    }
+    //     if (!r_Sandayo.skillFinished && count <= 0f)
+    //     {
+    //         r_Sandayo.characterStateMachine.ChangeState(r_Sandayo.skillState);
+    //     }
+    //     else
+    //     {
+    //         count -= Time.deltaTime;
+    //     }
+    // }
 
     #endregion
 

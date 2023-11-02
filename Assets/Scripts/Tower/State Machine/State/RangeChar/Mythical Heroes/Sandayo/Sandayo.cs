@@ -79,7 +79,7 @@ public class Sandayo : RangeCharacterEntity, IDamageable, IBuffable
     public void Fire()
     {
         GameObject projectileGO = Instantiate(projectile, firePoint.position, firePoint.rotation);
-        Projectile _projectile = projectileGO.GetComponent<Projectile>();
+        SandayoProjectile _projectile = projectileGO.GetComponent<SandayoProjectile>();
 
         if (_projectile != null)
         {

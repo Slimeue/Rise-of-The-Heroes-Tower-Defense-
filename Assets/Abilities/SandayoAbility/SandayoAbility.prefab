@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2545883166335334269}
   - component: {fileID: 1473257615114923159}
   - component: {fileID: 5664314942924954975}
-  - component: {fileID: 4662330103076126824}
   - component: {fileID: 6924352178068305767}
+  - component: {fileID: 8508881412998557584}
   m_Layer: 0
   m_Name: SandayoAbility
   m_TagString: Untagged
@@ -115,21 +115,6 @@ VFXRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &4662330103076126824
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4038803556841329707}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fe3f4f62d45e444a8f5f914c144b750, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
-  damageValue: 0
-  characterData: {fileID: 11400000, guid: cee8b4e45e2ce2d4ca94ff52bb0d4548, type: 2}
 --- !u!65 &6924352178068305767
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -143,3 +128,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 12.089056, y: 3.099322, z: 2.5473876}
   m_Center: {x: 0.1731093, y: 0.36926854, z: 0.2012136}
+--- !u!114 &8508881412998557584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4038803556841329707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e75564d78cedf245b72a880149e14dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  center: {fileID: 0}
+  _rotationSpeed: 0

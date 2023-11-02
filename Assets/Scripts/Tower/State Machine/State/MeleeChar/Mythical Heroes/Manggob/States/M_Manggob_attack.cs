@@ -16,15 +16,17 @@ public class M_Manggob_attack : CharacterBaseState
     public override void Enter()
     {
         base.Enter();
-        m_Manggob.PlayAnim(animBoolName);
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+        m_Manggob.PlayAnim(animBoolName);
+
         FindTarget();
         ToDeathState();
         SkillActivate();
+
     }
 
     public override void DoChecks()

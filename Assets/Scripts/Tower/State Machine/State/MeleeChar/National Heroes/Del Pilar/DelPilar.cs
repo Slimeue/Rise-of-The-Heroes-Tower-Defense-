@@ -145,6 +145,11 @@ public class DelPilar : MeleeCharacterEntity, IDamageable, ISkillable, IBuffable
         throw new System.NotImplementedException();
     }
 
+    public CharacterData SkillData()
+    {
+        return characterData;
+    }
+
 
     #endregion
 

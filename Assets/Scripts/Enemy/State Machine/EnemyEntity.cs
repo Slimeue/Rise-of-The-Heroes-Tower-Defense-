@@ -28,6 +28,12 @@ public class EnemyEntity : MonoBehaviour
     [HideInInspector]
     public float radius;
 
+
+    //debuff
+    public bool isDamageTakenIncrease;
+    public float damageMultiplier;
+    public float debuffDuration;
+
     public float timeSlow;
     public bool slowed;
 
@@ -51,6 +57,16 @@ public class EnemyEntity : MonoBehaviour
     public virtual void Update()
     {
         stateMachine.currentState.LogicUpdate(stateMachine);
+
+        if (isDamageTakenIncrease)
+        {
+            debuffDuration -= Time.deltaTime;
+            if (debuffDuration <= 0f)
+            {
+                isDamageTakenIncrease = false;
+            }
+        }
+
     }
 
     private void FixedUpdate()
