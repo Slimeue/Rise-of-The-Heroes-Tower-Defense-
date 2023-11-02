@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 public class StageVineRef : MonoBehaviour, IPointerClickHandler
 {
     public GameObject vineSprite;
+    public GameObject stageCompeletText;
     public TextMeshProUGUI title;
     public bool isCompleted;
 

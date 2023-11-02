@@ -7,6 +7,10 @@ public class R_Tecson : RangeCharacterEntity, IDamageable, ISkillable
 
     BaseManager baseManager;
 
+    public GameObject abilityHolder;
+    public float skillCd;
+    public bool skillFinished;
+
     public R_Tecson_State_attackState attackState { get; private set; }
     public R_Tecson_State_idleState idleState { get; private set; }
     public R_Tecson_State_deathState deathState { get; private set; }
@@ -22,7 +26,6 @@ public class R_Tecson : RangeCharacterEntity, IDamageable, ISkillable
     public override void Awake()
     {
         base.Awake();
-
         attackState = new R_Tecson_State_attackState(characterStateMachine, HERO_ATTACK, this, this);
         idleState = new R_Tecson_State_idleState(characterStateMachine, HERO_IDLE, this, this);
         deathState = new R_Tecson_State_deathState(characterStateMachine, HERO_DEATH, this, this);
@@ -31,6 +34,9 @@ public class R_Tecson : RangeCharacterEntity, IDamageable, ISkillable
         baseManager = FindObjectOfType<BaseManager>();
         anim = GetComponent<Animator>();
         animationHandler = GetComponent<AnimationHandler>();
+        healthBar = baseManager.specialCharHpBar;
+        baseManager.baseCharIcon.sprite = characterData.charArtWork;
+
     }
 
     public override void Update()
@@ -38,10 +44,23 @@ public class R_Tecson : RangeCharacterEntity, IDamageable, ISkillable
         base.Update();
         radius = characterData.range;
         HealthBarTracker();
+
+        //cd
+        if (skillFinished)
+        {
+            //startCooldown
+            skillCd -= Time.deltaTime;
+            if (skillCd <= 0f)
+            {
+                skillFinished = false;
+                skillCd = characterData.skillCooldown;
+            }
+        }
     }
 
     private void Start()
     {
+
         characterStateMachine.Initialize(idleState);
     }
 
@@ -102,7 +121,17 @@ public class R_Tecson : RangeCharacterEntity, IDamageable, ISkillable
 
     public void Skill()
     {
-        throw new System.NotImplementedException();
+        if (!skillFinished && characterStateMachine.currentState != recoveryState)
+        {
+            Debug.Log(gameObject.name + " Skill Click");
+            characterStateMachine.ChangeState(skillState);
+            skillFinished = true;
+        }
+    }
+
+    public void SkillActivated()
+    {
+        Instantiate(abilityHolder, firePoint.position, transform.rotation);
     }
 
     public CharacterData SkillData()

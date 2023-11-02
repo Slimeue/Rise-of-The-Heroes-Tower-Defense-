@@ -38,6 +38,8 @@ public class DelPilar : MeleeCharacterEntity, IDamageable, ISkillable, IBuffable
         deathState = new M_DelPIlar_S_deathState(characterStateMachine, HERO_DEATH, this, this);
         anim = GetComponent<Animator>();
         animationHandler = GetComponent<AnimationHandler>();
+        healthBar = baseManager.specialCharHpBar;
+        baseManager.baseCharIcon.sprite = characterData.charArtWork;
 
     }
 
@@ -120,7 +122,7 @@ public class DelPilar : MeleeCharacterEntity, IDamageable, ISkillable, IBuffable
 
     public void Skill()
     {
-        if (!skillFinished)
+        if (!skillFinished && characterStateMachine.currentState != recoveryState)
         {
             Debug.Log(gameObject.name + " Skill Click");
             characterStateMachine.ChangeState(skillState);

@@ -45,10 +45,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71280a5a7ff1cd5429ab0c45c4e0a9ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxBaseHp: 10000
+  maxBaseHp: 100000
   currentBaseHp: 1000
+  baseHpBar: {fileID: 0}
+  specialCharHpBar: {fileID: 0}
   shakeMagnitude: 0.5
-  shakeDuration: 0.3
+  shakeDuration: 0
 --- !u!1001 &6055240422537796921
 PrefabInstance:
   m_ObjectHideFlags: 0

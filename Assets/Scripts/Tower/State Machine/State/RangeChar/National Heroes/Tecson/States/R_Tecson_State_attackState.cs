@@ -47,6 +47,8 @@ public class R_Tecson_State_attackState : CharacterBaseState
     public override void Exit()
     {
         base.Exit();
+        r_Tecson.rangeCharAnimationHandler.OnRangeStartAttack -= r_Tecson.Fire;
+
     }
 
     #region METHODS

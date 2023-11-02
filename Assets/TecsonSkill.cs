@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SandayoAbility : MonoBehaviour
+public class TecsonSkill : MonoBehaviour
 {
     public float speed = 10.0f; // Adjust this to set the speed of the movement.
     float startCount;
@@ -72,6 +72,5 @@ public class SandayoAbility : MonoBehaviour
 
 
     }
-
 
 }

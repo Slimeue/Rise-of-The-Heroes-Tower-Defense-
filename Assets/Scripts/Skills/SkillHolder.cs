@@ -24,7 +24,7 @@ public class SkillHolder : MonoBehaviour, IPointerClickHandler
     }
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         specialHeroSpawn = FindObjectOfType<SpecialHeroSpawn>();
         _selectedHero = specialHeroSpawn._specialHero;

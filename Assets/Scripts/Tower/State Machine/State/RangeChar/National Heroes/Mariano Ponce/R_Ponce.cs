@@ -40,6 +40,9 @@ public class R_Ponce : RangeCharacterEntity, IDamageable, ISkillable, IBuffable
         baseManager = FindObjectOfType<BaseManager>();
         anim = GetComponent<Animator>();
         animationHandler = GetComponent<AnimationHandler>();
+        healthBar = baseManager.specialCharHpBar;
+        baseManager.baseCharIcon.sprite = characterData.charArtWork;
+
     }
 
     public override void Update()
@@ -126,7 +129,7 @@ public class R_Ponce : RangeCharacterEntity, IDamageable, ISkillable, IBuffable
 
     public void Skill()
     {
-        if (!skillFinished)
+        if (!skillFinished && characterStateMachine.currentState != recoveryState)
         {
             Debug.Log(gameObject.name + " Skill Click");
             characterStateMachine.ChangeState(skillState);

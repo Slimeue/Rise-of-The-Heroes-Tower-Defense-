@@ -118,6 +118,7 @@ public class StageManager : MonoBehaviour
                 else if (j < stageReached - 1)
                 {
                     stageVineRef.isCompleted = true;
+                    stageVineRef.stageCompeletText.SetActive(true);
                 }
 
             }
