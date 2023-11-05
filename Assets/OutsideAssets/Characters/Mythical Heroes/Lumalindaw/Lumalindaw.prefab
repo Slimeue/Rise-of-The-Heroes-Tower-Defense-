@@ -381,6 +381,7 @@ GameObject:
   - component: {fileID: -793140981403429600}
   - component: {fileID: -6665193673867713217}
   - component: {fileID: 5086499382264572822}
+  - component: {fileID: 522011346337281278}
   m_Layer: 6
   m_Name: Lumalindaw
   m_TagString: Player
@@ -434,6 +435,8 @@ MonoBehaviour:
   radius: 0
   _rotationSpeed: 0
   isAttackFinished: 0
+  buffDuration: 0
+  isBuffed: 0
   target: {fileID: 0}
   currentTarget: {fileID: 0}
   _targetDir: {x: 0, y: 0, z: 0}
@@ -506,6 +509,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &522011346337281278
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558075628705206174}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0114543, y: 4.9193854, z: 1.600551}
+  m_Center: {x: 0.0632159, y: 1.959691, z: 0.2686674}
 --- !u!1 &2002302176369300859
 GameObject:
   m_ObjectHideFlags: 0

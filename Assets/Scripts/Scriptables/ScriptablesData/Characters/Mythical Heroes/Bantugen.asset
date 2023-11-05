@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Bantugen
   m_EditorClassIdentifier: 
   charArtWork: {fileID: 525727493, guid: cedf0234596f97140aee4bfac68dfae7, type: 3}
+  skillData: {fileID: 11400000, guid: 709d11dddda34a348a368d6e2639ff79, type: 2}
   _layerMask:
     serializedVersion: 2
     m_Bits: 256

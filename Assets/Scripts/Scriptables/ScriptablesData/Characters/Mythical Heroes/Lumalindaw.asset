@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Lumalindaw
   m_EditorClassIdentifier: 
   charArtWork: {fileID: -2094786600, guid: d18fe5e29685bf34fbdeeaec757fead8, type: 3}
+  skillData: {fileID: 11400000, guid: a83ee705f48c48f4b86dc889eda7ab90, type: 2}
   _layerMask:
     serializedVersion: 2
     m_Bits: 256

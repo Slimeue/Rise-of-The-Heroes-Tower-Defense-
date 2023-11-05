@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Sandayo
   m_EditorClassIdentifier: 
   charArtWork: {fileID: -1122762761, guid: 798cda3fcbc5a1d4da59a1fa79131043, type: 3}
+  skillData: {fileID: 11400000, guid: 8d7c6df4e001d3d46b29bac9d33e2f51, type: 2}
   _layerMask:
     serializedVersion: 2
     m_Bits: 512

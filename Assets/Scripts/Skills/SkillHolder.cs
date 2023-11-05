@@ -32,8 +32,11 @@ public class SkillHolder : MonoBehaviour, IPointerClickHandler
         skillable = _selectedHero.GetComponent<ISkillable>();
         characterData = skillable.SkillData();
 
-        skillArtWork.sprite = characterData.charArtWork;
+        CharacterSkill characterSkill = characterData.skillData;
+
+        skillArtWork.sprite = characterSkill.skillArtWork;
         skillName.text = characterData.charName;
+
     }
 
 

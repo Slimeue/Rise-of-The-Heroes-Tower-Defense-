@@ -8,6 +8,8 @@ public class CharacterData : ScriptableObject
 
     [SerializeField] public Sprite charArtWork;
 
+    [SerializeField] public CharacterSkill skillData;
+
     [SerializeField] public LayerMask _layerMask;
     [SerializeField] public string _platformTag;
 

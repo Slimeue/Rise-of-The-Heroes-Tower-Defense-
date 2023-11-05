@@ -59,6 +59,7 @@ public class CanvasManager : MonoBehaviour
 
         if (squadCanvas != null)
         {
+            Time.timeScale = 1f;
             squadCanvas.transform.localScale = Vector2.zero;
             selectedSquadPanel.transform.localScale = Vector2.zero;
             squadSelection.transform.localScale = Vector2.zero;
@@ -68,8 +69,6 @@ public class CanvasManager : MonoBehaviour
             heroesStatusScreen.SetActive(false);
             levelWindow.SetActive(false);
             StageSelectionUI.SetActive(false);
-
-
         }
     }
 

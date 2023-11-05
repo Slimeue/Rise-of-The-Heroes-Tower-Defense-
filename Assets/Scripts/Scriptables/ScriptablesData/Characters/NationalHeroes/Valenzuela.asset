@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Valenzuela
   m_EditorClassIdentifier: 
   charArtWork: {fileID: 1354984968, guid: cd3fab574bed45d4090a8ed495684135, type: 3}
+  skillData: {fileID: 11400000, guid: 369a96bb09971cb48977a520845f2f05, type: 2}
   _layerMask:
     serializedVersion: 2
     m_Bits: 4096

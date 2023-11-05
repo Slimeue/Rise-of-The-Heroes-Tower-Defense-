@@ -24,9 +24,10 @@ public class SceneLoaderManager : MonoBehaviour
         canvasManager = FindAnyObjectByType<CanvasManager>();
     }
 
-    public void LoadScene(string scene)
+    public void LoadStageScene(string scene)
     {
 
+        Debug.Log("Wat");
 
         string path = Application.persistentDataPath + saveDataPath;
         if (!File.Exists(path))
@@ -40,4 +41,11 @@ public class SceneLoaderManager : MonoBehaviour
         SceneManager.LoadScene(scene);
 
     }
+
+    public void LoadScene(string scene)
+    {
+        SceneManager.LoadScene(scene);
+    }
+
+
 }

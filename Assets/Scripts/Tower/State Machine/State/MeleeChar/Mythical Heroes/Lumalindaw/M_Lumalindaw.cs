@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class M_Lumalindaw : MeleeCharacterEntity, IDamageable, IBuffable
+public class M_Lumalindaw : MeleeCharacterEntity, IDamageable, IBuffable, IPointerClickHandler, IDeletable
 {
 
     public GameObject abilityHolder;
@@ -159,6 +160,17 @@ public class M_Lumalindaw : MeleeCharacterEntity, IDamageable, IBuffable
         isBuffed = true;
         buffDuration = duration;
 
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        towerManager.DeleteState(gameObject);
+    }
+
+    public void DeleteChar()
+    {
+        DestroyGameObject();
+        TowerHolderEnabler();
     }
 
     #endregion

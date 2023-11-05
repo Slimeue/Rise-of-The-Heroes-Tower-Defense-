@@ -41,7 +41,9 @@ public class TowerManager : MonoBehaviour
     [Space(5)]
     [Header("Canvas")]
     [SerializeField] GameObject _CharConfirmPlacementCanvas;
+    [SerializeField] GameObject _charDeleteCanvas;
     [SerializeField] GameObject _charInfoCanvas;
+    GameObject tower;
 
     //TimeScale Properties
     float placingGameTimeSpeed = 0.1f;
@@ -55,7 +57,8 @@ public class TowerManager : MonoBehaviour
     {
         Default,
         Placing,
-        HoldPlacing
+        HoldPlacing,
+        Deleting
     }
 
     private State currentState;
@@ -86,8 +89,6 @@ public class TowerManager : MonoBehaviour
     private void Update()
     {
 
-
-
         switch (currentState)
         {
             case State.Default:
@@ -111,6 +112,11 @@ public class TowerManager : MonoBehaviour
                 break;
             case State.HoldPlacing:
                 PlacingTime();
+                break;
+            case State.Deleting:
+                Debug.Log("Is Deleting");
+                normalCam.Priority = 0;
+                placingCam.Priority = 1;
                 break;
         }
     }
@@ -185,6 +191,7 @@ public class TowerManager : MonoBehaviour
     {
         DisablePlatformCanvas();
         _CharConfirmPlacementCanvas.SetActive(false);
+        _charDeleteCanvas.SetActive(false);
         Destroy(_instPreviewObj);
         UnsubscribeAction();
         currentState = State.Default;
@@ -282,8 +289,6 @@ public class TowerManager : MonoBehaviour
         }
     }
 
-
-
     #endregion
 
     #region timeScale
@@ -298,4 +303,34 @@ public class TowerManager : MonoBehaviour
     }
 
     #endregion
+
+    //
+    public void DeleteState(GameObject tower)
+    {
+        this.tower = tower;
+        if (currentState != State.Deleting)
+        {
+            _charDeleteCanvas.SetActive(true);
+            _charDeleteCanvas.transform.position = tower.transform.position;
+            float yOffset = 5f;
+            Vector3 newPosition = _charDeleteCanvas.transform.position;
+            newPosition.y += yOffset;
+            _charDeleteCanvas.transform.position = newPosition;
+            currentState = State.Deleting;
+            Debug.Log("StateingDelete");
+            return;
+        }
+
+
+
+    }
+
+    public void DeleteChar()
+    {
+        _charDeleteCanvas.SetActive(false);
+        currentState = State.Default;
+        Debug.Log("Deleting");
+        IDeletable deletable = tower.GetComponent<IDeletable>();
+        deletable.DeleteChar();
+    }
 }

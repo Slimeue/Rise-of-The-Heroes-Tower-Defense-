@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Ponce
   m_EditorClassIdentifier: 
   charArtWork: {fileID: -968971903, guid: 07537cbda0e73e84a9eba3862fc92870, type: 3}
+  skillData: {fileID: 11400000, guid: cc8d55981964ae64dace40a1c08207b9, type: 2}
   _layerMask:
     serializedVersion: 2
     m_Bits: 4096

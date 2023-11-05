@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class Manggob : MeleeCharacterEntity, IDamageable, IBuffable
+public class Manggob : MeleeCharacterEntity, IDamageable, IBuffable, IDeletable, IPointerClickHandler
 {
 
     public GameObject skillHolder;
@@ -189,6 +190,16 @@ public class Manggob : MeleeCharacterEntity, IDamageable, IBuffable
         isBuffed = true;
         buffDuration = duration;
 
+    }
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        towerManager.DeleteState(gameObject);
+    }
+
+    public void DeleteChar()
+    {
+        DestroyGameObject();
+        TowerHolderEnabler();
     }
 
 

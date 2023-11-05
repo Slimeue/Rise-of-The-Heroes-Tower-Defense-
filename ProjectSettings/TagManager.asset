@@ -14,6 +14,7 @@ TagManager:
   - Body
   - Weapon
   - Base
+  - DeleteCanvas
   layers:
   - Default
   - TransparentFX

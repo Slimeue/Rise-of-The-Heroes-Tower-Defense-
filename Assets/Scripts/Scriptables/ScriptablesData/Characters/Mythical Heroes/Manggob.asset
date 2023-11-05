@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Manggob
   m_EditorClassIdentifier: 
   charArtWork: {fileID: 1113035084, guid: 832a01d5e86e4d647b014f79c2058423, type: 3}
+  skillData: {fileID: 11400000, guid: b80e1d3757af81441bb0eab677a5cd80, type: 2}
   _layerMask:
     serializedVersion: 2
     m_Bits: 256

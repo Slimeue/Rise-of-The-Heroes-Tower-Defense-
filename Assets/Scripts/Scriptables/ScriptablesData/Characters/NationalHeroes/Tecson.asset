@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Tecson
   m_EditorClassIdentifier: 
   charArtWork: {fileID: 1050084858, guid: 217fb54a6fe9c63499682bfda76c38be, type: 3}
+  skillData: {fileID: 11400000, guid: 78761518053d9884da204f16a47bb334, type: 2}
   _layerMask:
     serializedVersion: 2
     m_Bits: 4096
@@ -30,7 +31,7 @@ MonoBehaviour:
   mana: 0
   baseArmor: 32
   towerCooldown: 0
-  skillCooldown: 0
+  skillCooldown: 7
   towerCost: 0
   range: 94.76
   projectileSpeed: 50

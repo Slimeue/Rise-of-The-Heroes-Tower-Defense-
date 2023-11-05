@@ -82,10 +82,14 @@ public class StageManager : MonoBehaviour
         {
             TabButtons tabButton = stageDatas[i].chapter.gameObject.GetComponent<TabButtons>();
             StageVineRef chapterVineRef = stageDatas[i].chapter.gameObject.GetComponent<StageVineRef>();
-            if (i >= chapterReached)
+            if (i < chapterReached)
+            {
+                chapterVineRef.vineSprite.SetActive(false);
+
+            }
+            else
             {
                 stageDatas[i].chapter.interactable = false;
-                chapterVineRef.vineSprite.SetActive(true);
                 tabButton.enabled = false;
                 if (chapterVineRef.title != null)
                 {
@@ -105,9 +109,12 @@ public class StageManager : MonoBehaviour
             {
                 StageVineRef stageVineRef = buttonList[j].GetComponent<StageVineRef>();
 
-                if (j >= stageReached)
+                if (j < stageReached)
                 {
-                    stageVineRef.vineSprite.SetActive(true);
+                    stageVineRef.vineSprite.SetActive(false);
+                }
+                else
+                {
                     buttonList[j].interactable = false;
                 }
 

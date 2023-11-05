@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Del Pilar
   m_EditorClassIdentifier: 
   charArtWork: {fileID: -459093982, guid: cf9a839e02e8fba47a5cd702c5ade478, type: 3}
+  skillData: {fileID: 11400000, guid: 36deeb3d1a9e00a4290d5b9610c86b64, type: 2}
   _layerMask:
     serializedVersion: 2
     m_Bits: 4096

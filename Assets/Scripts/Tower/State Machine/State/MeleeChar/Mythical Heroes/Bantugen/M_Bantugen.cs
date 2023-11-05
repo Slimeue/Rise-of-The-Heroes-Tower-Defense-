@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class M_Bantugen : MeleeCharacterEntity, IDamageable, IBuffable
+public class M_Bantugen : MeleeCharacterEntity, IDamageable, IBuffable, IDeletable, IPointerClickHandler
 {
     public GameObject ability;
     public float skillCd;
@@ -180,6 +181,17 @@ public class M_Bantugen : MeleeCharacterEntity, IDamageable, IBuffable
         isBuffed = true;
         buffDuration = duration;
 
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        towerManager.DeleteState(gameObject);
+    }
+
+    public void DeleteChar()
+    {
+        DestroyGameObject();
+        TowerHolderEnabler();
     }
 
 

@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Sandayo : RangeCharacterEntity, IDamageable, IBuffable
+public class Sandayo : RangeCharacterEntity, IDamageable, IBuffable, IDeletable, IPointerClickHandler
 {
 
     public GameObject abilityHolder;
@@ -160,6 +161,17 @@ public class Sandayo : RangeCharacterEntity, IDamageable, IBuffable
         isBuffed = true;
         buffDuration = duration;
 
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        towerManager.DeleteState(gameObject);
+    }
+
+    public void DeleteChar()
+    {
+        DestroyGameObject();
+        TowerHolderEnabler();
     }
 
 
