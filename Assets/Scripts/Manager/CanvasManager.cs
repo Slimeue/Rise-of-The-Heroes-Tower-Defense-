@@ -45,6 +45,8 @@ public class CanvasManager : MonoBehaviour
     public GameObject StageSelectionBackButton;
 
 
+
+
     private void Awake()
     {
 
@@ -60,12 +62,12 @@ public class CanvasManager : MonoBehaviour
         if (squadCanvas != null)
         {
             Time.timeScale = 1f;
-            squadCanvas.transform.localScale = Vector2.zero;
-            selectedSquadPanel.transform.localScale = Vector2.zero;
-            squadSelection.transform.localScale = Vector2.zero;
+            squadCanvas.SetActive(false);
+            selectedSquadPanel.SetActive(false);
+            squadSelection.SetActive(false);
             heroeStatusPanel.SetActive(false);
             mythicalHeroesStatusPanel.SetActive(false);
-            heroesScreenPanel.transform.localScale = Vector2.zero;
+            heroesScreenPanel.SetActive(false);
             heroesStatusScreen.SetActive(false);
             levelWindow.SetActive(false);
             StageSelectionUI.SetActive(false);
@@ -84,22 +86,22 @@ public class CanvasManager : MonoBehaviour
 
     public void SquadButton()
     {
-        squadCanvas.transform.localScale = Vector3.one;
-        selectedSquadPanel.transform.localScale = Vector3.one;
+        squadCanvas.SetActive(true);
+        selectedSquadPanel.SetActive(true);
 
     }
 
     public void SquadSelectionButton()
     {
-        selectedSquadPanel.transform.localScale = Vector2.zero;
-        squadSelection.transform.localScale = Vector3.one;
+        selectedSquadPanel.SetActive(false);
+        squadSelection.SetActive(true);
     }
 
     public void HeroeStatusButton(CharacterData characterData)
     {
         selectedHero = characterData;
         selectedHeroForStatus = characterData;
-        squadSelection.transform.localScale = Vector3.zero;
+        squadSelection.SetActive(false);
         heroeStatusPanel.SetActive(true);
     }
 
@@ -107,14 +109,14 @@ public class CanvasManager : MonoBehaviour
     {
         selectedMythicalHero = characterData;
         selectedHeroForStatus = characterData;
-        selectedSquadPanel.transform.localScale = Vector3.zero;
+        selectedSquadPanel.SetActive(false);
         mythicalHeroesStatusPanel.SetActive(true);
     }
 
     public void CloseScreenHeroeStatus(GameObject gameObject)
     {
         gameObject.SetActive(false);
-        selectedSquadPanel.transform.localScale = Vector3.one;
+        selectedSquadPanel.SetActive(true);
     }
 
     #endregion end of openingLogic
@@ -124,25 +126,25 @@ public class CanvasManager : MonoBehaviour
 
     public void CloseSelectedSquad()
     {
-        squadCanvas.transform.localScale = Vector2.zero;
-        selectedSquadPanel.transform.localScale = Vector2.zero;
+        squadCanvas.SetActive(false);
+        selectedSquadPanel.SetActive(false);
     }
 
     public void CloseSquadSelection()
     {
-        selectedSquadPanel.transform.localScale = Vector3.one;
-        squadSelection.transform.localScale = Vector3.zero;
+        selectedSquadPanel.SetActive(true);
+        squadSelection.SetActive(false);
     }
 
     public void CloseHeroesStatus()
     {
-        squadSelection.transform.localScale = Vector3.one;
+        squadSelection.SetActive(true);
         heroeStatusPanel.SetActive(false);
     }
 
     public void CloseMythicalHeroesStatus()
     {
-        selectedSquadPanel.transform.localScale = Vector3.one;
+        selectedSquadPanel.SetActive(true);
         mythicalHeroesStatusPanel.SetActive(false);
     }
 
@@ -158,12 +160,12 @@ public class CanvasManager : MonoBehaviour
 
     public void OpenHeroesPanel()
     {
-        heroesScreenPanel.transform.localScale = Vector3.one;
+        heroesScreenPanel.SetActive(true);
     }
 
     public void CloseHeroesPanel()
     {
-        heroesScreenPanel.transform.localScale = Vector3.zero;
+        heroesScreenPanel.SetActive(false);
     }
 
     public void OpenHeroesStatus(CharacterData characterData)

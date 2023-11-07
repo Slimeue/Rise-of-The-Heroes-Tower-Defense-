@@ -16,9 +16,9 @@ public class StageVineRef : MonoBehaviour, IPointerClickHandler
         StageCompletedManager.instance.StageCompleted(this);
     }
 
-    // private void Awake()
-    // {
-    //     vineSprite.SetActive(false);
-    // }
+    private void Awake()
+    {
+        isCompleted = false;
+    }
 
 }

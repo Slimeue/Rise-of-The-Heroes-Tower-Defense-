@@ -280,7 +280,7 @@ MonoBehaviour:
   vineSprite: {fileID: 2835746466681415894}
   stageCompeletText: {fileID: 1938448114885649524}
   title: {fileID: 0}
-  isCompleted: 1
+  isCompleted: 0
 --- !u!1 &2835746468161378387
 GameObject:
   m_ObjectHideFlags: 0
