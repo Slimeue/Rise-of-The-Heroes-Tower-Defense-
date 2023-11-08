@@ -59,6 +59,9 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
+            //SaveMessage as Complete to save 
+            currentMessage.isCompleted = true;
+            SaveStoryProgression.instance.SaveLoadStory(currentMessage);
             Debug.Log("Conversation ended");
             _touchPressAction.performed -= TouchPress;
             dialoguePanel.SetActive(false);

@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a683bc4522d090b4ebe5ac3b6e54ad7c, type: 3}
+  m_Name: C1S0
+  m_EditorClassIdentifier: 
+  _character: {fileID: 11400000, guid: 201535f2f7cc39d4eac6275dbfe625d8, type: 2}
+  lines:
+  - _character: {fileID: 11400000, guid: 201535f2f7cc39d4eac6275dbfe625d8, type: 2}
+    text: Hello adventurer!
+  - _character: {fileID: 11400000, guid: 201535f2f7cc39d4eac6275dbfe625d8, type: 2}
+    text: Welcome to the world of Heroes
+  - _character: {fileID: 11400000, guid: 201535f2f7cc39d4eac6275dbfe625d8, type: 2}
+    text: This is your first time coming here right?
+  - _character: {fileID: 11400000, guid: 201535f2f7cc39d4eac6275dbfe625d8, type: 2}
+    text: Well, how rude of me not introducing myself. I'm your guide to aid you
+      in your adventure, Ponce!
+  - _character: {fileID: 11400000, guid: 201535f2f7cc39d4eac6275dbfe625d8, type: 2}
+    text: 'So now hero, first you have come from afar and shall take a rest. '
+  storyValue: 1
+  storyID: C1S0
+  isCompleted: 1

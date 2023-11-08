@@ -9,4 +9,6 @@ public class SO_Dialogue_Messages : ScriptableObject
     public SO_Characters _character;
     public Line[] lines;
     public int storyValue;
+    public string storyID;
+    public bool isCompleted;
 }
