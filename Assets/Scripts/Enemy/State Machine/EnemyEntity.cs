@@ -53,6 +53,10 @@ public class EnemyEntity : MonoBehaviour
         radius = enemiesData.attackRange;
 
     }
+    private void Start()
+    {
+        target = Waypoints.points[0];
+    }
 
     public virtual void Update()
     {

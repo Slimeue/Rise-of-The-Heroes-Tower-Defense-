@@ -87,9 +87,9 @@ public class TowerHolder : MonoBehaviour
 
     public void Pressed()
     {
-
         if (!_placed && cooldownFinished)
         {
+            Debug.Log("PRESSED");
             StartPlace();
         }
         else
@@ -101,6 +101,7 @@ public class TowerHolder : MonoBehaviour
 
     private void StartPlace()
     {
+        Debug.Log(characterData._platformTag);
         if (coinsManager._CurrentCoin >= _characterCost)
         {
             towerManager.StartPlacing(_preview, _charObj, _characterCost, layerMask, characterData._platformTag, gameObject);

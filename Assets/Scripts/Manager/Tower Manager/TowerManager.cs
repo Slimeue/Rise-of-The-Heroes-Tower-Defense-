@@ -14,7 +14,7 @@ public class TowerManager : MonoBehaviour
     GameObject[] towerHolder;
 
     //Platforms
-    GameObject[] _platFormsReference;
+    public GameObject[] _platFormsReference;
     string _platformTag;
     public CanvasEnabler canvasEnabler;
     //References
@@ -89,6 +89,7 @@ public class TowerManager : MonoBehaviour
     private void Update()
     {
 
+        Debug.Log(currentState);
         switch (currentState)
         {
             case State.Default:

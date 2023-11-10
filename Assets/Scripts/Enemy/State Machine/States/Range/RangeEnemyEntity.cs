@@ -27,7 +27,6 @@ public class RangeEnemyEntity : EnemyEntity
         rotationSpeed = enemiesData.rotationsSpeed;
         Debug.Log(TowerType.RANGE_CHAR);
         projectile = enemiesData.projectile;
-        target = Waypoints.points[0];
         rangeCharAnimationHandler = GetComponent<RangeCharAnimationHandler>();
     }
 
@@ -39,7 +38,11 @@ public class RangeEnemyEntity : EnemyEntity
 
     public virtual void OnEnable()
     {
-        target = Waypoints.points[0];
+        if (Waypoints.points[0] != null)
+        {
+            target = Waypoints.points[0];
+        }
+
         pointIndex = 0;
         Debug.Log("enabled");
     }
