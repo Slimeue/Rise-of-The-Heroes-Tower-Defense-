@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class R_Tecson : RangeCharacterEntity, IDamageable, ISkillable
+public class R_Tecson : RangeCharacterEntity, IDamageable, ISkillable, IPointerClickHandler
 {
 
     BaseManager baseManager;
@@ -137,6 +138,11 @@ public class R_Tecson : RangeCharacterEntity, IDamageable, ISkillable
     public CharacterData SkillData()
     {
         return characterData;
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        towerManager.SpecialCharacterClick(gameObject, characterData, damageValue, baseArmor, currentHealth);
     }
 
     #endregion

@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class R_Ponce : RangeCharacterEntity, IDamageable, ISkillable, IBuffable
+public class R_Ponce : RangeCharacterEntity, IDamageable, ISkillable, IBuffable, IPointerClickHandler
 {
 
 
@@ -154,6 +155,11 @@ public class R_Ponce : RangeCharacterEntity, IDamageable, ISkillable, IBuffable
     public CharacterData SkillData()
     {
         return characterData;
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        towerManager.SpecialCharacterClick(gameObject, characterData, damageValue, baseArmor, currentHealth);
     }
 
     #endregion

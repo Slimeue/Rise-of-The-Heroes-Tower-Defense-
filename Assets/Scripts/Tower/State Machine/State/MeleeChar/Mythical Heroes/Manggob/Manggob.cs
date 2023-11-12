@@ -193,7 +193,8 @@ public class Manggob : MeleeCharacterEntity, IDamageable, IBuffable, IDeletable,
     }
     public void OnPointerClick(PointerEventData eventData)
     {
-        towerManager.DeleteState(gameObject);
+        Debug.Log("Clicked");
+        towerManager.DeleteState(gameObject, characterData, damageValue, baseArmor, currentHealth);
     }
 
     public void DeleteChar()

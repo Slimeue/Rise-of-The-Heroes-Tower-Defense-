@@ -42,6 +42,9 @@ public class M_Bantugen : MeleeCharacterEntity, IDamageable, IBuffable, IDeletab
         characterStateMachine.Initialize(idleState);
         isDead = false;
         ground = towerManager.canvasEnabler.gameObject;
+
+
+
     }
 
     // Update is called once per frame
@@ -63,6 +66,7 @@ public class M_Bantugen : MeleeCharacterEntity, IDamageable, IBuffable, IDeletab
                 skillCd = characterData.skillCooldown;
             }
         }
+        // GameObject rangeIndicator = Instantiate(TowerRangeIndicator, transform.position, Quaternion.identity);
 
         SkillCounter();
     }
@@ -185,7 +189,8 @@ public class M_Bantugen : MeleeCharacterEntity, IDamageable, IBuffable, IDeletab
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        towerManager.DeleteState(gameObject);
+        Debug.Log("CLicked");
+        towerManager.DeleteState(gameObject, characterData, damageValue, baseArmor, currentHealth);
     }
 
     public void DeleteChar()

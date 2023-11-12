@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e454853e7f0ec346bb1144e52ab7ab1, type: 3}
   m_Name: Del Pilar
   m_EditorClassIdentifier: 
+  charTypeArt: {fileID: -942566212, guid: 448cb174202fab440a6ec45d5cba4cbf, type: 3}
   charArtWork: {fileID: -459093982, guid: cf9a839e02e8fba47a5cd702c5ade478, type: 3}
   skillData: {fileID: 11400000, guid: 36deeb3d1a9e00a4290d5b9610c86b64, type: 2}
   _layerMask:
@@ -32,7 +33,7 @@ MonoBehaviour:
   towerCooldown: 0
   skillCooldown: 10
   towerCost: 0
-  range: 15
+  range: 20
   projectileSpeed: 0
   attackSpeed: 2
   rotationSpeed: 5

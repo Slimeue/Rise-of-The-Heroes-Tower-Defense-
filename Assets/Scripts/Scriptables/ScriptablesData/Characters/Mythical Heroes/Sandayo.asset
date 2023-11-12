@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e454853e7f0ec346bb1144e52ab7ab1, type: 3}
   m_Name: Sandayo
   m_EditorClassIdentifier: 
+  charTypeArt: {fileID: -223164601, guid: 448cb174202fab440a6ec45d5cba4cbf, type: 3}
   charArtWork: {fileID: -1122762761, guid: 798cda3fcbc5a1d4da59a1fa79131043, type: 3}
   skillData: {fileID: 11400000, guid: 8d7c6df4e001d3d46b29bac9d33e2f51, type: 2}
   _layerMask:

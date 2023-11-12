@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e454853e7f0ec346bb1144e52ab7ab1, type: 3}
   m_Name: Bantugen
   m_EditorClassIdentifier: 
+  charTypeArt: {fileID: -265997245, guid: 448cb174202fab440a6ec45d5cba4cbf, type: 3}
   charArtWork: {fileID: 525727493, guid: cedf0234596f97140aee4bfac68dfae7, type: 3}
   skillData: {fileID: 11400000, guid: 709d11dddda34a348a368d6e2639ff79, type: 2}
   _layerMask:

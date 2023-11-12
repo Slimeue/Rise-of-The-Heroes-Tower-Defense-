@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: PonceSkill
   m_EditorClassIdentifier: 
   skillArtWork: {fileID: -2128392639, guid: 6e6fb2dfd38c9a64b808631b1bc5d3b1, type: 3}
-  skillDescription: 
+  skillName: Bless O'Saint
+  skillType: Active
+  skillDescription: Buff all Characters attack in the field by 100% for 10 seconds.

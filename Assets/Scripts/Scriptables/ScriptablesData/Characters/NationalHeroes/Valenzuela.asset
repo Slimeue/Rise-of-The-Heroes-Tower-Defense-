@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e454853e7f0ec346bb1144e52ab7ab1, type: 3}
   m_Name: Valenzuela
   m_EditorClassIdentifier: 
+  charTypeArt: {fileID: -942566212, guid: 448cb174202fab440a6ec45d5cba4cbf, type: 3}
   charArtWork: {fileID: 1354984968, guid: cd3fab574bed45d4090a8ed495684135, type: 3}
   skillData: {fileID: 11400000, guid: 369a96bb09971cb48977a520845f2f05, type: 2}
   _layerMask:
@@ -32,7 +33,7 @@ MonoBehaviour:
   towerCooldown: 0
   skillCooldown: 12
   towerCost: 0
-  range: 15
+  range: 20
   projectileSpeed: 0
   attackSpeed: 2
   rotationSpeed: 5

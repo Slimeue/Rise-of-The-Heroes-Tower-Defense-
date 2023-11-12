@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,11 +7,11 @@ public class AudioBackGroundManager : MonoBehaviour
 {
     public static AudioBackGroundManager instance;
 
-    AudioSource audioSource;
+    public Sounds[] sounds;
+
 
     private void Awake()
     {
-        audioSource = GetComponent<AudioSource>();
         if (instance != null)
         {
             Destroy(gameObject);
@@ -21,13 +22,48 @@ public class AudioBackGroundManager : MonoBehaviour
 
         }
         DontDestroyOnLoad(gameObject);
+
+        CreateSounds();
     }
 
-    public void PlayBackground(AudioClip audioClip)
+    void CreateSounds()
     {
-        audioSource.Stop();
-        audioSource.clip = audioClip;
-        audioSource.Play();
+        foreach (Sounds sound in sounds)
+        {
+            sound.audioSource = gameObject.AddComponent<AudioSource>();
+            sound.audioSource.clip = sound.audioClip;
+            sound.audioSource.volume = sound.volume;
+            sound.audioSource.pitch = sound.pitch;
+            sound.audioSource.loop = sound.loop;
+        }
+    }
+
+    public void Play(string name)
+    {
+        Sounds s = Array.Find(sounds, sound => sound.soundName == name);
+        if (s == null)
+        {
+            return;
+        }
+        if (s.playOneShot)
+        {
+            s.audioSource.PlayOneShot(s.audioClip);
+            return;
+        }
+        s.audioSource.Play();
+    }
+
+    public void ChangeAudioClip(string name, AudioClip audioClip)
+    {
+        Sounds s = Array.Find(sounds, sounds => sounds.soundName == name);
+        if (s == null)
+        {
+            return;
+        }
+        s.audioClip = audioClip;
+        s.audioSource.clip = s.audioClip;
+        s.audioSource.Play();
+
     }
 
 }

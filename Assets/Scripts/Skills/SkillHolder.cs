@@ -18,6 +18,10 @@ public class SkillHolder : MonoBehaviour, IPointerClickHandler
     [SerializeField] Image skillArtWork;
     [SerializeField] TextMeshProUGUI skillName;
 
+    public Slider skilSlider;
+
+
+
     public void OnPointerClick(PointerEventData eventData)
     {
         skillable.Skill();
@@ -36,8 +40,9 @@ public class SkillHolder : MonoBehaviour, IPointerClickHandler
 
         skillArtWork.sprite = characterSkill.skillArtWork;
         skillName.text = characterData.charName;
-
     }
+
+
 
 
 

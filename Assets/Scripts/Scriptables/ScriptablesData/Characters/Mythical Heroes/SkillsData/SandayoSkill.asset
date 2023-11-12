@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: SandayoSkill
   m_EditorClassIdentifier: 
   skillArtWork: {fileID: 1444552515, guid: 0582ffb372ed16c428fe79fa2ededf59, type: 3}
-  skillDescription: 
+  skillName: Down Bad
+  skillType: Passive
+  skillDescription: When Sandayo hit an enemy, they will be mark down and lower their
+    base armor by 50% for 5sec.

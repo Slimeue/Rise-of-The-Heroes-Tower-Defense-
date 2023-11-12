@@ -165,7 +165,7 @@ public class Sandayo : RangeCharacterEntity, IDamageable, IBuffable, IDeletable,
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        towerManager.DeleteState(gameObject);
+        towerManager.DeleteState(gameObject, characterData, damageValue, baseArmor, currentHealth);
     }
 
     public void DeleteChar()

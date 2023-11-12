@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: TecsonSkill
   m_EditorClassIdentifier: 
   skillArtWork: {fileID: -1413274492, guid: 986c1e77386854142b2fa7350d6d49e7, type: 3}
-  skillDescription: 
+  skillName: Magic Missile
+  skillType: Active
+  skillDescription: Fire a huge magic missile to the front

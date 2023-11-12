@@ -10,7 +10,12 @@ public class AnimationHandler : MonoBehaviour
     public event Action OnAttackEnd;
     public event Action OnSkillActivated;
     public event Action OnSkillFinished;
+    public event Action OnAnimationTrigger;
 
+    private void AnimationSoundTrigger()
+    {
+        OnAnimationTrigger?.Invoke();
+    }
 
     private void AnimationDeathFinishedTrigger()
     {

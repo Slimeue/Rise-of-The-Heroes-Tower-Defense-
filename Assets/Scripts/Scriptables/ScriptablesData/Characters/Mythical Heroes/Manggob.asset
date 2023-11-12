@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e454853e7f0ec346bb1144e52ab7ab1, type: 3}
   m_Name: Manggob
   m_EditorClassIdentifier: 
+  charTypeArt: {fileID: -942566212, guid: 448cb174202fab440a6ec45d5cba4cbf, type: 3}
   charArtWork: {fileID: 1113035084, guid: 832a01d5e86e4d647b014f79c2058423, type: 3}
   skillData: {fileID: 11400000, guid: b80e1d3757af81441bb0eab677a5cd80, type: 2}
   _layerMask:

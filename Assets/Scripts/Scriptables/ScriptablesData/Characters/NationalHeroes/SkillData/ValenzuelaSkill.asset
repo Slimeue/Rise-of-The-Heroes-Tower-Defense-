@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: ValenzuelaSkill
   m_EditorClassIdentifier: 
   skillArtWork: {fileID: -1578574939, guid: 2b99eedc4f6d2ee46a5b14fa1a553bc8, type: 3}
-  skillDescription: 
+  skillName: Devasting Quake
+  skillType: Active
+  skillDescription: Stomped his stick to cause an Earthquake dealing 150% damage
+    to the nearest enemies and slowing them down by 100% for 5sec.

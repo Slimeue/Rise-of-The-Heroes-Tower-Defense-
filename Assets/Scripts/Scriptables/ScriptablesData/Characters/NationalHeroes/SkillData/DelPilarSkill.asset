@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: DelPilarSkill
   m_EditorClassIdentifier: 
   skillArtWork: {fileID: 663611360, guid: c23fd5594ef24e54b81664cf66ec05a2, type: 3}
-  skillDescription: 
+  skillName: Battle Cry
+  skillType: Active
+  skillDescription: Buff all Characters attack speed in the field by 50% for 10 seconds.

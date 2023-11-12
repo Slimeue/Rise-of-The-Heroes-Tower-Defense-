@@ -164,7 +164,7 @@ public class M_Lumalindaw : MeleeCharacterEntity, IDamageable, IBuffable, IPoint
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        towerManager.DeleteState(gameObject);
+        towerManager.DeleteState(gameObject, characterData, damageValue, baseArmor, currentHealth);
     }
 
     public void DeleteChar()

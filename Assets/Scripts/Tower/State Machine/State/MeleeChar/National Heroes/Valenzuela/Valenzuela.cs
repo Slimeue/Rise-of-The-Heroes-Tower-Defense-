@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class Valenzuela : MeleeCharacterEntity, IDamageable, ISkillable
+public class Valenzuela : MeleeCharacterEntity, IDamageable, ISkillable, IPointerClickHandler
 {
 
     public GameObject skillHolder;
@@ -129,6 +130,11 @@ public class Valenzuela : MeleeCharacterEntity, IDamageable, ISkillable
     public CharacterData SkillData()
     {
         return characterData;
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        towerManager.SpecialCharacterClick(gameObject, characterData, damageValue, baseArmor, currentHealth);
     }
 
 

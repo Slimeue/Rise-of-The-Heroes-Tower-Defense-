@@ -30,6 +30,7 @@ public class CharEntity : MonoBehaviour
     public float currentMana;
     public float baseArmor;
     public float damageValue;
+    public int currentLevel;
 
     [HideInInspector]
     public float radius;
@@ -51,6 +52,8 @@ public class CharEntity : MonoBehaviour
     [HideInInspector]
     public bool isBuffed;
 
+    public GameObject TowerRangeIndicator;
+
     // Start is called before the first frame update
     public virtual void Awake()
     {
@@ -60,6 +63,7 @@ public class CharEntity : MonoBehaviour
         towerManager = FindObjectOfType<TowerManager>();
         characterStateMachine = new CharacterStateMachine();
     }
+
 
     // Update is called once per frame
     public virtual void Update()
@@ -99,8 +103,6 @@ public class CharEntity : MonoBehaviour
 
         }
 
-
-
         CharacterStats charStatsData = dataService.LoadData<CharacterStats>(newSaveDataPath, false);
 
         try
@@ -111,6 +113,7 @@ public class CharEntity : MonoBehaviour
             currentHealth = charData.hp;
             baseArmor = charData.armor;
             damageValue = charData.damage;
+            currentLevel = charData.level;
 
         }
         catch (Exception e)
@@ -118,7 +121,6 @@ public class CharEntity : MonoBehaviour
             Debug.Log(e.Message + " " + e.StackTrace);
 
         }
-
 
     }
 

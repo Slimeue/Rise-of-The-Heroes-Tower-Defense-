@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: LumalindawSkill
   m_EditorClassIdentifier: 
   skillArtWork: {fileID: -2040385858, guid: 04d6c152c6f0b9549b1fe175157db357, type: 3}
-  skillDescription: 
+  skillName: Heroic Slash
+  skillType: Passive
+  skillDescription: When 3 or more enemies is in front of malindaw, he would unleash
+    a wide area effect attack.

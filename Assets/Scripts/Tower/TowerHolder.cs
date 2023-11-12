@@ -104,7 +104,7 @@ public class TowerHolder : MonoBehaviour
         Debug.Log(characterData._platformTag);
         if (coinsManager._CurrentCoin >= _characterCost)
         {
-            towerManager.StartPlacing(_preview, _charObj, _characterCost, layerMask, characterData._platformTag, gameObject);
+            towerManager.StartPlacing(_preview, _charObj, _characterCost, layerMask, characterData._platformTag, gameObject, characterData);
 
         }
     }

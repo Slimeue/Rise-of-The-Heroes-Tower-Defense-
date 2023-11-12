@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class SwitchBackgroundTrack : MonoBehaviour
 {
+    public string audioClipName;
     public AudioClip audioClip;
 
     private void Start()
     {
-        AudioBackGroundManager.instance.PlayBackground(audioClip);
+        AudioBackGroundManager.instance.ChangeAudioClip(audioClipName, audioClip);
     }
 }

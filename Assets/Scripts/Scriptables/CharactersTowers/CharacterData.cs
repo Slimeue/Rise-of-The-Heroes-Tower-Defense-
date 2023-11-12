@@ -6,6 +6,7 @@ using UnityEngine;
 public class CharacterData : ScriptableObject
 {
 
+    [SerializeField] public Sprite charTypeArt;
     [SerializeField] public Sprite charArtWork;
 
     [SerializeField] public CharacterSkill skillData;

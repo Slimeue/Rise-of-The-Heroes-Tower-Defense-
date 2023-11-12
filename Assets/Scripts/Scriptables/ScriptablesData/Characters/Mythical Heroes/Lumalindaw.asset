@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e454853e7f0ec346bb1144e52ab7ab1, type: 3}
   m_Name: Lumalindaw
   m_EditorClassIdentifier: 
+  charTypeArt: {fileID: -942566212, guid: 448cb174202fab440a6ec45d5cba4cbf, type: 3}
   charArtWork: {fileID: -2094786600, guid: d18fe5e29685bf34fbdeeaec757fead8, type: 3}
   skillData: {fileID: 11400000, guid: a83ee705f48c48f4b86dc889eda7ab90, type: 2}
   _layerMask:

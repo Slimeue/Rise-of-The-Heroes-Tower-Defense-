@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class DelPilar : MeleeCharacterEntity, IDamageable, ISkillable, IBuffable
+public class DelPilar : MeleeCharacterEntity, IDamageable, ISkillable, IBuffable, IPointerClickHandler
 {
 
     public GameObject skillHolder;
@@ -26,6 +28,9 @@ public class DelPilar : MeleeCharacterEntity, IDamageable, ISkillable, IBuffable
 
     public GameObject[] activeTowers;
 
+    SkillHolder specialSkillHolder;
+    public Slider skillSlider;
+
     public override void Awake()
     {
         base.Awake();
@@ -41,11 +46,15 @@ public class DelPilar : MeleeCharacterEntity, IDamageable, ISkillable, IBuffable
         healthBar = baseManager.specialCharHpBar;
         baseManager.baseCharIcon.sprite = characterData.charArtWork;
 
+        specialSkillHolder = FindObjectOfType<SkillHolder>();
+
+
     }
 
     private void Start()
     {
         characterStateMachine.Initialize(idleState);
+        skillSlider = specialSkillHolder.skilSlider;
     }
 
 
@@ -63,6 +72,10 @@ public class DelPilar : MeleeCharacterEntity, IDamageable, ISkillable, IBuffable
         if (skillFinished)
         {
             skillCd -= Time.deltaTime;
+
+            float _charCooldownNormalized = skillCd / characterData.skillCooldown;
+            Debug.Log(_charCooldownNormalized);
+            skillSlider.value = _charCooldownNormalized;
             if (skillCd <= 0f)
             {
                 skillFinished = false;
@@ -150,6 +163,11 @@ public class DelPilar : MeleeCharacterEntity, IDamageable, ISkillable, IBuffable
     public CharacterData SkillData()
     {
         return characterData;
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        towerManager.SpecialCharacterClick(gameObject, characterData, damageValue, baseArmor, currentHealth);
     }
 
 

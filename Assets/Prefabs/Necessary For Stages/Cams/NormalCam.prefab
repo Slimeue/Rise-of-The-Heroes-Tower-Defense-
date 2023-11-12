@@ -27,13 +27,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8573589972917974030}
+  serializedVersion: 2
   m_LocalRotation: {x: 0.11074608, y: 0.021770792, z: -0.0024256776, w: -0.9936073}
   m_LocalPosition: {x: -48.533455, y: -53.18749, z: 38.585083}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8573589973504001522}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8573589972917974258
 MonoBehaviour:
@@ -139,14 +139,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8573589973504001520}
-  m_LocalRotation: {x: 0.534918, y: -0, z: -0, w: 0.844904}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.5349202, y: 0, z: 0, w: 0.8449026}
   m_LocalPosition: {x: 50, y: 61.6, z: 0.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8573589972917974031}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 64.677, y: 0, z: 0}
 --- !u!114 &8573589973504001521
 MonoBehaviour:
@@ -177,6 +177,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
+    FocusDistance: 10
     m_SensorSize: {x: 1, y: 1}
     Iso: 200
     ShutterSpeed: 0.005

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c23fd5594ef24e54b81664cf66ec05a2
+guid: 448cb174202fab440a6ec45d5cba4cbf
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -81,7 +81,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Standalone
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -94,7 +94,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Server
+    buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -120,7 +120,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -136,22 +136,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DEL PILAR_0
+      name: Role-icon_2_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 762
-        height: 328
+        x: 553
+        y: 1319
+        width: 537
+        height: 469
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9611b00c0ebabb44fbb0587a6d2b440c
-      internalID: 663611360
+      spriteID: ea1cea434d7bf56458d020bb0d73e4d9
+      internalID: -265997245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Role-icon_2_1
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 716
+        width: 536
+        height: 468
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23ded47a0fce987439ad49f611efce75
+      internalID: -942566212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Role-icon_2_2
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 163
+        width: 536
+        height: 468
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27773916bfa8d274392dc34b1db314b7
+      internalID: -223164601
       vertices: []
       indices: 
       edges: []
@@ -159,7 +201,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: cc30d283d5c2fc14395d2f3a75745d6e
+    spriteID: 52d24172d51cc3c43be6b859bd468b2c
     internalID: 0
     vertices: []
     indices: 
@@ -167,7 +209,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      DEL PILAR_0: 663611360
+      Role-icon_2_0: -265997245
+      Role-icon_2_1: -942566212
+      Role-icon_2_2: -223164601
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

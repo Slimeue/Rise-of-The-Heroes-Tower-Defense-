@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: BantugenSkill
   m_EditorClassIdentifier: 
   skillArtWork: {fileID: 2050191497, guid: 81e0d90fac034534f9fab1709f49aba6, type: 3}
-  skillDescription: 
+  skillName: Tough Shield
+  skillType: Passive
+  skillDescription: When hp hit 50% Manggob gain a 100% increase in defense for 4
+    secs.
