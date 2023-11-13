@@ -66,6 +66,7 @@ public class M_Berberoka_S_AttackState : BaseState
 
         if (collider.gameObject.CompareTag("Body"))
         {
+            m_Berberoka.soundsPlayTrack.Play("Hit");
             tower.Damage(m_Berberoka.enemiesData.dmgValue);
             m_Berberoka.enemyAttackFinished = false;
         }

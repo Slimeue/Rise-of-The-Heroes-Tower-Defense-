@@ -16,6 +16,7 @@ public class M_Manggob_attack : CharacterBaseState
     public override void Enter()
     {
         base.Enter();
+        m_Manggob.animationHandler.OnAnimationTrigger += PlayHitSFX;
     }
 
     public override void LogicUpdate()
@@ -50,6 +51,7 @@ public class M_Manggob_attack : CharacterBaseState
     public override void Exit()
     {
         base.Exit();
+        m_Manggob.animationHandler.OnAnimationTrigger -= PlayHitSFX;
     }
 
     #region 
@@ -69,12 +71,18 @@ public class M_Manggob_attack : CharacterBaseState
         {
             if (collider.gameObject.CompareTag("Enemy"))
             {
+
                 damageable.Damage(m_Manggob.damageValue);
                 Debug.Log(collider.gameObject.name);
                 m_Manggob.isAttackFinished = false;
             }
         }
 
+    }
+
+    void PlayHitSFX()
+    {
+        m_Manggob.soundsPlayTrack.Play("Hit");
     }
 
     private void FindTarget()

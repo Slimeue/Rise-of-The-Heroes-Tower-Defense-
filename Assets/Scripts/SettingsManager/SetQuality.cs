@@ -1,0 +1,20 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+
+public class SetQuality : MonoBehaviour
+{
+    [SerializeField] private TMP_Dropdown qualityDropdown;
+
+    private void Awake()
+    {
+        qualityDropdown.value = QualitySettings.GetQualityLevel();
+    }
+
+    public void SetQualityLevelDropdown(int index)
+    {
+        QualitySettings.SetQualityLevel(index, false);
+    }
+}

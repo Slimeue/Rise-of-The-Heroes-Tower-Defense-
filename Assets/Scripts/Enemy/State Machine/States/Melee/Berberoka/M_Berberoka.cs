@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class M_Berberoka : MeleeEnemyEntity, IDamageable, IEnemyDataGetable, IDebuffable
+public class M_Berberoka : MeleeEnemyEntity, IDamageable, IEnemyDataGetable, IDebuffable, IRangeSoundable
 {
 
     public M_Berberoka_S_AttackState attackState { get; private set; }
@@ -159,6 +159,11 @@ public class M_Berberoka : MeleeEnemyEntity, IDamageable, IEnemyDataGetable, IDe
                 speed = enemiesData.moveSpeed;
             }
         }
+    }
+
+    public void PlayRangeHitSFX(string sfx)
+    {
+        soundsPlayTrack.Play(sfx);
     }
 
 

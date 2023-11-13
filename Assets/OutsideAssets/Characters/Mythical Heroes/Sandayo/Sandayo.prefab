@@ -198,38 +198,6 @@ Transform:
   - {fileID: 48903837266622806}
   m_Father: {fileID: 7578701865172729605}
   m_LocalEulerAnglesHint: {x: 6.1737113, y: -0.46889913, z: -0.7699768}
---- !u!1 &791546463325255222
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8154764807205053591}
-  m_Layer: 0
-  m_Name: RangeIndicator
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8154764807205053591
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 791546463325255222}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 5}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 66555173360360075}
-  m_Father: {fileID: 7236988554436472246}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &806737956879117478
 GameObject:
   m_ObjectHideFlags: 0
@@ -1657,6 +1625,7 @@ GameObject:
   - component: {fileID: 521605592330098563}
   - component: {fileID: 88249466456952567}
   - component: {fileID: 8597944683053745092}
+  - component: {fileID: 3998923573278430049}
   m_Layer: 6
   m_Name: Sandayo
   m_TagString: Player
@@ -1682,7 +1651,6 @@ Transform:
   - {fileID: 3049203224344228311}
   - {fileID: 6339487463038333733}
   - {fileID: 8429248063643487145}
-  - {fileID: 8154764807205053591}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4606868741581876667
@@ -1703,11 +1671,13 @@ MonoBehaviour:
   healthBar: {fileID: 3211193197126274477}
   anim: {fileID: 0}
   characterData: {fileID: 11400000, guid: cee8b4e45e2ce2d4ca94ff52bb0d4548, type: 2}
+  soundsPlayTrack: {fileID: 0}
   maxHp: 0
   currentHealth: 0
   currentMana: 0
   baseArmor: 0
   damageValue: 0
+  currentLevel: 0
   radius: 0
   _rotationSpeed: 2
   isAttackFinished: 0
@@ -1792,6 +1762,30 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.6425514, y: 4.7734127, z: 1}
   m_Center: {x: -0.035697185, y: 2.1544323, z: 0}
+--- !u!114 &3998923573278430049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8008844980106868492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bedebc233bd369c4794f30b3044481b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - audioClip: {fileID: 8300000, guid: 5e3a257334e6164448ea9ecf4da9fb4f, type: 3}
+    audioMixer: {fileID: 1751150313044384599, guid: 9b84f62a14af47149999b1c08ef98263,
+      type: 2}
+    soundName: RangeCast
+    volume: 0.704
+    pitch: 1
+    spatialBlend: 0
+    loop: 0
+    playOneShot: 1
+    playOnAwake: 0
+    audioSource: {fileID: 0}
 --- !u!1 &8074271894998603299
 GameObject:
   m_ObjectHideFlags: 0
@@ -2245,78 +2239,4 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3308739186227538276, guid: e4a7960f0fc2fb3489ab2ad446951bbf,
     type: 3}
   m_PrefabInstance: {fileID: 8795919849628949057}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &8837415711015683856
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 8154764807205053591}
-    m_Modifications:
-    - target: {fileID: 8143473478085920545, guid: b13d12eb8d8c21f40b21df38474e9377,
-        type: 3}
-      propertyPath: m_Name
-      value: RangeIndicator
-      objectReference: {fileID: 0}
-    - target: {fileID: 8811500856094498203, guid: b13d12eb8d8c21f40b21df38474e9377,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8811500856094498203, guid: b13d12eb8d8c21f40b21df38474e9377,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8811500856094498203, guid: b13d12eb8d8c21f40b21df38474e9377,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8811500856094498203, guid: b13d12eb8d8c21f40b21df38474e9377,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8811500856094498203, guid: b13d12eb8d8c21f40b21df38474e9377,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8811500856094498203, guid: b13d12eb8d8c21f40b21df38474e9377,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8811500856094498203, guid: b13d12eb8d8c21f40b21df38474e9377,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8811500856094498203, guid: b13d12eb8d8c21f40b21df38474e9377,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8811500856094498203, guid: b13d12eb8d8c21f40b21df38474e9377,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8811500856094498203, guid: b13d12eb8d8c21f40b21df38474e9377,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b13d12eb8d8c21f40b21df38474e9377, type: 3}
---- !u!4 &66555173360360075 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8811500856094498203, guid: b13d12eb8d8c21f40b21df38474e9377,
-    type: 3}
-  m_PrefabInstance: {fileID: 8837415711015683856}
   m_PrefabAsset: {fileID: 0}

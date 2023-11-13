@@ -11,7 +11,8 @@ public class EnemyEntity : MonoBehaviour
     public Animator anim;
     public Slider healthBar;
 
-
+    [HideInInspector]
+    public SoundsPlayTrack soundsPlayTrack;
 
     //TargetWaypoint
     public Transform target;
@@ -51,6 +52,7 @@ public class EnemyEntity : MonoBehaviour
         speed = enemiesData.moveSpeed;
         stateMachine = new StateMachine();
         radius = enemiesData.attackRange;
+        soundsPlayTrack = GetComponent<SoundsPlayTrack>();
 
     }
     private void Start()

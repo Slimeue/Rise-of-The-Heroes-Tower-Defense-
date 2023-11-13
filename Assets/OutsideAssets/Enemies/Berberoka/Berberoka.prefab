@@ -298,6 +298,7 @@ GameObject:
   - component: {fileID: 2661973230325799174}
   - component: {fileID: -4434814421336479059}
   - component: {fileID: 541487517284705476}
+  - component: {fileID: -1253842811299193394}
   m_Layer: 11
   m_Name: Berberoka
   m_TagString: Enemy
@@ -400,6 +401,7 @@ MonoBehaviour:
   currentTarget: {fileID: 0}
   anim: {fileID: 0}
   healthBar: {fileID: 811198349289647428}
+  soundsPlayTrack: {fileID: 0}
   target: {fileID: 0}
   animationHandler: {fileID: 0}
   speed: 0
@@ -434,6 +436,52 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5.3274894, y: 7.178401, z: 3.133458}
   m_Center: {x: -0.07820733, y: 3.2456157, z: 0.048450153}
+--- !u!114 &-1253842811299193394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181177267751087925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bedebc233bd369c4794f30b3044481b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - audioClip: {fileID: 8300000, guid: 1dcbb94e4121b0040b2c11e446bce0b3, type: 3}
+    audioMixer: {fileID: 1751150313044384599, guid: 9b84f62a14af47149999b1c08ef98263,
+      type: 2}
+    soundName: Hit
+    volume: 1
+    pitch: 1
+    spatialBlend: 1
+    loop: 0
+    playOneShot: 1
+    playOnAwake: 0
+    audioSource: {fileID: 0}
+  - audioClip: {fileID: 8300000, guid: 8deaf6459365f4449aee825836b1f698, type: 3}
+    audioMixer: {fileID: 1751150313044384599, guid: 9b84f62a14af47149999b1c08ef98263,
+      type: 2}
+    soundName: Voice1
+    volume: 1
+    pitch: 1
+    spatialBlend: 1
+    loop: 0
+    playOneShot: 1
+    playOnAwake: 1
+    audioSource: {fileID: 0}
+  - audioClip: {fileID: 8300000, guid: 1f974a2a94997bf46946a325be95e517, type: 3}
+    audioMixer: {fileID: 1751150313044384599, guid: 9b84f62a14af47149999b1c08ef98263,
+      type: 2}
+    soundName: RangeHit
+    volume: 0.5
+    pitch: 1
+    spatialBlend: 0
+    loop: 0
+    playOneShot: 1
+    playOnAwake: 0
+    audioSource: {fileID: 0}
 --- !u!1 &1588129770462682091
 GameObject:
   m_ObjectHideFlags: 0

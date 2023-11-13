@@ -81,7 +81,7 @@ public class Sandayo : RangeCharacterEntity, IDamageable, IBuffable, IDeletable,
     {
         GameObject projectileGO = Instantiate(projectile, firePoint.position, firePoint.rotation);
         SandayoProjectile _projectile = projectileGO.GetComponent<SandayoProjectile>();
-
+        soundsPlayTrack.Play("RangeCast");
         if (_projectile != null)
         {
             _projectile.SeekTarget(target, characterData, damageValue);

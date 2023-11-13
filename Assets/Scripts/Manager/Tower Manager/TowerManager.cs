@@ -46,6 +46,7 @@ public class TowerManager : MonoBehaviour
     [SerializeField] GameObject _charDeleteCanvas;
     [SerializeField] GameObject _charInfoCanvas;
     [Header("Char Info Attributes")]
+    [SerializeField] Image charInfoArtWork;
     [SerializeField] TextMeshProUGUI charInfoName;
     [SerializeField] Image charInfoTypeImage;
     [SerializeField] TextMeshProUGUI charInfoLevel;
@@ -193,6 +194,7 @@ public class TowerManager : MonoBehaviour
             DisablePlatformCanvas();
             Destroy(_instPreviewObj);
             _CharConfirmPlacementCanvas.SetActive(false);
+            _rangeIndicatorObj.SetActive(false);
             currentState = State.Default;
         }
 
@@ -210,6 +212,8 @@ public class TowerManager : MonoBehaviour
             currentState = State.Placing;
             //CharInfo
             LoadCharStats();
+
+            charInfoArtWork.sprite = characterData.charArtWork;
             charInfoTypeImage.sprite = characterData.charTypeArt;
             charInfoName.text = characterData.charName;
             charInfoHp.text = maxHp.ToString("f0");
@@ -409,6 +413,7 @@ public class TowerManager : MonoBehaviour
             Debug.Log("StateingDelete");
 
             //charInfoCanvas
+            charInfoArtWork.sprite = charData.charArtWork;
             charInfoTypeImage.sprite = charData.charTypeArt;
             charInfoName.text = charData.charName;
             charInfoHp.text = hp.ToString("f0");
@@ -442,6 +447,7 @@ public class TowerManager : MonoBehaviour
             _rangeIndicatorObj.SetActive(true);
             _charInfoCanvas.SetActive(true);
 
+            charInfoArtWork.sprite = data.charArtWork;
             charInfoTypeImage.sprite = data.charTypeArt;
             charInfoName.text = data.charName;
             charInfoHp.text = hp.ToString("f0");

@@ -533,6 +533,7 @@ GameObject:
   - component: {fileID: -6086331402742912521}
   - component: {fileID: -1955971057591892364}
   - component: {fileID: 4395990351093323180}
+  - component: {fileID: 225856365682054296}
   m_Layer: 6
   m_Name: Bantugen
   m_TagString: Player
@@ -626,11 +627,13 @@ MonoBehaviour:
   healthBar: {fileID: 341728777057589247}
   anim: {fileID: 0}
   characterData: {fileID: 11400000, guid: c5fd8cc5a6019534eac1bbe380138339, type: 2}
+  soundsPlayTrack: {fileID: 0}
   maxHp: 0
   currentHealth: 0
   currentMana: 0
   baseArmor: 0
   damageValue: 0
+  currentLevel: 0
   radius: 0
   _rotationSpeed: 0
   isAttackFinished: 0
@@ -681,6 +684,30 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 9.304844, y: 13.955835, z: 8.533548}
   m_Center: {x: -0.20771599, y: 6.83095, z: 0.8438604}
+--- !u!114 &225856365682054296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3470282489955092626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bedebc233bd369c4794f30b3044481b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - audioClip: {fileID: 8300000, guid: 45d647ca31b6cfb408d1544d9cb91b7b, type: 3}
+    audioMixer: {fileID: 1751150313044384599, guid: 9b84f62a14af47149999b1c08ef98263,
+      type: 2}
+    soundName: Hit
+    volume: 1
+    pitch: 1
+    spatialBlend: 0.708
+    loop: 0
+    playOneShot: 1
+    playOnAwake: 0
+    audioSource: {fileID: 0}
 --- !u!1 &3756036454813823694
 GameObject:
   m_ObjectHideFlags: 0
@@ -1809,6 +1836,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3308739186227538276, guid: e4a7960f0fc2fb3489ab2ad446951bbf,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3308739186227538276, guid: e4a7960f0fc2fb3489ab2ad446951bbf,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3308739186227538276, guid: e4a7960f0fc2fb3489ab2ad446951bbf,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3308739186227538276, guid: e4a7960f0fc2fb3489ab2ad446951bbf,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -1850,7 +1892,7 @@ PrefabInstance:
     - target: {fileID: 3308739186227538276, guid: e4a7960f0fc2fb3489ab2ad446951bbf,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 5
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3308739186227538276, guid: e4a7960f0fc2fb3489ab2ad446951bbf,
         type: 3}

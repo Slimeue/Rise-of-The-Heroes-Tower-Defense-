@@ -21,6 +21,10 @@ public class CharEntity : MonoBehaviour
     [Header("Components")]
     public Animator anim;
     public CharacterData characterData;
+    [HideInInspector]
+    public SoundsPlayTrack soundsPlayTrack;
+
+
     [Space(5)]
     //Stats
     [Header("Stats")]
@@ -62,6 +66,7 @@ public class CharEntity : MonoBehaviour
         _rotationSpeed = characterData.rotationSpeed;
         towerManager = FindObjectOfType<TowerManager>();
         characterStateMachine = new CharacterStateMachine();
+        soundsPlayTrack = GetComponent<SoundsPlayTrack>();
     }
 
 

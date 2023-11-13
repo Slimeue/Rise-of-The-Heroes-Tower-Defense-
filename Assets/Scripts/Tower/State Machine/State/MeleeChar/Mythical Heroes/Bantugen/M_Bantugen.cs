@@ -42,7 +42,7 @@ public class M_Bantugen : MeleeCharacterEntity, IDamageable, IBuffable, IDeletab
         characterStateMachine.Initialize(idleState);
         isDead = false;
         ground = towerManager.canvasEnabler.gameObject;
-
+        soundsPlayTrack.Play("Voice1");
 
 
     }

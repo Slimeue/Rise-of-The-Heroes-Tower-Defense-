@@ -1663,6 +1663,7 @@ GameObject:
   - component: {fileID: 8996305527789474842}
   - component: {fileID: 8454554351012362319}
   - component: {fileID: 1317622805172926904}
+  - component: {fileID: 5618627272099572988}
   m_Layer: 6
   m_Name: Manggob
   m_TagString: Player
@@ -1756,11 +1757,13 @@ MonoBehaviour:
   healthBar: {fileID: 7794019588293106082}
   anim: {fileID: 0}
   characterData: {fileID: 11400000, guid: 17768d95cd87b774b80c65cc987f82a1, type: 2}
+  soundsPlayTrack: {fileID: 0}
   maxHp: 0
   currentHealth: 0
   currentMana: 0
   baseArmor: 0
   damageValue: 0
+  currentLevel: 0
   radius: 0
   _rotationSpeed: 0
   isAttackFinished: 0
@@ -1812,6 +1815,29 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.1519804, y: 4.3512154, z: 1.2094512}
   m_Center: {x: -0.052362442, y: 1.6756065, z: 0.10472544}
+--- !u!114 &5618627272099572988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9120724745420781136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bedebc233bd369c4794f30b3044481b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - audioClip: {fileID: 8300000, guid: 3c47b2cf68c061e42b023a2ab778dc67, type: 3}
+    audioMixer: {fileID: 0}
+    soundName: Hit
+    volume: 0.7
+    pitch: 1
+    spatialBlend: 0
+    loop: 0
+    playOneShot: 1
+    playOnAwake: 0
+    audioSource: {fileID: 0}
 --- !u!1 &9156247427584588055
 GameObject:
   m_ObjectHideFlags: 0

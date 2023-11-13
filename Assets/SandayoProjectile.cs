@@ -41,6 +41,7 @@ public class SandayoProjectile : MonoBehaviour
         float yOffset = 10f;
         IDamageable damageable = target.GetComponentInParent<IDamageable>();
         IDebuffable debuffable = target.GetComponentInParent<IDebuffable>();
+        IRangeSoundable rangeSoundable = target.GetComponentInParent<IRangeSoundable>();
 
 
         if (debuffable != null)
@@ -58,6 +59,7 @@ public class SandayoProjectile : MonoBehaviour
 
         if (damageable != null)
         {
+            rangeSoundable.PlayRangeHitSFX("RangeHit");
             damageable.Damage(dmgValue);
             Destroy(gameObject);
         }

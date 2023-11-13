@@ -7,6 +7,8 @@ public class AudioBackGroundManager : MonoBehaviour
 {
     public static AudioBackGroundManager instance;
 
+    SwitchBackgroundTrack switchBackgroundTrack;
+
     public Sounds[] sounds;
 
 
@@ -23,14 +25,22 @@ public class AudioBackGroundManager : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
 
+        switchBackgroundTrack = FindAnyObjectByType<SwitchBackgroundTrack>();
         CreateSounds();
+        if (switchBackgroundTrack != null)
+        {
+            return;
+        }
+        Play("Background");
     }
+
 
     void CreateSounds()
     {
         foreach (Sounds sound in sounds)
         {
             sound.audioSource = gameObject.AddComponent<AudioSource>();
+            sound.audioSource.outputAudioMixerGroup = sound.audioMixer;
             sound.audioSource.clip = sound.audioClip;
             sound.audioSource.volume = sound.volume;
             sound.audioSource.pitch = sound.pitch;
