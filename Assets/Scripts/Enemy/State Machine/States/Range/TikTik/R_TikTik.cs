@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class R_TikTik : RangeEnemyEntity, IDamageable, IEnemyDataGetable, IDebuffable
+public class R_TikTik : RangeEnemyEntity, IDamageable, IEnemyDataGetable, IDebuffable, IRangeSoundable
 {
     public R_TikTik_S_attackState attackState { get; private set; }
     public R_TikTik_S_deathState deathState { get; private set; }
@@ -150,6 +150,11 @@ public class R_TikTik : RangeEnemyEntity, IDamageable, IEnemyDataGetable, IDebuf
                 slowed = false;
             }
         }
+    }
+
+    public void PlayRangeHitSFX(string sfx)
+    {
+        soundsPlayTrack.Play(sfx);
     }
     #endregion
 

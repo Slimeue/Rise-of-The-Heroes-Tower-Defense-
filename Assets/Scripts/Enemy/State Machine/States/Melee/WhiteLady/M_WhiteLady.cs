@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class M_WhiteLady : MeleeEnemyEntity, IDamageable, IEnemyDataGetable, IDebuffable
+public class M_WhiteLady : MeleeEnemyEntity, IDamageable, IEnemyDataGetable, IDebuffable, IRangeSoundable
 {
     public M_WhiteLady_S_attackState attackState { get; private set; }
     public M_WhiteLady_S_deathState deathState { get; private set; }
@@ -153,6 +153,11 @@ public class M_WhiteLady : MeleeEnemyEntity, IDamageable, IEnemyDataGetable, IDe
                 slowed = false;
             }
         }
+    }
+
+    public void PlayRangeHitSFX(string sfx)
+    {
+        soundsPlayTrack.Play(sfx);
     }
 
 

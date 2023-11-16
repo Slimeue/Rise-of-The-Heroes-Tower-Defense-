@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class M_Bungisngis : MeleeEnemyEntity, IDamageable, IEnemyDataGetable, IDebuffable
+public class M_Bungisngis : MeleeEnemyEntity, IDamageable, IEnemyDataGetable, IDebuffable, IRangeSoundable
 {
 
     public M_Bungisngis_S_AttackState attackState { get; private set; }
@@ -155,6 +155,11 @@ public class M_Bungisngis : MeleeEnemyEntity, IDamageable, IEnemyDataGetable, ID
 
             }
         }
+    }
+
+    public void PlayRangeHitSFX(string sfx)
+    {
+        soundsPlayTrack.Play(sfx);
     }
 
     #endregion

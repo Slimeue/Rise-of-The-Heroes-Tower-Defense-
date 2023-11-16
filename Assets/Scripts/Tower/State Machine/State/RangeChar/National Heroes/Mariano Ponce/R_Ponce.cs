@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class R_Ponce : RangeCharacterEntity, IDamageable, ISkillable, IBuffable, IPointerClickHandler
+public class R_Ponce : RangeCharacterEntity, IDamageable, ISkillable, IBuffable, IPointerClickHandler, IRangeSoundable
 {
 
 
@@ -98,6 +98,7 @@ public class R_Ponce : RangeCharacterEntity, IDamageable, ISkillable, IBuffable,
     {
         GameObject projectileGO = Instantiate(projectile, firePoint.position, firePoint.rotation);
         Projectile _projectile = projectileGO.GetComponent<Projectile>();
+        soundsPlayTrack.Play("RangeCast");
 
         if (_projectile != null)
         {
@@ -162,6 +163,10 @@ public class R_Ponce : RangeCharacterEntity, IDamageable, ISkillable, IBuffable,
         towerManager.SpecialCharacterClick(gameObject, characterData, damageValue, baseArmor, currentHealth);
     }
 
+    public void PlayRangeHitSFX(string sfx)
+    {
+        soundsPlayTrack.Play(sfx);
+    }
     #endregion
 
 

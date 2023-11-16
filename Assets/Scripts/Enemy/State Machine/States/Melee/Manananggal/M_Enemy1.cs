@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class M_Enemy1 : MeleeEnemyEntity, IDamageable, IEnemyDataGetable, IDebuffable
+public class M_Enemy1 : MeleeEnemyEntity, IDamageable, IEnemyDataGetable, IDebuffable, IRangeSoundable
 {
 
 
@@ -153,6 +153,10 @@ public class M_Enemy1 : MeleeEnemyEntity, IDamageable, IEnemyDataGetable, IDebuf
                 slowed = false;
             }
         }
+    }
+    public void PlayRangeHitSFX(string sfx)
+    {
+        soundsPlayTrack.Play(sfx);
     }
 
     #endregion

@@ -73,6 +73,8 @@ public class M_Valenzuela_S_attackState : CharacterBaseState
 
         if (collider.gameObject.CompareTag("Enemy"))
         {
+            m_Valenzuela.soundsPlayTrack.Play("Hit");
+
             Debug.Log("Hit");
             damageable.Damage(m_Valenzuela.damageValue);
             m_Valenzuela.isAttackFinished = false;

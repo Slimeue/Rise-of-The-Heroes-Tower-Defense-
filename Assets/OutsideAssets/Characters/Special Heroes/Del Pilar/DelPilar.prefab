@@ -1542,6 +1542,7 @@ GameObject:
   - component: {fileID: 5359407373163904082}
   - component: {fileID: 2738046164756003443}
   - component: {fileID: 8008175645773479691}
+  - component: {fileID: 8669841460812818889}
   m_Layer: 12
   m_Name: DelPilar
   m_TagString: Player
@@ -1585,6 +1586,7 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   anim: {fileID: 0}
   characterData: {fileID: 11400000, guid: 44820dc02b094c24d8c14447cb23f68b, type: 2}
+  soundsPlayTrack: {fileID: 0}
   maxHp: 0
   currentHealth: 0
   currentMana: 0
@@ -1691,3 +1693,38 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.4140687, y: 5.104247, z: 2.1726432}
   m_Center: {x: 0.0862236, y: 2.0521235, z: 0.20693693}
+--- !u!114 &8669841460812818889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8946194410183242603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bedebc233bd369c4794f30b3044481b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - audioClip: {fileID: 8300000, guid: b865a5449429de54882abaf78cc6ab73, type: 3}
+    audioMixer: {fileID: 1751150313044384599, guid: 9b84f62a14af47149999b1c08ef98263,
+      type: 2}
+    soundName: Hit
+    volume: 1
+    pitch: 1
+    spatialBlend: 0.1
+    loop: 0
+    playOneShot: 1
+    playOnAwake: 0
+    audioSource: {fileID: 0}
+  - audioClip: {fileID: 8300000, guid: 1f974a2a94997bf46946a325be95e517, type: 3}
+    audioMixer: {fileID: 1751150313044384599, guid: 9b84f62a14af47149999b1c08ef98263,
+      type: 2}
+    soundName: RangeHit
+    volume: 1
+    pitch: 1
+    spatialBlend: 0.1
+    loop: 0
+    playOneShot: 1
+    playOnAwake: 0
+    audioSource: {fileID: 0}

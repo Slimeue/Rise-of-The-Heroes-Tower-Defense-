@@ -1829,11 +1829,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - audioClip: {fileID: 8300000, guid: 3c47b2cf68c061e42b023a2ab778dc67, type: 3}
-    audioMixer: {fileID: 0}
+    audioMixer: {fileID: 1751150313044384599, guid: 9b84f62a14af47149999b1c08ef98263,
+      type: 2}
     soundName: Hit
     volume: 0.7
     pitch: 1
-    spatialBlend: 0
+    spatialBlend: 0.1
+    loop: 0
+    playOneShot: 1
+    playOnAwake: 0
+    audioSource: {fileID: 0}
+  - audioClip: {fileID: 8300000, guid: 1f974a2a94997bf46946a325be95e517, type: 3}
+    audioMixer: {fileID: 1751150313044384599, guid: 9b84f62a14af47149999b1c08ef98263,
+      type: 2}
+    soundName: RangeHit
+    volume: 0.7
+    pitch: 1
+    spatialBlend: 0.1
     loop: 0
     playOneShot: 1
     playOnAwake: 0

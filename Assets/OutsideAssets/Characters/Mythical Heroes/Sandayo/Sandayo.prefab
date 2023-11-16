@@ -1775,13 +1775,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - audioClip: {fileID: 8300000, guid: 5e3a257334e6164448ea9ecf4da9fb4f, type: 3}
+  - audioClip: {fileID: 8300000, guid: bbbb0618ff0e75f468e257b5e7eb97d4, type: 3}
     audioMixer: {fileID: 1751150313044384599, guid: 9b84f62a14af47149999b1c08ef98263,
       type: 2}
     soundName: RangeCast
     volume: 0.704
     pitch: 1
-    spatialBlend: 0
+    spatialBlend: 0.1
+    loop: 0
+    playOneShot: 1
+    playOnAwake: 0
+    audioSource: {fileID: 0}
+  - audioClip: {fileID: 8300000, guid: 1f974a2a94997bf46946a325be95e517, type: 3}
+    audioMixer: {fileID: 1751150313044384599, guid: 9b84f62a14af47149999b1c08ef98263,
+      type: 2}
+    soundName: RangeHit
+    volume: 0.704
+    pitch: 1
+    spatialBlend: 0.1
     loop: 0
     playOneShot: 1
     playOnAwake: 0

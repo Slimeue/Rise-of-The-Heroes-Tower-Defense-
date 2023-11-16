@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class M_Bantugen : MeleeCharacterEntity, IDamageable, IBuffable, IDeletable, IPointerClickHandler
+public class M_Bantugen : MeleeCharacterEntity, IDamageable, IBuffable, IDeletable, IPointerClickHandler, IRangeSoundable
 {
     public GameObject ability;
     public float skillCd;
@@ -42,9 +42,6 @@ public class M_Bantugen : MeleeCharacterEntity, IDamageable, IBuffable, IDeletab
         characterStateMachine.Initialize(idleState);
         isDead = false;
         ground = towerManager.canvasEnabler.gameObject;
-        soundsPlayTrack.Play("Voice1");
-
-
     }
 
     // Update is called once per frame
@@ -197,6 +194,11 @@ public class M_Bantugen : MeleeCharacterEntity, IDamageable, IBuffable, IDeletab
     {
         DestroyGameObject();
         TowerHolderEnabler();
+    }
+
+    public void PlayRangeHitSFX(string sfx)
+    {
+        soundsPlayTrack.Play(sfx);
     }
 
 

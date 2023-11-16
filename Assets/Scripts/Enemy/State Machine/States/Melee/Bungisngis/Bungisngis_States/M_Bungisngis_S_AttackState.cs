@@ -66,6 +66,7 @@ public class M_Bungisngis_S_AttackState : BaseState
 
         if (collider.gameObject.CompareTag("Body"))
         {
+            m_Bungisngis.soundsPlayTrack.Play("Hit");
             tower.Damage(m_Bungisngis.enemiesData.dmgValue);
             m_Bungisngis.enemyAttackFinished = false;
         }

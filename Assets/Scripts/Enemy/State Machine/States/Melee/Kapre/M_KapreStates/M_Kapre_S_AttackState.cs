@@ -73,9 +73,8 @@ public class M_Kapre_S_AttackState : BaseState
 
         if (collider.gameObject.CompareTag("Body"))
         {
-            Debug.Log("Hit!!");
+            m_Kapre.soundsPlayTrack.Play("Hit");
             tower.Damage(m_Kapre.enemiesData.dmgValue);
-            Debug.Log(collider.name);
             m_Kapre.enemyAttackFinished = false;
         }
     }

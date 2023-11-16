@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Valenzuela : MeleeCharacterEntity, IDamageable, ISkillable, IPointerClickHandler
+public class Valenzuela : MeleeCharacterEntity, IDamageable, ISkillable, IPointerClickHandler, IRangeSoundable
 {
 
     public GameObject skillHolder;
@@ -136,7 +136,10 @@ public class Valenzuela : MeleeCharacterEntity, IDamageable, ISkillable, IPointe
     {
         towerManager.SpecialCharacterClick(gameObject, characterData, damageValue, baseArmor, currentHealth);
     }
-
+    public void PlayRangeHitSFX(string sfx)
+    {
+        soundsPlayTrack.Play(sfx);
+    }
 
     #endregion
 

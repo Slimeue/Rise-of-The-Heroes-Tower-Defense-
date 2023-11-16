@@ -102,7 +102,7 @@ public class TowerManager : MonoBehaviour
 
         towerHolder = GameObject.FindGameObjectsWithTag("TowerHolder");
         _rangeIndicatorObj = Instantiate(rangeIndicator, gameObject.transform.position, Quaternion.identity);
-
+        soundsPlayTrack = GetComponent<SoundsPlayTrack>();
     }
 
     GameObject _towerHolder;
@@ -118,6 +118,7 @@ public class TowerManager : MonoBehaviour
 
     private int _charCost;
 
+    SoundsPlayTrack soundsPlayTrack;
 
 
 
@@ -269,6 +270,7 @@ public class TowerManager : MonoBehaviour
             Destroy(_instPreviewObj);
             _rangeIndicatorObj.SetActive(false);
             _instObj = Instantiate(_charObj, _instPreviewObj.transform.position, Quaternion.identity);
+            soundsPlayTrack.Play("PlacedSFX");
             currentState = State.Default;
         }
     }

@@ -73,9 +73,8 @@ public class M_Tikbalang_S_attackState : BaseState
 
         if (collider.gameObject.CompareTag("Body"))
         {
-            Debug.Log("Hit!!");
+            m_Tikbalang.soundsPlayTrack.Play("Hit");
             tower.Damage(m_Tikbalang.enemiesData.dmgValue);
-            Debug.Log(collider.name);
             m_Tikbalang.enemyAttackFinished = false;
         }
     }

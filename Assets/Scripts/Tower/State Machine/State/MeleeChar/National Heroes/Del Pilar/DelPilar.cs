@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class DelPilar : MeleeCharacterEntity, IDamageable, ISkillable, IBuffable, IPointerClickHandler
+public class DelPilar : MeleeCharacterEntity, IDamageable, ISkillable, IBuffable, IPointerClickHandler, IRangeSoundable
 {
 
     public GameObject skillHolder;
@@ -168,6 +168,11 @@ public class DelPilar : MeleeCharacterEntity, IDamageable, ISkillable, IBuffable
     public void OnPointerClick(PointerEventData eventData)
     {
         towerManager.SpecialCharacterClick(gameObject, characterData, damageValue, baseArmor, currentHealth);
+    }
+
+    public void PlayRangeHitSFX(string sfx)
+    {
+        soundsPlayTrack.Play(sfx);
     }
 
 

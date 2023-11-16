@@ -78,7 +78,9 @@ public class R_TikTik_S_attackState : BaseState
 
         if (collider.gameObject.CompareTag("Body"))
         {
+            r_TikTik.soundsPlayTrack.Play("Hit");
             tower.Damage(r_TikTik.enemiesData.dmgValue);
+            r_TikTik.enemyAttackFinished = false;
         }
     }
 

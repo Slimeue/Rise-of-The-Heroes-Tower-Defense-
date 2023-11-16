@@ -33,9 +33,12 @@ public class Projectile : MonoBehaviour
     void HitTarget()
     {
         IDamageable damageable = target.GetComponentInParent<IDamageable>();
+        IRangeSoundable rangeSoundable = target.GetComponentInParent<IRangeSoundable>();
+
 
         if (damageable != null)
         {
+            rangeSoundable.PlayRangeHitSFX("RangeHit");
             damageable.Damage(dmgValue);
             Destroy(gameObject);
         }

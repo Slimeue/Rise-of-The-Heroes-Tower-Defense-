@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Manggob : MeleeCharacterEntity, IDamageable, IBuffable, IDeletable, IPointerClickHandler
+public class Manggob : MeleeCharacterEntity, IDamageable, IBuffable, IDeletable, IPointerClickHandler, IRangeSoundable
 {
 
     public GameObject skillHolder;
@@ -203,7 +203,10 @@ public class Manggob : MeleeCharacterEntity, IDamageable, IBuffable, IDeletable,
         TowerHolderEnabler();
     }
 
-
+    public void PlayRangeHitSFX(string sfx)
+    {
+        soundsPlayTrack.Play(sfx);
+    }
     #endregion
 
 }

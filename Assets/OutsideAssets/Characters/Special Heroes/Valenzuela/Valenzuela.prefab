@@ -538,6 +538,7 @@ GameObject:
   - component: {fileID: -3979414915740466386}
   - component: {fileID: 4180461943566201068}
   - component: {fileID: 807889068719841108}
+  - component: {fileID: -7584612776408516484}
   m_Layer: 12
   m_Name: Valenzuela
   m_TagString: Player
@@ -582,6 +583,7 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   anim: {fileID: 0}
   characterData: {fileID: 11400000, guid: 390698b3c8f0368479e3731fbab78fd8, type: 2}
+  soundsPlayTrack: {fileID: 0}
   maxHp: 0
   currentHealth: 0
   currentMana: 0
@@ -686,6 +688,41 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.309057, y: 5.533806, z: 2.43677}
   m_Center: {x: -0.1756053, y: 2.2669027, z: 0.36717397}
+--- !u!114 &-7584612776408516484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3537201373362703865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bedebc233bd369c4794f30b3044481b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - audioClip: {fileID: 8300000, guid: cc5cdc6f492eb7d4c88274f1a9320fc5, type: 3}
+    audioMixer: {fileID: -2573456522418864588, guid: 9b84f62a14af47149999b1c08ef98263,
+      type: 2}
+    soundName: Hit
+    volume: 1
+    pitch: 1
+    spatialBlend: 0.1
+    loop: 0
+    playOneShot: 1
+    playOnAwake: 0
+    audioSource: {fileID: 0}
+  - audioClip: {fileID: 8300000, guid: 1f974a2a94997bf46946a325be95e517, type: 3}
+    audioMixer: {fileID: -2573456522418864588, guid: 9b84f62a14af47149999b1c08ef98263,
+      type: 2}
+    soundName: RangeHit
+    volume: 1
+    pitch: 1
+    spatialBlend: 0.1
+    loop: 0
+    playOneShot: 1
+    playOnAwake: 0
+    audioSource: {fileID: 0}
 --- !u!1 &3827599129339410341
 GameObject:
   m_ObjectHideFlags: 0

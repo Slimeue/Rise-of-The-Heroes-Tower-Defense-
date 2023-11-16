@@ -73,9 +73,8 @@ public class M_WhiteLady_S_attackState : BaseState
 
         if (collider.gameObject.CompareTag("Body"))
         {
-            Debug.Log("Hit!!");
+            m_WhiteLady.soundsPlayTrack.Play("Hit");
             tower.Damage(m_WhiteLady.enemiesData.dmgValue);
-            Debug.Log(collider.name);
             m_WhiteLady.enemyAttackFinished = false;
         }
     }

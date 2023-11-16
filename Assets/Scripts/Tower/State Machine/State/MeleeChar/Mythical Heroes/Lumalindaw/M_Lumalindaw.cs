@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class M_Lumalindaw : MeleeCharacterEntity, IDamageable, IBuffable, IPointerClickHandler, IDeletable
+public class M_Lumalindaw : MeleeCharacterEntity, IDamageable, IBuffable, IPointerClickHandler, IDeletable, IRangeSoundable
 {
 
     public GameObject abilityHolder;
@@ -171,6 +171,10 @@ public class M_Lumalindaw : MeleeCharacterEntity, IDamageable, IBuffable, IPoint
     {
         DestroyGameObject();
         TowerHolderEnabler();
+    }
+    public void PlayRangeHitSFX(string sfx)
+    {
+        soundsPlayTrack.Play(sfx);
     }
 
     #endregion

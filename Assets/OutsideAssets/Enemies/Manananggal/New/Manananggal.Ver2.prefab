@@ -1285,6 +1285,7 @@ GameObject:
   - component: {fileID: 1304364762310780523}
   - component: {fileID: -8292873989217917105}
   - component: {fileID: 7767559287416776875}
+  - component: {fileID: -5516507911571145043}
   m_Layer: 11
   m_Name: Manananggal.Ver2
   m_TagString: Enemy
@@ -1422,6 +1423,41 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.4613421, y: 3.3186715, z: 1.3899587}
   m_Center: {x: -0.038490392, y: 2.4334855, z: 0.19497891}
+--- !u!114 &-5516507911571145043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7445524174623351422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bedebc233bd369c4794f30b3044481b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - audioClip: {fileID: 8300000, guid: 1f974a2a94997bf46946a325be95e517, type: 3}
+    audioMixer: {fileID: 1751150313044384599, guid: 9b84f62a14af47149999b1c08ef98263,
+      type: 2}
+    soundName: RangeHit
+    volume: 1
+    pitch: 1
+    spatialBlend: 0.1
+    loop: 0
+    playOneShot: 1
+    playOnAwake: 0
+    audioSource: {fileID: 0}
+  - audioClip: {fileID: 8300000, guid: f1ec7c68d691d2b46ac5cd5123ac7f1d, type: 3}
+    audioMixer: {fileID: 1751150313044384599, guid: 9b84f62a14af47149999b1c08ef98263,
+      type: 2}
+    soundName: Hit
+    volume: 1
+    pitch: 1
+    spatialBlend: 0.1
+    loop: 0
+    playOneShot: 1
+    playOnAwake: 0
+    audioSource: {fileID: 0}
 --- !u!1 &7807969548774549061
 GameObject:
   m_ObjectHideFlags: 0

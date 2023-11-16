@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class M_Kapre : MeleeEnemyEntity, IDamageable, IEnemyDataGetable, IDebuffable
+public class M_Kapre : MeleeEnemyEntity, IDamageable, IEnemyDataGetable, IDebuffable, IRangeSoundable
 {
     public M_Kapre_S_AttackState attackState { get; private set; }
     public M_Kapre_S_DeathState deathState { get; private set; }
@@ -154,6 +154,11 @@ public class M_Kapre : MeleeEnemyEntity, IDamageable, IEnemyDataGetable, IDebuff
                 slowed = false;
             }
         }
+    }
+
+    public void PlayRangeHitSFX(string sfx)
+    {
+        soundsPlayTrack.Play(sfx);
     }
 
     #endregion

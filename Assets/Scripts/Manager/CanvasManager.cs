@@ -44,6 +44,12 @@ public class CanvasManager : MonoBehaviour
     public GameObject StageSelectionUI;
     public GameObject StageSelectionBackButton;
 
+    [Space(5)]
+    [Header("Book Of Wisdom UI")]
+    public GameObject BookOfWisdomUI;
+    public GameObject BookOfWisdomUICloseButton;
+    public GameObject ClosedBookUI;
+    public GameObject OpenBookUI;
 
 
 
@@ -71,6 +77,7 @@ public class CanvasManager : MonoBehaviour
             heroesStatusScreen.SetActive(false);
             levelWindow.SetActive(false);
             StageSelectionUI.SetActive(false);
+            BookOfWisdomUI.SetActive(false);
         }
     }
 
@@ -205,6 +212,31 @@ public class CanvasManager : MonoBehaviour
     public void CloseStageSelection()
     {
         StageSelectionUI.SetActive(false);
+    }
+
+    //BookOfWisdom
+
+    public void BookOfWisdomOpen()
+    {
+        BookOfWisdomUI.SetActive(true);
+    }
+
+    public void CloseBookOfWisdomUI()
+    {
+
+        if (OpenBookUI.activeInHierarchy)
+        {
+            OpenBookUI.SetActive(false);
+            ClosedBookUI.SetActive(true);
+            return;
+        }
+        BookOfWisdomUI.SetActive(false);
+    }
+
+    public void OpenBookOpenUI()
+    {
+        OpenBookUI.SetActive(true);
+        ClosedBookUI.SetActive(false);
     }
 
     #endregion

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Sandayo : RangeCharacterEntity, IDamageable, IBuffable, IDeletable, IPointerClickHandler
+public class Sandayo : RangeCharacterEntity, IDamageable, IBuffable, IDeletable, IPointerClickHandler, IRangeSoundable
 {
 
     public GameObject abilityHolder;
@@ -173,7 +173,10 @@ public class Sandayo : RangeCharacterEntity, IDamageable, IBuffable, IDeletable,
         DestroyGameObject();
         TowerHolderEnabler();
     }
-
+    public void PlayRangeHitSFX(string sfx)
+    {
+        soundsPlayTrack.Play(sfx);
+    }
 
     #endregion
 

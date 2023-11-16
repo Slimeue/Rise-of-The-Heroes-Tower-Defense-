@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class R_Tecson : RangeCharacterEntity, IDamageable, ISkillable, IPointerClickHandler
+public class R_Tecson : RangeCharacterEntity, IDamageable, ISkillable, IPointerClickHandler, IRangeSoundable
 {
 
     BaseManager baseManager;
@@ -90,6 +90,7 @@ public class R_Tecson : RangeCharacterEntity, IDamageable, ISkillable, IPointerC
     {
         GameObject projectileGO = Instantiate(projectile, firePoint.position, firePoint.rotation);
         Projectile _projectile = projectileGO.GetComponent<Projectile>();
+        soundsPlayTrack.Play("RangeCast");
 
         if (_projectile != null)
         {
@@ -143,6 +144,11 @@ public class R_Tecson : RangeCharacterEntity, IDamageable, ISkillable, IPointerC
     public void OnPointerClick(PointerEventData eventData)
     {
         towerManager.SpecialCharacterClick(gameObject, characterData, damageValue, baseArmor, currentHealth);
+    }
+
+    public void PlayRangeHitSFX(string sfx)
+    {
+        soundsPlayTrack.Play(sfx);
     }
 
     #endregion

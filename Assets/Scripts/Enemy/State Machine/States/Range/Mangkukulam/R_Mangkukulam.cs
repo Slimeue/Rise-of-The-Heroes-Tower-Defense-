@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class R_Mangkukulam : RangeEnemyEntity, IDamageable, IEnemyDataGetable, IDebuffable
+public class R_Mangkukulam : RangeEnemyEntity, IDamageable, IEnemyDataGetable, IDebuffable, IRangeSoundable
 {
     public R_Mangkukulam_S_attackState attackState { get; private set; }
     public R_Mangkukulam_S_deathState deathState { get; private set; }
@@ -73,7 +73,7 @@ public class R_Mangkukulam : RangeEnemyEntity, IDamageable, IEnemyDataGetable, I
     {
         GameObject projectileGO = Instantiate(projectile, firePoint.position, firePoint.rotation);
         EnemyProjectile _projectile = projectileGO.GetComponent<EnemyProjectile>();
-
+        soundsPlayTrack.Play("RangeCast");
         if (_projectile != null)
         {
             _projectile.EnemySeekTarget(enemyTarget, enemiesData);
@@ -163,6 +163,11 @@ public class R_Mangkukulam : RangeEnemyEntity, IDamageable, IEnemyDataGetable, I
                 slowed = false;
             }
         }
+    }
+
+    public void PlayRangeHitSFX(string sfx)
+    {
+        soundsPlayTrack.Play(sfx);
     }
     #endregion
 
