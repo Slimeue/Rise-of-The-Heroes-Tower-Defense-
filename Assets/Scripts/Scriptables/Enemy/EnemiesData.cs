@@ -5,6 +5,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Enemies", menuName = "Enemy/Enemy Data")]
 public class EnemiesData : ScriptableObject
 {
+
+    [SerializeField] public EnemiesInfoData enemiesInfoData;
+
     [Space(5)]
     [SerializeField] public GameObject enemyPrefab;
     [SerializeField] public GameObject projectile;

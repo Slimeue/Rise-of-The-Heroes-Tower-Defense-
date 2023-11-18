@@ -44,7 +44,6 @@ public class RangeEnemyEntity : EnemyEntity
         }
 
         pointIndex = 0;
-        Debug.Log("enabled");
     }
 
 

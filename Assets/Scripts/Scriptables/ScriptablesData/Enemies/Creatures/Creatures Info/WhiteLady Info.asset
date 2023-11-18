@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aef3d5e6d694054a9f5f8d27a28c12c, type: 3}
+  m_Name: WhiteLady Info
+  m_EditorClassIdentifier: 
+  lorePart1: "A female ghost wearing a white long dress, with long black hair. White
+    Lady or Kaperosa is a female who commit suicide because of hatred or being betrayed
+    by her husband or fiance, or murdered, they are the souls who don\u2019t rest
+    because they have an unfinished thing to do on Earth. "
+  lorePart2: a white lady sometimes lingers in an inherited house from your parents/relatives,
+    they believe that she was the previous owner and want to stay on her property.
+    A White lady stays in a particular place where she had a bad experience and dies.
+  lorePart3: 
+  personalityPart1: White Lady is a ghostly figure tied to sad stories of loss and
+    longing. She appears unexpectedly in eerie places, haunting roads and abandoned
+    spots, sending chills to those who see her. Sometimes, she's seen as a protector,
+    guiding people away from danger or warning of future events. Her mystique captures
+    imaginations, sparking fear, sympathy, and curiosity in those who hear her tales.
+  personalityPart2: 
+  personalityPart3: 

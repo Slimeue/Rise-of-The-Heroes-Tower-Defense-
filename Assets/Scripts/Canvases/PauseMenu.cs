@@ -10,6 +10,10 @@ public class PauseMenu : MonoBehaviour
 
     [SerializeField] GameObject pauseMenuScreen;
     [SerializeField] GameObject restartConfirmationPanel;
+    [SerializeField] GameObject pauseObj;
+    [SerializeField] GameObject optionSettings;
+    [SerializeField] GameObject soundSettings;
+    [SerializeField] GameObject videoSettings;
 
     bool isInConfirmation;
 
@@ -18,6 +22,9 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenuScreen.SetActive(false);
         restartConfirmationPanel.SetActive(false);
+        optionSettings.SetActive(false);
+        soundSettings.SetActive(false);
+        videoSettings.SetActive(false);
         isGamePause = false;
     }
 
@@ -50,12 +57,14 @@ public class PauseMenu : MonoBehaviour
     {
         if (isInConfirmation)
         {//Closes
+            pauseObj.SetActive(true);
             restartConfirmationPanel.SetActive(false);
             isInConfirmation = false;
         }
         else
         {//Open
             isInConfirmation = true;
+            pauseObj.SetActive(false);
             restartConfirmationPanel.SetActive(true);
         }
     }
@@ -73,4 +82,39 @@ public class PauseMenu : MonoBehaviour
         isGamePause = false;
     }
 
+
+    public void OptionOpen()
+    {
+        optionSettings.SetActive(true);
+        pauseObj.SetActive(false);
+    }
+
+    public void OptionClose()
+    {
+        optionSettings.SetActive(false);
+        pauseObj.SetActive(true);
+    }
+
+    public void SoundSettingOpen()
+    {
+        optionSettings.SetActive(false);
+        soundSettings.SetActive(true);
+    }
+
+    public void SoundSettingsClose()
+    {
+        optionSettings.SetActive(true);
+        soundSettings.SetActive(false);
+    }
+
+    public void VideoSettingsOpen()
+    {
+        optionSettings.SetActive(false);
+        videoSettings.SetActive(true);
+    }
+    public void VideoSettingsClose()
+    {
+        optionSettings.SetActive(true);
+        videoSettings.SetActive(false);
+    }
 }

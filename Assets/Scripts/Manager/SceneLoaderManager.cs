@@ -19,9 +19,12 @@ public class SceneLoaderManager : MonoBehaviour
 
     bool EncryptionEnabled;
 
+    LoadingScreenManager loadingScreenManager;
+
     private void Awake()
     {
         canvasManager = FindAnyObjectByType<CanvasManager>();
+        loadingScreenManager = FindObjectOfType<LoadingScreenManager>();
     }
 
     public void LoadStageScene(string scene)
@@ -38,7 +41,7 @@ public class SceneLoaderManager : MonoBehaviour
         }
 
 
-        SceneManager.LoadScene(scene);
+        loadingScreenManager.LoadLevel(scene);
 
     }
 

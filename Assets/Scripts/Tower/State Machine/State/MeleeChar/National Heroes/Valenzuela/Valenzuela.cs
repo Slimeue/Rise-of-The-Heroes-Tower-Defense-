@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class Valenzuela : MeleeCharacterEntity, IDamageable, ISkillable, IPointerClickHandler, IRangeSoundable
 {
@@ -27,6 +28,8 @@ public class Valenzuela : MeleeCharacterEntity, IDamageable, ISkillable, IPointe
     const string HERO_SKILL = "skill";
     const string HERO_DEATH = "death";
 
+    SkillHolder specialSkillHolder;
+    public Slider skillSlider;
 
     public override void Awake()
     {
@@ -42,13 +45,15 @@ public class Valenzuela : MeleeCharacterEntity, IDamageable, ISkillable, IPointe
         animationHandler = GetComponent<AnimationHandler>();
         healthBar = baseManager.specialCharHpBar;
         baseManager.baseCharIcon.sprite = characterData.charArtWork;
-
+        specialSkillHolder = FindObjectOfType<SkillHolder>();
 
     }
 
     private void Start()
     {
         characterStateMachine.Initialize(idleState);
+        skillSlider = specialSkillHolder.skilSlider;
+
     }
 
     public override void Update()
@@ -60,6 +65,10 @@ public class Valenzuela : MeleeCharacterEntity, IDamageable, ISkillable, IPointe
         if (skillFinished)
         {
             skillCd -= Time.deltaTime;
+
+            float _charCooldownNormalized = skillCd / characterData.skillCooldown;
+            Debug.Log(_charCooldownNormalized);
+            skillSlider.value = _charCooldownNormalized;
             if (skillCd <= 0f)
             {
                 skillFinished = false;

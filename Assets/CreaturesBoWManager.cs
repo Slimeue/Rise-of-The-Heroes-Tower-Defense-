@@ -20,24 +20,29 @@ public class CreaturesBoWManager : MonoBehaviour
     [SerializeField] GameObject chain;
     [SerializeField] Image artwork;
     [SerializeField] TextMeshProUGUI enemyName;
+    Button button;
 
     private void Awake()
     {
-        LoadData();
+        button = GetComponent<Button>();
+        button.interactable = false;
     }
 
-    private void Start()
+    private void OnEnable()
     {
+        LoadData();
         artwork.sprite = enemiesData.enemyArtWork;
         enemyName.text = enemiesData.enemyName;
 
         if (isUnlocked)
         {
-            Debug.Log(enemiesData.enemyName + " " + isUnlocked);
             artwork.color = unlockedColor;
             chain.SetActive(false);
+            button.interactable = true;
         }
     }
+
+
 
     private void LoadData()
     {

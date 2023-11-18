@@ -35,6 +35,8 @@ public class CanvasManager : MonoBehaviour
     public CharacterData selectedHero;
     public CharacterData selectedMythicalHero;
     public CharacterData selectedHeroForStatus;
+    public CharacterData selectedHeroesForBookInfo;
+    public EnemiesData selectedEnemyForBookInfo;
 
     IDataService dataService = new JsonDataService();
     DataPathClass dataPathClass = new DataPathClass();
@@ -50,6 +52,9 @@ public class CanvasManager : MonoBehaviour
     public GameObject BookOfWisdomUICloseButton;
     public GameObject ClosedBookUI;
     public GameObject OpenBookUI;
+    //
+    public GameObject BookOfWisdomHeroesInfo;
+    public GameObject BookOfWisdomCreaturesInfo;
 
 
 
@@ -78,6 +83,8 @@ public class CanvasManager : MonoBehaviour
             levelWindow.SetActive(false);
             StageSelectionUI.SetActive(false);
             BookOfWisdomUI.SetActive(false);
+            BookOfWisdomCreaturesInfo.SetActive(false);
+            BookOfWisdomHeroesInfo.SetActive(false);
         }
     }
 
@@ -237,6 +244,35 @@ public class CanvasManager : MonoBehaviour
     {
         OpenBookUI.SetActive(true);
         ClosedBookUI.SetActive(false);
+    }
+
+    //
+
+    public void OpenHeroesBookInfo(CharacterData characterData)
+    {
+        selectedHeroesForBookInfo = characterData;
+        BookOfWisdomHeroesInfo.SetActive(true);
+        OpenBookUI.SetActive(false);
+    }
+
+    public void CloseHeroesBookInfo()
+    {
+        BookOfWisdomHeroesInfo.SetActive(false);
+        OpenBookUI.SetActive(true);
+
+    }
+
+    public void OpenCreaturesBookInfo(EnemiesData enemiesData)
+    {
+        selectedEnemyForBookInfo = enemiesData;
+        BookOfWisdomCreaturesInfo.SetActive(true);
+        OpenBookUI.SetActive(false);
+    }
+
+    public void CloseCreaturesBookInfo()
+    {
+        BookOfWisdomCreaturesInfo.SetActive(false);
+        OpenBookUI.SetActive(true);
     }
 
     #endregion

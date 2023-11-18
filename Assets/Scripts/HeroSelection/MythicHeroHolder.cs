@@ -18,7 +18,7 @@ public class MythicHeroHolder : MonoBehaviour
 
         if (lockedChain != null)
         {
-            lockedChain.SetActive(false);
+            lockedChain.SetActive(true);
         }
 
     }

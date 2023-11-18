@@ -15,6 +15,7 @@ MonoBehaviour:
   charTypeArt: {fileID: -265997245, guid: 448cb174202fab440a6ec45d5cba4cbf, type: 3}
   charArtWork: {fileID: 525727493, guid: cedf0234596f97140aee4bfac68dfae7, type: 3}
   skillData: {fileID: 11400000, guid: 709d11dddda34a348a368d6e2639ff79, type: 2}
+  charInfoData: {fileID: 11400000, guid: 59be5ba44a13f6448ad161e18b568040, type: 2}
   _layerMask:
     serializedVersion: 2
     m_Bits: 256
@@ -25,7 +26,7 @@ MonoBehaviour:
     type: 3}
   projectile: {fileID: 3470282489955092626, guid: e745b19baf502fe4e8fe353bb62ee9f2,
     type: 3}
-  charName: Bantugen
+  charName: Bantugan
   dmgValue: 23
   charType: 0
   charLevel: 0

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class R_Ponce : RangeCharacterEntity, IDamageable, ISkillable, IBuffable, IPointerClickHandler, IRangeSoundable
 {
@@ -27,7 +28,8 @@ public class R_Ponce : RangeCharacterEntity, IDamageable, ISkillable, IBuffable,
     const string HERO_DEATH = "death";
 
     public GameObject[] activeTowers;
-
+    SkillHolder specialSkillHolder;
+    public Slider skillSlider;
 
     public override void Awake()
     {
@@ -43,6 +45,7 @@ public class R_Ponce : RangeCharacterEntity, IDamageable, ISkillable, IBuffable,
         animationHandler = GetComponent<AnimationHandler>();
         healthBar = baseManager.specialCharHpBar;
         baseManager.baseCharIcon.sprite = characterData.charArtWork;
+        specialSkillHolder = FindObjectOfType<SkillHolder>();
 
     }
 
@@ -59,6 +62,9 @@ public class R_Ponce : RangeCharacterEntity, IDamageable, ISkillable, IBuffable,
         if (skillFinished)
         {
             skillCd -= Time.deltaTime;
+            float _charCooldownNormalized = skillCd / characterData.skillCooldown;
+            Debug.Log(_charCooldownNormalized);
+            skillSlider.value = _charCooldownNormalized;
             if (skillCd <= 0f)
             {
                 skillFinished = false;
@@ -71,6 +77,8 @@ public class R_Ponce : RangeCharacterEntity, IDamageable, ISkillable, IBuffable,
     private void Start()
     {
         characterStateMachine.Initialize(idleState);
+        skillSlider = specialSkillHolder.skilSlider;
+
     }
 
 

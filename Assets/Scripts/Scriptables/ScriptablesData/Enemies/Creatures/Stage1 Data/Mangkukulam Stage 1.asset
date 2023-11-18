@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a869f512bc3988443925f27cd4554df4, type: 3}
   m_Name: Mangkukulam Stage 1
   m_EditorClassIdentifier: 
+  enemiesInfoData: {fileID: 11400000, guid: 811ff9780243b6b47b09a11b099fe271, type: 2}
   enemyPrefab: {fileID: 1237659550585703584, guid: bfac1a18a405ef84fa4f994d6f999e15,
     type: 3}
   projectile: {fileID: 2246912459879025901, guid: 69bfa80a5ed884f4dbf88848b414f3de,
@@ -26,7 +27,8 @@ MonoBehaviour:
   attackRange: 25
   projectileSpeed: 50
   rotationsSpeed: 5
-  enemyLore: 
+  enemyLore: 'Mangkukulams are often depicted as enigmatic figures, shrouded in mystery
+    due to their esoteric knowledge of traditional healing and mystical practices. '
   whatIsTower:
     serializedVersion: 2
     m_Bits: 4160

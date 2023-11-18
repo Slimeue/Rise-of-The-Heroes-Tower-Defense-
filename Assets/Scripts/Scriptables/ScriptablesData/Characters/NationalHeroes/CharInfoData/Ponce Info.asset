@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1cfc1b649f2c254f920a5cb7b0ab89a, type: 3}
+  m_Name: Ponce Info
+  m_EditorClassIdentifier: 
+  lorePart1: "Mariano Ponce, born on March 23, 1863, in Baliwag, Bulacan, Philippines,
+    was a key figure in the Philippine Revolution. A contemporary of Jos\xE9 Rizal,
+    Ponce actively participated in the reform movement in Spain and worked alongside
+    Rizal in advocating for the rights and independence of the Filipino people."
+  lorePart2: Ponce's commitment to the cause of Philippine independence extended
+    to his involvement in revolutionary activities against Spanish rule. After the
+    outbreak of the Philippine-American War, he served as a diplomatic envoy, traveling
+    to Japan to seek international support for the Philippine revolutionary government.
+  lorePart3: 'Apart from his revolutionary activities, Ponce was a prolific writer
+    and intellectual. His writings encompassed various topics, including Philippine
+    history, culture, and nationalism. His contributions to publications provided
+    valuable insights into the issues facing the Philippines during that period and
+    helped shape the discourse on independence.
+
+    
+
+    Mariano Ponce passed
+    away on May 23, 1918, in Hong Kong. His legacy endures as a dedicated nationalist,
+    intellectual, and diplomatic envoy who played a crucial role in the struggle
+    for Philippine independence during a pivotal period in its history.'
+  personalityPart1: Ponce was known for his passion and commitment to the cause of
+    Philippine independence. He actively participated in the reform movement and
+    later in the revolutionary activities against Spanish colonization.
+  personalityPart2: As an intellectual, Ponce was a prolific writer, contributing
+    articles and essays that tackled various aspects of Philippine history, culture,
+    and nationalism. His writings reflected not only his deep understanding of the
+    issues facing the Philippines but also his advocacy for change and independence.
+  personalityPart3: 'Ponce''s involvement in international efforts, such as his mission
+    to seek support from Japan during the Philippine-American War, showcases his
+    diplomatic skills and strategic thinking. He played a crucial role in representing
+    the interests of the Filipino people on the global stage.
+
+
+    Mariano Ponce
+    is remembered as a principled and determined individual who used his intellectual
+    prowess to contribute to the nationalist cause, seeking to bring about positive
+    change for the Philippines during a crucial period in its history.'

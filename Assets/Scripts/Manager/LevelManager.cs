@@ -38,6 +38,8 @@ public class LevelManager : MonoBehaviour
     string saveDataPath = "/data-stageProgress.json";
     StageDataModel newStageDataModel = new StageDataModel();
 
+    LoadingScreenManager loadingScreenManager;
+
     //
 
     bool isNormalSpeed;
@@ -45,7 +47,7 @@ public class LevelManager : MonoBehaviour
     public bool isVictory;
     public bool isStageFinished;
 
-    float timeToContinue = 5f;
+    float timeToContinue = 10f;
 
     float rewardValue;
 
@@ -57,16 +59,19 @@ public class LevelManager : MonoBehaviour
     int stageCounter;
     int stageReached;
     int chapterReached;
+    bool runOnce;
+    private bool hasStageCompleted;
+
 
     private void Awake()
     {
         isNormalSpeed = true;
-
+        loadingScreenManager = FindObjectOfType<LoadingScreenManager>();
         waveManager = FindObjectOfType<WaveManager>();
         baseManager = FindObjectOfType<BaseManager>();
         starsManager = FindObjectOfType<StarsManager>();
         coinsManager = FindObjectOfType<CoinsManager>();
-
+        runOnce = false;
         LoadData();
     }
 
@@ -74,7 +79,6 @@ public class LevelManager : MonoBehaviour
     {
         LevelComplete();
         LevelFailed();
-
         if (!PauseMenu.isGamePause)
         {
             FastForward();
@@ -82,7 +86,9 @@ public class LevelManager : MonoBehaviour
 
         if (isStageFinished)
         {
+
             AutoToContinue();
+
 
         }
 
@@ -95,15 +101,33 @@ public class LevelManager : MonoBehaviour
         if (timeToContinue <= 0f)
         {
             StageComplete();
+            hasStageCompleted = true; // Set the flag to true after completion
+
         }
+    }
+
+    public void ContinueLevel()
+    {
+        if (!runOnce)
+        {
+            StageComplete();
+            runOnce = true;
+
+        }
+
     }
 
 
     private void StageComplete()
     {
-        //After some time itll automatically throw us to the continue scene
-        SceneManager.LoadScene("MainHomeScreen");
-        Debug.Log("New Scene continue to reward scene!!");
+        // Check if the stage has already completed
+        if (!hasStageCompleted)
+        {
+            // After some time, it'll automatically throw us to the continue scene
+            loadingScreenManager.LoadLevel("MainHomeScreen");
+            //SceneManager.LoadScene("MainHomeScreen");
+            hasStageCompleted = true; // Set the flag to true after completion
+        }
     }
 
     private void Start()
@@ -127,6 +151,7 @@ public class LevelManager : MonoBehaviour
             float healthPercentage = baseManager.currentBaseHp / baseManager.maxBaseHp * 100f;
             isVictory = true;
             isStageFinished = true;
+            Time.timeScale = 1f;
             //TODO:: if 100% 3 stars
             //if if less than 100% 2stars
             //if less than = 25% 1 star
@@ -210,12 +235,14 @@ public class LevelManager : MonoBehaviour
             fastForward.sprite = normalSpeed;
             Time.timeScale = 1f;
             fastForwardText.text = "1x";
+
         }
         else
         {
             fastForward.sprite = fastSpeed;
             Time.timeScale = 2f;
             fastForwardText.text = "2x";
+            Debug.Log("SPEED2");
         }
     }
 

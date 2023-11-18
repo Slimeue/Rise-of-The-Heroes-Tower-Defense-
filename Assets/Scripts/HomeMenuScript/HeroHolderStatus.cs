@@ -16,6 +16,10 @@ public class HeroHolderStatus : MonoBehaviour
     [SerializeField] TextMeshProUGUI charDefense;
     [SerializeField] TextMeshProUGUI charLevel;
     [SerializeField] TextMeshProUGUI charLore;
+    [SerializeField] Image skillImage;
+    [SerializeField] TextMeshProUGUI skillName;
+    [SerializeField] TextMeshProUGUI skillDescription;
+
 
     IDataService dataService = new JsonDataService();
 
@@ -87,6 +91,9 @@ public class HeroHolderStatus : MonoBehaviour
                 charDefense.text = "Defense: " + charData.armor.ToString("f0");
                 charLevel.text = "Lvl: " + charData.level;
                 charLore.text = characterData.charLore;
+                skillImage.sprite = characterData.skillData.skillArtWork;
+                skillName.text = characterData.skillData.skillName;
+                skillDescription.text = characterData.skillData.skillDescription;
 
             }
             catch (Exception e)

@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aef3d5e6d694054a9f5f8d27a28c12c, type: 3}
+  m_Name: Berberoka Info
+  m_EditorClassIdentifier: 
+  lorePart1: he Berberoka, a spectral entity inhabiting wetlands, lakes, and swamps,
+    entices its prey by consuming copious amounts of water. Those who attempt to
+    capture it are met with peril, as the elusive spirit floods and submerges them,
+    ultimately turning them into its macabre feast.
+  lorePart2: "The Berberoka\u2019s true form remains elusive, described vaguely as
+    either a ghostly presence or a creature resembling a shadow or a chameleon.\r\n\r\nIn
+    tropical regions where Berberok sightings are frequent, locals exercise caution
+    around vacant ponds, resisting the allure of tempting fish. While some hungry
+    travelers may perceive the Berberoka\u2019s offerings as a boon, they risk succumbing
+    to its lethal force, swept away by the very source of their perceived fortune."
+  lorePart3: 
+  personalityPart1: The berberoka is frequently portrayed as an ogre-like being,
+    blending seamlessly with its surroundings through a skin resembling rocks or
+    foliage. Often concealing itself in dry riverbeds, it patiently awaits the arrival
+    of unsuspecting humans.
+  personalityPart2: "In certain narratives, it takes on the guise of a female water
+    creature, adorned with fish-like characteristics. The creature\u2019s back boasts
+    a dense cover of vegetation, mimicking a cluster of small trees and rocks. Its
+    innate ability to camouflage enables it to remain inconspicuous, forming rock
+    formations around its belly as it patiently anticipates the approach of passersby."
+  personalityPart3: 

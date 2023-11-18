@@ -113,6 +113,41 @@ PrefabInstance:
       propertyPath: enemyName
       value: 
       objectReference: {fileID: 537327457460304568}
+    - target: {fileID: 3189821535641572432, guid: cc7df8e0c9e6e854894773b6ea26028e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3189821535641572432, guid: cc7df8e0c9e6e854894773b6ea26028e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3189821535641572432, guid: cc7df8e0c9e6e854894773b6ea26028e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3189821535641572432, guid: cc7df8e0c9e6e854894773b6ea26028e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3189821535641572432, guid: cc7df8e0c9e6e854894773b6ea26028e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3189821535641572432, guid: cc7df8e0c9e6e854894773b6ea26028e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CanvasManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3189821535641572432, guid: cc7df8e0c9e6e854894773b6ea26028e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6985390881686012032, guid: cc7df8e0c9e6e854894773b6ea26028e,
         type: 3}
       propertyPath: m_Name

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a561af5b1f482b44cb64b6b2477ad6fe, type: 3}
   m_Name: ManggobSkill
   m_EditorClassIdentifier: 
-  skillArtWork: {fileID: 0}
+  skillArtWork: {fileID: 1316623913, guid: ca22036ac4e83a2489ebcd56f48ab6fb, type: 3}
   skillName: Chilly Smoke
   skillType: Passive
   skillDescription: When enemy enter his range he will cast a skill that will slow

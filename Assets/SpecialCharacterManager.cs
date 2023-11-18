@@ -29,15 +29,15 @@ public class SpecialCharacterManager : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
-        CheckCharacterLocked();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        CheckCharacterLocked();
     }
 
     private void SaveLoadData()
@@ -72,18 +72,19 @@ public class SpecialCharacterManager : MonoBehaviour
         {
             SpecialHeroHolder specialHeroHolder = towerHolder[i].GetComponent<SpecialHeroHolder>();
             MythicHeroHolder mythicHeroHolder = heroesTowerHolder[i].GetComponent<MythicHeroHolder>();
-            if (i >= chapterReached)
+            if (i < chapterReached)
+            {
+                mythicHeroHolder.lockedChain.SetActive(false);
+                specialHeroHolder.chainLocked.SetActive(false);
+            }
+            else
             {
                 heroesTowerHolder[i].interactable = false;
-                mythicHeroHolder.lockedChain.SetActive(true);
-                mythicHeroHolder.charArtWork.color = lockedColor;
-                mythicHeroHolder.charName.color = lockedColor;
-                //SpecialHolder
                 towerHolder[i].interactable = false;
-                specialHeroHolder.chainLocked.SetActive(true);
                 specialHeroHolder.charArtWork.color = lockedColor;
                 specialHeroHolder.charName.color = lockedColor;
-
+                mythicHeroHolder.charArtWork.color = lockedColor;
+                mythicHeroHolder.charName.color = lockedColor;
             }
         }
     }

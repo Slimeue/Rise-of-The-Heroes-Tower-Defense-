@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aef3d5e6d694054a9f5f8d27a28c12c, type: 3}
+  m_Name: Mangkukulam Info
+  m_EditorClassIdentifier: 
+  lorePart1: 'Mangkukulams are often depicted as enigmatic figures, shrouded in mystery
+    due to their esoteric knowledge of traditional healing and mystical practices.
+    They are perceived as individuals with deep understanding and knowledge of herbal
+    remedies, rituals, and supernatural forces. '
+  lorePart2: "The term \u201CMangkukulam\u201D holds a deep and enduring significance
+    within the cultural tapestry of the Philippines. It is a reference to those who
+    engage in \u201Ckulam,\u201D a form of witchcraft or sorcery. This article aims
+    to explore the fascinating realm of the Mangkukulam, their rituals, and their
+    integral role in Philippine folklore. The concept of the Mangkukulam predates
+    the era of Spanish colonization, as witchcraft had already established a firm
+    presence across the Philippine archipelago. In contemporary times, these practices
+    are notably concentrated in regions such as Siquijor, Cebu, Davao, Talalora,
+    Western Samar, and Sorsogon."
+  lorePart3: 
+  personalityPart1: 'Mangkukulams are often depicted as enigmatic figures, shrouded
+    in mystery due to their esoteric knowledge of traditional healing and mystical
+    practices. They are perceived as individuals with deep understanding and knowledge
+    of herbal remedies, rituals, and supernatural forces. '
+  personalityPart2: ' Their wisdom is sought after for both healing and protective
+    purposes. They are often portrayed as solitary figures, living on the outskirts
+    of communities, away from mainstream society. They may keep to themselves, maintaining
+    a certain distance due to their perceived powers.'
+  personalityPart3: Throughout the annals of history, Mangkukulam have been subjected
+    to persecution and discrimination, largely stemming from the stigma associated
+    with their craft. The Catholic Church and colonial authorities regarded them
+    as a potential threat to the ascendancy of Christianity and made concerted efforts
+    to suppress their practices. Consequently, many Mangkukulam were compelled to
+    operate covertly, concealing their remarkable talents from the prying eyes of
+    the public.

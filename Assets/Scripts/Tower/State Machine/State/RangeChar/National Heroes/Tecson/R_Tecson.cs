@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class R_Tecson : RangeCharacterEntity, IDamageable, ISkillable, IPointerClickHandler, IRangeSoundable
 {
@@ -24,6 +25,9 @@ public class R_Tecson : RangeCharacterEntity, IDamageable, ISkillable, IPointerC
     const string HERO_SKILL = "skill";
     const string HERO_DEATH = "death";
 
+    SkillHolder specialSkillHolder;
+    public Slider skillSlider;
+
     public override void Awake()
     {
         base.Awake();
@@ -37,6 +41,7 @@ public class R_Tecson : RangeCharacterEntity, IDamageable, ISkillable, IPointerC
         animationHandler = GetComponent<AnimationHandler>();
         healthBar = baseManager.specialCharHpBar;
         baseManager.baseCharIcon.sprite = characterData.charArtWork;
+        specialSkillHolder = FindObjectOfType<SkillHolder>();
 
     }
 
@@ -51,6 +56,9 @@ public class R_Tecson : RangeCharacterEntity, IDamageable, ISkillable, IPointerC
         {
             //startCooldown
             skillCd -= Time.deltaTime;
+            float _charCooldownNormalized = skillCd / characterData.skillCooldown;
+            Debug.Log(_charCooldownNormalized);
+            skillSlider.value = _charCooldownNormalized;
             if (skillCd <= 0f)
             {
                 skillFinished = false;
@@ -63,6 +71,8 @@ public class R_Tecson : RangeCharacterEntity, IDamageable, ISkillable, IPointerC
     {
 
         characterStateMachine.Initialize(idleState);
+        skillSlider = specialSkillHolder.skilSlider;
+
     }
 
 

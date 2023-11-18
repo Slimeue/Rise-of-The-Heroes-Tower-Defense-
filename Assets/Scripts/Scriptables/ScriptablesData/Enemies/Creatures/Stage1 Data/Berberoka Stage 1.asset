@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a869f512bc3988443925f27cd4554df4, type: 3}
   m_Name: Berberoka Stage 1
   m_EditorClassIdentifier: 
+  enemiesInfoData: {fileID: 11400000, guid: 61778bb57ff10fe429cac18b5e6da601, type: 2}
   enemyPrefab: {fileID: 1181177267751087925, guid: 3d26f14cb2e83fa488957d353ec96b83,
     type: 3}
+  projectile: {fileID: 0}
   enemyArtWork: {fileID: 1759421812, guid: aa0319ae36b0fd641bf192523d827a38, type: 3}
   enemyName: Berberoka
   dmgValue: 46
@@ -22,12 +24,13 @@ MonoBehaviour:
   baseArmor: 67
   moveSpeed: 7
   attackRange: 7
+  projectileSpeed: 0
+  rotationsSpeed: 0
   enemyLore: 'The Berberoka is a water spirit or ghost that lives in the wetlands,
     lakes, or swamps. It can lure its victims by drinking a lot of water. When humans
     try to catch it, it floods and drowns them, and it makes dinner out of them as
     well. There is not a clear description of what a Berberoka is, though it could
     be a ghost or a creature that looks like a shadow or a chameleon.
-
 
 
     In tropical

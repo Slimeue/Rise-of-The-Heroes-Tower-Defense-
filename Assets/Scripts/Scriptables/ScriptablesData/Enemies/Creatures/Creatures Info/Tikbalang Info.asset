@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aef3d5e6d694054a9f5f8d27a28c12c, type: 3}
+  m_Name: Tikbalang Info
+  m_EditorClassIdentifier: 
+  lorePart1: "In Philippine mythology, the tikbalang is a half-human and half-horse
+    creature and it\u2019s very similar to the centaur in Greek mythology. It\u2019s
+    believed that a tikbalang would scare away travelers or lead them astray. In
+    order to break free from this, the creature would require the lost individual
+    to turn his clothes inside out. "
+  lorePart2: "These experiences usually happen in rural and dark areas and especially
+    after sunset.\r\n\r\nTikbalang may have originated from Hayagriva, an avatar
+    of the Hindu god Vishnu, whose worship was first recorded in 2000 BCE. Before
+    the Spanish arrived in the Philippines, there were no horses in the area so the
+    history of a horse shaped creature was not possible. In the pre-colonial period,
+    tikbalang were regarded as spirits of the forests and ghosts and they were also
+    referred to as \u201Cmulto\u201D and \u201Cbibit\u201D. "
+  lorePart3: In some versions, it is a transformation of an aborted foetus sent to
+    earth from limbo.
+  personalityPart1: 'Contrary to popular belief, the tikbalang is not a centaur.
+    It can be described a being a reverse centaur as the centaur has the body of
+    a horse and the torso and head of a man, the tikbalang has the head of a horse
+    and the body of a human. '
+  personalityPart2: 'The tikbalang is a tall, thin creature with a disproportionately
+    long and disproportionately large limbs to the point that its knees reach above
+    its head when it squats down. It has a thick mane and a lighter colour fur.
+
+
+    Some
+    accounts also claim that the eyes of the tikbalang glow like embers and there
+    is some fiery glow associated with it when enraged.'
+  personalityPart3: 

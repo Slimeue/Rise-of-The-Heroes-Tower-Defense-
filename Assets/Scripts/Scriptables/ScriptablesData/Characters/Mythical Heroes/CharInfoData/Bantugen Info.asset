@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1cfc1b649f2c254f920a5cb7b0ab89a, type: 3}
+  m_Name: Bantugen Info
+  m_EditorClassIdentifier: 
+  lorePart1: "Legend has it that Bantug\xEBn can fly in the heavens, walk on water,
+    and breathe underwater for a long time. \n\nHe also has the power to rule over
+    all kinds of anito, a lineage of spirits that dwell in nature.\n\nBantug\xEBn\u2019s
+    preferred mode of transportation is a giant wooden ship, \n\r"
+  lorePart2: "which can carry a whole town of warriors. \n\nHis most prized possession
+    is the kampilan, a single-edged sword distinct for its tapered blade that's broad
+    and thin at the end. It sometimes has a spikelet at the tip\n\nAs the second
+    son of Tominaman sa Rogong and Lalawanen sa Solog, it is his responsibility to
+    rule over Bembaran and protect his people."
+  lorePart3: "Bembaran, described as a city near a great river, was founded by Bantug\xEBn's
+    grandfather. \nHe has 12 brothers, three sisters, and seven sons. Two of his
+    offspring, Sayana and Lomna, have their own tales of adventure and heroism in
+    the Darang\xEBn.\r\nAccording to a translation in The Journal of American Folklore,
+    one of the adventures of Bantug\xEBn is a two-day journey in the valley of the
+    Rio Grande de Mindanao. A huge hurricane carries the house of his sister named
+    Alcat from the village of Bembaran to the seacoast, where it is seen by Spanish
+    general Minda- lunu sa Tunu-Miducau sa da Uata. The general puts Alcat's house
+    on the warszhip and takes her to Sugurungan a Lagat, where the king is named
+    Dumakulay Amalana Dumombang Mapamatu.\r\nWhen Bantug\xEBn finds out that her
+    sister is captured, he tells his men to launch all his ships and prepare his
+    brothers for battle. Upon arriving in Sugurungan a Lagat, the village of the
+    Spaniards immediately fires at his warship, which remains unscathed. The battle
+    between the Spaniards and Bantug\xEBn continues for seven days, but the warrior's
+    ship is still undamaged. Faced with the threat that this could go on for years,
+    the king agrees to return Alcat to her brother and let them all go."
+  personalityPart1: "Bantugen had always been calm, cold-blooded and had barely ever
+    shown any affection towards anyone. \n\nEven in his early life, he had only cared
+    for his family, and a handful of his mates. \n\nBantugen would often show compassion
+    towards people in distress, "
+  personalityPart2: "but when it came to actually caring for them, he'd politely
+    decline. \n\nHe is not the type of person to easily show affection to anyone,
+    enjoying the beauties of the world is one thing. \n\nBut actually having feelings
+    for the person is entirely another thing for him. \n\nHe was very listening toward
+    his older brother, as despitw the woman's beauties, he could let them go in half
+    a second and very harshly."
+  personalityPart3: "Bantugen was a man of strong character, was quite hardworking
+    and extremely stubborn, and always took things his way, but still kept his promises
+    no matter what; these were some of his most remarkable features.\n\nIf he swore
+    to help someone, he will do so until the very end. No matter the hardships, he
+    will uphold his promises. \n\nHowever, his personality was governed by another
+    very major attribute; he simply couldn't hold back his grievances. \n\nHe would
+    always show his revenge tenfold, a hundredfold to what he had been through."

@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a869f512bc3988443925f27cd4554df4, type: 3}
   m_Name: Tikbalang Stage 1
   m_EditorClassIdentifier: 
+  enemiesInfoData: {fileID: 11400000, guid: 3de0b5651c1815742a4fc85ca8f6ad3f, type: 2}
   enemyPrefab: {fileID: 6898964170759076284, guid: 39352874d92bb9840b048e6767d496df,
     type: 3}
+  projectile: {fileID: 0}
   enemyArtWork: {fileID: -451497622, guid: 37c73ac720f3d4547879aed4c5a01eba, type: 3}
   enemyName: Tikbalang
   dmgValue: 35
@@ -22,7 +24,11 @@ MonoBehaviour:
   baseArmor: 40
   moveSpeed: 5
   attackRange: 7
-  enemyLore: 
+  projectileSpeed: 0
+  rotationsSpeed: 0
+  enemyLore: "The tikbalang is a half-human and half-horse creature and it\u2019s
+    very similar to the centaur in Greek mythology. It\u2019s believed that a tikbalang
+    would scare away travelers or lead them astray. "
   whatIsTower:
     serializedVersion: 2
     m_Bits: 4160

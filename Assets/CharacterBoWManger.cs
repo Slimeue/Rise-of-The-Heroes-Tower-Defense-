@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharacterBoWManger : MonoBehaviour
 {
@@ -11,6 +13,35 @@ public class CharacterBoWManger : MonoBehaviour
     string saveDataPath = "/character-data"; //TODO static reference
 
     public bool isUnlocked;
+    [SerializeField] Color unlockedColor;
+    //UI
+    [SerializeField] GameObject chain;
+    [SerializeField] Image charImage;
+    [SerializeField] TextMeshProUGUI charName;
+
+    Button button;
+
+    private void Awake()
+    {
+        button = GetComponent<Button>();
+        button.interactable = false;
+    }
+
+    private void OnEnable()
+    {
+        LoadData();
+
+        charImage.sprite = characterData.charArtWork;
+        charName.text = characterData.charName;
+        if (isUnlocked)
+        {
+            chain.SetActive(false);
+            charImage.color = unlockedColor;
+            button.interactable = true;
+        }
+    }
+
+
 
     void LoadData()
     {

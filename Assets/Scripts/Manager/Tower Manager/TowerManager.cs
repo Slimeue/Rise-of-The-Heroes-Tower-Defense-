@@ -91,6 +91,7 @@ public class TowerManager : MonoBehaviour
     }
 
     private State currentState;
+    SoundsPlayTrack soundsPlayTrack;
 
     private void Awake()
     {
@@ -118,7 +119,6 @@ public class TowerManager : MonoBehaviour
 
     private int _charCost;
 
-    SoundsPlayTrack soundsPlayTrack;
 
 
 
@@ -235,6 +235,33 @@ public class TowerManager : MonoBehaviour
     public void LoadCharStats()
     {
         string newSaveDataPath = $"{saveDataPath}-{characterData.charName}.json";
+
+        string path = Application.persistentDataPath + newSaveDataPath;
+
+        if (!File.Exists(path))
+        {
+            if (!characterStats.stats.ContainsKey(characterData.charName))
+            {
+                CharacterStats.charStats characterStatsData = new CharacterStats.charStats
+                {
+                    charName = characterData.charName,
+                    level = characterData.charLevel,
+                    experienceToNextLevel = 50,
+                    hp = characterData.maxHp,
+                    damage = characterData.dmgValue,
+                    armor = characterData.baseArmor
+                };
+                characterStats.stats.Clear();
+                characterStats.stats.Add(characterData.charName, characterStatsData);
+                dataService.SaveData(newSaveDataPath, characterStats, false);
+            }
+            else
+            {
+                return;
+            }
+
+        }
+
 
         CharacterStats charStatsData = dataService.LoadData<CharacterStats>(newSaveDataPath, false);
 
@@ -398,9 +425,10 @@ public class TowerManager : MonoBehaviour
     //
     public void DeleteState(GameObject tower, CharacterData charData, float dmg, float armor, float hp)
     {
-        this.tower = tower;
         if (currentState == State.Default)
         {
+            this.tower = tower;
+
             _rangeIndicatorObj.transform.localScale = new Vector3(charData.range, heightRange, charData.range);
             _rangeIndicatorObj.transform.position = tower.transform.position;
             _charInfoCanvas.SetActive(true);
@@ -435,6 +463,8 @@ public class TowerManager : MonoBehaviour
         currentState = State.Default;
         Debug.Log("Deleting");
         IDeletable deletable = tower.GetComponent<IDeletable>();
+        _rangeIndicatorObj.SetActive(false);
+
         deletable.DeleteChar();
     }
 
@@ -461,6 +491,7 @@ public class TowerManager : MonoBehaviour
             charInfoSkillDescription.text = data.skillData.skillDescription;
             return;
         }
+        _rangeIndicatorObj.SetActive(false);
 
         currentState = State.Default;
     }

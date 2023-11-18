@@ -11,6 +11,8 @@ public class CharacterData : ScriptableObject
 
     [SerializeField] public CharacterSkill skillData;
 
+    [SerializeField] public CharacterInfoData charInfoData;
+
     [SerializeField] public LayerMask _layerMask;
     [SerializeField] public string _platformTag;
 

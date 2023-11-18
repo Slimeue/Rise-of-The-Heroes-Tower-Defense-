@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a869f512bc3988443925f27cd4554df4, type: 3}
   m_Name: TikTik Stage 1
   m_EditorClassIdentifier: 
+  enemiesInfoData: {fileID: 11400000, guid: f566926806e5cda498757e1e1e0296fc, type: 2}
   enemyPrefab: {fileID: 7917805220734778828, guid: dbfa2f3f008ffe3408909012e6fbfc63,
     type: 3}
   projectile: {fileID: 0}
@@ -23,8 +24,10 @@ MonoBehaviour:
   baseArmor: 32
   moveSpeed: 5
   attackRange: 20
+  projectileSpeed: 0
   rotationsSpeed: 5
-  enemyLore: 
+  enemyLore: 'The tiktik is described as having long limbs, keen claws, and the capacity
+    to change into other forms. Its predatory instincts are what set it apart. '
   whatIsTower:
     serializedVersion: 2
     m_Bits: 4160

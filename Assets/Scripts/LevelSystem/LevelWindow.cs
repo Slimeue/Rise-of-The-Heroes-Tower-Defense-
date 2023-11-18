@@ -39,15 +39,17 @@ public class LevelWindow : MonoBehaviour
     IDataService dataService = new JsonDataService();
     string saveDataPath = "/character-data"; //TODO static reference
 
-
+    CanvasManager canvasManager;
 
 
     private void OnEnable()
     {
-
-        characterData = CanvasManager.instance.heroesStatusCharacterData;
-        Debug.Log(characterData.charName);
-        LoadDataLevel();
+        canvasManager = FindObjectOfType<CanvasManager>();
+        if (canvasManager.heroesStatusCharacterData != null)
+        {
+            characterData = canvasManager.heroesStatusCharacterData;
+            LoadDataLevel();
+        }
 
 
     }

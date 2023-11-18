@@ -17,7 +17,7 @@ public class SpecialHeroHolder : MonoBehaviour
     {
         charArtWork.sprite = characterData.charArtWork;
         charName.text = characterData.charName;
-        chainLocked.SetActive(false);
+        chainLocked.SetActive(true);
     }
 
 }

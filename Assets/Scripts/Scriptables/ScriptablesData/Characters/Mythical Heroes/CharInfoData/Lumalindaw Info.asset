@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1cfc1b649f2c254f920a5cb7b0ab89a, type: 3}
+  m_Name: Lumalindaw Info
+  m_EditorClassIdentifier: 
+  lorePart1: "Lumalindaw is the hero from epic tales of theGa\u2019dang people.\n\n
+    He is the son of Datu Lumalibacfrom Nabbobawan. \n\nThe tales of Lumalindaw are
+    a series of romantic pursuits with our hero fighting for all the women he loves.
+    such as the fierce bolo combat with the brother of Menalam."
+  lorePart2: "He even broke the curse of the sirena, Carinuwan, that made her regain
+    human form.  \n\nHis pure heart also made him save the beautiful dwarf Caligayan
+    of the underworld and return her to normal size. This latter had came to the
+    earth after being cursed, in search of a potential cure for it. \n\nLumalindaw
+    was an extraordinary individual since his birth."
+  lorePart3: "He is a proficient player of the Ayoding; a magical music instrument
+    that also acts as a guiding voice whenever he makes a decision. He has armed
+    himself with a bolo blade that emits a blinding light (similiar to what ozy describes
+    Moses' staff, basically sword beam) and produces music whenever it is swing.
+    \n\nThe conclusion of the adventure of Lumalindaw is quiet melancholic, for unlike
+    other epics that end in glorious triumph, Lumalindaw\u2019s tale ended when he
+    left all his sons and daughters and entered the cave behind a waterfall, which
+    symbolized his death"
+  personalityPart1: "Lumalindaw is a quite diligent and strong-willed person, he
+    acts very friendly with everyone, handing smiles like a billionaire spnds money.
+    \n\nAlthough with his friendly nature, he is frequently overreacting to abnormal
+    situations with exaggerated expressions."
+  personalityPart2: "Due to having been on many adventures, Lumalindaw is confident
+    and brave person, eventually developing leadership skills. \n\nBecause of his
+    practice during many fights, Lumalindaw has developed a great analytical mind
+    and can form complex battle plans in seconds, which factor in both his allies'
+    and enemies\u2019. \n\nDespite not possessing such skill as Eye of the Mind or
+    tactics of sort, he was noted to hold such ability. "
+  personalityPart3: "Although out of combat, he externalizes his observations through
+    endless mumbling, a habit which annoys or scares his peers. Lumalindaw appears
+    to have a more brash and abrasive side to him. \n\nThis typically shows up when
+    he finds himself in combat. He has also admitted that he doesn't like this side
+    of him very much and tends to keep it in check. Lumalindaw often helps people
+    with personal and emotional problems, even if it does not concern him. He simply
+    has such empathic nature that makes it so he cannot leave anyone alone when they
+    are troubled. \n\nIt could nonetheless lead him to be unduly meddlesome, annoying
+    a few people he tried to help. Still, Lumalindaw's heroic spirit is recognized
+    by many, having earned the loyalty and gratitude of conquests and people he met.
+    Lumalindaw's natural charm and his heroic spirit in such way are what made his
+    tale to be so keen to romantic adventures. \n\nLumalindaw is a caring person
+    and never hesitates to rescue someone in danger, even if he knows that he is
+    not strong enough to do it. Often, he does this on a whim, taking a more careless
+    approach than the usual overthinking he goes through."

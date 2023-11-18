@@ -15,6 +15,7 @@ MonoBehaviour:
   charTypeArt: {fileID: -942566212, guid: 448cb174202fab440a6ec45d5cba4cbf, type: 3}
   charArtWork: {fileID: -459093982, guid: cf9a839e02e8fba47a5cd702c5ade478, type: 3}
   skillData: {fileID: 11400000, guid: 36deeb3d1a9e00a4290d5b9610c86b64, type: 2}
+  charInfoData: {fileID: 11400000, guid: 6c535169547c92b43a97c738eb500696, type: 2}
   _layerMask:
     serializedVersion: 2
     m_Bits: 4096

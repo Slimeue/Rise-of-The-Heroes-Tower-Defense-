@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1cfc1b649f2c254f920a5cb7b0ab89a, type: 3}
+  m_Name: Sandayo Info
+  m_EditorClassIdentifier: 
+  lorePart1: "One day, Bae Salaong took a bath at the miraculous Spring of Liyasan.
+    \n\nShe returned home and as she combed her hair, a baby fell from her hair.
+    \n\nHandsome as the rising sun, they named him Sandayo.\nOne week after, Sandayo
+    began to walk, and grew very fast after one month. "
+  lorePart2: "On his first month, he asked permission to go on a journey. \n\nHis
+    father Datu Salaria gave him a kalis. His mother dressed him with golden robes,
+    and put two charms. \n\nHe spread his monsala, rode in it, and brought to the
+    center of the sun. There he dreamt of Bolak Sonday and Benebong, who offered
+    him betel nut chew. But he chose the betel nut chew of Bolak Sonday. "
+  lorePart3: 'He went to Gwalo Leyo, and he was adopted by two datus, Daugbolawan
+    and Lomelok. They went to the buklog of Lumanay. In the buklog of lumanay, he
+    met his cousins, Bolak Sonday, Benobong, Datu Tulog and Pammintonan, Daugbolawan,
+    Lomelok, Lungotubig and Mendepesa. Sandayo fought to overcome the curse of the
+    evil woman Bae Pagdindingan on a ship on their way to Tubig Manelangan. He presided
+    the downry negotiations of his female cousins, Bolak Sonday and Benobong. The
+    wedding was set for Lomelok and Bolak Sonday, and Benogong and Baugbolawan. Datu
+    Lumalab and other datus, got angry. Sandayo and his cousins fought with the disappointed
+    suitors. Sandayo died when they went back to Liyasan. He is brought back to life
+    after Bolak Sonday and Benogong faught Bae Pandeligan for the spirit of Sandayo.
+    Bolak Sonday died from a small cut. Sandayo and the other cousins searched for
+    Bolak Sonday''s Spirit. Bolak Sonday then brought back to life. Sondayoo went
+    to Sumina with his relatives. Sandayo, with his parents and relatives, joined
+    the party prepared for him by Datu Pommitonan. They attended one final buklog
+    They danced as the platform goes higher and higher and reaches the clouds. Sandayo
+    ans his family ascended to heaven on a buklogan and live there happily ever after.
+
+'
+  personalityPart1: "Sandayo is celebrated for his exceptional bravery. He fearlessly
+    faces challenges, adversaries, and threats to protect his community and uphold
+    justice. \n\nHis courage is a central aspect of his character, inspiring those
+    around him."
+  personalityPart2: "As a spiritual leader and warrior, Sandayo possesses wisdom
+    and a deep understanding of her culture, traditions, and the spiritual realm.
+    \n\nHe guides her people not just through physical battles but also through spiritual
+    and moral guidance. Despite his warrior spirit, Sandayo is often depicted as
+    having a compassionate side. \n\nHe is a healer, using his knowledge of herbs,
+    rituals, and spiritual practices to aid the sick and wounded, showcasing his
+    caring nature."
+  personalityPart3: 
