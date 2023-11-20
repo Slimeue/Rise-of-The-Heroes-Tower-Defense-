@@ -77,7 +77,7 @@ public class TowerManager : MonoBehaviour
     float placingGameTimeSpeed = 0.1f;
     float normalGameTimeSpeed = 1f;
 
-    public bool _isPlacing;
+    public static bool _isPlacing;
 
     float maxDistance;
 
@@ -136,6 +136,7 @@ public class TowerManager : MonoBehaviour
                     EnableTowerHolder(_towerHolder.gameObject.GetComponent<TowerHolder>());
                 }
                 _charInfoCanvas.SetActive(false);
+                _isPlacing = false;
                 break;
             case State.Placing:
                 PlacingTime();
@@ -152,11 +153,17 @@ public class TowerManager : MonoBehaviour
                 PlacingTime();
                 break;
             case State.Deleting:
+                _isPlacing = true;
+
                 Debug.Log("Is Deleting");
+                PlacingTime();
                 normalCam.Priority = 0;
                 placingCam.Priority = 1;
                 break;
             case State.CharInfo:
+                _isPlacing = true;
+
+                PlacingTime();
                 normalCam.Priority = 0;
                 placingCam.Priority = 1;
                 break;
@@ -413,6 +420,7 @@ public class TowerManager : MonoBehaviour
 
     void PlacingTime()
     {
+
         Time.timeScale = placingGameTimeSpeed;
     }
     void NormalTime()
@@ -449,6 +457,7 @@ public class TowerManager : MonoBehaviour
             charInfoHp.text = hp.ToString("f0");
             charInfoAttack.text = dmg.ToString("f0");
             charInfoArmor.text = armor.ToString("f0");
+            charInfoLevel.text = charData.charLevel.ToString("f0");
             charInfoSkillImage.sprite = charData.skillData.skillArtWork;
             charInfoSkillType.text = charData.skillData.skillType;
             charInfoSkillName.text = charData.skillData.skillName;
@@ -468,7 +477,7 @@ public class TowerManager : MonoBehaviour
         deletable.DeleteChar();
     }
 
-    public void SpecialCharacterClick(GameObject tower, CharacterData data, float dmg, float armor, float hp)
+    public void SpecialCharacterClick(GameObject tower, CharacterData data, float dmg, float armor, float hp, int currentLevel)
     {
         this.tower = tower;
         if (currentState == State.Default)
@@ -485,6 +494,7 @@ public class TowerManager : MonoBehaviour
             charInfoHp.text = hp.ToString("f0");
             charInfoAttack.text = dmg.ToString("f0");
             charInfoArmor.text = armor.ToString("f0");
+            charInfoLevel.text = currentLevel.ToString("f0");
             charInfoSkillImage.sprite = data.skillData.skillArtWork;
             charInfoSkillType.text = data.skillData.skillType;
             charInfoSkillName.text = data.skillData.skillName;

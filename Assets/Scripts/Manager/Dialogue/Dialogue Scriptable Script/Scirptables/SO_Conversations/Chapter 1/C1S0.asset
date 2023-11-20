@@ -24,7 +24,15 @@ MonoBehaviour:
     text: Well, how rude of me not introducing myself. I'm your guide to aid you
       in your adventure, Ponce!
   - _character: {fileID: 11400000, guid: 201535f2f7cc39d4eac6275dbfe625d8, type: 2}
-    text: 'So now hero, first you have come from afar and shall take a rest. '
+    text: So now hero, you must retrieve the stolen pearl.
+  - _character: {fileID: 11400000, guid: 201535f2f7cc39d4eac6275dbfe625d8, type: 2}
+    text: Which this pearl is the treasure of the human kind that is being kept hidden.
+  - _character: {fileID: 11400000, guid: 201535f2f7cc39d4eac6275dbfe625d8, type: 2}
+    text: But for some reason the king of darkness, Erool got a hold of it after
+      attacking the village of the sacreds. The heroes of this world has been caught
+      suprised.
+  - _character: {fileID: 11400000, guid: 201535f2f7cc39d4eac6275dbfe625d8, type: 2}
+    text: 'So we summon you here to help us retrieve the stolen pearl. '
   storyValue: 1
   storyID: C1S0
-  isCompleted: 1
+  isCompleted: 0

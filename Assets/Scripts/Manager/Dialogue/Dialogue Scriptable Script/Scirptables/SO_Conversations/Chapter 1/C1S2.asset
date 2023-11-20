@@ -20,3 +20,4 @@ MonoBehaviour:
     text: Next, we shall continue your journey!
   storyValue: 2
   storyID: C1S2
+  isCompleted: 0

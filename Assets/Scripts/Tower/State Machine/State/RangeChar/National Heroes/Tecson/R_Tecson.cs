@@ -153,7 +153,7 @@ public class R_Tecson : RangeCharacterEntity, IDamageable, ISkillable, IPointerC
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        towerManager.SpecialCharacterClick(gameObject, characterData, damageValue, baseArmor, currentHealth);
+        towerManager.SpecialCharacterClick(gameObject, characterData, damageValue, baseArmor, currentHealth, currentLevel);
     }
 
     public void PlayRangeHitSFX(string sfx)

@@ -15,7 +15,8 @@ MonoBehaviour:
   _character: {fileID: 11400000, guid: 201535f2f7cc39d4eac6275dbfe625d8, type: 2}
   lines:
   - _character: {fileID: 11400000, guid: 201535f2f7cc39d4eac6275dbfe625d8, type: 2}
-    text: The darkness still looms
+    text: After battling for so long, you can view the Enemies information you encounter
+      inside the book of wisdom. Feel free to browse the book!
   storyValue: 3
   storyID: C1S3
   isCompleted: 0

@@ -17,8 +17,11 @@ MonoBehaviour:
   - _character: {fileID: 11400000, guid: 201535f2f7cc39d4eac6275dbfe625d8, type: 2}
     text: 'Congrats to your first victory adventurer! '
   - _character: {fileID: 11400000, guid: 201535f2f7cc39d4eac6275dbfe625d8, type: 2}
-    text: Now, after proving your woth im going to teach you how to strengthen your
-      heroes!
-  storyValue: 1
-  storyID: C1S1
-  isCompleted: 1
+    text: 'Now after that battle we got a pearl but its not the original. But we
+      can maybe somehow have a use for it. '
+  - _character: {fileID: 11400000, guid: 201535f2f7cc39d4eac6275dbfe625d8, type: 2}
+    text: 'You can level up your heroes in the heroes tab using the pearl you got
+      after every battle you won. '
+  storyValue: 2
+  storyID: C1S2
+  isCompleted: 0

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -45,61 +46,69 @@ public class DialogueTrigger : MonoBehaviour
     {
         string path = Application.persistentDataPath + storyProgressDataPath;
 
-        if (File.Exists(path))
+        if (!File.Exists(path))
         {
-            bool firstStory = false;
-            StoryModel storyLoad = DataService.LoadData<StoryModel>(storyProgressDataPath, false);
-            foreach (SO_Dialogue_Messages conversations in conversation)
+
+            try
             {
-                StoryModel.storyModel storyModel = new StoryModel.storyModel
+                foreach (SO_Dialogue_Messages item in conversation)
                 {
-                    storyId = conversations.storyID,
-                    storyValue = conversations.storyValue,
-                    isCompleted = conversations.isCompleted
-                };
-
-                if (!storyLoad.story.ContainsKey(conversations.name))
-                {
-                    storyLoad.story.Add(conversations.name, storyModel);
-                    DataService.SaveData(storyProgressDataPath, storyLoad, false);
-                }
-
-
-
-                if (stageReached == storyLoad.story[conversations.name].storyValue && !storyLoad.story[conversations.name].isCompleted)
-                {
-                    if (!firstStory)
+                    StoryModel.storyModel storyModel = new StoryModel.storyModel
                     {
-                        SO_Dialogue_Messages latestConversation = conversations;
-                        FindAnyObjectByType<DialogueManager>().OpenDialogue(latestConversation);
-                        firstStory = true;
+                        storyId = item.storyID,
+                        storyValue = item.storyValue,
+                        isCompleted = item.isCompleted
+                    };
+
+                    if (!story.story.ContainsKey(item.name))
+                    {
+                        story.story.Add(item.name, storyModel);
+                        DataService.SaveData(storyProgressDataPath, story, false);
                     }
 
+
                 }
-
-
-
             }
-        }
-        else
-        {
-            foreach (SO_Dialogue_Messages item in conversation)
+            catch (Exception e)
             {
-                StoryModel.storyModel storyModel = new StoryModel.storyModel
-                {
-                    storyId = item.storyID,
-                    storyValue = item.storyValue,
-                    isCompleted = item.isCompleted
-                };
+                Debug.Log(e.Message);
+            }
 
-                if (!story.story.ContainsKey(item.name))
+        }
+        bool firstStory = false;
+        StoryModel storyLoad = DataService.LoadData<StoryModel>(storyProgressDataPath, false);
+        foreach (SO_Dialogue_Messages conversations in conversation)
+        {
+            StoryModel.storyModel storyModel = new StoryModel.storyModel
+            {
+                storyId = conversations.storyID,
+                storyValue = conversations.storyValue,
+                isCompleted = conversations.isCompleted
+            };
+
+            if (!storyLoad.story.ContainsKey(conversations.name))
+            {
+                storyLoad.story.Add(conversations.name, storyModel);
+                DataService.SaveData(storyProgressDataPath, storyLoad, false);
+            }
+
+
+
+            if (stageReached == storyLoad.story[conversations.name].storyValue && !storyLoad.story[conversations.name].isCompleted)
+            {
+                if (!firstStory)
                 {
-                    story.story.Add(item.name, storyModel);
-                    DataService.SaveData(storyProgressDataPath, story, false);
+                    SO_Dialogue_Messages latestConversation = conversations;
+                    FindAnyObjectByType<DialogueManager>().OpenDialogue(latestConversation);
+                    firstStory = true;
                 }
 
             }
+
+
+
         }
+
 
 
 

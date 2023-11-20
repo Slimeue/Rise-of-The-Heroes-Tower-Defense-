@@ -40,6 +40,7 @@ public class DialogueManager : MonoBehaviour
         DisplayMessage();
         dialoguePanel.SetActive(true);
         dialogueArea.LeanScale(Vector3.one, 0.5f);
+        isConversationActive = true;
         actorImage.gameObject.LeanScale(Vector3.one, 0.5f);
 
     }
@@ -65,7 +66,7 @@ public class DialogueManager : MonoBehaviour
             Debug.Log("Conversation ended");
             _touchPressAction.performed -= TouchPress;
             dialoguePanel.SetActive(false);
-
+            isConversationActive = false;
             dialogueArea.transform.localScale = Vector3.zero;
             actorImage.transform.localScale = Vector3.zero;
         }

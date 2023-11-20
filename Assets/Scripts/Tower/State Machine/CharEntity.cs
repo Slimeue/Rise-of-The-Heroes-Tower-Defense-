@@ -36,6 +36,8 @@ public class CharEntity : MonoBehaviour
     public float damageValue;
     public int currentLevel;
 
+    public float originalDamage;
+
     [HideInInspector]
     public float radius;
 
@@ -127,6 +129,8 @@ public class CharEntity : MonoBehaviour
 
         }
 
+        originalDamage = damageValue;
+
     }
 
     public virtual void PlayAnim(string animBoolName)
@@ -147,7 +151,7 @@ public class CharEntity : MonoBehaviour
             buffDuration -= Time.deltaTime;
             if (buffDuration <= 0f)
             {
-                //setback to default speed
+                damageValue = originalDamage;
                 anim.SetFloat(ATTACK_SPEED, 1f);
                 isBuffed = false;
             }

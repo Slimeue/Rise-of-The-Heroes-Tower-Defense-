@@ -177,6 +177,8 @@ public class M_Bantugen : MeleeCharacterEntity, IDamageable, IBuffable, IDeletab
 
     public void AttackBuff(float percentage, float duration)
     {
+
+
         damageValue *= percentage;
 
         isBuffed = true;

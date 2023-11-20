@@ -16,6 +16,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField]
     float spawnInterval = 2f;
 
+
     [SerializeField] GameObject[] inActives;
 
     [SerializeField] TextMeshProUGUI _waveUIText;
@@ -43,7 +44,7 @@ public class WaveManager : MonoBehaviour
     {
         isSpawning = NotSpawning();
 
-        if (currentWaveIndex <= maxWave)
+        if (currentWaveIndex <= maxWave && !DialogueManager.isConversationActive)
         {
             StartWave();
 

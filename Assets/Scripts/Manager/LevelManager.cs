@@ -81,7 +81,10 @@ public class LevelManager : MonoBehaviour
         LevelFailed();
         if (!PauseMenu.isGamePause)
         {
-            FastForward();
+            if (!TowerManager._isPlacing)
+            {
+                FastForward();
+            }
         }
 
         if (isStageFinished)
