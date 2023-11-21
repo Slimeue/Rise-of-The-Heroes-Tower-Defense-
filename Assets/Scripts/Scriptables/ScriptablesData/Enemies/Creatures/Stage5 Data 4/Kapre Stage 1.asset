@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a869f512bc3988443925f27cd4554df4, type: 3}
+  m_Name: Kapre Stage 1
+  m_EditorClassIdentifier: 
+  enemiesInfoData: {fileID: 11400000, guid: 1ffd54547356d5b4bb19e812f2f17cd6, type: 2}
+  enemyPrefab: {fileID: 611673615268700165, guid: 135ab866e398e874c9f35b8dacebf601,
+    type: 3}
+  projectile: {fileID: 0}
+  enemyArtWork: {fileID: -2073505622, guid: 18872c405b3365a498c9c7e712c11d3e, type: 3}
+  enemyName: Kapre
+  dmgValue: 350
+  hitPoints: 0
+  maxHp: 400
+  baseArmor: 40
+  moveSpeed: 5
+  attackRange: 7
+  projectileSpeed: 0
+  rotationsSpeed: 0
+  enemyLore: "The Kapre is a type of mythical creature in the Philippines that\u2019s
+    commonly referred to as a tree demon. It\u2019s described as a tall and hairy
+    brown-haired creature with a strong smell. In addition, it\u2019s believed that
+    these individuals would typically smoke a tobacco pipe, which would draw the
+    attention of humans. Kapres are said to dwell in big trees like acacias, mangoes,
+    bamboo and banyan (known in the Philippines as balete). It is also mostly seen
+    sitting under those trees."
+  whatIsTower:
+    serializedVersion: 2
+    m_Bits: 4160

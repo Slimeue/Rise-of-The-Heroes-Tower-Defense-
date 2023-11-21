@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a869f512bc3988443925f27cd4554df4, type: 3}
+  m_Name: Manananggal Stage 1
+  m_EditorClassIdentifier: 
+  enemiesInfoData: {fileID: 11400000, guid: 489f1e8863201c74fba1e602b3f744fe, type: 2}
+  enemyPrefab: {fileID: 7445524174623351422, guid: 841ed25297f1e794e8cdc07eb233b314,
+    type: 3}
+  projectile: {fileID: 0}
+  enemyArtWork: {fileID: 675130504, guid: c78eda97fd6c81240988899b246488be, type: 3}
+  enemyName: Mananggal
+  dmgValue: 32
+  hitPoints: 1650
+  maxHp: 300
+  baseArmor: 24
+  moveSpeed: 7
+  attackRange: 7
+  projectileSpeed: 0
+  rotationsSpeed: 0
+  enemyLore: 'The manananggal is a mythical creature in the Philippines that is able
+    to separate its upper torso from the lower part of its body. Their fangs and
+    wings give them a vampire-like appearance.
+
+
+    The manananggal is described
+    as scary, often hideous, usually depicted as female, and always capable of severing
+    its upper torso and sprouting huge bat-like wings to fly into the night in search
+    of its victims. The word manananggal comes from the Tagalog word tanggal, which
+    means "to remove" or "to separate", which literally translates as "remover" or
+    "separator". In this case, "one who separates itself". The name also originates
+    from an expression used for a severed torso.
+
+
+
+    The manananggal is said to
+    favor preying on sleeping, pregnant women, using an elongated proboscis-like
+    tongue to suck the hearts of fetuses, or the blood of someone who is sleeping.
+    It also haunts newlyweds or couples in love and sometimes a new born child. Due
+    to being left at the altar, grooms-to-be are one of its main targets.
+
+
+    The
+    severed lower torso is left standing, and is the more vulnerable of the two halves.
+    Sprinkling salt, smearing crushed garlic or ash on top of the standing torso
+    is fatal to the creature. The upper torso then would not be able to rejoin itself
+    and would perish by sunrise.['
+  whatIsTower:
+    serializedVersion: 2
+    m_Bits: 4160

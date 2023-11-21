@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a869f512bc3988443925f27cd4554df4, type: 3}
+  m_Name: Mangkukulam Stage 1
+  m_EditorClassIdentifier: 
+  enemiesInfoData: {fileID: 11400000, guid: 811ff9780243b6b47b09a11b099fe271, type: 2}
+  enemyPrefab: {fileID: 1237659550585703584, guid: bfac1a18a405ef84fa4f994d6f999e15,
+    type: 3}
+  projectile: {fileID: 2246912459879025901, guid: 69bfa80a5ed884f4dbf88848b414f3de,
+    type: 3}
+  enemyArtWork: {fileID: -193591354, guid: 945b6c97a47f5bf43b4c68332354817f, type: 3}
+  enemyName: Mangkukulam
+  dmgValue: 23
+  hitPoints: 0
+  maxHp: 230
+  baseArmor: 32
+  moveSpeed: 5
+  attackRange: 25
+  projectileSpeed: 50
+  rotationsSpeed: 5
+  enemyLore: 'Mangkukulams are often depicted as enigmatic figures, shrouded in mystery
+    due to their esoteric knowledge of traditional healing and mystical practices. '
+  whatIsTower:
+    serializedVersion: 2
+    m_Bits: 4160
