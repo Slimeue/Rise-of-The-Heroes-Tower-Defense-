@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1034310466878995852}
   - component: {fileID: 7713706629324829818}
   - component: {fileID: 3180804492223075008}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: RawImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,7 +83,7 @@ GameObject:
   - component: {fileID: 702733998832758871}
   - component: {fileID: 1188528890583938243}
   - component: {fileID: 1558268972867193140}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ground5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,9 +166,9 @@ GameObject:
   - component: {fileID: 4067133798476526738}
   - component: {fileID: 1969342280674772808}
   - component: {fileID: 314646517901848430}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MeleeGround 1
-  m_TagString: Untagged
+  m_TagString: MeleePlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -239,7 +239,7 @@ GameObject:
   - component: {fileID: 283729021656692738}
   - component: {fileID: 9118508095566782142}
   - component: {fileID: 1057129164118738016}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -33,11 +33,11 @@ MonoBehaviour:
     including trauma from the battles he participated in, leading to psychological
     struggles.
 
-    
 
-    Gregorio del Pilar died at the young age of 24 during
-    the Battle of Tirad Pass. His life and legacy are remembered as part of the complex
-    and tumultuous period in Philippine history marked by the struggle for independence
+
+    Gregorio del Pilar died at the young age of 24 during the Battle
+    of Tirad Pass. His life and legacy are remembered as part of the complex and
+    tumultuous period in Philippine history marked by the struggle for independence
     against foreign powers.'
   personalityPart1: Goyo was defined to be a kind and charming fellow of the youth
     who had huge dreams for himself and had a clear vision for his dreams until before
@@ -73,3 +73,34 @@ MonoBehaviour:
     self-pity, uncontrolled anxieties and insecurities, and even situations of looking
     at the distance in wonder. Fighting off those demons of him often lead him to
     close-death scenarios or trouble; as well as having visions of his own death.'
+  charTrivias:
+  - "Young General: Gregorio del Pilar was born on November 14, 1875, in Bulac\xE1n,
+    Bulacan, Philippines. He became one of the youngest generals in the Philippine
+    Revolutionary Army at the age of 24."
+  - 'Aguinaldo''s Right Hand: Del Pilar served as the aide-de-camp to Emilio Aguinaldo,
+    the leader of the First Philippine Republic. He gained the trust of Aguinaldo
+    and played a crucial role in the president''s official and personal matters.'
+  - 'Battle of Tirad Pass: One of the most significant events in Del Pilar''s life
+    was the Battle of Tirad Pass on December 2, 1899. He bravely led a small contingent
+    of Filipino forces against a much larger American force commanded by Colonel
+    Peyton C. March. Del Pilar fought valiantly but perished in the battle.'
+  - '"Bayani ng Tirad" (Hero of Tirad): Del Pilar is often referred to as the "Bayani
+    ng Tirad" or "Hero of Tirad" because of his role and sacrifice in the Battle
+    of Tirad Pass. His defense allowed Aguinaldo to escape to continue the resistance
+    against the American forces.'
+  - 'Educational Background: Before joining the revolutionary forces, Del Pilar studied
+    at the Ateneo Municipal de Manila (now Ateneo de Manila University) and later
+    pursued law at the University of Santo Tomas.'
+  - 'Literary Pursuits: Del Pilar was not only a military leader but also a writer.
+    He contributed articles to various publications, including the revolutionary
+    newspaper "La Independencia," where he expressed his thoughts on the issues of
+    his time.'
+  - 'Military Strategy: Del Pilar was known for his strategic mind and innovative
+    military tactics. He demonstrated his skills in several battles during the Philippine-American
+    War, earning him respect among his peers.'
+  - "Monument: To honor his memory, a monument was erected in his hometown of Bulac\xE1n,
+    Bulacan, depicting Del Pilar on horseback. The monument is a symbol of his courage
+    and sacrifice."
+  - 'Legacy: General Gregorio del Pilar is remembered as a national hero in the Philippines.
+    His contributions to the fight for Philippine independence are commemorated annually
+    on his birth and death anniversaries.'

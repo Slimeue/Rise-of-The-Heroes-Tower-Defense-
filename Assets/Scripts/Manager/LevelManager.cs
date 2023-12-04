@@ -22,6 +22,7 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField] private GameObject victoryScreen;
     [SerializeField] private GameObject failedScreen;
+    [SerializeField] private GameObject triviaScreen;
 
     [SerializeField] private TextMeshProUGUI rewardText;
 
@@ -46,6 +47,12 @@ public class LevelManager : MonoBehaviour
 
     public bool isVictory;
     public bool isStageFinished;
+    public bool isStageFinishedDefeated;
+
+
+    bool isOpen = false;
+    bool openOnce;
+
 
     float timeToContinue = 10f;
 
@@ -71,6 +78,7 @@ public class LevelManager : MonoBehaviour
         baseManager = FindObjectOfType<BaseManager>();
         starsManager = FindObjectOfType<StarsManager>();
         coinsManager = FindObjectOfType<CoinsManager>();
+        triviaScreen.SetActive(false);
         runOnce = false;
         LoadData();
     }
@@ -87,7 +95,7 @@ public class LevelManager : MonoBehaviour
             }
         }
 
-        if (isStageFinished)
+        if (isStageFinishedDefeated)
         {
 
             AutoToContinue();
@@ -115,10 +123,10 @@ public class LevelManager : MonoBehaviour
         {
             StageComplete();
             runOnce = true;
-
         }
 
     }
+
 
 
     private void StageComplete()
@@ -132,6 +140,29 @@ public class LevelManager : MonoBehaviour
             hasStageCompleted = true; // Set the flag to true after completion
         }
     }
+
+    public void OpenCloseTrivia()
+    {
+
+
+
+        if (!isOpen)
+        {
+            triviaScreen.SetActive(true);
+            isOpen = true;
+            openOnce = true;
+            return;
+        }
+
+        triviaScreen.SetActive(false);
+        isOpen = false;
+
+        if (openOnce)
+        {
+            ContinueLevel();
+        }
+    }
+
 
     private void Start()
     {
@@ -226,7 +257,7 @@ public class LevelManager : MonoBehaviour
         {
             failedScreen.SetActive(true);
             isVictory = false;
-            isStageFinished = true;
+            isStageFinishedDefeated = true;
         }
     }
 

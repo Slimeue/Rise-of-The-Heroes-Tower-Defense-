@@ -20,5 +20,5 @@ MonoBehaviour:
   - _character: {fileID: 11400000, guid: 201535f2f7cc39d4eac6275dbfe625d8, type: 2}
     text: Best of luck battling them! I will cheer you on to the side.
   storyValue: 1
-  storyID: C1S1_ig
+  storyID: C1S1_IG
   isCompleted: 0

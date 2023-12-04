@@ -109,7 +109,7 @@ public class WaveManager : MonoBehaviour
                     enemy.transform.rotation = spawnPoint.transform.rotation;
                     enemy.SetActive(true);
                     Debug.Log(enemy.name);
-                    yield return new WaitForSeconds(spawnInterval);
+                    yield return new WaitForSeconds(waveData.spawnInterval);
 
                 }
                 nextWaveTime = timeBetweenWave;
