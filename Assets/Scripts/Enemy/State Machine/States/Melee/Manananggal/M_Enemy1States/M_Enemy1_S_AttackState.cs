@@ -81,7 +81,11 @@ public class M_Enemy1_S_AttackState : BaseState
 
         if (collider.gameObject.CompareTag("Body"))
         {
+            m_Enemy1SM.soundsPlayTrack.Play("Hit");
+
             tower.Damage(m_Enemy1SM.enemiesData.dmgValue);
+            m_Enemy1SM.enemyAttackFinished = false;
+
         }
     }
 

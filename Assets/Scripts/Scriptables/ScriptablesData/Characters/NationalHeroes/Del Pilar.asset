@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e454853e7f0ec346bb1144e52ab7ab1, type: 3}
+  m_Name: Del Pilar
+  m_EditorClassIdentifier: 
+  charTypeArt: {fileID: -942566212, guid: 448cb174202fab440a6ec45d5cba4cbf, type: 3}
+  charArtWork: {fileID: -459093982, guid: cf9a839e02e8fba47a5cd702c5ade478, type: 3}
+  skillData: {fileID: 11400000, guid: 36deeb3d1a9e00a4290d5b9610c86b64, type: 2}
+  charInfoData: {fileID: 11400000, guid: 6c535169547c92b43a97c738eb500696, type: 2}
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 4096
+  _platformTag: MeleePlatform
+  previewChar: {fileID: 0}
+  charObject: {fileID: 8946194410183242603, guid: fe5619690256e0843b920837ea94e250,
+    type: 3}
+  projectile: {fileID: 0}
+  charName: Gregorio Del Pilar
+  dmgValue: 65
+  charType: 0
+  charLevel: 0
+  maxHp: 500
+  mana: 0
+  baseArmor: 30
+  towerCooldown: 0
+  skillCooldown: 10
+  towerCost: 0
+  range: 20
+  projectileSpeed: 0
+  attackSpeed: 2
+  rotationSpeed: 5
+  charLore: "Gregorio Hilario del Pilar y Sempio was a Filipino general of the Philippine
+    Revolutionary Army druing the Philippine-American War.\n\nAs one of the youngest
+    generals in the Revolutionary Army, he was known for the successful assault on
+    the Spanish barracks in the municipality of Paombong, his victory on the first
+    phase Battle of Quingua and his last stand at the Battle of Tirad Pass during
+    the Philippine\u2013American War. Because of his youth, he became known as the
+    \"Boy General\". He was also known as a ladies man and was described by National
+    Artist for Literature Nick Joaquin as the \"Byron of Bulacan\"."

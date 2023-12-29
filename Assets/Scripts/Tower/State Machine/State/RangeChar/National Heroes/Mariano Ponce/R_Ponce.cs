@@ -1,9 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class R_Ponce : RangeCharacterEntity, IDamageable
+public class R_Ponce : RangeCharacterEntity, IDamageable, ISkillable, IBuffable, IPointerClickHandler, IRangeSoundable
 {
+
+
+    public GameObject skillHolder;
+    public float skillCd;
+    public float skillDuration;
+    public bool skillFinished;
 
     BaseManager baseManager;
 
@@ -19,10 +27,14 @@ public class R_Ponce : RangeCharacterEntity, IDamageable
     const string HERO_SKILL = "skill";
     const string HERO_DEATH = "death";
 
+    public GameObject[] activeTowers;
+    SkillHolder specialSkillHolder;
+    public Slider skillSlider;
+
     public override void Awake()
     {
         base.Awake();
-
+        skillCd = characterData.skillCooldown;
         attackState = new R_Ponce_State_attackState(characterStateMachine, HERO_ATTACK, this, this);
         idleState = new R_Ponce_State_idleState(characterStateMachine, HERO_IDLE, this, this);
         deathState = new R_Ponce_State_deathState(characterStateMachine, HERO_DEATH, this, this);
@@ -31,18 +43,42 @@ public class R_Ponce : RangeCharacterEntity, IDamageable
         baseManager = FindObjectOfType<BaseManager>();
         anim = GetComponent<Animator>();
         animationHandler = GetComponent<AnimationHandler>();
+        healthBar = baseManager.specialCharHpBar;
+        baseManager.baseCharIcon.sprite = characterData.charArtWork;
+        specialSkillHolder = FindObjectOfType<SkillHolder>();
+
     }
 
     public override void Update()
     {
         base.Update();
+
+        activeTowers = GameObject.FindGameObjectsWithTag("Player");
+
         radius = characterData.range;
         HealthBarTracker();
+
+        //skillcd
+        if (skillFinished)
+        {
+            skillCd -= Time.deltaTime;
+            float _charCooldownNormalized = skillCd / characterData.skillCooldown;
+            Debug.Log(_charCooldownNormalized);
+            skillSlider.value = _charCooldownNormalized;
+            if (skillCd <= 0f)
+            {
+                skillFinished = false;
+                skillCd = characterData.skillCooldown;
+            }
+        }
+
     }
 
     private void Start()
     {
         characterStateMachine.Initialize(idleState);
+        skillSlider = specialSkillHolder.skilSlider;
+
     }
 
 
@@ -70,10 +106,11 @@ public class R_Ponce : RangeCharacterEntity, IDamageable
     {
         GameObject projectileGO = Instantiate(projectile, firePoint.position, firePoint.rotation);
         Projectile _projectile = projectileGO.GetComponent<Projectile>();
+        soundsPlayTrack.Play("RangeCast");
 
         if (_projectile != null)
         {
-            _projectile.SeekTarget(target, characterData);
+            _projectile.SeekTarget(target, characterData, damageValue);
         }
     }
 
@@ -98,6 +135,46 @@ public class R_Ponce : RangeCharacterEntity, IDamageable
         characterStateMachine.ChangeState(recoveryState);
     }
 
+    public void Slowed(float slowAmount, float time) { }
+
+    public void Skill()
+    {
+        if (!skillFinished && characterStateMachine.currentState != recoveryState)
+        {
+            Debug.Log(gameObject.name + " Skill Click");
+            characterStateMachine.ChangeState(skillState);
+            skillFinished = true;
+        }
+    }
+
+    public void AttackSpeedBuff(float percentage, float duration)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void AttackBuff(float percentage, float duration)
+    {
+        damageValue *= percentage;
+
+        isBuffed = true;
+        buffDuration = duration;
+
+    }
+
+    public CharacterData SkillData()
+    {
+        return characterData;
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        towerManager.SpecialCharacterClick(gameObject, characterData, damageValue, baseArmor, currentHealth, currentLevel);
+    }
+
+    public void PlayRangeHitSFX(string sfx)
+    {
+        soundsPlayTrack.Play(sfx);
+    }
     #endregion
 
 

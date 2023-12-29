@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1cfc1b649f2c254f920a5cb7b0ab89a, type: 3}
+  m_Name: Tecson Info
+  m_EditorClassIdentifier: 
+  lorePart1: Trinidad Tecson, born on November 18, 1848, in San Miguel, Bulacan,
+    Philippines, is celebrated as a heroine of the Philippine Revolution against
+    Spanish colonization. Known as the "Mother of Biak-na-Bato," Tecson's lore is
+    marked by her fearless and dedicated contributions to the cause of Philippine
+    independence.
+  lorePart2: 'Tecson actively participated in the revolutionary activities against
+    the Spanish forces, showcasing both leadership and combat skills. Her commitment
+    to the movement earned her the title "Mother of Biak-na-Bato," referring to the
+    revolutionary republic established in 1897.
+
+
+
+    A strong and patriotic figure,
+    Tecson organized and led troops in various engagements. Her bravery on the battlefield
+    became a symbol of the Filipino people''s resistance against foreign oppression. '
+  lorePart3: 'Beyond her military role, Tecson played a crucial part in supporting
+    and organizing the revolutionary forces.
+
+
+
+    Trinidad Tecson''s legacy endures
+    as a courageous patriot who fearlessly fought for the ideals of freedom and independence.
+    Her contributions during the Philippine Revolution have left an indelible mark
+    on the country''s history, and she is remembered as one of the prominent women
+    who played a crucial role in the fight for Philippine sovereignty.'
+  personalityPart1: 'Tecson''s personality is often described as strong, courageous,
+    and fiercely patriotic.
+
+
+
+    Tecson was actively involved in the revolutionary
+    activities against Spanish rule. She contributed not only as a combatant but
+    also as a leader and organizer. '
+  personalityPart2: 'Her commitment to the cause of Philippine independence earned
+    her the moniker "Mother of Biak-na-Bato," in reference to the revolutionary republic
+    established during that time.
+
+
+    Known for her bravery on the battlefield,
+    Tecson led troops and participated in numerous engagements against Spanish forces.
+    Her dedication to the revolutionary cause extended beyond her military role;
+    she also played a crucial part in organizing and supporting the revolutionaries.'
+  personalityPart3: Trinidad Tecson's personality is characterized by her unwavering
+    commitment to the ideals of freedom and independence for the Philippines. Her
+    contributions during the revolution have solidified her place in Philippine history
+    as a brave and dedicated patriot.
+  charTrivias:
+  - 'Birth and Early Life: Born on November 18, 1848, in San Miguel, Bulacan, Trinidad
+    Tecson grew up during a period of significant social and political change in
+    the Philippines.'
+  - 'Pseudonym and Nickname: Trinidad Tecson used the pseudonym "Tandang Sora" during
+    the Philippine Revolution. "Tandang" is a Filipino term of respect for an elderly
+    woman, and "Sora" refers to her being a healer or midwife. She was also fondly
+    called the "Mother of Biak-na-Bato" for her dedication to the revolutionary cause.'
+  - 'Revolutionary Activities: Tecson actively participated in the Philippine Revolution
+    against Spanish rule. She provided support to revolutionary forces by nursing
+    the wounded, acting as a spy, and assisting in the recruitment of soldiers.'
+  - 'Biak-na-Bato Republic: Trinidad Tecson played a significant role during the
+    establishment of the Biak-na-Bato Republic in 1897. She served as a nurse and
+    a combatant, providing medical aid to wounded revolutionary soldiers and engaging
+    in battles against Spanish forces.'
+  - 'Captured by the Spanish: In 1897, Trinidad Tecson, along with other revolutionary
+    leaders, was captured by the Spanish authorities. She was imprisoned and sentenced
+    to death. However, she managed to escape and rejoined the revolutionary forces.'
+  - 'Friendship with Andres Bonifacio: Tecson was a close friend of Andres Bonifacio,
+    one of the key leaders of the Katipunan. Her dedication to the revolutionary
+    cause was inspired by her friendship with Bonifacio and her desire for Philippine
+    independence.'
+  - 'Later Life: After the Philippine-American War, Tecson continued to contribute
+    to her community. She lived a simple life and engaged in philanthropy, helping
+    those in need. She was a respected figure in her later years.'
+  - 'Recognition and Honors: Trinidad Tecson''s contributions to the Philippine Revolution
+    have been widely recognized. In her honor, streets, schools, and monuments have
+    been named after her. The "Tandang Sora" Circle in Quezon City is one prominent
+    landmark named after her.'
+  - 'Family of Revolutionaries: Trinidad Tecson came from a family with a strong
+    commitment to the revolutionary cause. Her sons and husband were also actively
+    involved in the fight for Philippine independence, making the Tecson family a
+    symbol of patriotism.'
+  - 'Family of Revolutionaries: Trinidad Tecson came from a family with a strong
+    commitment to the revolutionary cause. Her sons and husband were also actively
+    involved in the fight for Philippine independence, making the Tecson family a
+    symbol of patriotism.'
+  - 'Legacy: Trinidad Tecson is celebrated as a national heroine for her bravery,
+    compassion, and selflessness during a critical period in Philippine history.
+    Her legacy lives on, inspiring generations of Filipinos to cherish and defend
+    their freedom.'

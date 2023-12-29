@@ -6,7 +6,12 @@ using UnityEngine;
 public class CharacterData : ScriptableObject
 {
 
+    [SerializeField] public Sprite charTypeArt;
     [SerializeField] public Sprite charArtWork;
+
+    [SerializeField] public CharacterSkill skillData;
+
+    [SerializeField] public CharacterInfoData charInfoData;
 
     [SerializeField] public LayerMask _layerMask;
     [SerializeField] public string _platformTag;
@@ -22,6 +27,13 @@ public class CharacterData : ScriptableObject
     [SerializeField] public float dmgValue;
 
     [Space(5)]
+    [SerializeField] public bool charType;
+
+    [Space(5)]
+    [Header("Level")]
+    [SerializeField] public int charLevel;
+
+    [Space(5)]
     [Header("Health")]
     [SerializeField] public float maxHp;
 
@@ -35,6 +47,7 @@ public class CharacterData : ScriptableObject
     [Space(5)]
     [Header("Cooldowns")]
     [SerializeField] public float towerCooldown; // Tower Cooldown after dying
+    [SerializeField] public float skillCooldown;
 
     [Header("Cost")]
     [SerializeField] public int towerCost;
@@ -48,6 +61,9 @@ public class CharacterData : ScriptableObject
     [Space(5)]
     [SerializeField] public float rotationSpeed;
 
+    [Space(5)]
+    [Header("Lore")]
+    [TextArea(5, 10)][SerializeField] public string charLore;
 
 
 

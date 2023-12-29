@@ -16,7 +16,7 @@ public class MeleeCharacterEntity : CharEntity
 
     [SerializeField] public TowerHolder[] towerTesting;
 
-
+    public float enemiesInRange;
 
     public bool isDead;
 
@@ -40,6 +40,7 @@ public class MeleeCharacterEntity : CharEntity
         Transform closestTarget = null;
 
         bool _anyEnemyInRange = false;
+        enemiesInRange = 0;
 
         float maxDis = Mathf.Infinity;
         foreach (EnemyType enemy in enemies)
@@ -47,12 +48,19 @@ public class MeleeCharacterEntity : CharEntity
 
             _targetDir = enemy.transform.position - transform.position;
             float distance = _targetDir.magnitude;
-            if (distance < radius && distance < maxDis)
+
+            if (distance < radius && enemy.isGroundType)
             {
-                maxDis = distance;
-                closestTarget = enemy.transform;
-                _anyEnemyInRange = true;
+                enemiesInRange++;
+                if (distance < maxDis)
+                {
+                    maxDis = distance;
+                    closestTarget = enemy.transform;
+                    _anyEnemyInRange = true;
+                }
             }
+
+
 
         }
 

@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a869f512bc3988443925f27cd4554df4, type: 3}
+  m_Name: WhiteLady Stage 1
+  m_EditorClassIdentifier: 
+  enemiesInfoData: {fileID: 11400000, guid: 0f514e76ea76fc2448f1e38e95ce85ec, type: 2}
+  enemyPrefab: {fileID: 5552148620602345194, guid: f4e72b7ce4766344b8c0313d7d02f7a3,
+    type: 3}
+  projectile: {fileID: 0}
+  enemyArtWork: {fileID: 443578721, guid: ee70be99f7b560242b3b2e49effc2711, type: 3}
+  enemyName: White Lady
+  dmgValue: 23
+  hitPoints: 0
+  maxHp: 230
+  baseArmor: 34
+  moveSpeed: 8
+  attackRange: 7
+  projectileSpeed: 0
+  rotationsSpeed: 0
+  enemyLore: "A female ghost wearing a white long dress, with long black hair. White
+    Lady or Kaperosa is a female who commit suicide because of hatred or being betrayed
+    by her husband or fiance, or murdered, they are the souls who don\u2019t rest
+    because they have an unfinished thing to do on Earth."
+  whatIsTower:
+    serializedVersion: 2
+    m_Bits: 4160

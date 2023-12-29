@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class M_Valenzuela_S_skillState : CharacterBaseState
 {
-    M_Valenzuela m_Valenzuela;
+    Valenzuela m_Valenzuela;
 
-    public M_Valenzuela_S_skillState(CharacterStateMachine characterStateMachine, string animBoolName, CharEntity charEntity, M_Valenzuela m_Valenzuela)
+    public M_Valenzuela_S_skillState(CharacterStateMachine characterStateMachine, string animBoolName, CharEntity charEntity, Valenzuela m_Valenzuela)
     : base(animBoolName, characterStateMachine)
     {
         this.animBoolName = animBoolName;
@@ -17,11 +17,16 @@ public class M_Valenzuela_S_skillState : CharacterBaseState
     public override void Enter()
     {
         base.Enter();
+        m_Valenzuela.animationHandler.OnSkillActivated += SkillActivated;
+        m_Valenzuela.animationHandler.OnSkillFinished += SkillFinished;
+
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+        m_Valenzuela.PlayAnim(animBoolName);
+
     }
 
     public override void OnTriggerEnter(Collider collider)
@@ -42,5 +47,18 @@ public class M_Valenzuela_S_skillState : CharacterBaseState
     public override void Exit()
     {
         base.Exit();
+        m_Valenzuela.animationHandler.OnSkillActivated -= SkillActivated;
+        m_Valenzuela.animationHandler.OnSkillFinished -= SkillFinished;
+    }
+
+    void SkillActivated()
+    {
+        m_Valenzuela.skillHolder.SetActive(true);
+        CameraShake.instance.ShakeCamera(2f, 1f);
+    }
+
+    void SkillFinished()
+    {
+        m_Valenzuela.characterStateMachine.ChangeState(m_Valenzuela.idleState);
     }
 }

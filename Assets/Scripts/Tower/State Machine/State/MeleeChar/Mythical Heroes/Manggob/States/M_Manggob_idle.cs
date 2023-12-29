@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class M_Manggob_idle : CharacterBaseState
 {
-    M_Manggob m_Manggob;
+    Manggob m_Manggob;
 
-    public M_Manggob_idle(CharacterStateMachine characterStateMachine, string animBoolName, CharEntity charEntity, M_Manggob m_Manggob)
+    public M_Manggob_idle(CharacterStateMachine characterStateMachine, string animBoolName, CharEntity charEntity, Manggob m_Manggob)
     : base(animBoolName, characterStateMachine)
     {
         this.animBoolName = animBoolName;
@@ -16,12 +16,13 @@ public class M_Manggob_idle : CharacterBaseState
     public override void Enter()
     {
         base.Enter();
-        m_Manggob.PlayAnim(animBoolName);
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+        m_Manggob.PlayAnim(animBoolName);
+
         ToDeathState();
     }
 

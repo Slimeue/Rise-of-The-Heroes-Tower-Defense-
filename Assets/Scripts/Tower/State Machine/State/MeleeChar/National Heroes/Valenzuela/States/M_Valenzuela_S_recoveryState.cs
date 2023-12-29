@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class M_Valenzuela_S_recoveryState : CharacterBaseState
 {
-    M_Valenzuela m_Valenzuela;
+    Valenzuela m_Valenzuela;
 
-    public M_Valenzuela_S_recoveryState(CharacterStateMachine characterStateMachine, string animBoolName, CharEntity charEntity, M_Valenzuela m_Valenzuela)
+
+    float recoveryDuration = 30f;
+    float timeStarted;
+    float elapsed = 0f;
+    float recoveryRate = 1.0f; // percent   
+    bool isRecovering = true;
+
+    public M_Valenzuela_S_recoveryState(CharacterStateMachine characterStateMachine, string animBoolName, CharEntity charEntity, Valenzuela m_Valenzuela)
     : base(animBoolName, characterStateMachine)
     {
         this.animBoolName = animBoolName;
@@ -17,13 +24,15 @@ public class M_Valenzuela_S_recoveryState : CharacterBaseState
     public override void Enter()
     {
         base.Enter();
-        m_Valenzuela.PlayAnim(animBoolName);
+        isRecovering = true;
         Debug.Log("Hello from Valenzuela RecoveryState");
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+        m_Valenzuela.PlayAnim(animBoolName);
+        PassiveHeal();
     }
 
     public override void OnTriggerEnter(Collider collider)
@@ -44,6 +53,32 @@ public class M_Valenzuela_S_recoveryState : CharacterBaseState
     public override void Exit()
     {
         base.Exit();
+    }
+
+
+    void PassiveHeal()
+    {
+        if (isRecovering)
+        {
+            timeStarted += Time.deltaTime;
+
+            float amountToHeal = m_Valenzuela.maxHp / recoveryDuration;
+
+            elapsed += Time.deltaTime;
+
+            if (elapsed >= 1f)
+            {
+                m_Valenzuela.currentHealth += amountToHeal;
+                elapsed = 0f;
+            }
+
+            if (timeStarted >= recoveryDuration)
+            {
+                isRecovering = false;
+                m_Valenzuela.characterStateMachine.ChangeState(m_Valenzuela.idleState);
+                timeStarted = 0f;
+            }
+        }
     }
 
 

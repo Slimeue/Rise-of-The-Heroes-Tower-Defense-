@@ -12,23 +12,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e454853e7f0ec346bb1144e52ab7ab1, type: 3}
   m_Name: Valenzuela
   m_EditorClassIdentifier: 
-  charArtWork: {fileID: 0}
+  charTypeArt: {fileID: -942566212, guid: 448cb174202fab440a6ec45d5cba4cbf, type: 3}
+  charArtWork: {fileID: 1354984968, guid: cd3fab574bed45d4090a8ed495684135, type: 3}
+  skillData: {fileID: 11400000, guid: 369a96bb09971cb48977a520845f2f05, type: 2}
+  charInfoData: {fileID: 11400000, guid: 800c206704d9e3a40be364b10a4faade, type: 2}
   _layerMask:
     serializedVersion: 2
     m_Bits: 4096
-  _platformTag: 
+  _platformTag: MeleePlatform
   previewChar: {fileID: 0}
-  charObject: {fileID: 7481068085187042713, guid: 02f6df4f92a1a3a4b81537ab9323a574,
+  charObject: {fileID: 3537201373362703865, guid: 5d6c2ef8c39163a48b49406cbd2d6f61,
     type: 3}
   projectile: {fileID: 0}
   charName: Valenzuela
-  dmgValue: 440
-  maxHp: 1550
+  dmgValue: 65
+  charType: 0
+  charLevel: 0
+  maxHp: 500
   mana: 0
-  baseArmor: 280
+  baseArmor: 45
   towerCooldown: 0
+  skillCooldown: 12
   towerCost: 0
-  range: 15
+  range: 20
   projectileSpeed: 0
   attackSpeed: 2
   rotationSpeed: 5
+  charLore: "P\xEDo Valenzuela y Alejandrino was a Filipino physician and revolutionary
+    leader who played a crucial role in the independence movement of the Philippines
+    from Spanish colonial rule. Born on July 11, 1869, and passing away on April
+    6, 1956, he joined the Katipunan society at the age of 23. Alongside Andr\xE9s
+    Bonifacio and Emilio Jacinto, they established the secret chamber within the
+    society known as Camara Reina. Valenzuela was responsible for overseeing the
+    publication of Ang Kalayaan, the Katipunan's inaugural and sole official publication.\r\n\r\nValenzuela
+    even made efforts to persuade the exiled Jos\xE9 Rizal to join the revolutionary
+    cause. When the Katipunan was eventually uncovered, he fled to Balintawak (now
+    part of Quezon City) on August 20, 1896. Subsequently, he decided to avail of
+    an amnesty offered by the Spanish colonial government, surrendering on September
+    1, 1896. Following his surrender, he was deported to Spain and endured trials
+    and imprisonment in Madrid before being transferred to M\xE1laga and eventually
+    a Spanish outpost in Africa. His incarceration lasted for approximately two years.\r\n\r\nUpon
+    his return to the Philippines in April 1899, Valenzuela resumed his medical practice.
+    However, the American authorities, fearing that he might incite insurrection,
+    promptly arrested him. His election as municipal president in his hometown of
+    Polo forced the Americans to release him from prison. Between 1921 and 1925,
+    he served as the governor of the province of Bulacan."

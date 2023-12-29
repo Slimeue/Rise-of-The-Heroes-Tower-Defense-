@@ -17,6 +17,10 @@ public class M_Lumalindaw_skill : CharacterBaseState
     public override void Enter()
     {
         base.Enter();
+        m_Lumalindaw.PlayAnim(animBoolName);
+        m_Lumalindaw.skillFinished = true;
+        m_Lumalindaw.animationHandler.OnSkillActivated += SkillActivated;
+        m_Lumalindaw.animationHandler.OnSkillFinished += ToAttackState;
     }
 
     public override void LogicUpdate()
@@ -37,6 +41,19 @@ public class M_Lumalindaw_skill : CharacterBaseState
     public override void Exit()
     {
         base.Exit();
+        m_Lumalindaw.animationHandler.OnSkillActivated -= SkillActivated;
+        m_Lumalindaw.animationHandler.OnSkillFinished -= ToAttackState;
+    }
+
+
+    void SkillActivated()
+    {
+        m_Lumalindaw.abilityHolder.SetActive(true);
+    }
+
+    void ToAttackState()
+    {
+        m_Lumalindaw.characterStateMachine.ChangeState(m_Lumalindaw.attackState);
     }
 
 }

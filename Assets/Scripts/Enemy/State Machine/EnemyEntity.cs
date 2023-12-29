@@ -11,6 +11,9 @@ public class EnemyEntity : MonoBehaviour
     public Animator anim;
     public Slider healthBar;
 
+    [HideInInspector]
+    public SoundsPlayTrack soundsPlayTrack;
+
     //TargetWaypoint
     public Transform target;
 
@@ -22,6 +25,18 @@ public class EnemyEntity : MonoBehaviour
     public float speed;
     public int pointIndex = 0;
     #endregion
+
+    [HideInInspector]
+    public float radius;
+
+
+    //debuff
+    public bool isDamageTakenIncrease;
+    public float damageMultiplier;
+    public float debuffDuration;
+
+    public float timeSlow;
+    public bool slowed;
 
     public bool enemyAttackFinished;
 
@@ -36,12 +51,34 @@ public class EnemyEntity : MonoBehaviour
         baseArmor = enemiesData.baseArmor;
         speed = enemiesData.moveSpeed;
         stateMachine = new StateMachine();
+        radius = enemiesData.attackRange;
+        soundsPlayTrack = GetComponent<SoundsPlayTrack>();
 
+    }
+    private void Start()
+    {
+        target = Waypoints.points[0];
     }
 
     public virtual void Update()
     {
         stateMachine.currentState.LogicUpdate(stateMachine);
+
+        if (isDamageTakenIncrease)
+        {
+            debuffDuration -= Time.deltaTime;
+            if (debuffDuration <= 0f)
+            {
+                isDamageTakenIncrease = false;
+            }
+        }
+
+    }
+
+    private void FixedUpdate()
+    {
+        stateMachine.currentState.PhysicsUpdate(stateMachine);
+        Debug.Log("FixedUpdated");
     }
 
     public virtual void PlayAnim(string animBoolName)

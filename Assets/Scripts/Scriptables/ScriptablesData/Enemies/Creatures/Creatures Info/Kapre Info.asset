@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aef3d5e6d694054a9f5f8d27a28c12c, type: 3}
+  m_Name: Kapre Info
+  m_EditorClassIdentifier: 
+  lorePart1: 'The kapre is a Philippine cryptid creature with the appearance of an
+    phenomenally tall, long-legged, god type of hairy humanoid, that sits in big
+    trees and smokes cigars. It is often seen waiting for people as they walk through
+    a path. '
+  lorePart2: ' It scares away little children who play at night. If you''re stuck
+    in a place and you keep going around in circles, you''re said to be played around
+    by a kapre. To escape its control, you must remove your shirt/clothing, and wear
+    it inside-out.
+
+
+    The term kapre comes from the Arabic word "kaffir", meaning
+    a non-believer in Islam. The early Arabs and the Moors used it to refer to the
+    non-Muslim Indians who were dark-skinned. The term "kaffir" was also used for
+    Papuan slaves brought to the Philippines by the Portuguese before slavery was
+    abolished by Spain.'
+  lorePart3: 
+  personalityPart1: 'Kapres may make contact with people to offer friendship, or
+    if it is attracted to a woman. If a kapre befriends any human, especially because
+    of love, the kapre will consistently follow its "love interest" throughout life. '
+  personalityPart2: 'Also, if one is a friend of the kapre then that person has the
+    ability to see it and if they were to sit on it then any other person could see
+    it. This proves kapres are the "friendly type" of humanoid.
+
+
+    In some versions,
+    the kapre is supposed to hold a magical white stone, smaller in size than a quail
+    egg. Should any person happen to obtain this stone, the kapre could grant wishes.'
+  personalityPart3: 'Kapre is a filthy, gorilla-like dark giant humanoid characterized
+    as a tree demon. It is described as being tall (between 7 to 9 ft), brown, hairy
+    male with a beard. Kapres are normally described as smoking a very large ganja
+    pipe, whose strong smell would almost always attract human attention. But a kapre''s
+    most least known, but probably most horrendous feature is the fact that it reeks
+    of goat.
+
+
+
+    The kapre is said to wear the indigenous Northern Philippine
+    loincloth known as bahag, and according to some, it wears a belt which gives
+    the Kapre the ability to be invisible to humans.'

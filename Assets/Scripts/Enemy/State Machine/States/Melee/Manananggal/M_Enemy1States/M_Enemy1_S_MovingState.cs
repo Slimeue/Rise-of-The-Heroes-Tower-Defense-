@@ -27,11 +27,14 @@ public class M_Enemy1_S_MovingState : BaseState
     {
         base.LogicUpdate(stateMachine);
         /*if enemy goes still transition to idleState*/
-        FollowPath();
         CheckFront(stateMachine);
         ToDeathState();
     }
-
+    public override void PhysicsUpdate(StateMachine stateMachine)
+    {
+        base.PhysicsUpdate(stateMachine);
+        FollowPath();
+    }
 
 
     public override void Exit(StateMachine stateMachine)

@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class M_DelPIlar_S_idleState : CharacterBaseState
 {
-    M_DelPilar m_DelPilar;
+    DelPilar m_DelPilar;
+    float healInterval = 5f;
+    float timeLastHeal = 0f;
+    float healPercentageAmount = 5f;
 
-    public M_DelPIlar_S_idleState(CharacterStateMachine characterStateMachine, string animBoolName, CharEntity charEntity, M_DelPilar m_DelPilar)
+    public M_DelPIlar_S_idleState(CharacterStateMachine characterStateMachine, string animBoolName, CharEntity charEntity, DelPilar m_DelPilar)
     : base(animBoolName, characterStateMachine)
     {
         this.animBoolName = animBoolName;
@@ -16,13 +19,15 @@ public class M_DelPIlar_S_idleState : CharacterBaseState
     public override void Enter()
     {
         base.Enter();
-        m_DelPilar.PlayAnim(animBoolName);
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
         ToDeathState();
+        PassiveHeal();
+        m_DelPilar.PlayAnim(animBoolName);
+
     }
 
     public override void OnTriggerEnter(Collider collider)
@@ -63,7 +68,19 @@ public class M_DelPIlar_S_idleState : CharacterBaseState
         if (m_DelPilar.currentHealth <= 0)
         {
             Debug.Log("Hello From to death state");
-            characterStateMachine.ChangeState(m_DelPilar.recoveryState);
+            characterStateMachine.ChangeState(m_DelPilar.deathState);
+        }
+    }
+
+    void PassiveHeal()
+    {
+        timeLastHeal += Time.deltaTime;
+        if (timeLastHeal >= healInterval)
+        {
+            float healValue = (healPercentageAmount * m_DelPilar.maxHp) / 100f;
+
+            m_DelPilar.currentHealth = Mathf.Min(m_DelPilar.maxHp, m_DelPilar.currentHealth + healValue);
+            timeLastHeal = 0f;
         }
     }
 

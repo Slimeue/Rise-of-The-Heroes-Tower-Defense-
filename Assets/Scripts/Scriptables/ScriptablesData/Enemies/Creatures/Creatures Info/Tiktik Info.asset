@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aef3d5e6d694054a9f5f8d27a28c12c, type: 3}
+  m_Name: Tiktik Info
+  m_EditorClassIdentifier: 
+  lorePart1: 'The tiktik is described as having long limbs, keen claws, and the capacity
+    to change into other forms. Its predatory instincts are what set it apart. Though
+    it has a reputation for being frightening, there are stories that claim the tiktik
+    can change shape during the day to resemble a person, allowing it to blend in
+    and hide its true nature. '
+  lorePart2: The Western Visayan regions, including Capiz, Iloilo, Negros, Bohol,
+    Masbate, Aklan, and Antique, are particularly known for its popularity. The aswang
+    is also known by its other regional names, "tik-tik," "wak-wak," and "soc-soc,"
+    which refer to the noise it makes as it pursues victims.
+  lorePart3: 
+  personalityPart1: Tiktik appear at night to prey on careless travelers or individuals
+    who are sleeping. They are reported to have a strange preference for the flavor
+    of human liver. Pregnant women's fetuses are also reported to appeal to tiktik
+    like the Manananggal, who are said to locate their prey by the mother's fragrance,
+    which to them smells like ripe jackfruit.
+  personalityPart2: 
+  personalityPart3: 

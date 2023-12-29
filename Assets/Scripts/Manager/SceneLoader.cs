@@ -10,8 +10,66 @@ public class SceneLoader : MonoBehaviour
 
     public GameObject startButton;
     public GameObject mainMenu;
+    public GameObject menuCanvas;
+
+    //Options
+
+    [SerializeField] GameObject SettingsCanvas;
+    [SerializeField] GameObject SettingCanvasBackButton;
+    [SerializeField] GameObject SettingsButtons;
+
+    //Video
+
+    [SerializeField] GameObject VideSetting;
+
+    //Sound
+
+    [SerializeField] GameObject SoundSetting;
 
 
+
+    private void Awake()
+    {
+        SettingsCanvas.SetActive(false);
+        VideSetting.SetActive(false);
+        SoundSetting.SetActive(false);
+    }
+
+    public void OpenSettings()
+    {
+        SettingsCanvas.SetActive(true);
+        menuCanvas.SetActive(false);
+    }
+
+    public void CloseSettings()
+    {
+        SettingsCanvas.SetActive(false);
+        menuCanvas.SetActive(true);
+    }
+
+    public void OpenVideoSetting()
+    {
+        VideSetting.SetActive(true);
+        SettingsButtons.SetActive(false);
+    }
+
+    public void CloseVideoSetting()
+    {
+        SettingsButtons.SetActive(true);
+        VideSetting.SetActive(false);
+    }
+
+    public void OpenSoundSetting()
+    {
+        SoundSetting.SetActive(true);
+        SettingsButtons.SetActive(false);
+    }
+
+    public void CloseSoundSetting()
+    {
+        SettingsButtons.SetActive(true);
+        SoundSetting.SetActive(false);
+    }
 
     private void Start()
     {
@@ -24,9 +82,9 @@ public class SceneLoader : MonoBehaviour
 
     public void MainMenuStart()
     {
-        title.transform.LeanMoveLocal(new Vector2(transform.position.x, 300), 2).setEaseInOutExpo();
+        title.transform.LeanMoveLocal(new Vector2(title.transform.position.x, 200), 2).setEaseInOutExpo();
 
-        title.transform.LeanScale(new Vector3(1.5f, 1.5f, 1.5f), 2).setEaseInOutExpo();
+        title.transform.LeanScale(new Vector3(1f, 1f, 1f), 2).setEaseInOutExpo();
 
         // mainMenu.SetActive(true);
 

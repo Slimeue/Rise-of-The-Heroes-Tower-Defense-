@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e454853e7f0ec346bb1144e52ab7ab1, type: 3}
   m_Name: Bantugen
   m_EditorClassIdentifier: 
-  charArtWork: {fileID: -804784678, guid: ffa38d74d981c1541852df6ee2c89e65, type: 3}
+  charTypeArt: {fileID: -265997245, guid: 448cb174202fab440a6ec45d5cba4cbf, type: 3}
+  charArtWork: {fileID: 525727493, guid: cedf0234596f97140aee4bfac68dfae7, type: 3}
+  skillData: {fileID: 11400000, guid: 709d11dddda34a348a368d6e2639ff79, type: 2}
+  charInfoData: {fileID: 11400000, guid: 59be5ba44a13f6448ad161e18b568040, type: 2}
   _layerMask:
     serializedVersion: 2
     m_Bits: 256
@@ -23,14 +26,35 @@ MonoBehaviour:
     type: 3}
   projectile: {fileID: 3470282489955092626, guid: e745b19baf502fe4e8fe353bb62ee9f2,
     type: 3}
-  charName: Bantugen
-  dmgValue: 300
-  maxHp: 5000
+  charName: Bantugan
+  dmgValue: 23
+  charType: 0
+  charLevel: 0
+  maxHp: 560
   mana: 0
-  baseArmor: 500
+  baseArmor: 70
   towerCooldown: 17
+  skillCooldown: 10
   towerCost: 11
-  range: 15
+  range: 20
   projectileSpeed: 0
   attackSpeed: 0
   rotationSpeed: 10
+  charLore: "Prince Bantug\xEBn is a courageous warrior in the epic of the people
+    of Darang\xEBn of the M\xEBranaw. He is known for his kingdom, Bumbaran, due
+    to the victories he achieved in battles.\r\n\r\nA symbol of bravery and valor,
+    Prince Bantug\xEBn is widely renowned in their kingdom of Bumbaran, especially
+    among the maidens. It is said that he courted 50 of the most beautiful princesses
+    in the world. Because of this, his older brother, King Madali, became extremely
+    jealous of him. Madali prohibited anyone from speaking to his brother.\r\n\r\nIn
+    deep sorrow, Bantug\xEBn left their kingdom until he fell ill and died near the
+    Kingdom of the Land Between Two Seas. The king and Princess Datimbang saw Bantugan's
+    body and immediately reported the news to the council. A parrot entered and revealed
+    who the deceased traveler was and where he came from.\r\n\r\nUpon learning this,
+    King Madali retrieved his brother's soul from the heavens to restore it to Bantug\xEBn's
+    body. The news of his resurrection spread, reaching the enemy kingdom and King
+    Miskoyaw. Miskoyaw's soldiers attacked Bumbaran and captured Prince Bantug\xEBn,
+    weakened in body. When his strength returned, he defeated the enemy king's army
+    and saved the entire Bumbaran. They celebrated grandly, and the jealousy in King
+    Madali's heart disappeared. Prince Bantug\xEBn lived a long and joyful life in
+    the kingdom of Bumbaran with the princesses he married."

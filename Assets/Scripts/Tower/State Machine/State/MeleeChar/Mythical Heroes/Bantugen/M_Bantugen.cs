@@ -1,9 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class M_Bantugen : MeleeCharacterEntity, IDamageable
+public class M_Bantugen : MeleeCharacterEntity, IDamageable, IBuffable, IDeletable, IPointerClickHandler, IRangeSoundable
 {
+    public GameObject ability;
+    public float skillCd;
+    public bool skillFinished;
+    public bool skillIsActivated;
+    float skillDuration = 5f;
+
     public M_Bantguen_idle idleState { get; private set; }
     public M_Bantugen_attack attackState { get; private set; }
     public M_Bantugen_death deathState { get; private set; }
@@ -19,6 +26,7 @@ public class M_Bantugen : MeleeCharacterEntity, IDamageable
     {
 
         base.Awake();
+        skillCd = characterData.skillCooldown;
         attackState = new M_Bantugen_attack(characterStateMachine, TOWER_ATTACK, this, this);
         idleState = new M_Bantguen_idle(characterStateMachine, TOWER_IDLE, this, this);
         deathState = new M_Bantugen_death(characterStateMachine, TOWER_DEATH, this, this);
@@ -43,6 +51,21 @@ public class M_Bantugen : MeleeCharacterEntity, IDamageable
         radius = characterData.range;
         RefreshChar();
         HealthBarTracker();
+        Debug.Log(characterStateMachine.currentState);
+        if (skillFinished)
+        {
+            skillIsActivated = true;
+            //startCooldown
+            skillCd -= Time.deltaTime;
+            if (skillCd <= 0f)
+            {
+                skillFinished = false;
+                skillCd = characterData.skillCooldown;
+            }
+        }
+        // GameObject rangeIndicator = Instantiate(TowerRangeIndicator, transform.position, Quaternion.identity);
+
+        SkillCounter();
     }
 
     private void OnDrawGizmos()
@@ -121,6 +144,66 @@ public class M_Bantugen : MeleeCharacterEntity, IDamageable
         }
 
     }
+
+    void SkillCounter()
+    {
+        if (skillIsActivated)
+        {
+            skillDuration -= Time.deltaTime;
+            if (skillDuration <= 0f)
+            {
+                skillDuration = 5f;
+                baseArmor = characterData.baseArmor;
+                ability.SetActive(false);
+            }
+        }
+    }
+
+    public void Slowed(float slowAmount, float time)
+    {
+    }
+
+    public void AttackSpeedBuff(float percentage, float duration)
+    {
+        float defaultAttackSpeed = anim.GetFloat(ATTACK_SPEED);
+
+        float buffAttackSpeed = defaultAttackSpeed *= percentage;
+
+        anim.SetFloat(ATTACK_SPEED, buffAttackSpeed);
+
+        isBuffed = true;
+        buffDuration = duration;
+    }
+
+    public void AttackBuff(float percentage, float duration)
+    {
+
+
+        damageValue *= percentage;
+
+        isBuffed = true;
+        buffDuration = duration;
+
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        Debug.Log("CLicked");
+        towerManager.DeleteState(gameObject, characterData, damageValue, baseArmor, currentHealth);
+    }
+
+    public void DeleteChar()
+    {
+        DestroyGameObject();
+        TowerHolderEnabler();
+    }
+
+    public void PlayRangeHitSFX(string sfx)
+    {
+        soundsPlayTrack.Play(sfx);
+    }
+
+
 
     #endregion
 

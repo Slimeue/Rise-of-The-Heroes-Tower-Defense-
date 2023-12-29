@@ -12,24 +12,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e454853e7f0ec346bb1144e52ab7ab1, type: 3}
   m_Name: Ponce
   m_EditorClassIdentifier: 
-  charArtWork: {fileID: 0}
+  charTypeArt: {fileID: -223164601, guid: 448cb174202fab440a6ec45d5cba4cbf, type: 3}
+  charArtWork: {fileID: -968971903, guid: 07537cbda0e73e84a9eba3862fc92870, type: 3}
+  skillData: {fileID: 11400000, guid: cc8d55981964ae64dace40a1c08207b9, type: 2}
+  charInfoData: {fileID: 11400000, guid: cff9ce3a9b7752b45b0e7962085a313d, type: 2}
   _layerMask:
     serializedVersion: 2
     m_Bits: 4096
-  _platformTag: 
+  _platformTag: MeleePlatform
   previewChar: {fileID: 0}
   charObject: {fileID: 8328953826122689365, guid: 8ab8661038a8f2848a608743f04cf27d,
     type: 3}
   projectile: {fileID: 2462218149979854566, guid: 6119f98b5ad4c6444aa3ee194bfdc451,
     type: 3}
   charName: Ponce
-  dmgValue: 350
-  maxHp: 500
+  dmgValue: 54
+  charType: 0
+  charLevel: 0
+  maxHp: 360
   mana: 500
-  baseArmor: 350
+  baseArmor: 34
   towerCooldown: 0
+  skillCooldown: 10
   towerCost: 0
   range: 50
   projectileSpeed: 50
   attackSpeed: 0
   rotationSpeed: 10
+  charLore: "Mariano Ponce y Collantes, commonly known as Mariano Ponce, was a Filipino
+    physician, writer, statesman, and an active member of the Propaganda Movement.
+    He was born on March 22, 1863, and passed away on May 23, 1918. Ponce played
+    a pivotal role in the movement for Filipino independence. In Spain, he was one
+    of the founders of La Solidaridad and Asociaci\xF3n Hispano-Filipino.\r\n\r\nOne
+    of his notable contributions was \"Efemerides Filipinas,\" a column focusing
+    on historical events in the Philippines, which was published in La Oceania Espa\xF1ola
+    from 1892 to 1893 and later in El Ideal from 1911 to 1912. Ponce also authored
+    \"Ang Wika at Lahi\" in 1917, a work that discussed the significance of a national
+    language for the Philippines.\r\n\r\nIn addition to his literary and intellectual
+    pursuits, Mariano Ponce served as the representative of Bulacan in the Philippine
+    Assembly from 1909 to 1912, actively participating in the political development
+    of the Philippines."

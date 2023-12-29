@@ -1,9 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class M_Lumalindaw : MeleeCharacterEntity, IDamageable
+public class M_Lumalindaw : MeleeCharacterEntity, IDamageable, IBuffable, IPointerClickHandler, IDeletable, IRangeSoundable
 {
+
+    public GameObject abilityHolder;
+    public float skillCd;
+    public bool skillFinished;
 
 
     public M_Lumalindaw_attack attackState { get; private set; }
@@ -20,6 +25,7 @@ public class M_Lumalindaw : MeleeCharacterEntity, IDamageable
     {
 
         base.Awake();
+        skillCd = characterData.skillCooldown;
         attackState = new M_Lumalindaw_attack(characterStateMachine, TOWER_ATTACK, this, this);
         idleState = new M_Lumalindaw_Idle(characterStateMachine, TOWER_IDLE, this, this);
         deathState = new M_Lumalindaw_death(characterStateMachine, TOWER_DEATH, this, this);
@@ -35,6 +41,18 @@ public class M_Lumalindaw : MeleeCharacterEntity, IDamageable
         radius = characterData.range;
         RefreshChar();
         HealthBarTracker();
+        Debug.Log(characterStateMachine.currentState);
+        //skillCd
+        if (skillFinished)
+        {
+            //startCooldown
+            skillCd -= Time.deltaTime;
+            if (skillCd <= 0f)
+            {
+                skillFinished = false;
+                skillCd = characterData.skillCooldown;
+            }
+        }
     }
 
     private void Start()
@@ -117,6 +135,46 @@ public class M_Lumalindaw : MeleeCharacterEntity, IDamageable
                 _towerTesting._placed = false;
             }
         }
+    }
+
+    public void Slowed(float slowAmount, float time)
+    {
+    }
+
+    public void AttackSpeedBuff(float percentage, float duration)
+    {
+        float defaultAttackSpeed = anim.GetFloat(ATTACK_SPEED);
+
+        float buffAttackSpeed = defaultAttackSpeed *= percentage;
+
+        anim.SetFloat(ATTACK_SPEED, buffAttackSpeed);
+
+        isBuffed = true;
+        buffDuration = duration;
+    }
+
+    public void AttackBuff(float percentage, float duration)
+    {
+        damageValue *= percentage;
+
+        isBuffed = true;
+        buffDuration = duration;
+
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        towerManager.DeleteState(gameObject, characterData, damageValue, baseArmor, currentHealth);
+    }
+
+    public void DeleteChar()
+    {
+        DestroyGameObject();
+        TowerHolderEnabler();
+    }
+    public void PlayRangeHitSFX(string sfx)
+    {
+        soundsPlayTrack.Play(sfx);
     }
 
     #endregion

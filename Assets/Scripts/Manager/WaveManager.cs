@@ -16,6 +16,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField]
     float spawnInterval = 2f;
 
+
     [SerializeField] GameObject[] inActives;
 
     [SerializeField] TextMeshProUGUI _waveUIText;
@@ -43,7 +44,7 @@ public class WaveManager : MonoBehaviour
     {
         isSpawning = NotSpawning();
 
-        if (currentWaveIndex <= maxWave)
+        if (currentWaveIndex <= maxWave && !DialogueManager.isConversationActive)
         {
             StartWave();
 
@@ -61,7 +62,6 @@ public class WaveManager : MonoBehaviour
         if (!isSpawning)
         {
             StartNextWave();
-            Debug.Log("Current Wave: " + currentWaveIndex);
         }
 
     }
@@ -109,7 +109,7 @@ public class WaveManager : MonoBehaviour
                     enemy.transform.rotation = spawnPoint.transform.rotation;
                     enemy.SetActive(true);
                     Debug.Log(enemy.name);
-                    yield return new WaitForSeconds(spawnInterval);
+                    yield return new WaitForSeconds(waveData.spawnInterval);
 
                 }
                 nextWaveTime = timeBetweenWave;

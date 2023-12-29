@@ -5,9 +5,9 @@ using UnityEngine;
 public class R_Sandayo_skill : CharacterBaseState
 {
 
-    R_Sandayo r_Sandayo;
+    Sandayo r_Sandayo;
 
-    public R_Sandayo_skill(CharacterStateMachine characterStateMachine, string animBoolName, CharEntity charEntity, R_Sandayo r_Sandayo)
+    public R_Sandayo_skill(CharacterStateMachine characterStateMachine, string animBoolName, CharEntity charEntity, Sandayo r_Sandayo)
     : base(animBoolName, characterStateMachine)
     {
         this.r_Sandayo = r_Sandayo;
@@ -19,6 +19,12 @@ public class R_Sandayo_skill : CharacterBaseState
     public override void Enter()
     {
         base.Enter();
+        r_Sandayo.PlayAnim(animBoolName);
+        Debug.Log("Skill Activated");
+        r_Sandayo.skillFinished = true;
+        r_Sandayo.animationHandler.OnSkillActivated += r_Sandayo.SkillAttack;
+        r_Sandayo.animationHandler.OnSkillFinished += SkillFinished;
+
     }
 
     public override void LogicUpdate()
@@ -29,6 +35,8 @@ public class R_Sandayo_skill : CharacterBaseState
     public override void Exit()
     {
         base.Exit();
+        r_Sandayo.animationHandler.OnSkillActivated -= r_Sandayo.SkillAttack;
+        r_Sandayo.animationHandler.OnSkillFinished -= SkillFinished;
     }
 
     public override void OnTriggerEnter(Collider collider)
@@ -42,6 +50,11 @@ public class R_Sandayo_skill : CharacterBaseState
     }
 
     #endregion
+
+    void SkillFinished()
+    {
+        r_Sandayo.characterStateMachine.ChangeState(r_Sandayo.attackState);
+    }
 
 
 

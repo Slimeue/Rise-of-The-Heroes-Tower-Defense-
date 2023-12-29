@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aef3d5e6d694054a9f5f8d27a28c12c, type: 3}
+  m_Name: Bungisngis Info
+  m_EditorClassIdentifier: 
+  lorePart1: Bungisngis is a one-eyed giant that is found in Philippine folklore.
+    This giant, purported to dwell in Meluz, Orion, Bataan, is described as is always
+    laughing. The literal meaning of the name Bungingis is derived from the Tagalog
+    word ngisi which means "to giggle".
+  lorePart2: "Although it only has one eye, it has a great sense of hearing and displays
+    unusual strength. In the Filipino tale \"The Three Friends \u2013 The Monkey,
+    The Dog and The Carabao, The giant is able to lift the carabao and throw it with
+    such force that it ends knee-deep in the ground. In the tale of the Three Friends,
+    Monkey's tricks led him to his death."
+  lorePart3: 
+  personalityPart1: 'Having a humanoid shape, it has large teeth which are always
+    showing, and its upper lip covers its face when it is thrown back. Two long tusks
+    project from the side of its mouth. The giant''s only eye is found in the middle
+    of its forehead.
+
+    
+
+    A Bungisngis stands more than 10 to 20 feet tall.
+
+    Despite
+    its strength, the bungisngis is easily outwitted and quickly panics.'
+  personalityPart2: 
+  personalityPart3: 

@@ -6,6 +6,7 @@ public class M_Lumalindaw_attack : CharacterBaseState
 {
     M_Lumalindaw m_Lumalindaw;
 
+    float maxEnemyInFrontCount = 2;
 
     public M_Lumalindaw_attack(CharacterStateMachine characterStateMachine, string animBoolName, CharEntity charEntity, M_Lumalindaw m_Lumalindaw)
     : base(animBoolName, characterStateMachine)
@@ -27,6 +28,7 @@ public class M_Lumalindaw_attack : CharacterBaseState
         base.LogicUpdate();
         FindTarget();
         ToDeathState();
+        SkillActivate();
     }
 
     public override void OnTriggerEnter(Collider collider)
@@ -75,7 +77,8 @@ public class M_Lumalindaw_attack : CharacterBaseState
         {
             if (collider.gameObject.CompareTag("Enemy"))
             {
-                damageable.Damage(m_Lumalindaw.characterData.dmgValue);
+                m_Lumalindaw.soundsPlayTrack.Play("Hit");
+                damageable.Damage(m_Lumalindaw.damageValue);
                 Debug.Log(collider.gameObject.name);
                 m_Lumalindaw.isAttackFinished = false;
             }
@@ -102,6 +105,17 @@ public class M_Lumalindaw_attack : CharacterBaseState
             characterStateMachine.ChangeState(m_Lumalindaw.deathState);
         }
     }
+
+
+
+    void SkillActivate()
+    {
+        if (m_Lumalindaw.enemiesInRange >= maxEnemyInFrontCount && !m_Lumalindaw.skillFinished)
+        {
+            m_Lumalindaw.characterStateMachine.ChangeState(m_Lumalindaw.skillState);
+        }
+    }
+
     #endregion
 
 }

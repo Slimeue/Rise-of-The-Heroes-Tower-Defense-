@@ -13,14 +13,19 @@ public class MeleeEnemyEntity : EnemyEntity
     public override void Awake()
     {
         base.Awake();
-        target = Waypoints.points[0];
+
     }
 
     public virtual void OnEnable()
     {
-        target = Waypoints.points[0];
+        if (Waypoints.points != null && Waypoints.points.Length > 0 && Waypoints.points[0] != null)
+        {
+            target = Waypoints.points[0];
+        }
+
         pointIndex = 0;
         Debug.Log("enabled");
+        speed = enemiesData.moveSpeed;
     }
 
     public bool OnEnemyFrontCheck()

@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class M_DelPilar_S_attackState : CharacterBaseState
 {
-    M_DelPilar m_DelPilar;
+    DelPilar m_DelPilar;
 
-    public M_DelPilar_S_attackState(CharacterStateMachine characterStateMachine, string animBoolName, CharEntity charEntity, M_DelPilar m_DelPilar)
+
+    public M_DelPilar_S_attackState(CharacterStateMachine characterStateMachine, string animBoolName, CharEntity charEntity, DelPilar m_DelPilar)
     : base(animBoolName, characterStateMachine)
     {
         this.animBoolName = animBoolName;
@@ -18,7 +19,6 @@ public class M_DelPilar_S_attackState : CharacterBaseState
     {
         base.Enter();
         m_DelPilar.anim.speed = m_DelPilar.characterData.attackSpeed;
-        m_DelPilar.PlayAnim(animBoolName);
     }
 
     public override void LogicUpdate()
@@ -27,6 +27,8 @@ public class M_DelPilar_S_attackState : CharacterBaseState
         ToIdleState();
         ToDeathState();
         FindTarget();
+        m_DelPilar.PlayAnim(animBoolName);
+
     }
 
     public override void OnTriggerEnter(Collider collider)
@@ -73,8 +75,9 @@ public class M_DelPilar_S_attackState : CharacterBaseState
 
         if (collider.gameObject.CompareTag("Enemy"))
         {
+            m_DelPilar.soundsPlayTrack.Play("Hit");
             Debug.Log("Hit");
-            damageable.Damage(m_DelPilar.characterData.dmgValue);
+            damageable.Damage(m_DelPilar.damageValue);
             m_DelPilar.isAttackFinished = false;
         }
     }
@@ -94,9 +97,10 @@ public class M_DelPilar_S_attackState : CharacterBaseState
     {
         if (m_DelPilar.currentHealth <= 0)
         {
-            characterStateMachine.ChangeState(m_DelPilar.recoveryState);
+            characterStateMachine.ChangeState(m_DelPilar.deathState);
         }
     }
+
 
     #endregion
 }

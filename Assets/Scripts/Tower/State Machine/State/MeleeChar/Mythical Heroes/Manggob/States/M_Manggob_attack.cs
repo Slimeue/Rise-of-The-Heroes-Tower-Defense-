@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class M_Manggob_attack : CharacterBaseState
 {
-    M_Manggob m_Manggob;
+    Manggob m_Manggob;
 
-    public M_Manggob_attack(CharacterStateMachine characterStateMachine, string animBoolName, CharEntity charEntity, M_Manggob m_Manggob)
+    public M_Manggob_attack(CharacterStateMachine characterStateMachine, string animBoolName, CharEntity charEntity, Manggob m_Manggob)
     : base(animBoolName, characterStateMachine)
     {
         this.animBoolName = animBoolName;
@@ -16,14 +16,18 @@ public class M_Manggob_attack : CharacterBaseState
     public override void Enter()
     {
         base.Enter();
-        m_Manggob.PlayAnim(animBoolName);
+        m_Manggob.animationHandler.OnAnimationTrigger += PlayHitSFX;
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+        m_Manggob.PlayAnim(animBoolName);
+
         FindTarget();
         ToDeathState();
+        SkillActivate();
+
     }
 
     public override void DoChecks()
@@ -47,6 +51,7 @@ public class M_Manggob_attack : CharacterBaseState
     public override void Exit()
     {
         base.Exit();
+        m_Manggob.animationHandler.OnAnimationTrigger -= PlayHitSFX;
     }
 
     #region 
@@ -66,12 +71,18 @@ public class M_Manggob_attack : CharacterBaseState
         {
             if (collider.gameObject.CompareTag("Enemy"))
             {
-                damageable.Damage(m_Manggob.characterData.dmgValue);
+
+                damageable.Damage(m_Manggob.damageValue);
                 Debug.Log(collider.gameObject.name);
                 m_Manggob.isAttackFinished = false;
             }
         }
 
+    }
+
+    void PlayHitSFX()
+    {
+        m_Manggob.soundsPlayTrack.Play("Hit");
     }
 
     private void FindTarget()
@@ -93,6 +104,15 @@ public class M_Manggob_attack : CharacterBaseState
             characterStateMachine.ChangeState(m_Manggob.deathState);
         }
     }
+
+    void SkillActivate()
+    {
+        if (!m_Manggob.skillFinished)
+        {
+            m_Manggob.characterStateMachine.ChangeState(m_Manggob.skillState);
+        }
+    }
+
     #endregion
 
 }

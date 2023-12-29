@@ -20,7 +20,7 @@ public class M_Berberoka_S_IdleState : BaseState
     public override void Enter(StateMachine stateMachine)
     {
         base.Enter(stateMachine);
-        idleTime = 5;
+        idleTime = Random.Range(1f, 5f);
         m_Berberoka.PlayAnim(animBoolName);
     }
 

@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aef3d5e6d694054a9f5f8d27a28c12c, type: 3}
+  m_Name: Manananggal Info
+  m_EditorClassIdentifier: 
+  lorePart1: "It is believed that there is a black chick living inside the creature.
+    This is passed on from the deathbed of those afflicted to another person who
+    is usually a relative. The chick is then believed to reside inside the body of
+    the Manananggal eating the innards of its host while keeping them alive. \r\n"
+  lorePart2: It is this that is believed to be the reason why the Manananggal craves
+    the taste of human blood and flesh and transforms into its hideous shape.
+  lorePart3: 
+  personalityPart1: 'The Manananggal chooses an isolated place where she will leave
+    her lower torso while she hunts at night. When she separates from her lower torso,
+    she then gains the ability to fly. She then goes off in search of houses where
+    pregnant women reside. '
+  personalityPart2: "Upon choosing a suitable victim, the Manananggal alights on
+    the house and inserts her tongue through the roof. The tongue is long, hollow,
+    and extremely flexible. She uses it to puncture the womb of the sleeping woman
+    and to suck out the fetus. \n\nAt other times, she seduces men with her beauty
+    and lures them to a private place before eating them alive. She usually eats
+    the insides, like the heart, stomach, or the liver"
+  personalityPart3: 

@@ -13,16 +13,20 @@ public class CoinsManager : MonoBehaviour
     public float _CurrentCoin { get { return _currentCoin; } }
     [SerializeField] TextMeshProUGUI _coins;
 
+    LevelManager levelManager;
 
     private void Awake()
     {
         _currentCoin = _startingCoin;
+        levelManager = FindObjectOfType<LevelManager>();
     }
 
     private void Update()
     {
-
-        IncrementCoin();
+        if (!levelManager.isStageFinished)
+        {
+            IncrementCoin();
+        }
         UpdateCoinDisplay();
     }
 
@@ -35,10 +39,9 @@ public class CoinsManager : MonoBehaviour
     {
         if (_startingCoin <= 99)
         {
-            _startingCoin += Time.deltaTime;
+            _startingCoin += Time.deltaTime * 0.5f;
             _currentCoin = Mathf.Round(_startingCoin);
         }
-
     }
 
     public void MinusCoin(int amount)

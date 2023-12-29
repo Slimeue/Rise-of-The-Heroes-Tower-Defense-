@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e454853e7f0ec346bb1144e52ab7ab1, type: 3}
+  m_Name: Tecson
+  m_EditorClassIdentifier: 
+  charTypeArt: {fileID: -223164601, guid: 448cb174202fab440a6ec45d5cba4cbf, type: 3}
+  charArtWork: {fileID: 1050084858, guid: 217fb54a6fe9c63499682bfda76c38be, type: 3}
+  skillData: {fileID: 11400000, guid: 78761518053d9884da204f16a47bb334, type: 2}
+  charInfoData: {fileID: 11400000, guid: 23f81ab0ecc52ce4e841ee724feebb17, type: 2}
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 4096
+  _platformTag: MeleePlatform
+  previewChar: {fileID: 0}
+  charObject: {fileID: 1005150024574080214, guid: 454302ee936d4fc46a197fe2926a217b,
+    type: 3}
+  projectile: {fileID: 4448543319399486599, guid: 4fefe8a516b999741a70daa982ae26bb,
+    type: 3}
+  charName: Tecson
+  dmgValue: 20
+  charType: 0
+  charLevel: 0
+  maxHp: 460
+  mana: 0
+  baseArmor: 32
+  towerCooldown: 0
+  skillCooldown: 7
+  towerCost: 0
+  range: 50
+  projectileSpeed: 50
+  attackSpeed: 0
+  rotationSpeed: 5
+  charLore: 'Trinidad Perez Tecson, known as the "Mother of Biak-na-Bato" and "Mother
+    of Mercy", fought to gain Philippines independence.
+
+
+    She was given the title
+    "Mother of Biak-na-Bato" by Gen. Emilio Aguinaldo. She was also cited as the
+    "Mother of the Philippine National Red Cross" for her service to her fellow Katipuneros.'

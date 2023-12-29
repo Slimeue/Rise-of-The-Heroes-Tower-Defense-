@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class M_Valenzuela_S_attackState : CharacterBaseState
 {
-    M_Valenzuela m_Valenzuela;
+    Valenzuela m_Valenzuela;
 
-    public M_Valenzuela_S_attackState(CharacterStateMachine characterStateMachine, string animBoolName, CharEntity charEntity, M_Valenzuela m_Valenzuela)
+    public M_Valenzuela_S_attackState(CharacterStateMachine characterStateMachine, string animBoolName, CharEntity charEntity, Valenzuela m_Valenzuela)
     : base(animBoolName, characterStateMachine)
     {
         this.animBoolName = animBoolName;
@@ -18,12 +18,12 @@ public class M_Valenzuela_S_attackState : CharacterBaseState
     {
         base.Enter();
         m_Valenzuela.anim.speed = m_Valenzuela.characterData.attackSpeed;
-        m_Valenzuela.PlayAnim(animBoolName);
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+        m_Valenzuela.PlayAnim(animBoolName);
         ToIdleState();
         ToDeathState();
         FindTarget();
@@ -73,8 +73,10 @@ public class M_Valenzuela_S_attackState : CharacterBaseState
 
         if (collider.gameObject.CompareTag("Enemy"))
         {
+            m_Valenzuela.soundsPlayTrack.Play("Hit");
+
             Debug.Log("Hit");
-            damageable.Damage(m_Valenzuela.characterData.dmgValue);
+            damageable.Damage(m_Valenzuela.damageValue);
             m_Valenzuela.isAttackFinished = false;
         }
     }

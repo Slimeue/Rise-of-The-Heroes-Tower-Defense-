@@ -37,6 +37,7 @@ public class TowerHolder : MonoBehaviour
     public GameObject cooldownSlider;
     Image _image;
 
+    [SerializeField] public TextMeshProUGUI _charName;
     [SerializeField] public Image _charArtWork;
     [SerializeField] public Color _unavailColor;
     [SerializeField] public Color _availColor;
@@ -64,6 +65,7 @@ public class TowerHolder : MonoBehaviour
         _charArtWork.sprite = characterData.charArtWork;
         _preview = characterData.previewChar;
         _charObj = characterData.charObject;
+        _charName.text = characterData.charName;
 
 
     }
@@ -85,9 +87,9 @@ public class TowerHolder : MonoBehaviour
 
     public void Pressed()
     {
-
         if (!_placed && cooldownFinished)
         {
+            Debug.Log("PRESSED");
             StartPlace();
         }
         else
@@ -99,9 +101,10 @@ public class TowerHolder : MonoBehaviour
 
     private void StartPlace()
     {
+        Debug.Log(characterData._platformTag);
         if (coinsManager._CurrentCoin >= _characterCost)
         {
-            towerManager.StartPlacing(_preview, _charObj, _characterCost, layerMask, characterData._platformTag, gameObject);
+            towerManager.StartPlacing(_preview, _charObj, _characterCost, layerMask, characterData._platformTag, gameObject, characterData);
 
         }
     }
@@ -111,10 +114,12 @@ public class TowerHolder : MonoBehaviour
         if (coinsManager._CurrentCoin < _characterCost || _placed || !cooldownFinished)
         {
             _image.color = _unavailColor;
+            _charArtWork.color = _unavailColor;
         }
         else
         {
             _image.color = _availColor;
+            _charArtWork.color = _availColor;
         }
     }
 

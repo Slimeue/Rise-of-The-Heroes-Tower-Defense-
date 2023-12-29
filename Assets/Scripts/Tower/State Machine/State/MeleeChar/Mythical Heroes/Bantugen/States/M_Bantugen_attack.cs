@@ -24,6 +24,7 @@ public class M_Bantugen_attack : CharacterBaseState
         base.LogicUpdate();
         FindTarget();
         ToDeathState();
+        ToSkillState();
     }
 
     public override void DoChecks()
@@ -69,7 +70,8 @@ public class M_Bantugen_attack : CharacterBaseState
 
         if (collider.gameObject.CompareTag("Enemy"))
         {
-            damageable.Damage(m_Bantugen.characterData.dmgValue);
+            m_Bantugen.soundsPlayTrack.Play("Hit");
+            damageable.Damage(m_Bantugen.damageValue);
             m_Bantugen.isAttackFinished = false;
         }
     }
@@ -90,6 +92,15 @@ public class M_Bantugen_attack : CharacterBaseState
         if (m_Bantugen.currentHealth <= 0)
         {
             characterStateMachine.ChangeState(m_Bantugen.deathState);
+        }
+    }
+
+    void ToSkillState()
+    {
+        float healthPercentage = m_Bantugen.maxHp * 0.5f;
+        if (m_Bantugen.currentHealth < healthPercentage && !m_Bantugen.skillFinished)
+        {
+            m_Bantugen.characterStateMachine.ChangeState(m_Bantugen.skillState);
         }
     }
 

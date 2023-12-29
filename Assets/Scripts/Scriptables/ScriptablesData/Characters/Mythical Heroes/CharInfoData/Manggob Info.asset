@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1cfc1b649f2c254f920a5cb7b0ab89a, type: 3}
+  m_Name: Manggob Info
+  m_EditorClassIdentifier: 
+  lorePart1: He is raised by a giant, as recorded in the Diawot epic. He wields a
+    golden top that had the power to bring dreams into reality. His journey focuses
+    on his search for the golden top and his long-lost sister.
+  lorePart2: He is raised by a giant, as recorded in the Diawot epic. He wields a
+    golden top that had the power to bring dreams into reality. His journey focuses
+    on his search for the golden top and his long-lost sister.
+  lorePart3: He is raised by a giant, as recorded in the Diawot epic. He wields a
+    golden top that had the power to bring dreams into reality. His journey focuses
+    on his search for the golden top and his long-lost sister.
+  personalityPart1: He is raised by a giant, as recorded in the Diawot epic. He wields
+    a golden top that had the power to bring dreams into reality. His journey focuses
+    on his search for the golden top and his long-lost sister.
+  personalityPart2: He is raised by a giant, as recorded in the Diawot epic. He wields
+    a golden top that had the power to bring dreams into reality. His journey focuses
+    on his search for the golden top and his long-lost sister.
+  personalityPart3: He is raised by a giant, as recorded in the Diawot epic. He wields
+    a golden top that had the power to bring dreams into reality. His journey focuses
+    on his search for the golden top and his long-lost sister.

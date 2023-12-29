@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1cfc1b649f2c254f920a5cb7b0ab89a, type: 3}
+  m_Name: Del Pilar Info
+  m_EditorClassIdentifier: 
+  lorePart1: 'Gregorio "Goyo" del Pilar was a key figure in Philippine history, known
+    for his role in the Philippine Revolution against Spanish colonization and the
+    subsequent Philippine-American War. Born on November 14, 1875, del Pilar became
+    one of the youngest generals in the revolutionary forces.
+
+'
+  lorePart2: 'During the Philippine-American War, he played a significant role in
+    the Battle of Tirad Pass in 1899, where he fought against American forces. Despite
+    his efforts, the battle ended in defeat, but del Pilar''s bravery and commitment
+    to the cause of Philippine independence left a lasting legacy.
+
+
+    Del Pilar''s
+    loyalty to the revolutionary leader Emilio Aguinaldo earned him both admiration
+    and criticism. He was often regarded as Aguinaldo''s favorite, but this loyalty
+    led to accusations of being Aguinaldo''s henchman.'
+  lorePart3: 'Beyond his military prowess, del Pilar was known for his charisma and
+    romantic pursuits. Despite his outward confidence, he grappled with inner demons,
+    including trauma from the battles he participated in, leading to psychological
+    struggles.
+
+
+
+    Gregorio del Pilar died at the young age of 24 during the Battle
+    of Tirad Pass. His life and legacy are remembered as part of the complex and
+    tumultuous period in Philippine history marked by the struggle for independence
+    against foreign powers.'
+  personalityPart1: Goyo was defined to be a kind and charming fellow of the youth
+    who had huge dreams for himself and had a clear vision for his dreams until before
+    the Philippine Revolution broke out and he decided to join the revolution. Due
+    to his looks, he also had adapted the personality of vanity and narcissism.
+  personalityPart2: 'Being attributed to be considered as an eagle, Goyo displayed
+    the skills and abilities of one for being patient and soft-spoken, but would
+    attack head-on when given the opportunity.  One of his most known trait was for
+    being undeniably loyal to the point of not recognizing the blurred line that
+    differentiates idolatry and fighting for principles, one that had been a heavy
+    theme throughout Goyo: Ang Batang Heneral for being Aguinaldo''s favorite.  Due
+    to his blinded loyalty, he was called to be considered not a soldier or hero,
+    but Aguinaldo''s henchman or even be disintegrated to be called as a "dog" by
+    Manuel Bernal.'
+  personalityPart3: 'It had been reasoned that Goyo will do anything given that it
+    had been ordered by Aguinaldo at any means. Though he could be calloused to others,
+    even not showing respect among his superiors, except for Aguinaldo, most of the
+    times, he remained calm and respect them as long as he can do so.
+
+
+    Contrary
+    for his almost blinded loyalty, Goyo was known to be a ladies'' man and a heart
+    breaker, one that could even rivaled that of Rizal if he had lived on to survive
+    Tirad Pass. He was a smooth-talker, sweet, friendly, gentleman, and confident.
+    It had been mentioned that he had a girl in every town he visited; but he somehow
+    had been different when it had come towards his last lover, Remedios.
+
+    But
+    behind all of his greatness, courage and confidence, Goyo was revealed to have
+    an inner demon that he had been fighting for too long on his own. He had remained
+    in trauma of the battles he had participated in and the words of truth that he
+    knew deep down but tried to neglect. His trauma had caused him ngihtmares, hallucinations,
+    self-pity, uncontrolled anxieties and insecurities, and even situations of looking
+    at the distance in wonder. Fighting off those demons of him often lead him to
+    close-death scenarios or trouble; as well as having visions of his own death.'
+  charTrivias:
+  - "Young General: Gregorio del Pilar was born on November 14, 1875, in Bulac\xE1n,
+    Bulacan, Philippines. He became one of the youngest generals in the Philippine
+    Revolutionary Army at the age of 24."
+  - 'Aguinaldo''s Right Hand: Del Pilar served as the aide-de-camp to Emilio Aguinaldo,
+    the leader of the First Philippine Republic. He gained the trust of Aguinaldo
+    and played a crucial role in the president''s official and personal matters.'
+  - 'Battle of Tirad Pass: One of the most significant events in Del Pilar''s life
+    was the Battle of Tirad Pass on December 2, 1899. He bravely led a small contingent
+    of Filipino forces against a much larger American force commanded by Colonel
+    Peyton C. March. Del Pilar fought valiantly but perished in the battle.'
+  - '"Bayani ng Tirad" (Hero of Tirad): Del Pilar is often referred to as the "Bayani
+    ng Tirad" or "Hero of Tirad" because of his role and sacrifice in the Battle
+    of Tirad Pass. His defense allowed Aguinaldo to escape to continue the resistance
+    against the American forces.'
+  - 'Educational Background: Before joining the revolutionary forces, Del Pilar studied
+    at the Ateneo Municipal de Manila (now Ateneo de Manila University) and later
+    pursued law at the University of Santo Tomas.'
+  - 'Literary Pursuits: Del Pilar was not only a military leader but also a writer.
+    He contributed articles to various publications, including the revolutionary
+    newspaper "La Independencia," where he expressed his thoughts on the issues of
+    his time.'
+  - 'Military Strategy: Del Pilar was known for his strategic mind and innovative
+    military tactics. He demonstrated his skills in several battles during the Philippine-American
+    War, earning him respect among his peers.'
+  - "Monument: To honor his memory, a monument was erected in his hometown of Bulac\xE1n,
+    Bulacan, depicting Del Pilar on horseback. The monument is a symbol of his courage
+    and sacrifice."
+  - 'Legacy: General Gregorio del Pilar is remembered as a national hero in the Philippines.
+    His contributions to the fight for Philippine independence are commemorated annually
+    on his birth and death anniversaries.'

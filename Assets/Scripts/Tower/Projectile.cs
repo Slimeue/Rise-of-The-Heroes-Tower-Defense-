@@ -33,9 +33,12 @@ public class Projectile : MonoBehaviour
     void HitTarget()
     {
         IDamageable damageable = target.GetComponentInParent<IDamageable>();
+        IRangeSoundable rangeSoundable = target.GetComponentInParent<IRangeSoundable>();
+
 
         if (damageable != null)
         {
+            rangeSoundable.PlayRangeHitSFX("RangeHit");
             damageable.Damage(dmgValue);
             Destroy(gameObject);
         }
@@ -43,11 +46,18 @@ public class Projectile : MonoBehaviour
 
     }
 
-    public void SeekTarget(Transform target, CharacterData characterData)
+    public void SeekTarget(Transform target, CharacterData characterData, float amountDamage)
     {
         this.target = target;
         speed = characterData.projectileSpeed;
-        dmgValue = characterData.dmgValue;
+        dmgValue = amountDamage;
+    }
+
+    public void EnemySeekTarget(Transform target, EnemiesData enemiesData)
+    {
+        this.target = target;
+        speed = enemiesData.projectileSpeed;
+        dmgValue = enemiesData.dmgValue;
     }
 
 

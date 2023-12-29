@@ -26,7 +26,6 @@ public class R_Ponce_State_attackState : CharacterBaseState
         FindTarget();
         ToDeathState();
         r_Ponce.PlayAnim(animBoolName);
-        Debug.Log(animBoolName);
     }
 
     public override void OnTriggerEnter(Collider collider)
@@ -48,6 +47,8 @@ public class R_Ponce_State_attackState : CharacterBaseState
     public override void Exit()
     {
         base.Exit();
+        r_Ponce.rangeCharAnimationHandler.OnRangeStartAttack -= r_Ponce.Fire;
+
     }
 
 

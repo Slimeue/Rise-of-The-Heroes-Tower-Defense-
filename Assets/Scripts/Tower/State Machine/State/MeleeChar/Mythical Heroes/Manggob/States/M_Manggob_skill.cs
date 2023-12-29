@@ -5,9 +5,9 @@ using UnityEngine;
 public class M_Manggob_skill : CharacterBaseState
 {
 
-    M_Manggob m_Manggob;
+    Manggob m_Manggob;
 
-    public M_Manggob_skill(CharacterStateMachine characterStateMachine, string animBoolName, CharEntity charEntity, M_Manggob m_Manggob)
+    public M_Manggob_skill(CharacterStateMachine characterStateMachine, string animBoolName, CharEntity charEntity, Manggob m_Manggob)
     : base(animBoolName, characterStateMachine)
     {
         this.animBoolName = animBoolName;
@@ -17,6 +17,10 @@ public class M_Manggob_skill : CharacterBaseState
     public override void Enter()
     {
         base.Enter();
+        m_Manggob.PlayAnim(animBoolName);
+        m_Manggob.skillFinished = true;
+        m_Manggob.animationHandler.OnSkillActivated += SkillActivated;
+        m_Manggob.animationHandler.OnSkillFinished += ToAttackState;
     }
 
     public override void LogicUpdate()
@@ -42,5 +46,18 @@ public class M_Manggob_skill : CharacterBaseState
     public override void Exit()
     {
         base.Exit();
+        m_Manggob.animationHandler.OnSkillActivated -= SkillActivated;
+        m_Manggob.animationHandler.OnSkillFinished -= ToAttackState;
     }
+
+    void SkillActivated()
+    {
+        m_Manggob.skillHolder.SetActive(true);
+    }
+
+    void ToAttackState()
+    {
+        m_Manggob.characterStateMachine.ChangeState(m_Manggob.attackState);
+    }
+
 }
